@@ -167,7 +167,7 @@ problem.yaml is a UTF-8 encoded YAML file consisting of a mapping with the follo
 |-
 | author || optional, defaults to "Unknown"  ||
 |-
-| license || optional, defaults to "cc by-sa"  ||
+| license || optional, defaults to "Unknown"  ||
 |-
 | rights_owner || mandatory || ICPC
 |-
