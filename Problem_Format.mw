@@ -1,6 +1,6 @@
 === Overview ===
 
-This document describes a standard for distributing and sharing problems for algorithmic programming contests.  It is primarily designed for the ACM ICPC but is applicable also to other contests.
+This document describes a standard for distributing and sharing problems for algorithmic programming contests. 
 
 All problems must have a "short name" consisting solely of lower case letters a-z and digits 0-9.  All files related to a given problem are provided in a directory named after the short name of the problem.
 
