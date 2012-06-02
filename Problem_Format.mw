@@ -10,7 +10,7 @@ All file names must match the following regexp
 
 I.e., it must be of length at least 2, consist solely of lower or upper case letters a-z, A-Z, digits 0-9, period, dash or underscore, but must not begin or end with period, dash or underscore. 
 
-All text files for a problem should be UTF-8 encoded and not have a byte order mark.
+All text files for a problem must be UTF-8 encoded and not have a byte order mark.
 
 === Problem Metadata ===
 
