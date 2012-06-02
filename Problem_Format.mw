@@ -14,22 +14,20 @@ All text files for a problem must be UTF-8 encoded and not have a byte order mar
 
 === Problem Metadata ===
 
-Metadata about the problem (e.g., source, license, limits) are provided in a file <tt><short-name>/problem.yaml</tt>.  The format of this file is defined in the Appendix.
+Metadata about the problem (e.g., source, license, limits) are provided in a UTF-8 encoded YAML file named <tt><short-name>/problem.yaml</tt>.  
 
-==== Configuration file format ====
-
-problem.yaml is a UTF-8 encoded YAML file consisting of a mapping with the following keys:
+The following keys are defined as below. Any unknown keys should be ignored.
 
 {| class="wikitable"
-! Key !! Comments !! Example
+! Key !! Type !! Comments
 |-
-| source || optional || ICPC World Finals 2011
+| author || String or sequence of strings, optional || Who should get author credits. This would typically be the persons that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 |-
-| author || optional, defaults to "Unknown"  ||
+| source || String, optional || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
-| license || optional, defaults to "Unknown"  ||
+| license || String, optional || License under which the problem may be used. 
 |-
-| rights_owner || mandatory || ICPC
+| rights_owner || String, mandatory || Owner of the copyright of the problem.
 |-
 | keywords || optional ||
 |-
