@@ -35,8 +35,8 @@ The following keys are defined as below. Any unknown keys should be ignored.
 |-
 | limits || Sequence of mappings with keys as defined below ||
 |-
-| validator 
-| optional, set of values from the following (delimited by spaces):
+| validator || String, optional
+| set of values from the following (delimited by spaces):
 * "case_sensitive" - upper/lower case differences are significant.  If this parameter is not specified, any changes in case are to be ignored.
 * "space_change_sensitive" - whitespace differences are significant.  If this parameter is not specified, any non-zero amounts of whitespace are considered identical.
 * "float_relative_tolerance X" - accepts token if it is a floating point number and the relative error is <= X
