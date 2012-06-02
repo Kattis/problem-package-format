@@ -16,6 +16,62 @@ All text files for a problem must be UTF-8 encoded and not have a byte order mar
 
 Metadata about the problem (e.g., source, license, limits) are provided in a file <tt><short-name>/problem.yaml</tt>.  The format of this file is defined in the Appendix.
 
+==== Configuration file format ====
+
+problem.yaml is a UTF-8 encoded YAML file consisting of a mapping with the following keys:
+
+{| class="wikitable"
+! Key !! Comments !! Example
+|-
+| source || optional || ICPC World Finals 2011
+|-
+| author || optional, defaults to "Unknown"  ||
+|-
+| license || optional, defaults to "Unknown"  ||
+|-
+| rights_owner || mandatory || ICPC
+|-
+| keywords || optional ||
+|-
+| difficulty || optional || 
+|-
+| limits || Sequence of mappings with keys as defined below ||
+|-
+| validator 
+| optional, set of values from the following (delimited by spaces):
+* "case_sensitive" - upper/lower case differences are significant.  If this parameter is not specified, any changes in case are to be ignored.
+* "space_change_sensitive" - whitespace differences are significant.  If this parameter is not specified, any non-zero amounts of whitespace are considered identical.
+* "float_relative_tolerance X" - accepts token if it is a floating point number and the relative error is <= X
+* "float_absolute_tolerance X" - accepts token if it is a floating point number and the absolute error is <= X
+* "float_tolerance X" - accepts token if either "float_relative_tolerance X" or "float_absolute_tolerance X" would accept
+* "custom" - use a custom output validator. Must be the first value. All following values will be passed as command-line arguments to each of the output validators
+|
+|}
+
+==== limits ====
+
+A sequence of mappings with the following keys:
+
+{| class="wikitable"
+! Key !! Comments !! Example
+|-
+| time_multiplier || optional, defaults to 5 ||3.5
+|-
+| time_safety_margin || optional, defaults to 2||1.5
+|-
+| memory || optional, in Mb, defaults to 2048 || 3072
+|-
+| output || optional, in Mb, defaults to 8 || 4
+|-
+| compilation_time || optional, in seconds, defaults to 60 || 120
+|-
+| validation_time || optional, in seconds, defaults to 60 || 120
+|-
+| validation_memory || optional, in Mb, defaults to 2048 || 3072
+|-
+| validation_output || optional, in Mb, defaults to 8 || 4
+|}
+
 === Problem Statements ===
 
 The problem statement of the problem is provided in the directory <tt><short_name>/problem_statement/</tt>.
@@ -156,63 +212,8 @@ Verification Checks (in order)
 
 === Appendix ===
 
-==== Configuration file format ====
 
-problem.yaml is a UTF-8 encoded YAML file consisting of a mapping with the following keys:
-
-{| class="wikitable"
-! Key !! Comments !! Example
-|-
-| source || optional || ICPC World Finals 2011
-|-
-| author || optional, defaults to "Unknown"  ||
-|-
-| license || optional, defaults to "Unknown"  ||
-|-
-| rights_owner || mandatory || ICPC
-|-
-| keywords || optional ||
-|-
-| difficulty || optional || 
-|-
-| limits || Sequence of mappings with keys as defined below ||
-|-
-| validator 
-| optional, set of values from the following (delimited by spaces):
-* "case_sensitive" - upper/lower case differences are significant.  If this parameter is not specified, any changes in case are to be ignored.
-* "space_change_sensitive" - whitespace differences are significant.  If this parameter is not specified, any non-zero amounts of whitespace are considered identical.
-* "float_relative_tolerance X" - accepts token if it is a floating point number and the relative error is <= X
-* "float_absolute_tolerance X" - accepts token if it is a floating point number and the absolute error is <= X
-* "float_tolerance X" - accepts token if either "float_relative_tolerance X" or "float_absolute_tolerance X" would accept
-* "custom" - use a custom output validator. Must be the first value. All following values will be passed as command-line arguments to each of the output validators
-|
-|}
-
-==== limits ====
-
-A sequence of mappings with the following keys:
-
-{| class="wikitable"
-! Key !! Comments !! Example
-|-
-| time_multiplier || optional, defaults to 5 ||3.5
-|-
-| time_safety_margin || optional, defaults to 2||1.5
-|-
-| memory || optional, in Mb, defaults to 2048 || 3072
-|-
-| output || optional, in Mb, defaults to 8 || 4
-|-
-| compilation_time || optional, in seconds, defaults to 60 || 120
-|-
-| validation_time || optional, in seconds, defaults to 60 || 120
-|-
-| validation_memory || optional, in Mb, defaults to 2048 || 3072
-|-
-| validation_output || optional, in Mb, defaults to 8 || 4
-|}
-
-===== Sample problem.yaml =====
+==== Sample problem.yaml ====
  
 Typical problem.yaml:
 
