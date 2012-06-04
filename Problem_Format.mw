@@ -21,7 +21,7 @@ The following keys are defined as below. Any unknown keys should be ignored.
 {| class="wikitable"
 ! Key !! Type !! Comments
 |-
-| author || String or sequence of strings, optional || Who should get author credits. This would typically be the persons that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
+| author || String or sequence of strings, optional || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 |-
 | source || String, optional || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
