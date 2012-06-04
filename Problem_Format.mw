@@ -224,7 +224,9 @@ Maximal problem.yaml:
 
  # Problem configuration
  source: ICPC Mid-Atlantic Regional Contest
- author: John von Judge 
+ author: 
+   - John von Judge
+   - Jon Judgeson
  license: cc by-sa  
  rights_owner: ICPC
  
