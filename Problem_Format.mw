@@ -88,6 +88,8 @@ The test data are provided in subdirectories of <tt><short_name>/data/</tt>. The
 
 All input and answer files have the filename extension .in and .ans respectively. Optionally a text file (with filename extension .txt) describing the purpose of an input file may be present. Input, answer and description files are matched by the base name.
 
+'''Comment:''' .hint for hints about the testcase?
+
 === Example Submissions ===
 
 Correct and incorrect solutions to the problem are provided in a directory <tt><short_name>/submissions/</tt>.  The submissions/ directory has subdirectories corresponding to the judgement that the programs are supposed to receive:
