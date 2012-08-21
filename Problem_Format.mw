@@ -1,4 +1,4 @@
-=== Overview ===
+== Overview ==
 
 This document describes a standard for distributing and sharing problems for algorithmic programming contests. 
 
@@ -12,7 +12,7 @@ I.e., it must be of length at least 2, consist solely of lower or upper case let
 
 All text files for a problem must be UTF-8 encoded and not have a byte order mark.
 
-=== Problem Metadata ===
+== Problem Metadata ==
 
 Metadata about the problem (e.g., source, license, limits) are provided in a UTF-8 encoded YAML file named <tt><short-name>/problem.yaml</tt>.  
 
@@ -46,7 +46,7 @@ The following keys are defined as below. Any unknown keys should be ignored.
 |
 |}
 
-==== limits ====
+=== limits ===
 
 A sequence of mappings with the following keys:
 
@@ -70,7 +70,7 @@ A sequence of mappings with the following keys:
 | validation_output || optional, in Mb, defaults to 8 || 4
 |}
 
-=== Problem Statements ===
+== Problem Statements ==
 
 The problem statement of the problem is provided in the directory <tt><short_name>/problem_statement/</tt>.
 
@@ -82,7 +82,7 @@ and output. The format of the problem statement is described in [[Problem Statem
 <tt><short_name>/problem_statement/</tt> , problem.tex should reference auxiliary files as if the
 working directory is <tt><short_name>/problem_statement/</tt>.
 
-=== Test data ===
+== Test data ==
 
 The test data are provided in subdirectories of <tt><short_name>/data/</tt>. The sample data in <tt><short_name>/data/sample/</tt> and the secret data in <tt><short_name>/data/secret/</tt>.
 
@@ -90,7 +90,7 @@ All input and answer files have the filename extension .in and .ans respectively
 
 '''Comment:''' .hint for hints about the testcase?
 
-=== Example Submissions ===
+== Example Submissions ==
 
 Correct and incorrect solutions to the problem are provided in a directory <tt><short_name>/submissions/</tt>.  The submissions/ directory has subdirectories corresponding to the judgement that the programs are supposed to receive:
 
@@ -103,28 +103,28 @@ Every file or directory in these directories represents a separate
 solution.  Same requirements as for submissions with regards to
 filenames. It is mandatory to provide at least one accepted solution.  Everything else is optional, and empty subdirectories can be omitted.
 
-==== Input/Output Methods ====
+=== Input/Output Methods ===
 
 Submissions must operate in such a way that they receive problem input data on their standard input stream, and write to their standard output stream.
 
-=== Validators ===
+== Validators ==
 
-==== Input Format Validators ====
+=== Input Format Validators ===
 
 Input Format Validators, for verifying the correctness of the input files, are provided in <tt><short_name>/input_format_validators/</tt>.  They must adhere to the [[Input format validator]] standard.
 
-==== Output Validators ====
+=== Output Validators ===
 
 Output Validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below.  They are provided in <tt><short_name>/output_validators/</tt>, and must adhere to the [[Output validator| Output Validator]] standard.
 
-==== File Conventions For Validators ====
+=== File Conventions For Validators ===
 
 A validator is either a file or a directory. A validator in the form of a directory may include two scripts "build" and "run".  Either both or none of these scripts must be included.  If the scripts are present, then:
 * validator must be compiled by executing the build script.
 * the validator must be run by executing the run script.
 Otherwise, the validator will be compiled and run as if it was a submission (except that it is given the command-line arguments specified in problem.yaml, if there are any).
 
-==== Default Validator Capabilities ====
+=== Default Validator Capabilities ===
 
 The default validator is essentially a beefed-up diff. In its default mode, it
 tokenizes the files to compare and compares them token by token. It supports the
@@ -148,13 +148,13 @@ whitespace characters are equivalent).
 When supplying both a relative and an absolute tolerance, the semantics are that a token is accepted if it is within either of the two tolerances.
 When a floating-point tolerance has been set, any valid formatting of floating point numbers is accepted for floating point tokens. So for instance if a token in the answer file says <tt>0.0314</tt>, a token of <tt>3.14000000e-2</tt> in the output file would be accepted. If no floating point tolerance has been set, floating point tokens are treated just like any other token and has to match exactly.
 
-=== Determination of Time Limit ===
+== Determination of Time Limit ==
 
 The execution time limit for the problem is determined as follows. First, all the provided <tt>accepted/</tt> solutions are run. Let ''t<sub>max</sub>'' be the maximum running time of these solutions on any of the input files.  The time limit is then set to be ''t<sub>lim</sub>'' = &lceil;''t<sub>max</sub> &middot; M''&rceil; where ''M'' is the value of the time multiplier parameter from the [[#limits|limits configuration of problem.yaml]].
 
 Furthermore, it is required that all of the provided time limit exceeded submissions run for at least ''t<sub>lim</sub> &middot; S'' seconds, where S is the value of the time safety margin parameter from the [[#limits|limits configuration]].
 
-=== Verification ===
+== Verification ==
 
 Solutions or validators in languages that are not supported by the CCS
 should be ignored and a warning to that effect shown.
@@ -210,10 +210,10 @@ Verification Checks (in order)
                Run the solution on the input
                If the solution is not judged Run-Time Error: Error!
 
-=== Appendix ===
+== Appendix ==
 
 
-==== Sample problem.yaml ====
+=== Sample problem.yaml ===
  
 Typical problem.yaml:
 
@@ -244,7 +244,7 @@ Maximal problem.yaml:
  
  validator: space_change_sensitive float_absolute_tolerance 1e-6
 
-==== Directory structure ====
+=== Directory structure ===
 
  <short_name>/
        problem.yaml - problem configuration file
@@ -275,7 +275,7 @@ Maximal problem.yaml:
        output_validators/
                - single file or directory per validator
 
-===== Sample Directory / Filenames =====
+==== Sample Directory / Filenames ====
 
 This is a sample list of directories/files for a problem named ''squares''
 
