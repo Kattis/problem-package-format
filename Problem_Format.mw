@@ -92,6 +92,8 @@ All input and answer files have the filename extension .in and .ans respectively
 
 == Included Code ==
 
+Code that should be included with all submissions are provided in a directory <tt><short_name>/include/</tt>. The files should be copied to submission files before compiling, overwriting files from the submission in the case of name collision.
+
 == Example Submissions ==
 
 Correct and incorrect solutions to the problem are provided in a directory <tt><short_name>/submissions/</tt>.  The submissions/ directory has subdirectories corresponding to the judgement that the programs are supposed to receive:
