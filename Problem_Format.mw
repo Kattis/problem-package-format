@@ -92,7 +92,7 @@ All input and answer files have the filename extension .in and .ans respectively
 
 == Included Code ==
 
-Code that should be included with all submissions are provided one directory per supported language <tt><short_name>/include/<language>/</tt>. 
+Code that should be included with all submissions are provided in one directory per supported language, called <tt><short_name>/include/<language>/</tt>. 
 
 The files should be copied from a language directory based on the language of the submission, to the submission files before compiling, overwriting files from the submission in the case of name collision. Language must be given as one of the language codes in the table below.
 
