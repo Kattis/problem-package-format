@@ -288,7 +288,8 @@ Maximal problem.yaml:
                        *.ans - answer files
                        *.txt - optional data file description
        include/
-               - any files that should be included with all submissions
+               <language>/
+                       - any files that should be included with all submissions in <language>
        submissions/
                accepted/
                        - single file or directory per solution
