@@ -92,6 +92,8 @@ Optionally a description or a hint file (or both) may be present. The descriptio
 
 Input, answer, description and hint files are matched by the base name.
 
+Test files will be used in lexicographical order. If a specific order is needed a numbered prefix such as 00, 01, 02, 03, and so on, can be used.
+
 == Included Code ==
 
 Code that should be included with all submissions are provided in one directory per supported language, called <tt><short_name>/include/<language>/</tt>. 
