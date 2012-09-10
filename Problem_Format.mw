@@ -27,7 +27,7 @@ The following keys are defined as below. Any unknown keys should be ignored.
 |-
 | source-url || String, optional || Link to page for source event. Should not be given if source is not.
 |-
-| license || String, optional || License under which the problem may be used. 
+| license || String, optional || License under which the problem may be used. Value have to be one of the ones defined below.
 |-
 | rights_owner || String, optional || Owner of the copyright of the problem. If not present, author is owner.
 |-
@@ -46,6 +46,8 @@ The following keys are defined as below. Any unknown keys should be ignored.
 * "float_tolerance X" - accepts token if either "float_relative_tolerance X" or "float_absolute_tolerance X" would accept
 * "custom" - use a custom output validator. Must be the first value. All following values will be passed as command-line arguments to each of the output validators
 |}
+
+=== license ===
 
 === limits ===
 
