@@ -70,23 +70,23 @@ The following keys are defined as below. Any unknown keys should be ignored.
 A map with the following keys:
 
 {| class="wikitable"
-! Key !! Comments !! Example
+! Key !! Comments !! Default
 |-
-| time_multiplier || optional, defaults to 5 ||3.5
+| time_multiplier || optional || 5
 |-
-| time_safety_margin || optional, defaults to 2||1.5
+| time_safety_margin || optional || 2
 |-
-| memory || optional, in Mb, defaults to 2048 || 3072
+| memory || optional, in Mb || 2048
 |-
-| output || optional, in Mb, defaults to 8 || 4
+| output || optional, in Mb || 8 
 |-
-| compilation_time || optional, in seconds, defaults to 60 || 120
+| compilation_time || optional, in seconds || 60
 |-
-| validation_time || optional, in seconds, defaults to 60 || 120
+| validation_time || optional, in seconds || 60
 |-
-| validation_memory || optional, in Mb, defaults to 2048 || 3072
+| validation_memory || optional, in Mb || 2048
 |-
-| validation_output || optional, in Mb, defaults to 8 || 4
+| validation_output || optional, in Mb || 8 
 |}
 
 == Problem Statements ==
