@@ -67,7 +67,7 @@ The following keys are defined as below. Any unknown keys should be ignored.
 
 === limits ===
 
-A sequence of mappings with the following keys:
+A map with the following keys:
 
 {| class="wikitable"
 ! Key !! Comments !! Example
