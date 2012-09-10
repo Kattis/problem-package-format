@@ -49,6 +49,22 @@ The following keys are defined as below. Any unknown keys should be ignored.
 
 === license ===
 
+{| class="wikitable"
+! Value !! Comments !! Link
+|-
+| unknown || The default value. In practice means that the problem can not be used. ||
+|-
+| public domain || There are no known copyrights on the problem, anywhere in the world. || http://creativecommons.org/about/pdm
+|-
+| cc0 || CC0, "no rights reserved" || http://creativecommons.org/about/cc0
+|-
+| cc by || CC attribution || http://creativecommons.org/licenses/by/3.0/
+|-
+| cc by-sa || CC attribution, share alike || http://creativecommons.org/licenses/by-sa/3.0/
+|-
+| permission || Used with permission. The author must be contact for every additional use. ||
+|}
+
 === limits ===
 
 A sequence of mappings with the following keys:
