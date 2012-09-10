@@ -25,6 +25,8 @@ The following keys are defined as below. Any unknown keys should be ignored.
 |-
 | source || String, optional || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
+| source-url || String, optional || Link to page for source event. Should not be given if source is not.
+|-
 | license || String, optional || License under which the problem may be used. 
 |-
 | rights_owner || String, mandatory || Owner of the copyright of the problem.
