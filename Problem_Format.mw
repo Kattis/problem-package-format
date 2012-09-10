@@ -35,7 +35,7 @@ The following keys are defined as below. Any unknown keys should be ignored.
 |-
 | difficulty || optional || One of "trivial", "easy", "medium", "hard" and "very hard"
 |-
-| limits || Sequence of mappings with keys as defined below ||
+| limits || Map with keys as defined below ||
 |-
 | validator || String, optional
 | set of values from the following (delimited by spaces):
