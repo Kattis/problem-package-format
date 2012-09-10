@@ -43,7 +43,6 @@ The following keys are defined as below. Any unknown keys should be ignored.
 * "float_absolute_tolerance X" - accepts token if it is a floating point number and the absolute error is <= X
 * "float_tolerance X" - accepts token if either "float_relative_tolerance X" or "float_absolute_tolerance X" would accept
 * "custom" - use a custom output validator. Must be the first value. All following values will be passed as command-line arguments to each of the output validators
-|
 |}
 
 === limits ===
