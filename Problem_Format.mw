@@ -33,7 +33,7 @@ The following keys are defined as below. Any unknown keys should be ignored.
 |-
 | keywords || optional ||
 |-
-| difficulty || optional || One of "trivial", "easy", "medium", "hard" and "very hard"
+| difficulty || optional || Value have to be one of the ones defined below.
 |-
 | limits || Map with keys as defined below ||
 |-
@@ -63,6 +63,24 @@ The following keys are defined as below. Any unknown keys should be ignored.
 | cc by-sa || CC attribution, share alike || http://creativecommons.org/licenses/by-sa/3.0/
 |-
 | permission || Used with permission. The author must be contacted for every additional use. ||
+|}
+
+=== difficulty ===
+
+Allowed values for difficulty. Difficulty can probably not be defined strictly, but the comments below will give some indication of the intended use.
+
+{| class="wikitable"
+! Value !! Comments
+|-
+| trivial || 99% of programmers can solve a typical trivial problem in 4 hours
+|-
+| easy || 80% of programmers can solve a typical easy problem in 4 hours
+|-
+| medium || 50% of programmers can solve a typical medium problem in 4 hours
+|-
+| hard || 20% of programmers can solve a typical hard problem in 4 hours
+|-
+| very hard || 1% of programmers can solve a typical very hard problem in 4 hours
 |}
 
 === limits ===
