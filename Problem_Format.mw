@@ -157,16 +157,27 @@ If there are any language directories, then submissions on this problem will onl
 
 == Example Submissions ==
 
-Correct and incorrect solutions to the problem are provided in a directory <tt><short_name>/submissions/</tt>.  The submissions/ directory has subdirectories corresponding to the judgement that the programs are supposed to receive:
+Correct and incorrect solutions to the problem are provided in a directory <tt><short_name>/submissions/</tt>.  
 
-# <tt>submissions/accepted/</tt>: Solutions correctly solving the problem
-# <tt>submissions/wrong_answer/</tt>: Submissions producing incorrect answers
-# <tt>submissions/time_limit_exceeded/</tt>: Submissions that are supposed to be too slow
-# <tt>submissions/run_time_error/</tt>: Submissions that are supposed to crash
+The expected result is specified by including the string <tt>@EXPECTED_RESULT@:</tt> followed by the expected result somewhere in the source code, e.g. in a comment. The expected result must be one of the ones listed below. If none are specified, it defaults to <tt>AC</tt>.
 
-Every file or directory in these directories represents a separate
-solution.  Same requirements as for submissions with regards to
-filenames. It is mandatory to provide at least one accepted solution.  Everything else is optional, and empty subdirectories can be omitted.
+{| class="wikitable"
+! Value !! Meaning !! Requirement !! Comment
+|-
+| AC || Accepted || Accepted as a correct solution for all test files || At least one is required. Default value.
+|-
+| RE || Rejected || Not accepted as a correct solution for some test file ||
+|-
+| WA || Wrong Answer || Wrong answer for some test file, but is not too slow and does not crash for any test file ||
+|-
+| TLE || Time Limit Exceeded || Too slow for some test file. May also give wrong answer but not crash for any test file.  ||
+|-
+| RTE || Run-Time Error || Crashes for some test file ||
+|-
+| <number> || The score || Score is exactly as specified || Only allowed when grading is "score"
+|}
+
+Every file or directory in these directories represents a separate solution.  Same requirements as for submissions with regards to filenames. It is mandatory to provide at least one accepted solution. 
 
 === Input/Output Methods ===
 
