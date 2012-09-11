@@ -49,6 +49,8 @@ The following keys are defined as below. Any unknown keys should be ignored.
 
 === license ===
 
+Allowed values for license.
+
 {| class="wikitable"
 ! Value !! Comments !! Link
 |-
