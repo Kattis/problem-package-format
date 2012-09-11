@@ -76,6 +76,8 @@ Allowed values for difficulty. Difficulty can probably not be defined strictly, 
 {| class="wikitable"
 ! Value !! Comments
 |-
+| unknown || Default value
+|-
 | trivial || 99% of programmers can solve a typical trivial problem in 4 hours
 |-
 | easy || 80% of programmers can solve a typical easy problem in 4 hours
