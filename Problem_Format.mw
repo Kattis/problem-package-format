@@ -183,9 +183,7 @@ The expected result is specified by including the string <tt>@EXPECTED_RESULT@:<
 
 Every file or directory in these directories represents a separate solution.  Same requirements as for submissions with regards to filenames. It is mandatory to provide at least one accepted solution. 
 
-=== Input/Output Methods ===
-
-Submissions must operate in such a way that they receive problem input data on their standard input stream, and write to their standard output stream.
+Submissions must read input data from standard input, and write output to standard output.
 
 == Validators ==
 
