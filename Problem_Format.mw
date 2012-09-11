@@ -37,6 +37,8 @@ The following keys are defined as below. Any unknown keys should be ignored.
 |-
 | limits || Map with keys as defined below ||
 |-
+| grading || String, optional || One of "acceptance" and "score"
+|-
 | validator || String, optional
 | set of values from the following (delimited by spaces):
 * "case_sensitive" - upper/lower case differences are significant.  If this parameter is not specified, any changes in case are to be ignored.
