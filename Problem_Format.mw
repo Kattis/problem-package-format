@@ -35,7 +35,7 @@ The following keys are defined as below. Any unknown keys should be ignored.
 |-
 | difficulty || optional || Value have to be one of the ones defined below.
 |-
-| limits || Map with keys as defined below ||
+| limits || Map with keys as defined below, optional ||
 |-
 | grading || String, optional || One of "acceptance" and "score"
 |-
