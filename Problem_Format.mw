@@ -16,30 +16,30 @@ All text files for a problem must be UTF-8 encoded and not have a byte order mar
 
 Metadata about the problem (e.g., source, license, limits) are provided in a UTF-8 encoded YAML file named <tt><short-name>/problem.yaml</tt>.  
 
-The keys are defined as below. Any unknown keys should be ignored.
+The keys are defined as below. All keys are optional. Any unknown keys should be ignored.
 
 {| class="wikitable"
 ! Key !! Type !! Comments
 |-
-| author || String or sequence of strings, optional || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
+| author || String or sequence of strings || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 |-
-| source || String, optional || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
+| source || String || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
-| source-url || String, optional || Link to page for source event. Should not be given if source is not.
+| source-url || String || Link to page for source event. Should not be given if source is not.
 |-
-| license || String, optional || License under which the problem may be used. Value have to be one of the ones defined below.
+| license || String || License under which the problem may be used. Value have to be one of the ones defined below.
 |-
-| rights_owner || String, optional || Owner of the copyright of the problem. If not present, author is owner.
+| rights_owner || String || Owner of the copyright of the problem. If not present, author is owner.
 |-
-| keywords || optional ||
+| keywords || ||
 |-
-| difficulty || optional || Value have to be one of the ones defined below.
+| difficulty || || Value have to be one of the ones defined below.
 |-
-| limits || Map with keys as defined below, optional ||
+| limits || Map with keys as defined below ||
 |-
-| grading || String, optional || One of "acceptance" and "score"
+| grading || String || One of "acceptance" and "score"
 |-
-| validator || String, optional
+| validator || String
 | set of values from the following (delimited by spaces):
 * "case_sensitive" - upper/lower case differences are significant.  If this parameter is not specified, any changes in case are to be ignored.
 * "space_change_sensitive" - whitespace differences are significant.  If this parameter is not specified, any non-zero amounts of whitespace are considered identical.
