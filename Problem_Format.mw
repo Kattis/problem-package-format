@@ -39,7 +39,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | grading || String || One of "acceptance" and "score"
 |-
-| validator || String
+| validator || String ||
 | set of values from the following (delimited by spaces):
 * "case_sensitive" - upper/lower case differences are significant.  If this parameter is not specified, any changes in case are to be ignored.
 * "space_change_sensitive" - whitespace differences are significant.  If this parameter is not specified, any non-zero amounts of whitespace are considered identical.
