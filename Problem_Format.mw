@@ -19,23 +19,23 @@ Metadata about the problem (e.g., source, license, limits) are provided in a UTF
 The keys are defined as below. All keys are optional. Any unknown keys should be ignored.
 
 {| class="wikitable"
-! Key !! Type !! Comments
+! Key !! Type !! Default !! Comments
 |-
-| author || String or sequence of strings || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
+| author || String or sequence of strings ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 |-
-| source || String || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
+| source || String ||  || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
-| source-url || String || Link to page for source event. Should not be given if source is not.
+| source-url || String || || Link to page for source event. Should not be given if source is not.
 |-
-| license || String || License under which the problem may be used. Value have to be one of the ones defined below.
+| license || String || unknown || License under which the problem may be used. Value have to be one of the ones defined below.
 |-
-| rights_owner || String || Owner of the copyright of the problem. If not present, author is owner.
+| rights_owner || String || Value of author || Owner of the copyright of the problem. If not present, author is owner.
 |-
-| keywords || ||
+| keywords || || ||
 |-
-| difficulty || || Value have to be one of the ones defined below.
+| difficulty || || unknown || Value have to be one of the ones defined below.
 |-
-| limits || Map with keys as defined below ||
+| limits || Map with keys as defined below || see definition below ||
 |-
 | grading || String || One of "acceptance" and "score"
 |-
