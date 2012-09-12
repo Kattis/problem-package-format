@@ -16,7 +16,7 @@ All text files for a problem must be UTF-8 encoded and not have a byte order mar
 
 Metadata about the problem (e.g., source, license, limits) are provided in a UTF-8 encoded YAML file named <tt><short-name>/problem.yaml</tt>.  
 
-The following keys are defined as below. Any unknown keys should be ignored.
+The keys are defined as below. Any unknown keys should be ignored.
 
 {| class="wikitable"
 ! Key !! Type !! Comments
