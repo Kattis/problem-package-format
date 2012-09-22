@@ -261,7 +261,7 @@ Verification Checks (in order)
        there are validators in output_validators/ and validator does not begin with "custom"
        any validator (input format or output) does not compile
 
- For each *.in in public_data and judge_data:
+ For each *.in in in data/*/:
        For each validator in input_format_validators/:
                If the validator does not accept the input file: Error!
 
