@@ -33,8 +33,6 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | keywords || || ||
 |-
-| difficulty || || unknown || Value have to be one of the ones defined below.
-|-
 | limits || Map with keys as defined below || see definition below ||
 |-
 | grading || String || acceptance || One of "acceptance" and "score"
@@ -69,26 +67,6 @@ Allowed values for license.
 | educational || May be freely used for educational purposes ||
 |-
 | permission || Used with permission. The author must be contacted for every additional use. ||
-|}
-
-=== difficulty ===
-
-Allowed values for difficulty. Difficulty can probably not be defined strictly, but the comments below will give some indication of the intended use.
-
-{| class="wikitable"
-! Value !! Comments
-|-
-| unknown || Default value
-|-
-| trivial || 99% of programmers can solve a typical trivial problem in 4 hours
-|-
-| easy || 80% of programmers can solve a typical easy problem in 4 hours
-|-
-| medium || 50% of programmers can solve a typical medium problem in 4 hours
-|-
-| hard || 20% of programmers can solve a typical hard problem in 4 hours
-|-
-| very hard || 1% of programmers can solve a typical very hard problem in 4 hours
 |}
 
 === limits ===
