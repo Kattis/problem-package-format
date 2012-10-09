@@ -123,8 +123,6 @@ Code that should be included with all submissions are provided in one directory 
 
 The files should be copied from a language directory based on the language of the submission, to the submission files before compiling, overwriting files from the submission in the case of name collision. Language must be given as one of the language codes in the table below. If any of the included files are supposed to be the main file (i.e. a driver), that file must have the langage dependent name as given in the table below.
 
-If there are any language directories, then submissions on this problem will only be allowed for languages with a corresponding directory. If files are needed for some languages, but not others, empty language directories must be added.
-
 {| class="wikitable"
 ! Code !! Language !! Default main file
 |-
