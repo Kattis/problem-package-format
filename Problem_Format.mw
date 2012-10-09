@@ -35,6 +35,8 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
+| languages || String || all || set of languages (delimited by spaces) or all
+|-
 | grading || String || acceptance || One of "acceptance" and "score"
 |-
 | validator || String ||
