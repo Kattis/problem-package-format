@@ -39,14 +39,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | grading || String || acceptance || One of "acceptance" and "score"
 |-
-| validator || String ||
-| set of values from the following (delimited by spaces):
-* "case_sensitive" - upper/lower case differences are significant.  If this parameter is not specified, any changes in case are to be ignored.
-* "space_change_sensitive" - whitespace differences are significant.  If this parameter is not specified, any non-zero amounts of whitespace are considered identical.
-* "float_relative_tolerance X" - accepts token if it is a floating point number and the relative error is <= X
-* "float_absolute_tolerance X" - accepts token if it is a floating point number and the absolute error is <= X
-* "float_tolerance X" - accepts token if either "float_relative_tolerance X" or "float_absolute_tolerance X" would accept
-* "custom" - use a custom output validator. Must be the first value. All following values will be passed as command-line arguments to each of the output validators
+| validator || String || || set of values from below (delimited by spaces):
 |}
 
 === license ===
@@ -93,6 +86,26 @@ A map with the following keys:
 | validation_memory || optional, in Mb || 2048
 |-
 | validation_output || optional, in Mb || 8 
+|}
+
+=== validator ===
+
+A space separated list from the following:
+
+{| class="wikitable"
+! Value !! Comments
+|-
+| case_sensitive || upper/lower case differences are significant.  If this parameter is not specified, any changes in case are to be ignored.
+|-
+| space_change_sensitive || whitespace differences are significant.  If this parameter is not specified, any non-zero amounts of whitespace are considered identical.
+|-
+| float_relative_tolerance X || accepts token if it is a floating point number and the relative error is <= X
+|-
+| float_absolute_tolerance X || accepts token if it is a floating point number and the absolute error is <= X
+|-
+| float_tolerance X || accepts token if either "float_relative_tolerance X" or "float_absolute_tolerance X" would accept
+|-
+| custom || use a custom output validator. Must be the first value. All following values will be passed as command-line arguments to each of the output validators
 |}
 
 == Problem Statements ==
