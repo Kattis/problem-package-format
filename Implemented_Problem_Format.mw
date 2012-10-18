@@ -124,6 +124,25 @@ filenames. It is mandatory to provide at least one accepted solution.  Everythin
 
 Submissions must operate in such a way that they receive problem input data on their standard input stream, and write to their standard output stream.
 
+
+== Included Code ==
+
+Code that should be included with all submissions are provided in one directory per supported language, called <tt><short_name>/include/<language>/</tt>. 
+
+The files should be copied from a language directory based on the language of the submission, to the submission files before compiling, overwriting files from the submission in the case of name collision. Language must be given as one of the language codes in the table below. If any of the included files are supposed to be the main file (i.e. a driver), that file must have the langage dependent name as given in the table below.
+
+{| class="wikitable"
+! Code !! Language !! Default main file
+|-
+| c || C ||
+|-
+| cpp || C++ ||
+|-
+| java || Java || Main.java
+|-
+| python || Python || main.py
+|}
+
 == Validators ==
 
 === Input Format Validators ===
