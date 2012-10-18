@@ -32,7 +32,15 @@ working directory is <tt><short_name>/problem_statement/</tt>.
 
 The test data are provided in subdirectories of <tt><short_name>/data/</tt>. The sample data in <tt><short_name>/data/sample/</tt> and the secret data in <tt><short_name>/data/secret/</tt>.
 
-All input and answer files have the filename extension .in and .ans respectively. Optionally a text file (with filename extension .txt) describing the purpose of an input file may be present. Input, answer and description files are matched by the base name.
+All input and answer files have the filename extension .in and .ans respectively. Optionally descriptions of a data set (a matching pair of .in and .ans files) may be provided, as follows:
+# A text file with filename extension <tt>.desc</tt>, which is only shown to judges of the judging system.
+# A text file with filename extension <tt>.hint</tt>, which is shown to all users.
+
+The <tt>.desc</tt> file is meant to be privileged information, whereas the <tt>.hint</tt> file is meant to be given to anybody who needs it, i.e. fails to solve the problem. The hint file might not be used at all, depending on how the problem is used, e.g. when used in a programming contest.
+
+Input, answer, and description files are matched by the base name.
+
+Test files will be used in lexicographical order. If a specific order is needed a numbered prefix such as 00, 01, 02, 03, and so on, can be used.
 
 === Example Submissions ===
 
