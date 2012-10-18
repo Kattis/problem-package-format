@@ -35,6 +35,8 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
+| libraries || String || || set of libraries (delimited by spaces) as defined below.
+|-
 | languages || String || all || set of languages (delimited by spaces) or all
 |-
 | grading || String || acceptance || One of "acceptance" and "score"
@@ -86,6 +88,18 @@ A map with the following keys:
 | validation_memory || optional, in Mb || 2048
 |-
 | validation_output || optional, in Mb || 8 
+|}
+
+=== libraries ===
+
+A space separated list from below. A library will be available for the languages listed.
+
+{| class="wikitable"
+! Value !! Library !! Languages
+|-
+| gmp || GMP - The GNU Multiple Precision Arithmetic Library || C, C++
+|-
+| boost || Boost || C++
 |}
 
 === validator ===
