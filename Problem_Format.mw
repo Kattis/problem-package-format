@@ -41,7 +41,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | grading || String || acceptance || One of "acceptance" and "score"
 |-
-| validator || String || || set of values from below (delimited by spaces):
+| validator || String || || set of values from below (delimited by spaces)
 |}
 
 === license ===
