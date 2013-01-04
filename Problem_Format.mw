@@ -1,6 +1,6 @@
 == Overview ==
 
-This document describes the Kattis problem format, used for distributing and sharing problems for algorithmic programming contests. 
+This document describes the Kattis problem format, used for distributing and sharing problems for algorithmic programming contests as well as educational use. 
 
 All problems must have a "short name" consisting solely of lower case letters a-z and digits 0-9.  All files related to a given problem are provided in a directory named after the short name of the problem.
 
