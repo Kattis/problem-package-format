@@ -235,6 +235,8 @@ whitespace characters are equivalent).
 When supplying both a relative and an absolute tolerance, the semantics are that a token is accepted if it is within either of the two tolerances.
 When a floating-point tolerance has been set, any valid formatting of floating point numbers is accepted for floating point tokens. So for instance if a token in the answer file says <tt>0.0314</tt>, a token of <tt>3.14000000e-2</tt> in the output file would be accepted. If no floating point tolerance has been set, floating point tokens are treated just like any other token and has to match exactly.
 
+== Graders ==
+
 == Determination of Time Limit ==
 
 The execution time limit for the problem is determined as follows. First, all the provided <tt>accepted/</tt> solutions are run. Let ''t<sub>max</sub>'' be the maximum running time of these solutions on any of the input files.  The time limit is then set to be ''t<sub>lim</sub>'' = &lceil;''t<sub>max</sub> &middot; M''&rceil; where ''M'' is the value of the time multiplier parameter from the [[#limits|limits configuration of problem.yaml]].
