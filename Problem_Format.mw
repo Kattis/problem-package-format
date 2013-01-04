@@ -352,14 +352,7 @@ Maximal problem.yaml:
                <language>/
                        - any files that should be included with all submissions in <language>
        submissions/
-               accepted/
-                       - single file or directory per solution
-               wrong_answer/
-                       - single file or directory per solution
-               time_limit_exceeded/
-                       - single file or directory per solution
-               run_time_error/
-                       - single file or directory per solution
+               - single file or directory per solution
        input_format_validators/
                - single file or directory per validator
        output_validators/
