@@ -29,7 +29,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | license || String || unknown || License under which the problem may be used. Value have to be one of the ones defined below.
 |-
-| rights_owner || String || Value of author || Owner of the copyright of the problem. If not present, author is owner.
+| rights_owner || String || Value of author, if present, otherwise value of source. || Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner.
 |-
 | keywords || || ||
 |-
