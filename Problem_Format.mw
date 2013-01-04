@@ -378,12 +378,12 @@ This is a sample list of directories/files for a problem named ''squares''
  squares/data/secret/squares2_cornercases.ans
  squares/data/secret/squares3_bigcases.in
  squares/data/secret/squares3_bigcases.ans
- squares/submissions/accepted/squares.cpp
- squares/submissions/accepted/Squares.java
- squares/submissions/accepted/squares.c
- squares/submissions/wrong_answer/wrong.cpp
- squares/submissions/time_limit_exceeded/tle.c
- squares/submissions/run_time_error/rte.c
+ squares/submissions/squares.cpp
+ squares/submissions/Squares.java
+ squares/submissions/squares.c
+ squares/submissions/wrong.cpp
+ squares/submissions/tle.c
+ squares/submissions/rte.c
  squares/input_format_validators/squares_input_checker1.py
  squares/input_format_validators/squares_input_checker2/check.c
  squares/input_format_validators/squares_input_checker2/data.h
