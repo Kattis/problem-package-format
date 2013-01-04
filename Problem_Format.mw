@@ -48,6 +48,8 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 
 Allowed values for license.
 
+Values other than ''unknown'' or ''public domain'' requires rights_owner to have a value.
+
 {| class="wikitable"
 ! Value !! Comments !! Link
 |-
