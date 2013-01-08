@@ -1,6 +1,6 @@
 == Summary ==
 
-An output validator is a program that is given the output of a submitted program, together with the corresponding input file, and a correct answer file for the input, and then decides whether the output provided is a correct output for the given input file.
+An output validator is a program that is given the output of a submitted program,  the corresponding input file and the answer file for that input, and then decides whether the output provided is a correct output for the given input file.
 
 This document describes a standard for Output Validators for Programming Contest Control Systems. It is designed especially with ACM ICPC-style contests in mind. This includes being well suited for use in the ICPC World Finals, but also being useful in other ICPC-related activities (such as regional contests, local training contests, or even evaluation of programming assignments in courses).
 
