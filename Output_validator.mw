@@ -9,12 +9,11 @@ A validator program must be an application (executable or interpreted) capable o
 
 == Invocation ==
 
-The CCS will invoke the validator and passing it at least three command line parameters. 
+When invoked the output validator will be passed at least three command line parameters and the output file to validate on stdin.
 
-The usage of the validator is as follows:
+The validator should be possible to use as follows on the command line:
 
  validator input judgeanswer feedbackdir < teamoutput
-
 
 The meaning of the parameters listed above are:
 
