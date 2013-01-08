@@ -2,10 +2,10 @@
 
 An output validator is a program that is given the output of a submitted program,  the corresponding input file and the answer file for that input, and then decides whether the output provided is a correct output for the given input file.
 
-A validator program must be an application (executable or interpreted) capable of being invoked with a command line call. The details of this invocation are described in Section 3 [[#Invocation|Invocation]]. The validator program has two ways of reporting back to the Contest Control System that invoked it:
+A validator program must be an application (executable or interpreted) capable of being invoked with a command line call. The details of this invocation are described below. The validator program has two ways of reporting back the results of validating:
 
-# The validator must give a judgment (see Section 4 [[#Reporting a judgment|Reporting a judgment]]).
-# The validator may give additional feedback, e.g., an explanation of the judgment to human judges. This is described in Section 5 [[#Reporting Additional Feedback|Reporting Additional Feedback]].
+# The validator must give a judgment (see [[#Reporting a judgment|Reporting a judgment]]).
+# The validator may give additional feedback, e.g., an explanation of the judgment to humans (see [[#Reporting Additional Feedback|Reporting Additional Feedback]]).
 
 == Invocation ==
 
