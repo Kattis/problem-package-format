@@ -18,4 +18,4 @@ The input format validator may output debug information on stdout and stderr. Th
 
 == Exit codes ==
 
-The input format validator must exit with code 42 on successful validation. Any other exit code is an error.
+The input format validator must exit with code 42 on successful validation. Any other exit code means that the input file could not be confirmed as valid.
