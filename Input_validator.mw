@@ -5,9 +5,10 @@ An Input format validator is a program that tests input data for correctness.
 A validator program must be an application (executable or interpreted) capable of being invoked with a command line call. The details of this invocation are described below.
 
 == Invocation ==
-The CCS will invoke the validator and passing it the input file on stdin.
 
-The usage of the validator is as follows:
+When invoked the input format validator will get the input file on stdin.
+
+The validator should be possible to use as follows on the command line:
 
   ./validator < inputfile
 
