@@ -1,6 +1,6 @@
 == Overview ==
 
-An Input format validator is a program that tests the input data for correctness.  
+An Input format validator is a program that tests input data for correctness.  
 
 A validator program must be an application (executable or interpreted) capable of being invoked with a command line call. The details of this invocation are described in Section 2 [[#Invocation|Invocation]].
 
