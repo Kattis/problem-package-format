@@ -398,3 +398,5 @@ This is a sample list of directories/files for a problem named ''squares''
 * [[Output validator]]
 * [[Input format validator]]
 * [[Grader]]
+* [[Sample problem.yaml]]
+* [[Problem format directory structure]]
