@@ -392,3 +392,9 @@ This is a sample list of directories/files for a problem named ''squares''
  squares/output_validators/squares_validator/validator.f
  squares/output_validators/squares_validator/build
  squares/output_validators/squares_validator/run
+
+== See also ==
+
+* [[Output validator]]
+* [[Input format validator]]
+* [[Grader]]
