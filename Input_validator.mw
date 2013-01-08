@@ -13,6 +13,7 @@ The validator should be possible to use as follows on the command line:
   ./validator < inputfile
 
 == Output ==
+
 The input format validator may output debug information on stdout and stderr. This information may be displayed to the user upon invocation of the validator.
 
 == Exit codes ==
