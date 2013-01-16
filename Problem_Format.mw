@@ -204,7 +204,7 @@ Input Format Validators, for verifying the correctness of the input files, are p
 
 === Output Validators ===
 
-Output Validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below.  They are provided in <tt><short_name>/output_validators/</tt>, and must adhere to the [[Output validator| Output Validator]] standard.
+Output Validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below.  They are provided in <tt><short_name>/output_validators/</tt>, and must adhere to the [[Output validator| Output Validator]] specification.
 
 === File Conventions For Validators ===
 
