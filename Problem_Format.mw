@@ -239,6 +239,8 @@ When a floating-point tolerance has been set, any valid formatting of floating p
 
 == Graders ==
 
+Graders are used if the problem requires more complicated result aggregation than what is provided by the default grader described below. They are provided in <tt><short_name>/graders/</tt>, and must adhere to the [[Grader]] specification.
+
 == Determination of Time Limit ==
 
 The execution time limit for the problem is determined as follows. First, all the provided <tt>accepted/</tt> solutions are run. Let ''t<sub>max</sub>'' be the maximum running time of these solutions on any of the input files.  The time limit is then set to be ''t<sub>lim</sub>'' = &lceil;''t<sub>max</sub> &middot; M''&rceil; where ''M'' is the value of the time multiplier parameter from the [[#limits|limits configuration of problem.yaml]].
