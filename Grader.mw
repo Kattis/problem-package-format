@@ -1,0 +1,37 @@
+== Overview ==
+
+A grader is a program that is given the results of judging individual test files and calculates an aggregate result.
+
+A grader program must be an application (executable or interpreted) capable of being invoked with a command line call. The details of this invocation are described below. 
+
+== Invocation ==
+
+When invoked the grader will get the test file results on stdin.
+
+The grader should be possible to use as follows on the command line:
+
+ ./grader < judgeresults
+
+== Input ==
+
+The input file will have the one line per test file containing the result of judging the testfile, using the code from the table below, followed by whitespace, followed by the test file base name (i.e. without the <tt>.in</tt>).
+
+{| class="wikitable"
+! Code !! Meaning
+|-
+| AC || Accepted
+|-
+| WA || Wrong Answer
+|-
+| RTE || Run-Time Error
+|-
+| TLE || Time-Limit Exceeded
+|} 
+
+Additional information from the output validator might be found in files with the filename extension <tt>.score</tt>. These files are matched to test cases by base name. None, some or all of these files might exist. The format of the files depend on the output validator used. Output validators and graders are expected to be developed together when using this feature.
+
+== Output ==
+
+The grader must output the aggregate result on stdout. The output must either be one of the codes listed in the table above or a number.
+
+The grader may output debug information on stderr. This information may be displayed to the user upon invocation of the grader.
