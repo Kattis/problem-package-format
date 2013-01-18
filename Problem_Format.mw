@@ -248,11 +248,11 @@ Graders are used if the problem requires more complicated result aggregation tha
 The default grader supports the most common forms of aggregation of results.
 
 {| class="wikitable"
-! Value !! Meaning
+! Value !! Meaning !! Comment
 |-
-| first_error || Will return AC if every test file is AC otherwise it will return the first non AC answer. Judging Error if any file has a numerical score.
+| first_error || Will return AC if every test file is AC otherwise it will return the first non AC answer. || Any <tt>.score</tt> files are ignored.
 |-
-| sum || Will return the sum of the scores for every test file. Judging Error if any file does not have a numerical score.
+| sum || Will return the sum of the scores in the <tt>.score</tt> files. || Assumes that <tt>.score</tt> files consist of a single line with a single number.
 |}
 
 == Determination of Time Limit ==
