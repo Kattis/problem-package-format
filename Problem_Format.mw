@@ -189,6 +189,8 @@ The expected result is specified by including the string <tt>@EXPECTED_RESULT@:<
 |-
 | RTE || Run-Time Error || Crashes for some test file ||
 |-
+| CE || Compile Error || Does not compile || Really only useful when included code is used. 
+|-
 | <number> || The score || Score is exactly as specified || Only allowed when grading is "score"
 |}
 
