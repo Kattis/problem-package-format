@@ -241,6 +241,18 @@ When a floating-point tolerance has been set, any valid formatting of floating p
 
 Graders are used if the problem requires more complicated result aggregation than what is provided by the default grader described below. They are provided in <tt><short_name>/graders/</tt>, and must adhere to the [[Grader]] specification.
 
+=== Default Grader Capabilities ===
+
+The default grader supports the most common forms of aggregation of results.
+
+{| class="wikitable"
+! Value !! Meaning
+|-
+| first_error || Will return AC if every test file is AC otherwise it will return the first non AC answer. Judging Error if any file has a numerical score.
+|-
+| sum || Will return the sum of the scores for every test file. Judging Error if any file does not have a numerical score.
+|}
+
 == Determination of Time Limit ==
 
 The execution time limit for the problem is determined as follows. First, all the provided <tt>accepted/</tt> solutions are run. Let ''t<sub>max</sub>'' be the maximum running time of these solutions on any of the input files.  The time limit is then set to be ''t<sub>lim</sub>'' = &lceil;''t<sub>max</sub> &middot; M''&rceil; where ''M'' is the value of the time multiplier parameter from the [[#limits|limits configuration of problem.yaml]].
