@@ -32,6 +32,6 @@ Additional information from the output validator might be found in files with th
 
 == Output ==
 
-The grader must output the aggregate result on stdout. The output must either be one of the codes listed in the table above or a number.
+The grader must output the aggregate result on stdout. The output must either be one of the codes listed in the table above or a number. Any other output, including no output, will result in a Judging Error.
 
 The grader may output debug information on stderr. This information may be displayed to the user upon invocation of the grader.
