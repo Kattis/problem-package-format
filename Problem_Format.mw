@@ -163,6 +163,10 @@ The files should be copied from a language directory based on the language of th
 |-
 | cpp || C++ ||
 |-
+| csharp || C# ||
+|-
+| go || Go ||
+|-
 | java || Java || Main.java
 |-
 | python2 || Python 2 || main.py
