@@ -169,6 +169,8 @@ The files should be copied from a language directory based on the language of th
 |-
 | java || Java || Main.java
 |-
+| pascal || Pascal || main.pas
+|-
 | python2 || Python 2 || main.py
 |-
 | python3 || Python 3 || main.py
