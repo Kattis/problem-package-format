@@ -41,7 +41,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | languages || String || all || set of languages (delimited by spaces) or all
 |-
-| grader || String || first_error || One of "first_error" and "sum"
+| grader || String || first_error || One of "first_error", "sum" and "custom"
 |-
 | validator || String || || set of values from below (delimited by spaces)
 |}
