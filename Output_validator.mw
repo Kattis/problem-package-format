@@ -75,4 +75,4 @@ An example of a teammessage.txt file:
 
 === Validator standard output and standard error ===
 
-:A valididator program is allowed to write any kind of debug information to its standard output and standard error pipes.
+A valididator program is allowed to write any kind of debug information to its standard output and standard error pipes.
