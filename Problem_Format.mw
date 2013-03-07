@@ -268,3 +268,4 @@ The default grader supports the most common forms of aggregation of results.
 * [[Grader]]
 * [[Sample problem.yaml]]
 * [[Problem format directory structure]]
+* [[Problem Format Verification]]
