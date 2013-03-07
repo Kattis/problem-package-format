@@ -261,6 +261,8 @@ The default grader supports the most common forms of aggregation of results.
 | sum || Will return the sum of the scores in the <tt>.score</tt> files. || Assumes that <tt>.score</tt> files consist of a single line with a single number.
 |}
 
+== Generators ==
+
 == See also ==
 
 * [[Output validator]]
