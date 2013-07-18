@@ -142,15 +142,32 @@ working directory is <tt><short_name>/problem_statement/</tt>.
 
 == Test data ==
 
+=== Basic usage ===
+
 The test data are provided in subdirectories of <tt><short_name>/data/</tt>. The sample data in <tt><short_name>/data/sample/</tt> and the secret data in <tt><short_name>/data/secret/</tt>.
 
 All input and answer files have the filename extension .in and .ans respectively. 
 
+Test files will be used in lexicographical order on file name. If a specific order is needed a numbered prefix such as 00, 01, 02, 03, and so on, can be used.
+
+=== Advanced usage: test data groups ===
+
+The set of all the test data for the problem is organized into a tree-like structure.  Each node of this tree is represented by a directory and referred to as a test data group.  Each test data group may consist of zero or more test cases (i.e., input-answer files) and zero or more subroups of test data (i.e., subdirectories).
+
+At the top level, the test data is divided into exactly two groups: <tt>sample</tt> and <tt>secret</tt>, but these two groups may be further split into subgroups as desired.
+
+In each test data group, a file <tt>grading.yaml</tt> may be placed to specify how the result of the test data group should be computed.  If such a file is not provided for a test data group then the grading for the parent group will be used.
+
+==== Example ====
+
+Todo
+
+
+=== Annotating the test data ===
+
 Optionally a description or a hint file (or both) may be present. The description file is a text file with filename extension <tt>.desc</tt> describing the purpose of an input file. The hint file is a text file with filename extension<tt>.hint</tt> giving a hint for solving an input file. The description file is meant to be privileged information, whereas the hint file is meant to be given to anybody who needs it, i.e. fails to solve the problem. The hint file might not be used at all, depending on how the problem is used, e.g. when used in a programming contest.
 
 Input, answer, description and hint files are matched by the base name.
-
-Test files will be used in lexicographical order. If a specific order is needed a numbered prefix such as 00, 01, 02, 03, and so on, can be used.
 
 == Included Code ==
 
