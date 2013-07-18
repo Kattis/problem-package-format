@@ -37,13 +37,15 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
-| libraries || String || || set of libraries (delimited by spaces) as defined below.
-|-
-| languages || String || all || set of languages (delimited by spaces) or all
-|-
-| grader || String || first_error || One of "first_error", "sum" and "custom"
-|-
 | validator || String || || set of values from below (delimited by spaces)
+|-
+| rejecthandling || String || first_error || One of "first_error", "worst_error" and "no_score" for some value X.
+|-
+| scoringtype || String ||  || One of "min" or "max" optionally followed by two numbers A and B giving the range of the scores
+|-
+| libraries [not available yet] || String || || set of libraries (delimited by spaces) as defined below.
+|-
+| languages [not available yet] || String || all || set of languages (delimited by spaces) or all
 |}
 
 === license ===
