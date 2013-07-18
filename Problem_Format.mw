@@ -4,6 +4,8 @@
 
 This document describes the Kattis problem format, used for distributing and sharing problems for algorithmic programming contests as well as educational use. 
 
+=== Basic requirements ===
+
 All problems must have a "short name" consisting solely of lower case letters a-z and digits 0-9.  All files related to a given problem are provided in a directory named after the short name of the problem.
 
 All file names must match the following regexp
@@ -13,6 +15,10 @@ All file names must match the following regexp
 I.e., it must be of length at least 2, consist solely of lower or upper case letters a-z, A-Z, digits 0-9, period, dash or underscore, but must not begin or end with period, dash or underscore. 
 
 All text files for a problem must be UTF-8 encoded and not have a byte order mark.
+
+=== Problem types ===
+
+There are two types of problems: <em>ACRE</em> problems and <em>scoring</em> problems.  In ACRE problems ("ACcept/REject"), submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and dividided into results such as "Wrong Answer", "Time Limit Exceeded", etc).  In scoring problems, a submission that is accepted is additionally given a score, which is a numeric value (and typically the goal is to either maximize or minimize this value).
 
 == Problem Metadata ==
 
@@ -39,9 +45,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | validator || String || || set of values from below (delimited by spaces)
 |-
-| rejecthandling || String || first_error || One of "first_error", "worst_error" and "no_score".
-|-
-| scoringtype || String ||  || One of "min" or "max" optionally followed by two numbers A and B giving the range of the scores
+| grading || Map with keys as defined below || see definition below ||
 |-
 | libraries [not available yet] || String || || set of libraries (delimited by spaces) as defined below.
 |-
@@ -96,16 +100,21 @@ A map with the following keys:
 | validation_output || optional, in Mb || 8 
 |}
 
-=== libraries ===
+=== grading ===
 
-A space separated list from below. A library will be available for the languages listed.
+A map with the following keys:
 
 {| class="wikitable"
-! Value !! Library !! Languages
+! Key !! Type !! Default !! Languages
 |-
-| gmp || GMP - The GNU Multiple Precision Arithmetic Library || C, C++
+| type || String || ACRE || One of "ACRE" and "scoring".
 |-
-| boost || Boost || C++
+| rejecthandling || String || first_error || One of "first_error", "worst_error" and "no_score".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test case.  For ACRE problems only the first two are valid.
+|-
+| objective || String || max || One of "min" or "max" specifying whether it is a minimization or a maximization problem (only applies for scoring problems).
+|-
+| range || String || -inf +inf || Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores (only applies for scoring problems).
+|-
 |}
 
 === validator ===
@@ -127,6 +136,19 @@ A space separated list from the following:
 |-
 | custom || use a custom output validator. Must be the first value. All following values will be passed as command-line arguments to each of the output validators
 |}
+
+=== libraries ===
+
+A space separated list from below. A library will be available for the languages listed.
+
+{| class="wikitable"
+! Value !! Library !! Languages
+|-
+| gmp || GMP - The GNU Multiple Precision Arithmetic Library || C, C++
+|-
+| boost || Boost || C++
+|}
+
 
 == Problem Statements ==
 
@@ -275,18 +297,22 @@ When a floating-point tolerance has been set, any valid formatting of floating p
 
 == Graders ==
 
-Graders are used if the problem requires more complicated result aggregation than what is provided by the default grader described below. They are provided in <tt><short_name>/graders/</tt>, and must adhere to the [[Grader]] specification.
+Graders are used if the problem requires more complicated result aggregation than the default options that are available.  A grader simply takes a list of results on standard input, and produces a single result on standard output.  A result is a string of the form "<AC|WA|TLE|RTE> <score>", e.g. "AC 57", "WA 0", etc.
 
-=== Default Grader Capabilities ===
+Note that in principle a grader can get as input (and produce as output) a non-Accepted result with a non-zero score.  However, for the final result of a submission, the score will be ignored for non-Accepted results.
 
-The default grader supports the most common forms of aggregation of results.
+The behaviour of the default graders available are as follows.
 
 {| class="wikitable"
-! Value !! Meaning !! Comment
+! Grader !! Description
 |-
-| first_error || Will return AC if every test file is AC otherwise it will return the first non AC answer. || Any <tt>.score</tt> files are ignored.
+| <tt>sum</tt> || result is Accepted, score is sum of input scores.
 |-
-| sum || Will return the sum of the scores in the <tt>.score</tt> files. || Assumes that <tt>.score</tt> files consist of a single line with a single number.
+| <tt>average</tt> || result is Accepted, score is average of input scores.
+|-
+| <tt>min</tt> || result is Accepted, score is minimum of input scores.
+|-
+| <tt>max</tt> || result is Accepted score is maximum of input scores.
 |}
 
 == Generators ==
@@ -295,7 +321,6 @@ The default grader supports the most common forms of aggregation of results.
 
 * [[Output validator]]
 * [[Input format validator]]
-* [[Grader]]
 * [[Sample problem.yaml]]
 * [[Problem format directory structure]]
 * [[Problem Format Verification]]
