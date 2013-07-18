@@ -39,7 +39,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | validator || String || || set of values from below (delimited by spaces)
 |-
-| rejecthandling || String || first_error || One of "first_error", "worst_error" and "no_score" for some value X.
+| rejecthandling || String || first_error || One of "first_error", "worst_error" and "no_score".
 |-
 | scoringtype || String ||  || One of "min" or "max" optionally followed by two numbers A and B giving the range of the scores
 |-
@@ -152,11 +152,24 @@ Test files will be used in lexicographical order on file name. If a specific ord
 
 === Advanced usage: test data groups ===
 
-The set of all the test data for the problem is organized into a tree-like structure.  Each node of this tree is represented by a directory and referred to as a test data group.  Each test data group may consist of zero or more test cases (i.e., input-answer files) and zero or more subroups of test data (i.e., subdirectories).
+For scoring problems, the set of all the test data for the problem can be organized into a tree-like structure.  Each node of this tree is represented by a directory and referred to as a test data group.  Each test data group may consist of zero or more test cases (i.e., input-answer files) and zero or more subroups of test data (i.e., subdirectories).
 
 At the top level, the test data is divided into exactly two groups: <tt>sample</tt> and <tt>secret</tt>, but these two groups may be further split into subgroups as desired.
 
-In each test data group, a file <tt>grading.yaml</tt> may be placed to specify how the result of the test data group should be computed.  If such a file is not provided for a test data group then the grading for the parent group will be used.
+The <em>result</em> of a test data group is computed by applying a <em>grader</em> to all of the items (test cases and subgroups) in the group.  For instance, if a group specifies that the "sum" grader should be used, the result of that group will always be accepted with a score that is the sum of the scores of the items in that group.
+
+In each test data group, a file <tt>grading.yaml</tt> may be placed to specify how the result of the test data group should be computed.  If such a file is not provided for a test data group then the grading for the parent group will be used.  The format of <tt>grading.yaml</tt> is as follows:
+
+{| class="wikitable"
+! Key !! Type !! Comments
+|-
+| type || String || One of "sum", "average", "min", "max", "custom [name]".  For custom graders, "name" refers to the name of a grader placed in "<tt><short_name>/graders/</tt>".
+|-
+| flags || String  || arguments passed to the grader
+|}
+
+The <tt>type</tt> field is mandatory, the <tt>flags</tt> field defaults to the empty string.
+
 
 ==== Example ====
 
