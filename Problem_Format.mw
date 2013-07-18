@@ -182,27 +182,21 @@ The files should be copied from a language directory based on the language of th
 
 == Example Submissions ==
 
-Correct and incorrect solutions to the problem are provided in a directory <tt><short_name>/submissions/</tt>.  
-
-The expected result is specified by including the string <tt>@EXPECTED_RESULT@:</tt> followed by the expected result somewhere in the source code, e.g. in a comment. The expected result must be one of the ones listed below. If none are specified, it defaults to <tt>AC</tt>.
+Correct and incorrect solutions to the problem are provided in subdirectories of <tt><short_name>/submissions/</tt>.  The possible subdirectories are:
 
 {| class="wikitable"
-! Value !! Meaning !! Requirement !! Comment
+! Value !! Requirement !! Comment
 |-
-| AC || Accepted || Accepted as a correct solution for all test files || At least one is required. Default value.
+| accepted || Accepted as a correct solution for all test files || At least one is required.
 |-
-| RE || Rejected || Not accepted as a correct solution for some test file ||
+| wrong_answer || Wrong answer for some test file, but is not too slow and does not crash for any test file ||
 |-
-| WA || Wrong Answer || Wrong answer for some test file, but is not too slow and does not crash for any test file ||
+| time_limit_exceeded || Too slow for some test file. May also give wrong answer but not crash for any test file.  ||
 |-
-| TLE || Time Limit Exceeded || Too slow for some test file. May also give wrong answer but not crash for any test file.  ||
-|-
-| RTE || Run-Time Error || Crashes for some test file ||
-|-
-| CE || Compile Error || Does not compile || Really only useful when included code is used. 
-|-
-| <number> || The score || Score is exactly as specified || Only allowed when grading is "score"
+| run_time_error || Crashes for some test file ||
 |}
+
+For submissions of type <tt>accepted</tt> and scoring problems, the expected score can be specified by including the string <tt>@EXPECTED_SCORE@:</tt> followed by the expected score somewhere in the source code, e.g. in a comment.
 
 Every file or directory in these directories represents a separate solution.  Same requirements as for submissions with regards to filenames. It is mandatory to provide at least one accepted solution. 
 
