@@ -149,6 +149,29 @@ A space separated list from below. A library will be available for the languages
 | boost || Boost || C++
 |}
 
+=== languages ===
+
+{| class="wikitable"
+! Code !! Language !! Default main file
+|-
+| c || C ||
+|-
+| cpp || C++ ||
+|-
+| csharp || C# ||
+|-
+| go || Go ||
+|-
+| java || Java || Main.java
+|-
+| objectivec || Objective-C ||
+|-
+| pascal || Pascal ||
+|-
+| python2 || Python 2 || main.py
+|-
+| python3 || Python 3 || main.py
+|}
 
 == Problem Statements ==
 
@@ -211,29 +234,7 @@ Input, answer, description and hint files are matched by the base name.
 
 Code that should be included with all submissions are provided in one directory per supported language, called <tt><short_name>/include/<language>/</tt>. 
 
-The files should be copied from a language directory based on the language of the submission, to the submission files before compiling, overwriting files from the submission in the case of name collision. Language must be given as one of the language codes in the table below. If any of the included files are supposed to be the main file (i.e. a driver), that file must have the langage dependent name as given in the table below.
-
-{| class="wikitable"
-! Code !! Language !! Default main file
-|-
-| c || C ||
-|-
-| cpp || C++ ||
-|-
-| csharp || C# ||
-|-
-| go || Go ||
-|-
-| java || Java || Main.java
-|-
-| objectivec || Objective-C ||
-|-
-| pascal || Pascal ||
-|-
-| python2 || Python 2 || main.py
-|-
-| python3 || Python 3 || main.py
-|}
+The files should be copied from a language directory based on the language of the submission, to the submission files before compiling, overwriting files from the submission in the case of name collision. Language must be given as one of the language codes in the language table in the metadata section. If any of the included files are supposed to be the main file (i.e. a driver), that file must have the language dependent name as given in the table below.
 
 == Example Submissions ==
 
