@@ -29,6 +29,8 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
+| uuid || String || || UUID identifying the problem.
+|-
 | type || String || pass-fail || One of "pass-fail" and "scoring".
 |-
 | author || String or sequence of strings ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
