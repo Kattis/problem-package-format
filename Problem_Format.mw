@@ -121,11 +121,13 @@ A map with the following keys:
 |-
 | on_reject || String || first_error || One of "first_error", "worst_error" and "grade".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file.  
 |-
-| default_score || String || 1 || Default score for accepted input files.
+| accept_score || String || 1 || Default score for accepted input files. Must only be used for scoring problems.
 |-
-| objective || String || max || One of "min" or "max" specifying whether it is a minimization or a maximization problem (must only be used for scoring problems).
+| reject_score || String || 0 || Default score for rejected input files. Must only be used for scoring problems.
 |-
-| range || String || -inf +inf || Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores (must only be used for scoring problems).
+| objective || String || max || One of "min" or "max" specifying whether it is a minimization or a maximization problem. Must only be used for scoring problems.
+|-
+| range || String || -inf +inf || Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. Must only be used for scoring problems.
 |-
 |}
 
