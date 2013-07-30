@@ -129,6 +129,12 @@ A map with the following keys:
 |-
 |}
 
+;first_error
+:The first non-accepted judgement will be the result for the entire submission. The order of input filed is defined in the section on test data.
+
+;worst_error
+:The first error in RTE, TLE, WA that is the result of some input file will be the result for the entire submission.
+
 === validator ===
 
 A space separated list from the following:
