@@ -272,7 +272,7 @@ Output Validators are used if the problem requires more complicated output valid
 
 === File Conventions For Validators ===
 
-A validator is either a file or a directory. A validator in the form of a directory may include two scripts "build" and "run".  Either both or none of these scripts must be included.  If the scripts are present, then:
+A validator is either a file or a directory. A validator in the form of a directory may include two POSIX-compliant scripts "build" and "run".  Either both or none of these scripts must be included.  If the scripts are present, then:
 * validator must be compiled by executing the build script.
 * the validator must be run by executing the run script.
 Otherwise, the validator will be compiled and run as if it was a submission (except that it is given the command-line arguments specified in problem.yaml, if there are any).
