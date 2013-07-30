@@ -18,6 +18,12 @@ All text files for a problem must be UTF-8 encoded and not have a byte order mar
 
 All floating point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
 
+All programs (validators, grader or submissions) are represented by a single file or a directory. Validators and graders, but not submissions, in the form of a directory may include two POSIX-compliant scripts "build" and "run". Either both or none of these scripts must be included.
+ If the scripts are present, then:
+* the program must be compiled by executing the build script.
+* the program must be run by executing the run script.
+Programs without these scripts will be compiled and run using the default system build and run script for the language in question.
+
 === Problem types ===
 
 There are two types of problems: <em>pass-fail</em> problems and <em>scoring</em> problems.  In pass-fail problems, submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and divided into results such as "Wrong Answer", "Time Limit Exceeded", etc).  In scoring problems, a submission that is accepted is additionally given a score, which is a numeric value (and the goal is to either maximize or minimize this value).
