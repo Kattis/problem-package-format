@@ -321,7 +321,9 @@ When a floating-point tolerance has been set, any valid formatting of floating p
 
 == Graders ==
 
-Graders are used if the problem requires more complicated result aggregation than the default options that are available.  A grader simply takes a list of results on standard input, and produces a single result on standard output.  A result is a string of the form "<AC|WA|TLE|RTE> <score>", e.g. "AC 57", "WA 0", etc.
+Graders are used if the problem requires more complicated result aggregation than the default options that are available.  They are provided in <tt><short_name>/graders/</tt> .
+
+A grader simply takes a list of results on standard input, and produces a single result on standard output.  A result is a string of the form "<AC|WA|TLE|RTE> <score>", e.g. "AC 57", "WA 0", etc.
 
 Note that in principle a grader can get as input (and produce as output) a non-Accepted result with a non-zero score.  However, for the final result of a submission, the score will be ignored for non-Accepted results.
 
