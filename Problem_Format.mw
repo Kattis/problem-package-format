@@ -16,6 +16,8 @@ I.e., it must be of length at least 2, consist solely of lower or upper case let
 
 All text files for a problem must be UTF-8 encoded and not have a byte order mark.
 
+All floating point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
+
 === Problem types ===
 
 There are two types of problems: <em>pass-fail</em> problems and <em>scoring</em> problems.  In pass-fail problems, submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and divided into results such as "Wrong Answer", "Time Limit Exceeded", etc).  In scoring problems, a submission that is accepted is additionally given a score, which is a numeric value (and the goal is to either maximize or minimize this value).
