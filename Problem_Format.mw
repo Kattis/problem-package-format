@@ -180,14 +180,18 @@ At the top level, the test data is divided into exactly two groups: <tt>sample</
 
 The <em>result</em> of a test data group is computed by applying a <em>grader</em> to all of the items (test cases and subgroups) in the group.  For instance, if a group specifies that the "sum" grader should be used, the result of that group will always be accepted with a score that is the sum of the scores of the items in that group.
 
-In each test data group, a file <tt>grading.yaml</tt> may be placed to specify how the result of the test data group should be computed.  If such a file is not provided for a test data group then the grading for the parent group will be used.  The format of <tt>grading.yaml</tt> is as follows:
+In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify how the result of the test data group should be computed.  If such a file is not provided for a test data group then the grading for the parent group will be used.  The format of <tt>testdata.yaml</tt> is as follows:
 
 {| class="wikitable"
 ! Key !! Type !! Comments
 |-
-| type || String || One of "sum", "average", "min", "max", "custom [name]".  For custom graders, "name" refers to the name of a grader placed in "<tt><short_name>/graders/</tt>".
+| grading || String || One of "sum", "average", "min", "max", "custom [name]".  For custom graders, "name" refers to the name of a grader placed in "<tt><short_name>/graders/</tt>".
 |-
-| flags || String  || arguments passed to the grader
+| grader_flags || String  || arguments passed to the grader for this test data group.
+|-
+| input_validator_flags || String || arguments passed to the input format validator for this test data group.
+|-
+| output_validator_flags || String || arguments passed to the output validator for this test data group.
 |}
 
 The <tt>type</tt> field is mandatory, the <tt>flags</tt> field defaults to the empty string.
@@ -196,7 +200,6 @@ The <tt>type</tt> field is mandatory, the <tt>flags</tt> field defaults to the e
 ==== Example ====
 
 Todo
-
 
 === Annotating the test data ===
 
