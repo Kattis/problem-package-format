@@ -119,7 +119,7 @@ A map with the following keys:
 {| class="wikitable"
 ! Key !! Type !! Default !! Languages
 |-
-| rejecthandling || String || first_error || One of "first_error", "worst_error" and "no_score".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test case.  For pass-fail problems only the first two are valid.
+| on_reject || String || first_error || One of "first_error", "worst_error" and "no_score".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test case.  For pass-fail problems only the first two are valid.
 |-
 | default_score || String || 1 || Default score for accepted input files.
 |-
