@@ -123,9 +123,9 @@ A map with the following keys:
 |-
 | default_score || String || 1 || Default score for accepted input files.
 |-
-| objective || String || max || One of "min" or "max" specifying whether it is a minimization or a maximization problem (only applies for scoring problems).
+| objective || String || max || One of "min" or "max" specifying whether it is a minimization or a maximization problem (must only be used for scoring problems).
 |-
-| range || String || -inf +inf || Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores (only applies for scoring problems).
+| range || String || -inf +inf || Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores (must only be used for scoring problems).
 |-
 |}
 
