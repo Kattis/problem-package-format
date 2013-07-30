@@ -219,6 +219,12 @@ All input and answer files have the filename extension .in and .ans respectively
 
 Test files will be used in lexicographical order on file name. If a specific order is needed a numbered prefix such as 00, 01, 02, 03, and so on, can be used.
 
+=== Annotations ===
+
+Optionally a description or a hint file (or both) may be present. The description file is a text file with filename extension <tt>.desc</tt> describing the purpose of an input file. The hint file is a text file with filename extension<tt>.hint</tt> giving a hint for solving an input file. The description file is meant to be privileged information, whereas the hint file is meant to be given to anybody who needs it, i.e. fails to solve the problem. The hint file might not be used at all, depending on how the problem is used, e.g. when used in a programming contest.
+
+Input, answer, description and hint files are matched by the base name.
+
 === Test Data Groups ===
 
 For scoring problems, the set of all the test data for the problem can be organized into a tree-like structure.  Each node of this tree is represented by a directory and referred to as a test data group.  Each test data group may consist of zero or more test cases (i.e., input-answer files) and zero or more subroups of test data (i.e., subdirectories).
@@ -242,12 +248,6 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 |}
 
 The <tt>type</tt> field is mandatory, the <tt>flags</tt> field defaults to the empty string.
-
-=== Annotations ===
-
-Optionally a description or a hint file (or both) may be present. The description file is a text file with filename extension <tt>.desc</tt> describing the purpose of an input file. The hint file is a text file with filename extension<tt>.hint</tt> giving a hint for solving an input file. The description file is meant to be privileged information, whereas the hint file is meant to be given to anybody who needs it, i.e. fails to solve the problem. The hint file might not be used at all, depending on how the problem is used, e.g. when used in a programming contest.
-
-Input, answer, description and hint files are matched by the base name.
 
 == Included Code ==
 
