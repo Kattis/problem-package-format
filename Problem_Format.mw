@@ -151,6 +151,8 @@ A space separated list from below. A library will be available for the languages
 
 === languages ===
 
+A space separated list from below or ''all''.
+
 {| class="wikitable"
 ! Code !! Language !! Default main file
 |-
