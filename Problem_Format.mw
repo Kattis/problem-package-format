@@ -107,9 +107,9 @@ A map with the following keys:
 {| class="wikitable"
 ! Key !! Type !! Default !! Languages
 |-
-| type || String || ACRE || One of "ACRE" and "scoring".
+| type || String || pass-fail || One of "pass-fail" and "scoring".
 |-
-| rejecthandling || String || first_error || One of "first_error", "worst_error" and "no_score".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test case.  For ACRE problems only the first two are valid.
+| rejecthandling || String || first_error || One of "first_error", "worst_error" and "no_score".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test case.  For pass-fail problems only the first two are valid.
 |-
 | objective || String || max || One of "min" or "max" specifying whether it is a minimization or a maximization problem (only applies for scoring problems).
 |-
