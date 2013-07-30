@@ -29,6 +29,8 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
+| type || String || pass-fail || One of "pass-fail" and "scoring".
+|-
 | author || String or sequence of strings ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 |-
 | source || String ||  || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
@@ -106,8 +108,6 @@ A map with the following keys:
 
 {| class="wikitable"
 ! Key !! Type !! Default !! Languages
-|-
-| type || String || pass-fail || One of "pass-fail" and "scoring".
 |-
 | rejecthandling || String || first_error || One of "first_error", "worst_error" and "no_score".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test case.  For pass-fail problems only the first two are valid.
 |-
