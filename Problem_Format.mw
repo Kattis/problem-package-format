@@ -4,7 +4,7 @@
 
 This document describes the Kattis problem format, used for distributing and sharing problems for algorithmic programming contests as well as educational use. 
 
-=== Basic requirements ===
+=== General Requirements ===
 
 All problems must have a "short name" consisting solely of lower case letters a-z and digits 0-9.  All files related to a given problem are provided in a directory named after the short name of the problem. The problem package, i.e. the directory <short_name>/ may be be zipped. The zipped directory is the recommended format for transferring a problem.
 
