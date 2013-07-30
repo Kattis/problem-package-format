@@ -155,6 +155,8 @@ A space separated list from below. A library will be available for the languages
 
 A space separated list from below or ''all''.
 
+If a list is given, the problem may only be solved using those languages.
+
 {| class="wikitable"
 ! Code !! Language !! Default main file
 |-
