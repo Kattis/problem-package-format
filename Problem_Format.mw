@@ -18,7 +18,7 @@ All text files for a problem must be UTF-8 encoded and not have a byte order mar
 
 === Problem types ===
 
-There are two types of problems: <em>ACRE</em> problems and <em>scoring</em> problems.  In ACRE problems ("ACcept/REject"), submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and dividided into results such as "Wrong Answer", "Time Limit Exceeded", etc).  In scoring problems, a submission that is accepted is additionally given a score, which is a numeric value (and typically the goal is to either maximize or minimize this value).
+There are two types of problems: <em>pass-fail</em> problems and <em>scoring</em> problems.  In pass-fail problems, submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and divided into results such as "Wrong Answer", "Time Limit Exceeded", etc).  In scoring problems, a submission that is accepted is additionally given a score, which is a numeric value (and the goal is to either maximize or minimize this value).
 
 == Problem Metadata ==
 
