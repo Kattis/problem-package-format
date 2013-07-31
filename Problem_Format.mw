@@ -55,9 +55,9 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
-| validator|| String || built-in || One of "built-in", "batch" or "interactive".
+| validation || String || default || One of "default", "static" or "interactive".
 |-
-| validator-flags || String || || will be passed as command-line arguments to each of the output validators
+| validator_flags || String || || will be passed as command-line arguments to each of the output validators
 |-
 | grading || Map with keys as defined below || see definition below ||
 |-
