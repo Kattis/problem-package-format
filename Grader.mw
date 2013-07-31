@@ -14,7 +14,7 @@ The grader should be possible to use as follows on the command line:
 
 == Input ==
 
-The input file will have the one line per test file containing the result of judging the testfile, using the code from the table below, followed by whitespace, followed by the test file base name (i.e. without the <tt>.in</tt>).
+The input file will have the one line per test file containing the result of judging the testfile, using the code from the table below, followed by whitespace, followed by the score.
 
 {| class="wikitable"
 ! Code !! Meaning
@@ -26,9 +26,7 @@ The input file will have the one line per test file containing the result of jud
 | RTE || Run-Time Error
 |-
 | TLE || Time-Limit Exceeded
-|} 
-
-Additional information from the output validator might be found in files with the filename extension <tt>.score</tt>. These files are matched to test cases by base name. None, some or all of these files might exist. The format of the files depend on the output validator used. Output validators and graders are expected to be developed together when using this feature.
+|}
 
 == Output ==
 
