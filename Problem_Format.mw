@@ -6,9 +6,9 @@ This document describes the format of a Kattis problem package, used for distrib
 
 === General Requirements ===
 
-All problems must have a "short name" consisting solely of lower case letters a-z and digits 0-9.  All files related to a given problem are provided in a directory named after the short name of the problem. The problem package, i.e. the directory <short_name>/ may be be zipped. The zipped directory is the recommended format for transferring a problem.
+The package consists of a single directory containing files as described below, or alternatively, a ZIP compressed archive of the same files using the file extension <tt>.kpp</tt> . The name of the directory or the basename of the archive is called the ''short name'' of the problem.  It must consisting solely of lower case letters a-z and digits 0-9.  
 
-All file names must match the following regexp
+All file names for files included in the package must match the following regexp
 
  [a-zA-Z0-9][a-zA-Z0-9_.-]*[a-zA-Z0-9]
 
