@@ -55,7 +55,9 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
-| validator || String || || set of values from below (delimited by spaces)
+| validator|| String || built-in || One of "built-in", "batch" or "interactive".
+|-
+| validator-flags || String || || set of values from below (delimited by spaces)
 |-
 | grading || Map with keys as defined below || see definition below ||
 |-
