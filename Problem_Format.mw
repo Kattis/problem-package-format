@@ -55,7 +55,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
-| validation || String || default || One of "default", "static" or "interactive".
+| validation || String || standard || One of "standard", "output-only" or "interactive".
 |-
 | validator_flags || String || || will be passed as command-line arguments to each of the output validators
 |-
