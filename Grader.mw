@@ -30,6 +30,6 @@ The input file will have the one line per test file containing the result of jud
 
 == Output ==
 
-The grader must output the aggregate result on stdout. The output must either be one of the codes listed in the table above or a number. Any other output, including no output, will result in a Judging Error.
+The grader must output the aggregate result on stdout. The output must be one of the codes listed in the table above followed by a number. Any other output, including no output, will result in a Judging Error.
 
 The grader may output debug information on stderr. This information may be displayed to the user upon invocation of the grader.
