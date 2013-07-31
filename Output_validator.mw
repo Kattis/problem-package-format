@@ -23,10 +23,14 @@ The meaning of the parameters listed above are:
 
 ;feedbackdir: a string which specifies the name of a “feedback directory” in which the validator can produce "feedback files" in order to report additional information on the validation of the output ﬁle.  The feedbackdir must end with a path separator (typically '/' or '\' depending on operating system), so that simply appending a filename to feedbackdir gives the path to a file in the feedback directory.
 
-;teamoutput: the output ﬁle which was produced by the program being validated is given on the validator's standard input pipe.
+;teamoutput: the output produced by the program being validated is given on the validator's standard input pipe.
 
 
 The two ﬁles pointed to by input and judgeanswer must exist (though they are allowed to be empty) and the validator program must be allowed to open them for reading. The directory pointed to by feedbackdir must also exist.
+
+== Interactive mode ==
+
+In addition to the above, when an output validator is used in interactive mode everything written on standard output pipe is given to the program being validated.
 
 == Reporting a judgment ==
 
@@ -75,4 +79,4 @@ An example of a teammessage.txt file:
 
 === Validator standard output and standard error ===
 
-A valididator program is allowed to write any kind of debug information to its standard output and standard error pipes.
+A valididator program is allowed to write any kind of debug information to its standard error pipe. This information may be displayed to the user upon invocation of the validator.
