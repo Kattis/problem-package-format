@@ -142,7 +142,7 @@ A map with the following keys:
 ;grade
 :The result of all test files will be sent to the grader that will determine the score.
 
-=== validator ===
+=== validator-flags ===
 
 A space separated list from the following:
 
@@ -158,8 +158,6 @@ A space separated list from the following:
 | float_absolute_tolerance X || accepts token if it is a floating point number and the absolute error is <= X
 |-
 | float_tolerance X || accepts token if either "float_relative_tolerance X" or "float_absolute_tolerance X" would accept
-|-
-| custom || use a custom output validator. Must be the first value. All following values will be passed as command-line arguments to each of the output validators
 |}
 
 === libraries ===
