@@ -10,7 +10,7 @@ When invoked the input format validator will get the input file on stdin.
 
 The validator should be possible to use as follows on the command line:
 
-  ./validator < inputfile
+  ./validator [arguments] < inputfile
 
 == Output ==
 
