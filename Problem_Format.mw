@@ -280,9 +280,27 @@ Submissions must read input data from standard input, and write output to standa
 
 == Input Validators ==
 
-Input Validators, for verifying the correctness of the input files, are provided in <tt><short_name>/input_format_validators/</tt>.  They must adhere to the [[Input validator]] specification.
+Input Validators, for verifying the correctness of the input files, are provided in <tt><short_name>/input_format_validators/</tt>.  
+
+== Invocation ==
+
+An input validator program must be an application (executable or interpreted) capable of being invoked with a command line call. 
 
 All input validators provided will be run on every test data file using the arguments specified for the test data group they are part of. Validation fails if any validator fails.
+
+When invoked the input validator will get the input file on stdin.
+
+The validator should be possible to use as follows on the command line:
+
+  ./validator [arguments] < inputfile
+
+== Output ==
+
+The input validator may output debug information on stdout and stderr. This information may be displayed to the user upon invocation of the validator.
+
+== Exit codes ==
+
+The input validator must exit with code 42 on successful validation. Any other exit code means that the input file could not be confirmed as valid.
 
 == Output Validators ==
 
