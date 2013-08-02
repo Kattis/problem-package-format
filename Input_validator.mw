@@ -1,12 +1,12 @@
 == Overview ==
 
-An Input format validator is a program that tests input data for correctness.  
+An Input validator is a program that tests input data for correctness.  
 
 A validator program must be an application (executable or interpreted) capable of being invoked with a command line call. The details of this invocation are described below.
 
 == Invocation ==
 
-When invoked the input format validator will get the input file on stdin.
+When invoked the input validator will get the input file on stdin.
 
 The validator should be possible to use as follows on the command line:
 
@@ -14,8 +14,8 @@ The validator should be possible to use as follows on the command line:
 
 == Output ==
 
-The input format validator may output debug information on stdout and stderr. This information may be displayed to the user upon invocation of the validator.
+The input validator may output debug information on stdout and stderr. This information may be displayed to the user upon invocation of the validator.
 
 == Exit codes ==
 
-The input format validator must exit with code 42 on successful validation. Any other exit code means that the input file could not be confirmed as valid.
+The input validator must exit with code 42 on successful validation. Any other exit code means that the input file could not be confirmed as valid.
