@@ -290,6 +290,8 @@ All input format validators provided will be run on every test data file using t
 
 Output Validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below.  They are provided in <tt><short_name>/output_validators/</tt>, and must adhere to the [[Output validator]] specification.
 
+All output validators provided will be run on the output for every test data file using the arguments specified for the test data group they are part of. Validation fails if any validator fails.
+
 === Default Validator Capabilities ===
 
 The default validator is essentially a beefed-up diff. In its default mode, it
