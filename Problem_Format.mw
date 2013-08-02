@@ -308,9 +308,9 @@ Output Validators are used if the problem requires more complicated output valid
 
 All output validators provided will be run on the output for every test data file using the arguments specified for the test data group they are part of. Validation fails if any validator fails.
 
-=== Default Validator Capabilities ===
+=== Default Output Validator ===
 
-The default validator is essentially a beefed-up diff. In its default mode, it
+The default output validator is essentially a beefed-up diff. In its default mode, it
 tokenizes the files to compare and compares them token by token. It supports the
 following command-line arguments to control how tokens are compared.
 
