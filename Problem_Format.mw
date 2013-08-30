@@ -380,13 +380,13 @@ In its default mode, the score is the sum of the input scores, but can be change
 {| class="wikitable"
 ! Argument !! Description
 |-
-| <tt>sum</tt> || result is Accepted, score is sum of input scores.
+| <tt>sum</tt> || score is sum of input scores (default).
 |-
-| <tt>average</tt> || result is Accepted, score is average of input scores.
+| <tt>avg</tt> || score is average of input scores.
 |-
-| <tt>min</tt> || result is Accepted, score is minimum of input scores.
+| <tt>min</tt> || score is minimum of input scores.
 |-
-| <tt>max</tt> || result is Accepted score is maximum of input scores.
+| <tt>max</tt> || score is maximum of input scores.
 |}
 
 == Generators ==
