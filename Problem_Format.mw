@@ -372,9 +372,9 @@ Note that in principle a grader can get as input (and produce as output) a non-A
 
 The grader may output debug information on stderr. This information may be displayed to the user upon invocation of the grader.
 
-=== Default Grader ===
+=== Default Grader Specification ===
 
-The behaviour of the default graders available are as follows.
+The behaviour of the default grader is as follows.
 
 {| class="wikitable"
 ! Grader !! Description
