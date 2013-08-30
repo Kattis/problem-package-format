@@ -374,10 +374,11 @@ The grader may output debug information on stderr. This information may be displ
 
 === Default Grader Specification ===
 
-The behaviour of the default grader is as follows.
+The default grader always gives verdict AC, regardless of input results.
+In its default mode, the score is the sum of the input scores, but can be changed by providing one of "sum", "avg", "max", "min" as a command-line argument (through the "grader_flags" option in testdata.yaml)
 
 {| class="wikitable"
-! Grader !! Description
+! Argument !! Description
 |-
 | <tt>sum</tt> || result is Accepted, score is sum of input scores.
 |-
