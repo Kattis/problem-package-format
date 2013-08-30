@@ -241,7 +241,7 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
-| grading || String || sum || One of "sum", "average", "min", "max", "custom".
+| grading || String || default || One of "default" and "custom".
 |-
 | grader_flags || String  || empty string|| arguments passed to the grader for this test data group.
 |-
