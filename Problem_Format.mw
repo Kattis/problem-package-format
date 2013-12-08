@@ -51,7 +51,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | rights_owner || String || Value of author, if present, otherwise value of source. || Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner.
 |-
-| keywords || || ||
+| keywords || String || || set of keywords (delimited by spaces).
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
