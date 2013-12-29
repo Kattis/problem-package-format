@@ -55,7 +55,7 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
-| validation || String || standard || One of "default" or "custom".  If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission.  For example, "custom interactive score". ["Interactive is not implemented yet."]
+| validation || String || default || One of "default" or "custom".  If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission.  For example, "custom interactive score". ["Interactive is not implemented yet."]
 |-
 | validator_flags || String || || Will be passed as command-line arguments to each of the output validators.
 |-
