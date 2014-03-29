@@ -171,6 +171,8 @@ If a list is given, the problem may only be solved using those languages.
 |-
 | go || Go ||
 |-
+| haskell || Haskell ||
+|-
 | java || Java || Main.java
 |-
 | objectivec || Objective-C ||
