@@ -6,7 +6,7 @@ This document describes the format of a ''Kattis problem package'', used for dis
 
 === General Requirements ===
 
-The package consists of a single directory containing files as described below, or alternatively, a ZIP compressed archive of the same files using the file extension <tt>.kpp</tt> . The name of the directory or the basename of the archive must consisting solely of lower case letters a-z and digits 0-9.  
+The package consists of a single directory containing files as described below, or alternatively, a ZIP compressed archive of the same files using the file extension <tt>.kpp</tt> . The name of the directory or the base name of the archive must consisting solely of lower case letters a-z and digits 0-9.  
 
 All file names for files included in the package must match the following regexp
 
