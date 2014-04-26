@@ -268,7 +268,7 @@ The files should be copied from a language directory based on the language of th
 
 == Example Submissions ==
 
-Correct and incorrect solutions to the problem are provided in subdirectories of <tt><short_name>/submissions/</tt>.  The possible subdirectories are:
+Correct and incorrect solutions to the problem are provided in subdirectories of <tt>submissions/</tt>.  The possible subdirectories are:
 
 {| class="wikitable"
 ! Value !! Requirement !! Comment
