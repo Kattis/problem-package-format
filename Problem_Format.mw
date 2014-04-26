@@ -226,9 +226,17 @@ Test files will be used in lexicographical order on file name. If a specific ord
 
 === Annotations ===
 
-Optionally a description or a hint file (or both) may be present. The description file is a text file with filename extension <tt>.desc</tt> describing the purpose of an input file. The hint file is a text file with filename extension<tt>.hint</tt> giving a hint for solving an input file. The description file is meant to be privileged information, whereas the hint file is meant to be given to anybody who needs it, i.e. fails to solve the problem. The hint file might not be used at all, depending on how the problem is used, e.g. when used in a programming contest.
+Optionally a hint, a description and an illustration file may be provided.
 
-Input, answer, description and hint files are matched by the base name.
+The hint file is a text file with filename extension<tt>.hint</tt> giving a hint for solving an input file. The hint file is meant to be given as feedback, i.e. to somebody that fails to solve the problem. 
+
+The description file is a text file with filename extension <tt>.desc</tt> describing the purpose of an input file. The description file is meant to be privileged information that explains the purpose of the related test file, e.g. what cases it's supposed to test.
+
+The Illustration is an image file with filename extension <tt>.png</tt> or <tt>.jpeg</tt>. The illustration is meant to be privileged information illustrating the related test file.
+
+Input, answer, description, hint and image files are matched by the base name.
+
+[support for illustration files is not implemented yet]
 
 === Test Data Groups ===
 
