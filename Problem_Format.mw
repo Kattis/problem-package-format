@@ -346,7 +346,7 @@ When a floating-point tolerance has been set, any valid formatting of floating p
 
 == Graders ==
 
-Graders are programs that is given the results of judging individual test files and calculates an aggregate result. They are provided in <tt><short_name>/graders/</tt> .
+Graders are programs that is given the results of judging individual test files and calculates an aggregate result. They are provided in <tt>graders/</tt> .
 
 === Invocation ===
 
