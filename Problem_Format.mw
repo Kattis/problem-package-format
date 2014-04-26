@@ -192,7 +192,7 @@ This directory must contain one LaTeX file per language, named <tt>problem.<lang
 and output specifications, but not sample input and output. Language must be given as an ISO 639-1 alpha-2 language code. Optionally, the language code can be left out, the default is then English.
 
 Files needed by this file must all be in <tt><short_name>/problem_statement/</tt> , problem.<language>.tex should reference auxiliary files as if the
-working directory is <tt><short_name>/problem_statement/</tt>.
+working directory is <tt><short_name>/problem_statement/</tt>. Image file formats supported are <tt>.png</tt>, <tt>.jpeg</tt> and <tt>.pdf</tt>.
 
 The LaTeX file must include the Problem name using the LaTeX command <tt>\problemname</tt>. In case the problem name consists of special LaTeX code (for instance, math, or escaped characters), a "plain" version of the problem name must be specified by a comment of the form 
 
