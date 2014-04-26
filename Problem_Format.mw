@@ -186,7 +186,7 @@ If a list is given, the problem may only be solved using those languages.
 
 == Problem Statements ==
 
-The problem statement of the problem is provided in the directory <tt><short_name>/problem_statement/</tt>.
+The problem statement of the problem is provided in the directory <tt>problem_statement/</tt>.
 
 This directory must contain one LaTeX file per language, named <tt>problem.<language>.tex</tt>, that contains the problem text itself, including input
 and output specifications, but not sample input and output. Language must be given as an ISO 639-1 alpha-2 language code. Optionally, the language code can be left out, the default is then English.
