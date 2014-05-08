@@ -185,33 +185,9 @@ A space separated list from below. A library will be available for the languages
 
 === languages ===
 
-A space separated list of language code from the table below or ''all''.
+A space separated list of language code from the table in the overview secton or ''all''.
 
 If a list is given, the problem may only be solved using those languages.
-
-{| class="wikitable"
-! Code !! Language !! Default main file
-|-
-| c || C ||
-|-
-| cpp || C++ ||
-|-
-| csharp || C# ||
-|-
-| go || Go ||
-|-
-| haskell || Haskell ||
-|-
-| java || Java || Main.java
-|-
-| objectivec || Objective-C ||
-|-
-| pascal || Pascal ||
-|-
-| python2 || Python 2 || main.py
-|-
-| python3 || Python 3 || main.py
-|}
 
 == Problem Statements ==
 
