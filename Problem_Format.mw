@@ -18,11 +18,40 @@ All text files for a problem must be UTF-8 encoded and not have a byte order mar
 
 All floating point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
 
-All programs (validators, grader or submissions) are represented by a single file or a directory. Validators and graders, but not submissions, in the form of a directory may include two POSIX-compliant scripts "build" and "run". Either both or none of these scripts must be included.
+=== Programs ===
+
+There are a number of different kinds of programs that maybe provided in the problem package; submissions, validators and graders. All programs are always represented by a single file or directory. In other words, if a program consists of several files, these must be provided in a single directory.
+
+Validators and graders, but not submissions, in the form of a directory may include two POSIX-compliant scripts "build" and "run". Either both or none of these scripts must be included.
 If the scripts are present, then:
-* the program must be compiled by executing the build script.
-* the program must be run by executing the run script.
-Programs without these scripts will be compiled and run using the default system build and run script for the language in question.
+* the program will be compiled by executing the build script.
+* the program will be run by executing the run script.
+
+Programs without build and run scripts are built and run according to what language is used. Language is determined by looking at the file endings. If a single language from the table below can't be determined, building fails. In the case of Python 2 and 3 which share the same file ending, language will be determined by looking at the shebang line which must match the ones in the table below exactly.
+
+For languages where there could be several entry points, the default entry point in the table below will be used. 
+
+{| class="wikitable"
+! Code !! Language !! Default entry point !! File endings !! Shebang
+|-
+| c || C || || .c ||
+|-
+| cpp || C++ || || .cc, .cpp, .cxx, .c++, .C ||
+|-
+| csharp || C# || || .cs ||
+|-
+| go || Go || || .go ||
+|-
+| haskell || Haskell || || .hs ||
+|-
+| java || Java || Main|| .java ||
+|-
+| objectivec || Objective-C || || .m ||
+|-
+| python2 || Python 2 || main.py || .py || <tt>#! /usr/bin/env python2</tt>
+|-
+| python3 || Python 3 || main.py || .py || <tt> #! /usr/bin/env python3</tt>
+|}
 
 === Problem types ===
 
