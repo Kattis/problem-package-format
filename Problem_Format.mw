@@ -27,7 +27,7 @@ If the scripts are present, then:
 * the program will be compiled by executing the build script.
 * the program will be run by executing the run script.
 
-Programs without build and run scripts are built and run according to what language is used. Language is determined by looking at the file endings. If a single language from the table below can't be determined, building fails. In the case of Python 2 and 3 which share the same file ending, language will be determined by looking at the shebang line which must match the ones in the table below exactly.
+Programs without build and run scripts are built and run according to what language is used. Language is determined by looking at the file endings. If a single language from the table below can't be determined, building fails. In the case of Python 2 and 3 which share the same file ending, language will be determined by looking at the shebang line which must match the regular expressions in the table below.
 
 For languages where there could be several entry points, the default entry point in the table below will be used. 
 
@@ -48,9 +48,9 @@ For languages where there could be several entry points, the default entry point
 |-
 | objectivec || Objective-C || || .m ||
 |-
-| python2 || Python 2 || main.py || .py || <tt>#! /usr/bin/env python2</tt>
+| python2 || Python 2 || main.py || .py || Matches the regex "<tt>^#!.*python2 </tt>", and default if shebang does not match any other language
 |-
-| python3 || Python 3 || main.py || .py || <tt> #! /usr/bin/env python3</tt>
+| python3 || Python 3 || main.py || .py || Matches the regex "<tt>^#!.*python3 </tt>"
 |}
 
 === Problem types ===
