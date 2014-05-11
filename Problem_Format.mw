@@ -197,7 +197,7 @@ This directory must contain one LaTeX file per language, named <tt>problem.<lang
 and output specifications, but not sample input and output. Language must be given as an ISO 639-1 alpha-2 language code. Optionally, the language code can be left out, the default is then English.
 
 Files needed by this file must all be in <tt><short_name>/problem_statement/</tt> , problem.<language>.tex should reference auxiliary files as if the
-working directory is <tt><short_name>/problem_statement/</tt>. Image file formats supported are <tt>.png</tt>, <tt>.jpeg</tt> and <tt>.pdf</tt>.
+working directory is <tt><short_name>/problem_statement/</tt>. Image file formats supported are <tt>.png</tt>, <tt>.jpg</tt>, <tt>.jpeg</tt>, and <tt>.pdf</tt>.
 
 The LaTeX file must include the Problem name using the LaTeX command <tt>\problemname</tt>. In case the problem name consists of special LaTeX code (for instance, math, or escaped characters), a "plain" version of the problem name must be specified by a comment of the form 
 
@@ -237,7 +237,7 @@ The hint file is a text file with filename extension<tt>.hint</tt> giving a hint
 
 The description file is a text file with filename extension <tt>.desc</tt> describing the purpose of an input file. The description file is meant to be privileged information that explains the purpose of the related test file, e.g. what cases it's supposed to test.
 
-The Illustration is an image file with filename extension <tt>.png</tt> or <tt>.jpeg</tt>. The illustration is meant to be privileged information illustrating the related test file.
+The Illustration is an image file with filename extension <tt>.png</tt>, <tt>.jpg</tt>, or <tt>.jpeg</tt>. The illustration is meant to be privileged information illustrating the related test file.
 
 Input, answer, description, hint and image files are matched by the base name.
 
