@@ -256,6 +256,10 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
+| on_reject || String || break || One of "break" or "continue".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file.
+|-
+| verdict || String || error || One of "error" or "grade".  Specifies what verdict should be given when the test case group has non-Accept judgements.
+|-
 | grading || String || default || One of "default" and "custom".
 |-
 | grader_flags || String  || empty string|| arguments passed to the grader for this test data group.
