@@ -150,7 +150,7 @@ A map with the following keys:
 {| class="wikitable"
 ! Key !! Type !! Default !! Languages
 |-
-| on_reject || String || first_error || One of "first_error", "worst_error" and "grade".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file.  
+| on_reject || String || first_error || One of "first_error", "worst_error" and "grade".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file.  '''This is deprecated, to be replaced by on_reject setting in testdata.yaml. '''
 |-
 | accept_score || String || 1 || Default score for accepted input files. Must only be used for scoring problems.
 |-
