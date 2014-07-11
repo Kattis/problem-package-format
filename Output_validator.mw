@@ -9,7 +9,7 @@ A validator program must be an application (executable or interpreted) capable o
 
 == Invocation ==
 
-When invoked the output validator will be passed at least three command line parameters and the output file to validate on stdin.
+When invoked the output validator will be passed at least three command line parameters and the output stream to validate on stdin.
 
 The validator should be possible to use as follows on the command line:
 
