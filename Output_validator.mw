@@ -13,7 +13,7 @@ When invoked the output validator will be passed at least three command line par
 
 The validator should be possible to use as follows on the command line:
 
- ./validator input judgeanswer feedbackdir < teamoutput
+ ./validator input judgeanswer feedbackdir < teamoutput > teaminput
 
 The meaning of the parameters listed above are:
 
@@ -25,6 +25,7 @@ The meaning of the parameters listed above are:
 
 ;teamoutput: the output produced by the program being validated is given on the validator's standard input pipe.
 
+;teaminput: when running the validator in interactive mode everything written on the validator's standard output pipe is given to the program being validated. Please not that when running interactive the program will only receive the output produced by the validator and will not have direct access to the input file.
 
 The two ﬁles pointed to by input and judgeanswer must exist (though they are allowed to be empty) and the validator program must be allowed to open them for reading. The directory pointed to by feedbackdir must also exist.
 
