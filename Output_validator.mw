@@ -29,10 +29,6 @@ The meaning of the parameters listed above are:
 
 The two ﬁles pointed to by input and judgeanswer must exist (though they are allowed to be empty) and the validator program must be allowed to open them for reading. The directory pointed to by feedbackdir must also exist.
 
-== Interactive mode ==
-
-In addition to the above, when an output validator is used in interactive mode everything written on standard output pipe is given to the program being validated.
-
 == Reporting a judgment ==
 
 A validator program is required to report its judgment by exiting with speciﬁc exit codes:
