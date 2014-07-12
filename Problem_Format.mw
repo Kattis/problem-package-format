@@ -68,6 +68,8 @@ The keys are defined as below. All keys are optional. Any unknown keys should be
 |-
 | uuid || String || || UUID identifying the problem.
 |-
+| name || String or map of strings || If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.
+|-
 | type || String || pass-fail || One of "pass-fail" and "scoring".
 |-
 | author || String or sequence of strings ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
