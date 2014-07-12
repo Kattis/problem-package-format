@@ -132,17 +132,17 @@ A map with the following keys:
 |-
 | time_safety_margin || optional || 2
 |-
-| memory || optional, in Mb || 2048
+| memory || optional, in MiB || 2048
 |-
-| output || optional, in Mb || 8 
+| output || optional, in MiB || 8 
 |-
 | compilation_time || optional, in seconds || 60
 |-
 | validation_time || optional, in seconds || 60
 |-
-| validation_memory || optional, in Mb || 2048
+| validation_memory || optional, in MiB || 2048
 |-
-| validation_output || optional, in Mb || 8 
+| validation_output || optional, in MiB || 8 
 |}
 
 === grading ===
