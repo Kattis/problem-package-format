@@ -201,17 +201,12 @@ and output specifications, but not sample input and output. Language must be giv
 Files needed by this file must all be in <tt><short_name>/problem_statement/</tt> , problem.<language>.tex should reference auxiliary files as if the
 working directory is <tt><short_name>/problem_statement/</tt>. Image file formats supported are <tt>.png</tt>, <tt>.jpg</tt>, <tt>.jpeg</tt>, and <tt>.pdf</tt>.
 
-The LaTeX file must include the Problem name using the LaTeX command <tt>\problemname</tt>. In case the problem name consists of special LaTeX code (for instance, math, or escaped characters), a "plain" version of the problem name must be specified by a comment of the form 
-
- %% plainproblemname: Problem Name
-
-somewhere in the file.
+The LaTeX file must include the Problem name using the LaTeX command <tt>\problemname</tt>. This should be the same as given in problem.yaml, but maybe with some additional LaTeX formatting.
 
 The problem statements must only contain the actual problem statement, no sample data
 (the .tex file is included in a template that adds these).  A typical problem.<language>.tex looks as follows:
 
  \problemname{Problem Name}
- %% plainproblemname: Problem Name
  
  <Problem statement here>
  
