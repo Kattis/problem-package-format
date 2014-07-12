@@ -61,7 +61,7 @@ There are two types of problems: <em>pass-fail</em> problems and <em>scoring</em
 
 Metadata about the problem (e.g., source, license, limits) are provided in a UTF-8 encoded YAML file named <tt>problem.yaml</tt> placed in the root directory of the package.  
 
-The keys are defined as below. All keys are optional. Any unknown keys should be treated as an error.
+The keys are defined as below. All keys are optional except name. Any unknown keys should be treated as an error.
 
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
