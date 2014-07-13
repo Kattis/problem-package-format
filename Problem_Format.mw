@@ -225,9 +225,11 @@ The test data are provided in subdirectories of <tt>data/</tt>. The sample data 
 
 All input and answer files have the filename extension <tt>.in</tt> and <tt>.ans</tt> respectively. 
 
+<s>
 If a input generator is used a <tt>.gen</tt> file must be provided. The contents of the file must be the name of the generator to be used followed by the arguments to give it, all separated by space.
 
 If both a <tt>.in</tt> and <tt>.gen</tt> are given then the latter must generate exactly the former.
+</s>
 
 Test files will be used in lexicographical order on file base name. If a specific order is needed a numbered prefix such as 00, 01, 02, 03, and so on, can be used.
 
