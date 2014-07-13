@@ -300,9 +300,7 @@ Submissions must read input data from standard input, and write output to standa
 
 == Input Validators ==
 
-Input Validators, for verifying the correctness of the input files, are provided in <tt>input_format_validators/</tt>.  Input validators can be specified as VIVA-files (with file ending <tt>.viva</tt>), Checktestdata-file (with file ending <tt>.ctd</tt>) or as a program.
-
-[VIVA and Checktestdata is not available yet]
+Input Validators, for verifying the correctness of the input files, are provided in <tt>input_format_validators/</tt>.  <s>Input validators can be specified as VIVA-files (with file ending <tt>.viva</tt>), Checktestdata-file (with file ending <tt>.ctd</tt>)</s> or as a program.
 
 === Invocation ===
 
