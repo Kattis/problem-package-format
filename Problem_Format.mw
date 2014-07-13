@@ -409,7 +409,7 @@ In its default mode, the score is the sum of the input scores, but can be change
 
 == Generators ==
 
-Input generators are programs that generates input. They are provided in generators/ .
+Input generators are programs that generates input. They are provided in <tt>generators/</tt>.
 
 === Invocation ===
 
