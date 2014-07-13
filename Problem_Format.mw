@@ -76,7 +76,7 @@ The keys are defined as below. All keys are optional except name. Any unknown ke
 |-
 | source || String ||  || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
-| source_url || String || || Link to page for source event. Should not be given if source is not.
+| source_url || String || || Link to page for source event. Must not be given if source is not.
 |-
 | license || String || unknown || License under which the problem may be used. Value have to be one of the ones defined below.
 |-
