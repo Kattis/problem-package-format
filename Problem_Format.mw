@@ -66,7 +66,7 @@ The keys are defined as below. All keys are optional <s>except name</s>. Any unk
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
-| uuid || String || || UUID identifying the problem.
+| <s>uuid</s> || String || || <s>UUID identifying the problem.</s>
 |-
 | <s>name</s> || String or map of strings || || <s>If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>
 |-
