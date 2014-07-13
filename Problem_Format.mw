@@ -412,11 +412,11 @@ In its default mode, the score is the sum of the input scores, but can be change
 |}
 
 == Generators ==
-
+<s>
 Input generators are programs that generates input. They are provided in <tt>generators/</tt>.
-
+</s>
 === Invocation ===
-
+<s>
 A generator program must be an application (executable or interpreted) capable of being invoked with a command line call.
 
 When invoked the generator will be given the arguments specified in the test data section and is expected to generate a single test data file based on those values on stdout.
@@ -426,6 +426,7 @@ The generator should be possible to use as follows on the command line:
  ./generator [arguments] > inputfile
 
 The generator must be deterministic, i.e. always produce the same input file when give the same arguments.
+</s>
 
 == See also ==
 
