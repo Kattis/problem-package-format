@@ -68,9 +68,9 @@ The keys are defined as below. All keys are optional <s>except name</s>. Any unk
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
-| <s>uuid</s> || String || || <s>UUID identifying the problem.</s>
+| <s>uuid</s> || <s>String</s> || || <s>UUID identifying the problem.</s>
 |-
-| <s>name</s> || String or map of strings || || <s>If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>
+| <s>name</s> || <s>String or map of strings</s> || || <s>If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>
 |-
 | type || String || pass-fail || One of "pass-fail" and "scoring".
 |-
@@ -88,9 +88,9 @@ The keys are defined as below. All keys are optional <s>except name</s>. Any unk
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
-| <s>libraries</s> || String || || Set of libraries (delimited by spaces) as defined below.
+| <s>libraries</s> || <s>String</s> || || <s>Set of libraries (delimited by spaces) as defined below.</s>
 |-
-| <s>languages</s> || String || all || Set of languages (delimited by spaces) or all.
+| <s>languages</s> || <s>String</s> || <s>all</s> || <s>Set of languages (delimited by spaces) or all.</s>
 |-
 | validation || String || default || One of "default" or "custom".  If "custom", may be followed by some subset of "score" and <s>"interactive"</s>, where "score" indicates that the validator produces a score (this is only valid for scoring problems), and <s>"interactive" specifies that the validator is run interactively with a submission</s>.  For example, "custom interactive score". 
 |-
