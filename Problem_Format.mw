@@ -350,6 +350,8 @@ When a floating-point tolerance has been set, any valid formatting of floating p
 
 Graders are programs that are given the sub-results of a test data group and aggregate a result for the group. They are provided in <tt>graders/</tt> .
 
+For pass-fail problems, this grader will typically just set the verdict to accepted if all sub-results in the group were accepted and otherwise select the "worst" error in the group (see below for definition of "worst"), though it is possible to write a custom grader which e.g. accepts if at least half the sub-results are accepted.  For scoring problems, one common grader behaviour would be to always set the verdict to Accepted, with the score being the sum of scores of the items in the test group.
+
 === Invocation ===
 
 A grader program must be an application (executable or interpreted) capable of being invoked with a command line call. 
@@ -388,7 +390,7 @@ The grader may output debug information on stderr. This information may be displ
 
 === Default Grader Specification ===
 
-The default grader has <s>two different modes for aggregating the verdict -- ''no_errors'' and ''always_accept''</s> -- and four different modes for aggregating the score -- ''sum'', ''avg'', ''min'', ''max''.  These modes can be set by providing their names as command line arguments (through the "grader_flags" option in testdata.yaml).  If multiple conflicting modes are given, the last one is used.  Their meaning are as follows.
+The default grader has <s>two different modes for aggregating the verdict -- ''no_errors'' and ''always_accept''</s> -- and four different modes for aggregating the score -- ''sum'', ''avg'', ''min'', ''max''.  These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [[#Test Data Groups|testdata.yaml]]).  If multiple conflicting modes are given, the last one is used.  Their meaning are as follows.
 
 {| class="wikitable"
 ! Argument !! Description
