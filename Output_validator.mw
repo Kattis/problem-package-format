@@ -13,7 +13,7 @@ When invoked the output validator will be passed at least three command line par
 
 The validator should be possible to use as follows on the command line:
 
- ./validator input judgeanswer feedbackdir < teamoutput > teaminput
+ ./validator input judgeanswer feedbackdir < teamoutput [ > teaminput ]
 
 The meaning of the parameters listed above are:
 
