@@ -402,9 +402,9 @@ The default grader has <s>two different modes for aggregating the verdict -- ''n
 {| class="wikitable"
 ! Argument !! Description
 |-
-| <tt>no_errors/tt> || <s>verdict is accepted if all subresults are accepted, otherwise it is the first of RTE, TLE, WA that is the subresult of some item in the test case group.  This is the default mode for pass-fail problems.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.</s>
+| <tt>no_errors</tt> || <s>verdict is accepted if all subresults are accepted, otherwise it is the first of RTE, TLE, WA that is the subresult of some item in the test case group.  This is the default mode for pass-fail problems.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.</s>
 |-
-| <tt>always_accept/tt> || <s>verdict is always accepted.  This is the default mode for scoring problems.</s>
+| <tt>always_accept</tt> || <s>verdict is always accepted.  This is the default mode for scoring problems.</s>
 |-
 | <tt>sum</tt> || score is sum of input scores (default).
 |-
