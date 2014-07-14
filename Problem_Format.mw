@@ -80,11 +80,11 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 |-
 | source || String ||  || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
-| source_url || String || || Link to page for source event. <s>Must not be given if source is not.</s>
+| source_url || String || || Link to page for source event. Must not be given if source is not.
 |-
 | license || String || unknown || License under which the problem may be used. Value have to be one of the ones defined below.
 |-
-| rights_owner || String || Value of author, if present, otherwise value of source. || Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. <s>Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".</s>
+| rights_owner || String || Value of author, if present, otherwise value of source. || Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".
 |-
 | keywords || <s>String of sequence of strings</s> || || Set of keywords.
 |-
@@ -94,7 +94,7 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 |-
 | <s>languages</s> || <s>String</s> || <s>all</s> || <s>Set of languages (delimited by spaces) or all.</s>
 |-
-| validation || String || default || One of "default" or "custom".  If "custom", may be followed by some subset of "score" and <s>"interactive"</s>, where "score" indicates that the validator produces a score (this is only valid for scoring problems), and <s>"interactive" specifies that the validator is run interactively with a submission</s>.  For example, "custom interactive score". 
+| validation || String || default || One of "default" or "custom".  If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission.  For example, "custom interactive score". 
 |-
 | validator_flags || String || || Will be passed as command-line arguments to each of the output validators.
 |-
