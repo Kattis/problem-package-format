@@ -357,7 +357,7 @@ When a floating-point tolerance has been set, any valid formatting of floating p
 
 == Graders ==
 
-Graders are programs that is given the results of judging individual test files and calculates an aggregate result. They are provided in <tt>graders/</tt> .
+Graders are programs that are given the sub-results of a test data group and aggregate a result for the group. They are provided in <tt>graders/</tt> .
 
 === Invocation ===
 
@@ -371,7 +371,7 @@ The grader should be possible to use as follows on the command line:
 
 === Input ===
 
-A grader simply takes a list of results on standard input, and produces a single result on standard output.  The input file will have the one line per test file containing the result of judging the testfile, using the code from the table below, followed by whitespace, followed by the score.
+A grader simply takes a list of results on standard input, and produces a single result on standard output.  The input file will have the one line per test file containing the result of judging the testfile, using the code from the table below, followed by whitespace, followed by the score.  <s>Format to be extended.</s>
 
 {| class="wikitable"
 ! Code !! Meaning
@@ -389,19 +389,22 @@ The score is taken from the <tt>score.txt</tt> files produces by the ouput valid
 
 === Output ===
 
-The grader must output the aggregate result on stdout. The output must be one of the codes listed in the table above followed by a number. Any other output, including no output, will result in a Judging Error.
+The grader must output the aggregate result on stdout in the same format as its input. Any other output, including no output, will result in a Judging Error.
 
-Note that in principle a grader can get as input (and produce as output) a non-Accepted result with a non-zero score.  However, for the final result of a submission, the score will be ignored for non-Accepted results.
+For pass-fail problems, or for non-Accepted results on scoring problems, the score provided by the grader will always be ignored.
 
 The grader may output debug information on stderr. This information may be displayed to the user upon invocation of the grader.
 
 === Default Grader Specification ===
 
-The default grader always gives verdict AC, regardless of input results.
-In its default mode, the score is the sum of the input scores, but can be changed by providing one of "sum", "avg", "max", "min" as a command-line argument (through the "grader_flags" option in testdata.yaml)
+The default grader has two different modes for aggregating the verdict -- ''no_errors'' and ''always_accept'' -- and four different modes for aggregating the score -- ''sum'', ''avg'', ''min'', ''max''.  These modes can be set by providing their names as command line arguments (through the "grader_flags" option in testdata.yaml).  If multiple conflicting modes are given, the last one is used.  Their meaning are as follows.
 
 {| class="wikitable"
 ! Argument !! Description
+|-
+| <tt>no_errors/tt> || <s>verdict is accepted if all subresults are accepted, otherwise it is the worst error.  This is the default mode for pass-fail problems.</s>
+|-
+| <tt>always_accept/tt> || <s>verdict is always accepted.  This is the default mode for scoring problems.</s>
 |-
 | <tt>sum</tt> || score is sum of input scores (default).
 |-
