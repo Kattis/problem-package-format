@@ -249,8 +249,6 @@ The Illustration is an image file with filename extension <tt>.png</tt>, <tt>.jp
 
 Input, answer, description, hint and image files are matched by the base name.
 
-[support for illustration files is not implemented yet]
-
 === Test Data Groups ===
 
 The test data for the problem can be organized into a tree-like structure.  Each node of this tree is represented by a directory and referred to as a test data group.  Each test data group may consist of zero or more test cases (i.e., input-answer files) and zero or more subroups of test data (i.e., subdirectories).
