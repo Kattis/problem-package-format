@@ -168,15 +168,6 @@ A map with the following keys:
 |-
 |}
 
-;first_error
-:The first non-accepted judgement will be the result for the entire submission. The order of test files is defined in the section on test data.
-
-;worst_error
-:The first error in RTE, TLE, WA that is the result of some test file will be the result for the entire submission.
-
-;grade
-:The result of all test files will be sent to the grader that will determine the score.
-
 === libraries ===
 <s>
 A space separated list from below. A library will be available for the languages listed.
