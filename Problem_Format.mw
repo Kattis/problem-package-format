@@ -255,16 +255,14 @@ The test data for the problem can be organized into a tree-like structure.  Each
 
 At the top level, the test data is divided into exactly two groups: <tt>sample</tt> and <tt>secret</tt>, but these two groups may be further split into subgroups as desired.
 
-The <em>result</em> of a test data group is computed by applying a <em>grader</em> to all of the items (test cases and subgroups) in the group.  For instance, if a group specifies that the "sum" grader should be used, the result of that group will always be accepted with a score that is the sum of the scores of the items in that group.
+The <em>result</em> of a test data group is computed by applying a <em>grader</em> to all of the sub-results (test cases and subgroups) in the group.  For pass-fail problems, this grader will typically just set the verdict to accepted if all sub-results in the group were accepted and otherwise the "worst" error in the group.  For scoring problems, one common grader behaviour would be to always set the verdict to Accepted, with the score being the sum of scores of the items in the test group.
 
 In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify how the result of the test data group should be computed.  If such a file is not provided for a test data group then the settings for the parent group will be used.  The format of <tt>testdata.yaml</tt> is as follows:
 
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
-| on_reject || String || break || <s>One of "break" or "continue".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file.</s>
-|-
-| verdict || String || error || <s>One of "error" or "grade".  Specifies what verdict should be given when the test case group has non-Accept judgements.</s>
+| on_reject || String || break || <s>One of "break" or "continue".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup.  If "break", judging proceeds immediately to grading.  If "continue", judging continues judging the rest of the test files and subgroups within the group.</s>
 |-
 | grading || String || default || One of "default" and "custom".
 |-
