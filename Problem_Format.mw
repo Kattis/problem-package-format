@@ -246,7 +246,7 @@ The test data for the problem can be organized into a tree-like structure.  Each
 
 At the top level, the test data is divided into exactly two groups: <tt>sample</tt> and <tt>secret</tt>, but these two groups may be further split into subgroups as desired.
 
-The <em>result</em> of a test data group is computed by applying a <em>grader</em> to all of the sub-results (test cases and subgroups) in the group.  For pass-fail problems, this grader will typically just set the verdict to accepted if all sub-results in the group were accepted and otherwise the "worst" error in the group.  For scoring problems, one common grader behaviour would be to always set the verdict to Accepted, with the score being the sum of scores of the items in the test group.
+The <em>result</em> of a test data group is computed by applying a <em>grader</em> to all of the sub-results (test cases and subgroups) in the group.  See [[#Graders|Graders]] for more details.
 
 In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify how the result of the test data group should be computed.  If such a file is not provided for a test data group then the settings for the parent group will be used.  The format of <tt>testdata.yaml</tt> is as follows:
 
