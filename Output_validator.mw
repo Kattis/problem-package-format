@@ -13,21 +13,23 @@ When invoked the output validator will be passed at least three command line par
 
 The validator should be possible to use as follows on the command line:
 
- ./validator input judgeanswer feedbackdir < teamoutput [ > teaminput ]
+ ./validator input judge_answer feedback_dir [additional_arguments] < team_output [ > team_input ]
 
 The meaning of the parameters listed above are:
 
 ;input: a string specifying the name of the input data ﬁle which was used to test the program whose results are being validated.
 
-;judgeanswer: a string specifying the name of an arbitrary “answer ﬁle” which acts as input to the validator program. The answer ﬁle may, but is not necessarily required to, contain the “correct answer” for the problem. For example, it might contain the output which was produced by a judge’s solution for the problem when run with input ﬁle as input. Alternatively, the “answer ﬁle” might contain information, in arbitrary format, which instructs the validator in some way about how to accomplish its task. The meaning of the contents of the answer ﬁle is not defined by this standard.
+;judge_answer: a string specifying the name of an arbitrary “answer ﬁle” which acts as input to the validator program. The answer ﬁle may, but is not necessarily required to, contain the “correct answer” for the problem. For example, it might contain the output which was produced by a judge’s solution for the problem when run with input ﬁle as input. Alternatively, the “answer ﬁle” might contain information, in arbitrary format, which instructs the validator in some way about how to accomplish its task. The meaning of the contents of the answer ﬁle is not defined by this standard.
 
-;feedbackdir: a string which specifies the name of a “feedback directory” in which the validator can produce "feedback files" in order to report additional information on the validation of the output ﬁle.  The feedbackdir must end with a path separator (typically '/' or '\' depending on operating system), so that simply appending a filename to feedbackdir gives the path to a file in the feedback directory.
+;feedback_dir: a string which specifies the name of a “feedback directory” in which the validator can produce "feedback files" in order to report additional information on the validation of the output ﬁle.  The feedbackdir must end with a path separator (typically '/' or '\' depending on operating system), so that simply appending a filename to feedbackdir gives the path to a file in the feedback directory.
 
-;teamoutput: the output produced by the program being validated is given on the validator's standard input pipe.
+;additional_arguments; in case the problem specifies additional validator_flags, these are passed as additional arguments to the validator on the command line.
 
-;teaminput: when running the validator in interactive mode everything written on the validator's standard output pipe is given to the program being validated. Please not that when running interactive the program will only receive the output produced by the validator and will not have direct access to the input file.
+;team_output: the output produced by the program being validated is given on the validator's standard input pipe.
 
-The two ﬁles pointed to by input and judgeanswer must exist (though they are allowed to be empty) and the validator program must be allowed to open them for reading. The directory pointed to by feedbackdir must also exist.
+;team_input: when running the validator in interactive mode everything written on the validator's standard output pipe is given to the program being validated. Please not that when running interactive the program will only receive the output produced by the validator and will not have direct access to the input file.
+
+The two files pointed to by input and judge_answer must exist (though they are allowed to be empty) and the validator program must be allowed to open them for reading. The directory pointed to by feedback_dir must also exist.
 
 == Reporting a judgment ==
 
