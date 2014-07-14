@@ -23,7 +23,7 @@ The meaning of the parameters listed above are:
 
 ;feedback_dir: a string which specifies the name of a “feedback directory” in which the validator can produce "feedback files" in order to report additional information on the validation of the output ﬁle.  The feedbackdir must end with a path separator (typically '/' or '\' depending on operating system), so that simply appending a filename to feedbackdir gives the path to a file in the feedback directory.
 
-;additional_arguments; in case the problem specifies additional validator_flags, these are passed as additional arguments to the validator on the command line.
+;additional_arguments: in case the problem specifies additional validator_flags, these are passed as additional arguments to the validator on the command line.
 
 ;team_output: the output produced by the program being validated is given on the validator's standard input pipe.
 
