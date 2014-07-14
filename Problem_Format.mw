@@ -82,7 +82,7 @@ The keys are defined as below. All keys are optional <s>except name</s>. Any unk
 |-
 | license || String || unknown || License under which the problem may be used. Value have to be one of the ones defined below.
 |-
-| rights_owner || String || Value of author, if present, otherwise value of source. || Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner.
+| rights_owner || String || Value of author, if present, otherwise value of source. || Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. <s>Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".</s>
 |-
 | keywords || <s>String of sequence of strings</s> || || Set of keywords.
 |-
