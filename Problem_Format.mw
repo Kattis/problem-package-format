@@ -63,14 +63,14 @@ There are two types of problems: <em>pass-fail</em> problems and <em>scoring</em
 
 Metadata about the problem (e.g., source, license, limits) are provided in a UTF-8 encoded YAML file named <tt>problem.yaml</tt> placed in the root directory of the package.  
 
-The keys are defined as below. All keys are optional <s>except name</s>. Any unknown keys should be treated as an error.
+The keys are defined as below. Keys are optional unless explicitly stated. Any unknown keys should be treated as an error.
 
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
 | <s>uuid</s> || <s>String</s> || || <s>UUID identifying the problem.</s>
 |-
-| <s>name</s> || <s>String or map of strings</s> || || <s>If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>
+| <s>name</s> || <s>String or map of strings</s> || || <s>Required. If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>
 |-
 | type || String || pass-fail || One of "pass-fail" and "scoring".
 |-
