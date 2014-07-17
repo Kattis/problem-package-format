@@ -408,11 +408,11 @@ The default grader has <s>two different modes for aggregating the verdict -- ''n
 | <tt>max</tt> || score is maximum of input scores.
 |}
 
-== Generators ==
+== <s>Generators</s> ==
 <s>
 Input generators are programs that generates input. They are provided in <tt>generators/</tt>.
 </s>
-=== Invocation ===
+=== <s>Invocation</s> ===
 <s>
 A generator program must be an application (executable or interpreted) capable of being invoked with a command line call.
 
