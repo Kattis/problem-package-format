@@ -217,7 +217,7 @@ The problem statements must only contain the actual problem statement, no sample
 == Test data ==
 
 <s>
-If a input generator is used the files described here might not be available in this directory. This section describes what must be the case after running the generator
+If a input generator is used the files described here might not be available in this directory. This section describes what must be the case after running the generator.
 </s>
 
 The test data are provided in subdirectories of <tt>data/</tt>. The sample data in <tt>data/sample/</tt> and the secret data in <tt>data/secret/</tt>.
