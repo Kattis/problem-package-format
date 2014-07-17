@@ -86,7 +86,7 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 |-
 | rights_owner || String || Value of author, if present, otherwise value of source. || Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".
 |-
-| keywords || <s>String of sequence of strings</s> || || Set of keywords.
+| keywords || <s>String or sequence of strings</s> || || Set of keywords.
 |-
 | limits || Map with keys as defined below || see definition below ||
 |-
