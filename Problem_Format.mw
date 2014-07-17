@@ -296,6 +296,8 @@ Submissions must read input data from standard input, and write output to standa
 
 Input Validators, for verifying the correctness of the input files, are provided in <tt>input_format_validators/</tt>.  <s>Input validators can be specified as VIVA-files (with file ending <tt>.viva</tt>), Checktestdata-file (with file ending <tt>.ctd</tt>)</s> or as a program.
 
+All input validators provided will be run on every input file. Validation fails if any validator fails.
+
 === Invocation ===
 
 An input validator program must be an application (executable or interpreted) capable of being invoked with a command line call. 
