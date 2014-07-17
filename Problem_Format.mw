@@ -98,7 +98,7 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 |-
 | validator_flags || String || || Will be passed as command-line arguments to each of the output validators.
 |-
-| grading || Map with keys as defined below || See definition below ||  Must only be used on scoring problems.
+| <s class="dep">grading</s> <s>scoring</s> || Map with keys as defined below || See definition below ||  Must only be used on scoring problems.
 |}
 
 === license ===
@@ -149,7 +149,7 @@ A map with the following keys:
 | validation_output || optional, in MiB || 8 
 |}
 
-=== grading ===
+=== <s class="dep">grading</s> <s>scoring</s> ===
 
 A map with the following keys:
 
