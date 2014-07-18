@@ -257,9 +257,9 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 |-
 | grader_flags || String  || empty string|| arguments passed to the grader for this test data group.
 |-
-| input_validator_flags || String || empty string || arguments passed to the input validator for this test data group.
+| input_validator<s class="dep">_flags</s> || String or map with the keys "name" and "flags" || empty string || <s class="dep">arguments passed to the input validator for this test data group.</s> <s>If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>
 |-
-| output_validator_flags || String || empty string || arguments passed to the output validator for this test data group.
+| output_validator<s class="dep">_flags</s> || String || empty string || <s class="dep">arguments passed to the output validator for this test data group.</s> <s>If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>
 |}
 
 == Included Code ==
