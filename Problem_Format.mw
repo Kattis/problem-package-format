@@ -191,16 +191,19 @@ If a list is given, the problem may only be solved using those languages.
 
 The problem statement of the problem is provided in the directory <tt>problem_statement/</tt>.
 
-This directory must contain one LaTeX file per language, named <tt>problem.<language>.tex</tt>, that contains the problem text itself, including input
-and output specifications, but not sample input and output.  <s class='dep'>Language must be given as an ISO 639-1 alpha-2 language code.</s>  <s>Language must be given as the shortest ISO 639 code. If needed a hyphen and a ISO 3166-1 alpha-2 code may be appended to ISO 639 code.</s> Optionally, the language code can be left out, the default is then English.
+This directory must contain one file per language, named <tt>problem.<language>.<filetype></tt>, that contains the problem text itself, including input
+and output specifications, but not sample input and output.  <s class='dep'>Language must be given as an ISO 639-1 alpha-2 language code.</s>  <s>Language must be given as the shortest ISO 639 code. If needed a hyphen and a ISO 3166-1 alpha-2 code may be appended to ISO 639 code.</s> Optionally, the language code can be left out, the default is then English (<tt>en</tt>). Filetype can either <tt>tex</tt> for LaTeX files <s>and <tt>md</tt> for Markdown</s>.
 
-Files needed by this file must all be in <tt><short_name>/problem_statement/</tt> , problem.<language>.tex should reference auxiliary files as if the
+Files needed by this file must all be in <tt><short_name>/problem_statement/</tt> , <tt>problem.<language>.<filetype></tt> should reference auxiliary files as if the
 working directory is <tt><short_name>/problem_statement/</tt>. Image file formats supported are <tt>.png</tt>, <tt>.jpg</tt>, <tt>.jpeg</tt>, and <tt>.pdf</tt>.
 
-The LaTeX file may include the Problem name using the LaTeX command <tt>\problemname</tt> in case LaTeX formatting of the title is wanted. <s>If it's not included the problem name specified in <tt>problem.yaml</tt> will be used.</s>
+A LaTeX file may include the Problem name using the LaTeX command <tt>\problemname</tt> in case LaTeX formatting of the title is wanted. <s>If it's not included the problem name specified in <tt>problem.yaml</tt> will be used.</s>
 
-The problem statements must only contain the actual problem statement, no sample data
-(the .tex file is included in a template that adds these).  A typical problem.<language>.tex looks as follows:
+The problem statements must only contain the actual problem statement, no sample data.
+
+=== LaTeX sample ===
+
+A typical problem.<language>.tex looks as follows:
 
  \problemname{Problem Name}
  
