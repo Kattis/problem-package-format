@@ -46,9 +46,13 @@ For languages where there could be several entry points, the default entry point
 |-
 | java || Java || Main|| .java ||
 |-
+| javascript || JavaScript || main.js  || .js ||
+|-
 | objectivec || Objective-C || || .m ||
 |-
 | <s>pascal</s> || <s>Pascal</s> || || <s>.pas</s> ||
+|-
+| php || PHP || main.php || .php ||
 |-
 | prolog || Prolog || || .pl ||
 |-
