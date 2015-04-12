@@ -80,7 +80,7 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 |-
 | type || String || pass-fail || One of "pass-fail" and "scoring".
 |-
-| author || String or sequence of strings ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
+| author || String <s>or sequence of strings</s> ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 |-
 | source || String ||  || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
