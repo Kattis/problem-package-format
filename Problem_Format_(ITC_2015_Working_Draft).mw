@@ -436,14 +436,13 @@ The default grader has <s>two different modes for aggregating the verdict -- ''n
 <s>
 Input generators are programs that generates input. They are provided in <tt>generators/</tt>.
 </s>
-=== <s>Invocation</s> ===
-<s>
+=== Invocation ===
+
 A generator program must be an application (executable or interpreted) capable of being invoked with a command line call.
 
-The generators will be run with the test data directory (<tt>data/</tt>) as the working directory. The generator may read any existing files in that directory and should create any kind of test data file as defined in the test data section. The generators will be run in lexicographical order on name.
+The generators will be run with the test data directory (<tt>data/</tt>) as the working directory. The generator may read any existing files in that directory and should create any kind of test data file as defined in the test data section. The generators will be run in lexicographical order on name. 
 
 The generator must be deterministic, i.e. always produce the same input file when give the same arguments.
-</s>
 
 == See also ==
 
