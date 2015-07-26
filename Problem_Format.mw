@@ -158,7 +158,7 @@ A map with the following keys:
 A map with the following keys:
 
 {| class="wikitable"
-! Key !! Type !! Default !! Languages
+! Key !! Type !! Default !! Comments
 |-
 | <s class="dep">on_reject</s> || <s class="dep">String</s> || <s class="dep">first_error</s> ||<s class="dep"> One of "first_error", "worst_error" and "grade".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file.  '''This is deprecated, to be replaced by on_reject setting in testdata.yaml. '''</s>
 |-
