@@ -221,6 +221,25 @@ A typical problem.<language>.tex looks as follows:
  
  <Output description here>
 
+=== Markdown sample ===
+
+A typical problem.<language>.md looks as follows:
+
+ Problem Name
+ ------------
+ 
+ <Problem statement here>
+ 
+ Input
+ -----
+ 
+ <Input description here>
+ 
+ Output
+ ------
+ 
+ <Output description here>
+
 == Test data ==
 
 <s>
