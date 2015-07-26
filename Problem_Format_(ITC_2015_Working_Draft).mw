@@ -102,7 +102,7 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 |-
 | validator_flags || String || || Will be passed as command-line arguments to each of the output validators.
 |-
-| <s class="dep">grading</s> <s>scoring</s> || Map with keys as defined below || See definition below ||  Must only be used on scoring problems.
+| scoring || Map with keys as defined below || See definition below ||  Must only be used on scoring problems.
 |}
 
 === license ===
@@ -153,14 +153,12 @@ A map with the following keys:
 | validation_output || optional, in MiB || 8 
 |}
 
-=== <s class="dep">grading</s> <s>scoring</s> ===
+=== scoring ===
 
 A map with the following keys:
 
 {| class="wikitable"
 ! Key !! Type !! Default !! Languages
-|-
-| <s class="dep">on_reject</s> || <s class="dep">String</s> || <s class="dep">first_error</s> ||<s class="dep"> One of "first_error", "worst_error" and "grade".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file.  '''This is deprecated, to be replaced by on_reject setting in testdata.yaml. '''</s>
 |-
 | accept_score || String || 1 || Default score for accepted input files.
 |-
@@ -196,7 +194,7 @@ If a list is given, the problem may only be solved using those languages.
 The problem statement of the problem is provided in the directory <tt>problem_statement/</tt>.
 
 This directory must contain one file per language, named <tt>problem.<language>.<filetype></tt>, that contains the problem text itself, including input
-and output specifications, but not sample input and output.  <s class='dep'>Language must be given as an ISO 639-1 alpha-2 language code.</s>  <s>Language must be given as the shortest ISO 639 code. If needed a hyphen and a ISO 3166-1 alpha-2 code may be appended to ISO 639 code.</s> Optionally, the language code can be left out, the default is then English (<tt>en</tt>). Filetype can be either <tt>tex</tt> for LaTeX files<s>, <tt>md</tt> for Markdown of <tt>pdf</tt> for PDF</s>. Please note that many kinds of transformations on the problem statements, such as conversion to HTML or styling to fit in a single document containing many problems will not be possible for PDF problem statements, so it is recommended to avoid this format if at all possible.
+and output specifications, but not sample input and output.  Language must be given as the shortest ISO 639 code. If needed a hyphen and a ISO 3166-1 alpha-2 code may be appended to ISO 639 code. Optionally, the language code can be left out, the default is then English (<tt>en</tt>). Filetype can be either <tt>tex</tt> for LaTeX files, <tt>md</tt> for Markdown of <tt>pdf</tt> for PDF. Please note that many kinds of transformations on the problem statements, such as conversion to HTML or styling to fit in a single document containing many problems will not be possible for PDF problem statements, so it is recommended to avoid this format if at all possible.
 
 Auxiliary files needed by the problem statement files must all be in <tt><short_name>/problem_statement/</tt> , <tt>problem.<language>.<filetype></tt> should reference auxiliary files as if the
 working directory is <tt><short_name>/problem_statement/</tt>. Image file formats supported are <tt>.png</tt>, <tt>.jpg</tt>, <tt>.jpeg</tt>, and <tt>.pdf</tt>.
@@ -283,9 +281,9 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 |-
 | grader_flags || String  || empty string|| arguments passed to the grader for this test data group.
 |-
-| input_validator<s class="dep">_flags</s> || String <s>or map with the keys "name" and "flags"</s> || empty string || <s class="dep">arguments passed to the input validator for this test data group.</s> <s>If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>
+| input_validator || String or map with the keys "name" and "flags" || empty string || If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.
 |-
-| output_validator<s class="dep">_flags</s> || String <s>or map with the keys "name" and "flags"</s> || empty string || <s class="dep">arguments passed to the output validator for this test data group.</s> <s>If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>
+| output_validator || String or map with the keys "name" and "flags" || empty string || If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.
 |}
 
 == Included Code ==
@@ -318,7 +316,7 @@ Submissions must read input data from standard input, and write output to standa
 
 == Input Validators ==
 
-Input Validators, for verifying the correctness of the input files, are provided in <s class="dep"><tt>input_format_validators/</tt></s> <s><tt>input_validators/</tt></s>.  Input validators can be specified as VIVA-files (with file ending <tt>.viva</tt>), Checktestdata-file (with file ending <tt>.ctd</tt>), or as a program.
+Input Validators, for verifying the correctness of the input files, are provided in <tt>input_validators/</tt>.  Input validators can be specified as VIVA-files (with file ending <tt>.viva</tt>), Checktestdata-file (with file ending <tt>.ctd</tt>), or as a program.
 
 All input validators provided will be run on every input file. Validation fails if any validator fails.
 
