@@ -204,6 +204,8 @@ The problem statements must only contain the actual problem statement, no sample
 
 == Public files ==
 
+Public, i.e. non-secret, files to be made available in addition to the problem statement and sample test data are provided in the directory <tt>public_files/</tt>.
+
 == Test data ==
 
 <s>
