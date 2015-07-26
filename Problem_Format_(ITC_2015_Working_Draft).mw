@@ -184,7 +184,7 @@ A set from elements below. A library will be available for the languages listed.
 
 === languages ===
 
-A set of language code from the table in the overview secton or ''all''.
+A set of language code from the table in the overview section or ''all''.
 
 If a list is given, the problem may only be solved using those languages.
 
