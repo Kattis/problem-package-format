@@ -370,7 +370,7 @@ A grader simply takes a list of results on standard input, and produces a single
 | TLE || Time-Limit Exceeded
 |}
 
-The score is taken from the <tt>score.txt</tt> files produces by the ouput validator. If no <tt>score.txt</tt> exists the score will be as defined by the grading accept_score and reject_score setting from problem.yaml.
+The score is taken from the <tt>score.txt</tt> files produced by the ouput validator. If no <tt>score.txt</tt> exists the score will be as defined by the grading accept_score and reject_score setting from problem.yaml.
 
 === Output ===
 
