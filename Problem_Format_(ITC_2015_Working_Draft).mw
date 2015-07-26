@@ -158,7 +158,7 @@ A map with the following keys:
 A map with the following keys:
 
 {| class="wikitable"
-! Key !! Type !! Default !! Languages
+! Key !! Type !! Default !! Comments
 |-
 | accept_score || String || 1 || Default score for accepted input files.
 |-
