@@ -232,7 +232,7 @@ Input, answer, description, hint and image files are matched by the base name.
 
 === Test Data Groups ===
 
-The test data for the problem can be organized into a tree-like structure.  Each node of this tree is represented by a directory and referred to as a test data group.  Each test data group may consist of zero or more test cases (i.e., input-answer files) and zero or more subroups of test data (i.e., subdirectories).
+The test data for the problem can be organized into a tree-like structure.  Each node of this tree is represented by a directory and referred to as a test data group.  Each test data group may consist of zero or more test cases (i.e., input-answer files) and zero or more subgroups of test data (i.e., subdirectories).
 
 At the top level, the test data is divided into exactly two groups: <tt>sample</tt> and <tt>secret</tt>, but these two groups may be further split into subgroups as desired.
 
