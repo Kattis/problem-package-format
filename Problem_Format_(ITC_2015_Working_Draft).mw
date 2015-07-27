@@ -417,6 +417,5 @@ The generators must be idempotent, i.e. running them multiple times should resul
 == See also ==
 
 * [[Output validator]]
-* [[Sample problem.yaml]]
 * [[Problem format directory structure]]
 * [[Problem Format Verification]]
