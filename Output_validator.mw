@@ -27,7 +27,7 @@ The meaning of the parameters listed above are:
 
 ;team_output: the output produced by the program being validated is given on the validator's standard input pipe.
 
-;team_input: when running the validator in interactive mode everything written on the validator's standard output pipe is given to the program being validated. Please not that when running interactive the program will only receive the output produced by the validator and will not have direct access to the input file.
+;team_input: when running the validator in interactive mode everything written on the validator's standard output pipe is given to the program being validated. Please note that when running interactive the program will only receive the output produced by the validator and will not have direct access to the input file.
 
 The two files pointed to by input and judge_answer must exist (though they are allowed to be empty) and the validator program must be allowed to open them for reading. The directory pointed to by feedback_dir must also exist.
 
