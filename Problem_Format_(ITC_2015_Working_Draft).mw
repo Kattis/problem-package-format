@@ -98,8 +98,6 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 |-
 | validation || String || default || One of "default" or "custom".  If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission.  For example, "custom interactive score". 
 |-
-| validator_flags || String || || Will be passed as command-line arguments to each of the output validators.
-|-
 | scoring || Map with keys as defined below || See definition below ||  Must only be used on scoring problems.
 |}
 
