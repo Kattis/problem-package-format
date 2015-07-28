@@ -241,13 +241,11 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 |-
 | on_reject || String || break || <s>One of "break" or "continue".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup.  If "break", judging proceeds immediately to grading.  If "continue", judging continues judging the rest of the test files and subgroups within the group.</s>
 |-
-| grading || String || default || One of "default" and "custom".
-|-
-| grader_flags || String  || empty string|| arguments passed to the grader for this test data group.
+| grader || String or map with the keys "name" and "flags" || empty string || If a string this is the name of the grader that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the grader. The name of the default grader is "default".
 |-
 | input_validator || String or map with the keys "name" and "flags" || empty string || If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.
 |-
-| output_validator || String or map with the keys "name" and "flags" || empty string || If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.
+| output_validator || String or map with the keys "name" and "flags" || empty string || If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator. The name of the default output validator is "default".
 |}
 
 == Included Code ==
