@@ -96,8 +96,6 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 |-
 | libraries || String or sequence of strings || || Set of libraries as defined below.
 |-
-| languages || String or sequence of strings || all || Set of languages or all.
-|-
 | validation || String || default || One of "default" or "custom".  If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission.  For example, "custom interactive score". 
 |-
 | validator_flags || String || || Will be passed as command-line arguments to each of the output validators.
@@ -181,12 +179,6 @@ A set from elements below. A library will be available for the languages listed.
 |-
 | boost || Boost || C++
 |}
-
-=== languages ===
-
-A set of language code from the table in the overview section or ''all''.
-
-If a list is given, the problem may only be solved using those languages.
 
 == Problem Statements ==
 
