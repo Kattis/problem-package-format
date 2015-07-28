@@ -142,7 +142,11 @@ A map with the following keys:
 |-
 | output || optional, in MiB || 8 
 |-
+| code || optional, in kiB || 128
+|-
 | compilation_time || optional, in seconds || 60
+|-
+| compilation_memory || optional, in MiB || 2048
 |-
 | validation_time || optional, in seconds || 60
 |-
