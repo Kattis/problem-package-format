@@ -222,7 +222,7 @@ The hint file is a text file with filename extension<tt>.hint</tt> giving a hint
 
 The description file is a text file with filename extension <tt>.desc</tt> describing the purpose of an input file. The description file is meant to be privileged information that explains the purpose of the related test file, e.g. what cases it's supposed to test.
 
-The Illustration is an image file with filename extension <tt>.png</tt>, <tt>.jpg</tt>, or <tt>.jpeg</tt>. The illustration is meant to be privileged information illustrating the related test file.
+The Illustration is an image file with filename extension <tt>.png</tt>, <tt>.jpg</tt>, <tt>.jpeg</tt>, or <tt>.svg</tt>. The illustration is meant to be privileged information illustrating the related test file.
 
 Input, answer, description, hint and image files are matched by the base name.
 
