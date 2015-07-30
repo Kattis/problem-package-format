@@ -246,6 +246,10 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 | input_validator || String or map with the keys "name" and "flags" || empty string || If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.
 |-
 | output_validator || String or map with the keys "name" and "flags" || empty string || If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator. The name of the default output validator is "default".
+|-
+| accept_score || Number || 1 || Score for accepted input files.
+|-
+| reject_score || Number || 0 || Score for rejected input files.
 |}
 
 == Included Code ==
