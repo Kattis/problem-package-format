@@ -50,7 +50,7 @@ For languages where there could be several entry points, the default entry point
 |-
 | objectivec || Objective-C || || .m ||
 |-
-| <s>pascal</s> || <s>Pascal</s> || || <s>.pas</s> ||
+| pascal || Pascal || || .pas ||
 |-
 | php || PHP || main.php || .php ||
 |-
@@ -74,13 +74,13 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
-| <s>uuid</s> || <s>String</s> || || <s>UUID identifying the problem.</s>
+| uuid || String || || UUID identifying the problem.
 |-
-| <s>name</s> || <s>String or map of strings</s> || || <s>Required. If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>
+| name || String or map of strings || || Required. If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.
 |-
 | type || String || pass-fail || One of "pass-fail" and "scoring".
 |-
-| author || String <s>or sequence of strings</s> ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
+| author || String or sequence of strings ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 |-
 | source || String ||  || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
@@ -196,7 +196,7 @@ Please note that many kinds of transformations on the problem statements, such a
 Auxiliary files needed by the problem statement files must all be in <tt><short_name>/problem_statement/</tt> , <tt>problem.<language>.<filetype></tt> should reference auxiliary files as if the
 working directory is <tt><short_name>/problem_statement/</tt>. Image file formats supported are <tt>.png</tt>, <tt>.jpg</tt>, <tt>.jpeg</tt>, and <tt>.pdf</tt>.
 
-A LaTeX file may include the Problem name using the LaTeX command <tt>\problemname</tt> in case LaTeX formatting of the title is wanted. <s>If it's not included the problem name specified in <tt>problem.yaml</tt> will be used.</s>
+A LaTeX file may include the Problem name using the LaTeX command <tt>\problemname</tt> in case LaTeX formatting of the title is wanted. If it's not included the problem name specified in <tt>problem.yaml</tt> will be used.
 
 The problem statements must only contain the actual problem statement, no sample data.
 
@@ -206,9 +206,7 @@ Public, i.e. non-secret, files to be made available in addition to the problem s
 
 == Test data ==
 
-<s>
 If a input generator is used the files described here might not be available in this directory. This section describes what must be the case after running the generator.
-</s>
 
 The test data are provided in subdirectories of <tt>data/</tt>. The sample data in <tt>data/sample/</tt> and the secret data in <tt>data/secret/</tt>.
 
@@ -241,7 +239,7 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
-| on_reject || String || break || <s>One of "break" or "continue".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup.  If "break", judging proceeds immediately to grading.  If "continue", judging continues judging the rest of the test files and subgroups within the group.</s>
+| on_reject || String || break || One of "break" or "continue".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup.  If "break", judging proceeds immediately to grading.  If "continue", judging continues judging the rest of the test files and subgroups within the group.
 |-
 | grader || String or map with the keys "name" and "flags" || empty string || If a string this is the name of the grader that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the grader. The name of the default grader is "default".
 |-
@@ -374,14 +372,14 @@ The grader may output debug information on stderr. This information may be displ
 
 === Default Grader Specification ===
 
-The default grader has <s>two different modes for aggregating the verdict -- ''no_errors'' and ''always_accept''</s> -- and four different modes for aggregating the score -- ''sum'', ''avg'', ''min'', ''max''.  These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [[#Test Data Groups|testdata.yaml]]).  If multiple conflicting modes are given, the last one is used.  Their meaning are as follows.
+The default grader has two different modes for aggregating the verdict -- ''no_errors'' and ''always_accept'' -- and four different modes for aggregating the score -- ''sum'', ''avg'', ''min'', ''max''.  These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [[#Test Data Groups|testdata.yaml]]).  If multiple conflicting modes are given, the last one is used.  Their meaning are as follows.
 
 {| class="wikitable"
 ! Argument !! Description
 |-
-| <tt>no_errors</tt> || <s>verdict is accepted if all subresults are accepted, otherwise it is the first of RTE, TLE, WA that is the subresult of some item in the test case group.  This is the default mode for pass-fail problems.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.</s>
+| <tt>no_errors</tt> || verdict is accepted if all subresults are accepted, otherwise it is the first of RTE, TLE, WA that is the subresult of some item in the test case group.  This is the default mode for pass-fail problems.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.
 |-
-| <tt>always_accept</tt> || <s>verdict is always accepted.  This is the default mode for scoring problems.</s>
+| <tt>always_accept</tt> || verdict is always accepted.  This is the default mode for scoring problems.
 |-
 | <tt>sum</tt> || score is sum of input scores (default).
 |-
@@ -392,10 +390,10 @@ The default grader has <s>two different modes for aggregating the verdict -- ''n
 | <tt>max</tt> || score is maximum of input scores.
 |}
 
-== <s>Generators</s> ==
-<s>
+== Generators ==
+
 Input generators are programs that generates input. They are provided in <tt>generators/</tt>.
-</s>
+
 === Invocation ===
 
 A generator program must be an application (executable or interpreted) capable of being invoked with a command line call.
