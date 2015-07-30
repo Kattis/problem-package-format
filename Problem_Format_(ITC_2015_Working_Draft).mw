@@ -162,10 +162,6 @@ A map with the following keys:
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
-| accept_score || String || 1 || Default score for accepted input files.
-|-
-| reject_score || String || 0 || Default score for rejected input files.
-|-
 | objective || String || max || One of "min" or "max" specifying whether it is a minimization or a maximization problem.
 |-
 | range || String || -inf +inf || Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores.
