@@ -202,7 +202,7 @@ Public, i.e. non-secret, files to be made available in addition to the problem s
 
 == Test data ==
 
-If a input generator is used the files described here might not be available in this directory. This section describes what must be the case after running the generator.
+If input generators are used the files described here might not be available in this directory. This section describes what must be the case after running the generators.
 
 The test data are provided in subdirectories of <tt>data/</tt>. The sample data in <tt>data/sample/</tt> and the secret data in <tt>data/secret/</tt>.
 
