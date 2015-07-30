@@ -281,6 +281,7 @@ All input validators provided will be run on every test data file using the argu
 When invoked the input validator will get the input file on stdin.
 
 The validator should be possible to use as follows on the command line:
+<s>Needs to be clarified to fit Java and Python and similar</s>
 
   ./validator [arguments] < inputfile
 
