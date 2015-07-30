@@ -258,6 +258,8 @@ The files should be copied from a language directory based on the language of th
 
 == Example Submissions ==
 
+<s>This section is not fully specified yet</s>
+
 Correct and incorrect solutions to the problem are provided in <tt>submissions/</tt>.
 
 The expected behaviour of the submissions are specified in a UTF-8 encoded YAML file named <tt>submissions.yaml</tt>. The file must contain a map with keys "accepted", "rejected" and "time-limit-exceeded". The value for each key should be a (possibly empty) sequence of strings or maps. If a string, it's the name of the submission, if a map, then the key is the name of the submission and the value is the expected results for that submission.
