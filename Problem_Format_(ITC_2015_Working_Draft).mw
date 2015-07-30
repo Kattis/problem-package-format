@@ -189,7 +189,7 @@ A set from elements below. A library will be available for the languages listed.
 The problem statement of the problem is provided in the directory <tt>problem_statement/</tt>.
 
 This directory must contain one file per language, for at least one language, named <tt>problem.<language>.<filetype></tt>, that contains the problem text itself, including input
-and output specifications, but not sample input and output.  Language must be given as the shortest ISO 639 code. If needed a hyphen and a ISO 3166-1 alpha-2 code may be appended to ISO 639 code. Optionally, the language code can be left out, the default is then English (<tt>en</tt>). Filetype can be either <tt>tex</tt> for LaTeX files, <tt>md</tt> for Markdown of <tt>pdf</tt> for PDF. 
+and output specifications, but not sample input and output.  Language must be given as the shortest ISO 639 code. If needed a hyphen and a ISO 3166-1 alpha-2 code may be appended to ISO 639 code. Optionally, the language code can be left out, the default is then English (<tt>en</tt>). Filetype can be either <tt>tex</tt> for LaTeX files, <tt>md</tt> for Markdown, or <tt>pdf</tt> for PDF. 
 
 Please note that many kinds of transformations on the problem statements, such as conversion to HTML or styling to fit in a single document containing many problems will not be possible for PDF problem statements, so using this format should be avoided if at all possible.
 
