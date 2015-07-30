@@ -130,28 +130,30 @@ Values other than ''unknown'' or ''public domain'' requires rights_owner to have
 A map with the following keys:
 
 {| class="wikitable"
-! Key !! Comments !! Default
+! Key !! Comments !! Default || Typical system default
 |-
-| time_multiplier || optional || 5
+| time_multiplier || optional || 5 || 
 |-
-| time_safety_margin || optional || 2
+| time_safety_margin || optional || 2 || 
 |-
-| memory || optional, in MiB || 2048
+| memory || optional, in MiB || system default || 2048
 |-
-| output || optional, in MiB || 8 
+| output || optional, in MiB || system default || 8 
 |-
-| code || optional, in kiB || 128
+| code || optional, in kiB || system default || 128
 |-
-| compilation_time || optional, in seconds || 60
+| compilation_time || optional, in seconds || system default || 60
 |-
-| compilation_memory || optional, in MiB || 2048
+| compilation_memory || optional, in MiB || system default || 2048
 |-
-| validation_time || optional, in seconds || 60
+| validation_time || optional, in seconds || system default || 60
 |-
-| validation_memory || optional, in MiB || 2048
+| validation_memory || optional, in MiB || system default || 2048
 |-
-| validation_output || optional, in MiB || 8 
+| validation_output || optional, in MiB || system default || 8 
 |}
+
+For most keys the system default will be used if nothing is specified. This can vary, but you SHOULD assume that it's reasonable. Only specify limits when the problem needs a specific limit, but do specify limits even if the "typical system default" is what is needed.
 
 === scoring ===
 
