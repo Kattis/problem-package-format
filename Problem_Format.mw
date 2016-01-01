@@ -296,6 +296,8 @@ The files should be copied from a language directory based on the language of th
 
 == Attachments ==
 
+Files that should be made available to all users trying to solve the problem are provided in <tt>attachments/</tt>.
+
 == Example Submissions ==
 
 Correct and incorrect solutions to the problem are provided in subdirectories of <tt>submissions/</tt>.  The possible subdirectories are:
