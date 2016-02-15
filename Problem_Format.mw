@@ -148,6 +148,8 @@ A map with the following keys:
 |-
 | compilation_time || optional, in seconds || system default || 60
 |-
+| compilation_memory || optional, in MiB || system default || 2048
+|-
 | validation_time || optional, in seconds || system default || 60
 |-
 | validation_memory || optional, in MiB || system default || 2048
