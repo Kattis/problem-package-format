@@ -213,9 +213,9 @@ A LaTeX file may include the Problem name using the LaTeX command <tt>\problemna
 
 The problem statements must only contain the actual problem statement, no sample data.
 
-== Public files ==
+== <s>Attachments</s> ==
 
-Public, i.e. non-secret, files to be made available in addition to the problem statement and sample test data are provided in the directory <tt>public_files/</tt>.
+Public, i.e. non-secret, files to be made available in addition to the problem statement and sample test data are provided in the directory <tt>attachments/</tt>.
 
 == Test data ==
 
@@ -270,10 +270,6 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 Code that should be included with all submissions are provided in one directory per supported language, called <tt>include/<language>/</tt>. 
 
 The files should be copied from a language directory based on the language of the submission, to the submission files before compiling, overwriting files from the submission in the case of name collision. Language must be given as one of the language codes in the language table in the overview section. If any of the included files are supposed to be the main file (i.e. a driver), that file must have the language dependent name as given in the table referred above.
-
-== <s>Attachments</s> ==
-
-Files that should be made available to all users trying to solve the problem are provided in <tt>attachments/</tt>.
 
 == Example Submissions ==
 
