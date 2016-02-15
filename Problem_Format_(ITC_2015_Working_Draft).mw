@@ -256,11 +256,21 @@ The files should be copied from a language directory based on the language of th
 
 == Example Submissions ==
 
-<s>This section is not fully specified yet</s>
+Correct and incorrect solutions to the problem are provided in subdirectories of <tt>submissions/</tt>.  The possible subdirectories are:
 
-Correct and incorrect solutions to the problem are provided in <tt>submissions/</tt>.
+{| class="wikitable"
+! Value !! Requirement !! Comment
+|-
+| accepted || Accepted as a correct solution for all test files || At least one is required.
+|-
+| rejected || Not accepted as a correct solution. Time limit is not applied, so may not be rejected only because of time limit ||
+|-
+| time_limit_exceeded || Too slow for some test file. May also give wrong answer but not crash for any test file.  ||
+|}
 
-The expected behaviour of the submissions are specified in a UTF-8 encoded YAML file named <tt>submissions.yaml</tt>. The file must contain a map with keys "accepted", "rejected" and "time-limit-exceeded". The value for each key should be a (possibly empty) sequence of strings or maps. If a string, it's the name of the submission, if a map, then the key is the name of the submission and the value is the expected results for that submission.
+For submissions in the <tt>accepted</tt> subdirectory the expected score may be specified in  a UTF-8 encoded YAML file named <tt>score.yaml</tt>. This is only relevant for scoring problems. The file must contain a map where the keys are the name of a submission and the value is the expected score for that submission. Not all submissions must be mentioned in the file, if a submission is not mentioned any score is accepted (but the submission may not be rejected).  
+
+For submissions in the <tt>rejected</tt> subdirectory the expected reason for rejection may be specified in  a UTF-8 encoded YAML file named <tt>judgement.yaml</tt>. The file must contain a map where the keys are the name of a submission and the value is the reason for rejection for that submission. The reason for rejection must be one of <tt>WA</tt> or <tt>RTE</tt>. Not all submissions must be mentioned in the file, if a submission is not mentioned any rejection is accepted.  
 
 Every file or directory in these directories represents a separate solution.  Same requirements as for submissions with regards to filenames. It is mandatory to provide at least one accepted solution. 
 
