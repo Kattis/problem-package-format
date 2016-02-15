@@ -261,7 +261,7 @@ Correct and incorrect solutions to the problem are provided in subdirectories of
 {| class="wikitable"
 ! Value !! Requirement !! Comment
 |-
-| accepted || Accepted as a correct solution for all test files || At least one is required.
+| accepted || Accepted as a correct solution. || At least one is required.
 |-
 | rejected || Not accepted as a correct solution. Time limit is not applied, so may not be rejected only because of time limit ||
 |-
