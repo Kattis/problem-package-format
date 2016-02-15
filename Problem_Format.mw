@@ -213,41 +213,6 @@ A LaTeX file may include the Problem name using the LaTeX command <tt>\problemna
 
 The problem statements must only contain the actual problem statement, no sample data.
 
-=== LaTeX sample ===
-
-A typical problem.<language>.tex looks as follows:
-
- \problemname{Problem Name}
- 
- <Problem statement here>
- 
- \section*{Input}
- 
- <Input description here>
- 
- \section*{Output}
- 
- <Output description here>
-
-=== Markdown sample ===
-
-A typical problem.<language>.md looks as follows:
-
- Problem Name
- ------------
- 
- <Problem statement here>
- 
- Input
- -----
- 
- <Input description here>
- 
- Output
- ------
- 
- <Output description here>
-
 == Test data ==
 
 <s>
