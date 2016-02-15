@@ -180,7 +180,7 @@ A map with the following keys:
 
 === libraries ===
 <s>
-A space separated list from below. A library will be available for the languages listed.
+A set from elements below. A library will be available for the languages listed.
 </s>
 {| class="wikitable"
 ! Value !! Library !! Languages
