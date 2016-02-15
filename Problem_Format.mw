@@ -319,6 +319,12 @@ The input validator may output debug information on stdout and stderr. This info
 
 The input validator must exit with code 42 on successful validation. Any other exit code means that the input file could not be confirmed as valid.
 
+=== Dependencies ====
+
+The validator MUST NOT read any files outside those defined in
+the Invocation section. Its result MUST depend only on these
+files and the arguments.
+
 == Output Validators ==
 
 Output Validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below.  They are provided in <tt>output_validators/</tt>, and must adhere to the [[Output validator]] specification.
