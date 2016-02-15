@@ -144,6 +144,8 @@ A map with the following keys:
 |-
 | output || optional, in MiB || system default || 8 
 |-
+| code || optional, in kiB	|| system default || 128
+|-
 | compilation_time || optional, in seconds || system default || 60
 |-
 | validation_time || optional, in seconds || system default || 60
