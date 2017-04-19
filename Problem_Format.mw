@@ -215,7 +215,7 @@ A LaTeX file may include the Problem name using the LaTeX command <tt>\problemna
 
 The problem statements must only contain the actual problem statement, no sample data.
 
-== <s>Attachments</s> ==
+== Attachments ==
 
 Public, i.e. non-secret, files to be made available in addition to the problem statement and sample test data are provided in the directory <tt>attachments/</tt>.
 
