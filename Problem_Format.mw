@@ -50,7 +50,7 @@ For languages where there could be several entry points, the default entry point
 |-
 | objectivec || Objective-C || || .m ||
 |-
-| <s>pascal</s> || <s>Pascal</s> || || <s>.pas</s> ||
+| pascal || Pascal || || .pas ||
 |-
 | php || PHP || main.php || .php ||
 |-
@@ -59,6 +59,8 @@ For languages where there could be several entry points, the default entry point
 | python2 || Python 2 || main.py || .py || Matches the regex "<tt>^#!.*python2 </tt>", and default if shebang does not match any other language
 |-
 | python3 || Python 3 || main.py || .py || Matches the regex "<tt>^#!.*python3 </tt>"
+|-
+| scala || Scala || || .scala ||
 |}
 
 === Problem types ===
