@@ -256,7 +256,7 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
-| on_reject || String || break || <s>One of "break" or "continue".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup.  If "break", judging proceeds immediately to grading.  If "continue", judging continues judging the rest of the test files and subgroups within the group.</s>
+| on_reject || String || break || One of "break" or "continue".  Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup.  If "break", judging proceeds immediately to grading.  If "continue", judging continues judging the rest of the test files and subgroups within the group.
 |-
 | grading || String || default || One of "default" and "custom".
 |-
@@ -265,7 +265,14 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 | input_validator<s class="dep">_flags</s> || String <s>or map with the keys "name" and "flags"</s> || empty string || <s class="dep">arguments passed to the input validator for this test data group.</s> <s>If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>
 |-
 | output_validator<s class="dep">_flags</s> || String <s>or map with the keys "name" and "flags"</s> || empty string || <s class="dep">arguments passed to the output validator for this test data group.</s> <s>If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>
-|}
+|-
+| accept_score || String || 1 || Default score for accepted input files.  May only be specified for scoring problems.
+|-
+| reject_score || String || 0 || Default score for rejected input files.  May only be specified for scoring problems.
+|-
+| range || String || -inf +inf || Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores.  May only be specified for scoring problems.
+|-
+}
 
 == Included Code ==
 
