@@ -400,16 +400,16 @@ The grader may output debug information on stderr. This information may be displ
 
 === Default Grader Specification ===
 
-The default grader has <s>two different modes for aggregating the verdict -- ''no_errors'' and ''always_accept''</s> -- and four different modes for aggregating the score -- ''sum'', ''avg'', ''min'', ''max''.  These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [[#Test Data Groups|testdata.yaml]]).  If multiple conflicting modes are given, the last one is used.  Their meaning are as follows.
+The default grader has two different modes for aggregating the verdict -- ''no_errors'' and ''always_accept'' -- and four different modes for aggregating the score -- ''sum'', ''avg'', ''min'', ''max''.  These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [[#Test Data Groups|testdata.yaml]]).  If multiple conflicting modes are given, the last one is used.  Their meaning are as follows.
 
 {| class="wikitable"
 ! Argument !! Description
 |-
-| <tt>no_errors</tt> || <s>verdict is accepted if all subresults are accepted, otherwise it is the first of RTE, TLE, WA that is the subresult of some item in the test case group.  This is the default mode for pass-fail problems.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.</s>
+| <tt>no_errors</tt> || Default.  Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.</s>
 |-
-| <tt>always_accept</tt> || <s>verdict is always accepted.  This is the default mode for scoring problems.</s>
+| <tt>always_accept</tt> || Verdict is always accepted.
 |-
-| <tt>sum</tt> || score is sum of input scores (default).
+| <tt>sum</tt> || Default.  Score is sum of input scores.
 |-
 | <tt>avg</tt> || score is average of input scores.
 |-
