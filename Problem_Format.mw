@@ -263,8 +263,7 @@ In each test data group, a file <tt>testdata.yaml</tt> may be placed to specify 
 | reject_score || String || 0 || Default score for rejected input files.  May only be specified for scoring problems.
 |-
 | range || String || -inf +inf || Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores.  May only be specified for scoring problems.
-|-
-}
+|}
 
 == Included Code ==
 
