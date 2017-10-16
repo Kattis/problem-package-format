@@ -44,9 +44,11 @@ For languages where there could be several entry points, the default entry point
 |-
 | haskell || Haskell || || .hs ||
 |-
-| java || Java || Main|| .java ||
+| java || Java || Main || .java ||
 |-
 | javascript || JavaScript || main.js  || .js ||
+|-
+| kotlin || Kotlin || MainKt || .kt ||
 |-
 | objectivec || Objective-C || || .m ||
 |-
