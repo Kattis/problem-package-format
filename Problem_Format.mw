@@ -62,6 +62,8 @@ For languages where there could be several entry points, the default entry point
 |-
 | python3 || Python 3 || main.py || .py || Matches the regex "<tt>^#!.*python3 </tt>"
 |-
+| ruby || Ruby || || .rb ||
+|-
 | scala || Scala || || .scala ||
 |}
 
