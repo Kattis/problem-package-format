@@ -80,35 +80,35 @@ The keys are defined as below. Keys are optional unless explicitly stated. Any u
 {| class="wikitable"
 ! Key !! Type !! Default !! Comments
 |-
-| <s>uuid</s> || <s>String</s> || || <s>UUID identifying the problem.</s>
-|-
 | <s>name</s> || <s>String or map of strings</s> || || <s>Required. If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>
 |-
 | type || String || pass-fail || One of "pass-fail" and "scoring".
 |-
-| author || String <s>or sequence of strings</s> ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
+| author || String ||  || Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 |-
 | source || String ||  || Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 |-
 | source_url || String || || Link to page for source event. Must not be given if source is not.
 |-
-| license || String || unknown || License under which the problem may be used. Value have to be one of the ones defined below.
+| license || String || unknown || License under which the problem may be used. Value has to be one of the ones defined below.
 |-
 | rights_owner || String || Value of author, if present, otherwise value of source. || Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".
 |-
-| keywords || <s>String or sequence of strings</s> || || Set of keywords.
-|-
 | limits || Map with keys as defined below || see definition below ||
-|-
-| <s>libraries</s> || <s>String or sequence of strings</s> || || <s>Set of libraries as defined below.</s>
-|-
-| <s>languages</s> || <s>String or sequence of strings</s> || <s>all</s> || <s>Set of languages or "all".</s>
 |-
 | validation || String || default || One of "default" or "custom".  If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission.  For example, "custom interactive score". 
 |-
 | validator_flags || String || || Will be passed as command-line arguments to each of the output validators.
 |-
 | <s class="dep">grading</s> <s>scoring</s> || Map with keys as defined below || See definition below ||  Must only be used on scoring problems.
+|-
+| keywords || <s>String or sequence of strings</s> || || Set of keywords.
+|-
+| <s>uuid</s> || <s>String</s> || || <s>UUID identifying the problem.</s>
+|-
+| <s>libraries</s> || <s>String or sequence of strings</s> || || <s>Set of libraries as defined below.</s>
+|-
+| <s>languages</s> || <s>String or sequence of strings</s> || <s>all</s> || <s>Set of languages or "all".</s>
 |}
 
 === license ===
