@@ -50,7 +50,11 @@ For languages where there could be several entry points, the default entry point
 |-
 | kotlin || Kotlin || MainKt || .kt ||
 |-
+| lisp || Common Lisp || main.{lisp,cl} || .lisp .cl ||
+|-
 | objectivec || Objective-C || || .m ||
+|-
+| ocaml || OCaml || || *.ml ||
 |-
 | pascal || Pascal || || .pas ||
 |-
@@ -63,6 +67,8 @@ For languages where there could be several entry points, the default entry point
 | python3 || Python 3 || main.py || .py || Matches the regex "<tt>^#!.*python3 </tt>"
 |-
 | ruby || Ruby || || .rb ||
+|-
+| rust || Rust || || .rs ||
 |-
 | scala || Scala || || .scala ||
 |}
