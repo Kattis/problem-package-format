@@ -418,6 +418,8 @@ The default grader has two different modes for aggregating the verdict -- ''no_e
 |-
 | <s><tt>worst_error</tt></s> <s class="dep"><tt>no_errors</tt></s> || Default.  Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.
 |-
+| <s><tt>first_error</tt></s> || <s>Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note <tt>worst_error</tt> and <tt>first_error</tt> always give the same result if <tt>on_reject</tt> is set to <tt>break</tt>, and as such it is recommended to use the default.</s>
+|-
 | <tt>always_accept</tt> || Verdict is always accepted.
 |-
 | <tt>sum</tt> || Default.  Score is sum of input scores.
