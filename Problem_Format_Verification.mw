@@ -1,8 +1,8 @@
 == Determination of Time Limit ==
 
-The execution time limit for the problem is determined as follows. First, all the provided <tt>accepted/</tt> solutions are run. Let ''t<sub>max</sub>'' be the maximum running time of these solutions on any of the input files.  The time limit is then set to be ''t<sub>lim</sub>'' = &lceil;''t<sub>max</sub> &middot; M''&rceil; where ''M'' is the value of the time multiplier parameter from the [[#limits|limits configuration of problem.yaml]].
+The execution time limit for the problem is determined as follows. First, all the provided <tt>accepted/</tt> solutions are run. Let ''t<sub>max</sub>'' be the maximum running time of these solutions on any of the input files.  The time limit is then set to be ''t<sub>lim</sub>'' = &lceil;''t<sub>max</sub> &middot; M''&rceil; where ''M'' is the value of the time multiplier parameter from the [[Problem_Format#limits|limits configuration of problem.yaml]].
 
-Furthermore, it is required that all of the provided time limit exceeded submissions run for at least ''t<sub>lim</sub> &middot; S'' seconds, where S is the value of the time safety margin parameter from the [[#limits|limits configuration]].
+Furthermore, it is required that all of the provided time limit exceeded submissions run for at least ''t<sub>lim</sub> &middot; S'' seconds, where S is the value of the time safety margin parameter from the [[Problem_Format#limits|limits configuration]].
 
 == Verification ==
 
