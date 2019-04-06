@@ -1,3 +1,5 @@
+'''NB! This page has not been kept up to date. See reference implementation for actual behavour'''
+
 == Determination of Time Limit ==
 
 The execution time limit for the problem is determined as follows. First, all the provided <tt>accepted/</tt> solutions are run. Let ''t<sub>max</sub>'' be the maximum running time of these solutions on any of the input files.  The time limit is then set to be ''t<sub>lim</sub>'' = &lceil;''t<sub>max</sub> &middot; M''&rceil; where ''M'' is the value of the time multiplier parameter from the [[Problem_Format#limits|limits configuration of problem.yaml]].
