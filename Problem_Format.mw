@@ -292,6 +292,8 @@ Correct and incorrect solutions to the problem are provided in subdirectories of
 |-
 | accepted || Accepted as a correct solution for all test files || At least one is required.
 |-
+| partially_accepted || Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min. || Must not be used for pass-fail problems.
+|-
 | wrong_answer || Wrong answer for some test file, but is not too slow and does not crash for any test file ||
 |-
 | time_limit_exceeded || Too slow for some test file. May also give wrong answer but not crash for any test file.  ||
