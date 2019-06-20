@@ -413,7 +413,7 @@ The grader may output debug information on stderr. This information may be displ
 
 === Default Grader Specification ===
 
-The default grader has three different modes for aggregating the verdict -- ''worst_error'', ''first_error'' and ''always_accept'' -- four different modes for aggregating the score -- ''sum'', ''avg'', ''min'', ''max'' -- and two flags -- ''ignore_sample'' and ''prefer_accepted''.  These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [[#Test Data Groups|testdata.yaml]]).  If multiple conflicting modes are given, the last one is used.  Their meaning are as follows.
+The default grader has three different modes for aggregating the verdict -- ''worst_error'', ''first_error'' and ''always_accept'' -- four different modes for aggregating the score -- ''sum'', ''avg'', ''min'', ''max'' -- and two flags -- ''ignore_sample'' and ''accept_if_any_accepted''.  These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [[#Test Data Groups|testdata.yaml]]).  If multiple conflicting modes are given, the last one is used.  Their meaning are as follows.
 
 {| class="wikitable"
 ! Argument !! Type !! Description
@@ -434,7 +434,7 @@ The default grader has three different modes for aggregating the verdict -- ''wo
 |-
 | <s><tt>ignore_sample</tt></s> || flag || <s>Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.</s>
 |-
-| <s><tt>prefer_accepted</tt></s> || flag || <s>Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.</s>
+| <s><tt>accept_if_any_accepted</tt></s> || flag || <s>Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.</s>
 |}
 
 == <s>Generators</s> ==
