@@ -385,6 +385,8 @@ The grader should be possible to use as follows on the command line:
 
  ./grader [arguments] < judgeresults
 
+On success, the grader must exit with exit code 0.
+
 === Input ===
 
 A grader simply takes a list of results on standard input, and produces a single result on standard output.  The input file will have the one line per test file containing the result of judging the testfile, using the code from the table below, followed by whitespace, followed by the score.  <s>Format to be extended.</s>
