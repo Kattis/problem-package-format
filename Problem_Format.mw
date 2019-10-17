@@ -420,7 +420,7 @@ The default grader has three different modes for aggregating the verdict -- ''wo
 |-
 | <tt>worst_error</tt> <s class="dep"><tt>no_errors</tt></s> || verdict mode || Default.  Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.
 |-
-| <tt>first_error</tt></s> || verdict mode || <s>Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note <tt>worst_error</tt> and <tt>first_error</tt> always give the same result if <tt>on_reject</tt> is set to <tt>break</tt>, and as such it is recommended to use the default.
+| <tt>first_error</tt> || verdict mode || Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note <tt>worst_error</tt> and <tt>first_error</tt> always give the same result if <tt>on_reject</tt> is set to <tt>break</tt>, and as such it is recommended to use the default.
 |-
 | <tt>always_accept</tt> || verdict mode || Verdict is always accepted.
 |-
