@@ -418,9 +418,9 @@ The default grader has three different modes for aggregating the verdict -- ''wo
 {| class="wikitable"
 ! Argument !! Type !! Description
 |-
-| <s><tt>worst_error</tt></s> <s class="dep"><tt>no_errors</tt></s> || verdict mode || Default.  Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.
+| <tt>worst_error</tt> <s class="dep"><tt>no_errors</tt></s> || verdict mode || Default.  Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group.  Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.
 |-
-| <s><tt>first_error</tt></s> || verdict mode || <s>Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note <tt>worst_error</tt> and <tt>first_error</tt> always give the same result if <tt>on_reject</tt> is set to <tt>break</tt>, and as such it is recommended to use the default.</s>
+| <tt>first_error</tt></s> || verdict mode || <s>Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note <tt>worst_error</tt> and <tt>first_error</tt> always give the same result if <tt>on_reject</tt> is set to <tt>break</tt>, and as such it is recommended to use the default.
 |-
 | <tt>always_accept</tt> || verdict mode || Verdict is always accepted.
 |-
@@ -432,9 +432,9 @@ The default grader has three different modes for aggregating the verdict -- ''wo
 |-
 | <tt>max</tt> || scoring mode || score is maximum of input scores.
 |-
-| <s><tt>ignore_sample</tt></s> || flag || <s>Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.</s>
+| <tt>ignore_sample</tt> || flag || Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.
 |-
-| <s><tt>accept_if_any_accepted</tt></s> || flag || <s>Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.</s>
+| <tt>accept_if_any_accepted</tt> || flag || Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.
 |}
 
 == <s>Generators</s> ==
