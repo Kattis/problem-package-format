@@ -1,3 +1,9 @@
+---
+sort: 1
+permalink: /examples/directory_structure
+---
+# Directory structure
+
 <short_name>`/`  
 `      problem.yaml - problem configuration file`  
 `      problem_statement/`  

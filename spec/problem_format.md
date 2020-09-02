@@ -1,3 +1,11 @@
+---
+layout: default
+permalink: /spec/problem_package_format
+sort: 1
+show_diff_buttons: true
+---
+# Problem Package Format
+
 <div class="problemarchive">
 
 This is a draft. Sections <s>highlighted in yellow</s> have not been
@@ -130,6 +138,7 @@ that is accepted is additionally given a score, which is a numeric value
 (and the goal is to either maximize or minimize this value).
 
 </div>
+
 ## Problem Metadata
 
 Metadata about the problem (e.g., source, license, limits) are provided
@@ -215,6 +224,7 @@ A map with the following keys:
 | objective                | String  | max     | One of "min" or "max" specifying whether it is a minimization or a maximization problem. |
 | show\_test\_data\_groups | boolean | false   | Specifies whether test group results should be shown to the end user.                    |
 |                          |         |         |                                                                                          |
+
 </div>
 <div class="problemarchive">
 
@@ -231,6 +241,7 @@ languages listed. </s>
 | - | - | - |
 | gmp   | GMP - The GNU Multiple Precision Arithmetic Library | C, C++    |
 | boost | Boost                                               | C++       |
+
 </div>
 <div class="problemarchive">
 
@@ -305,6 +316,7 @@ problem statement and sample test data are provided in the directory
 `attachments/`.
 
 </div>
+
 ## Test data
 
 <div class="problemarchive">
@@ -420,6 +432,7 @@ followed by the expected score somewhere in the source code, e.g. in a
 comment.</s>
 
 </div>
+
 Every file or directory in these directories represents a separate
 solution. Same requirements as for submissions with regards to
 filenames. It is mandatory to provide at least one accepted solution.
@@ -561,6 +574,7 @@ score. <s>Format to be extended.</s>
 | WA   | Wrong Answer        |
 | RTE  | Run-Time Error      |
 | TLE  | Time-Limit Exceeded |
+
 </div>
 <div class="problemarchive">
 
@@ -636,6 +650,7 @@ should result in the same contents of the test data directory as running
 them once. </s>
 
 </div>
+
 ## See also
 
   - [Output validator](Output_validator "wikilink")

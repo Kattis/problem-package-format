@@ -1,0 +1,40 @@
+s {
+	text-decoration: initial;
+}
+s:not([class]), s:not([class]) code {
+	background: yellow;
+}
+s.dep, s.dep code {
+	color: lightpink;
+}
+p {
+	color: inherit;
+    background: inherit;
+}
+div.buttons {
+	padding-top: 12px;
+    display: flex;
+    justify-content: space-evenly;
+}
+div.buttons button.clics_button {
+    color: blue
+}
+div.buttons button.problemarchive_button {
+    color: red
+}
+
+/* Unified view: colours per section */
+.unified_view .clics, .unified_view .clics td, .unified_view .clics code {
+    color: blue;
+}
+.unified_view .problemarchive, .unified_view .problemarchive td, .unified_view .problemarchive code {
+    color: red;
+}
+
+/* Single view: hide irrelevant sections. */
+.clics_view .problemarchive {
+	display: none
+}
+.problemarchive_view .clics {
+	display: none
+}

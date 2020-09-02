@@ -1,3 +1,7 @@
+---
+title: Main page
+sort: 1
+---
 # Quick Introduction to the Kattis Problem Format
 
 This document is a quick introduction to writing problems for the Kattis

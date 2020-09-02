@@ -1,3 +1,9 @@
+---
+sort: 2
+permalink: /examples/problem_yaml
+---
+# Problem.yaml
+
 Typical problem.yaml:
 
 `# Problem configuration`  

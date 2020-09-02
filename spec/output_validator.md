@@ -1,12 +1,22 @@
+---
+layout: default
+permalink: /spec/output_validators
+sort: 2
+show_diff_buttons: true
+---
+# Output Validators
+
 <div class="problemarchive">
 
 ## Overview
+
 </div>
 <div class="clics">
 
 **This document is deprecated**
 
 ## Summary
+
 </div>
 
 An output validator is a program that is given the output of a submitted
@@ -30,6 +40,7 @@ World Finals, but also being useful in other ICPC-related activities
 of programming assignments in courses).
 
 ## Overview
+
 </div>
 
 A validator program must be an application (executable or interpreted)
@@ -49,20 +60,19 @@ of reporting back to the Contest Control System that invoked it:
 <div class="problemarchive">
 
 1.  The validator must give a judgment (see [Reporting a
+    judgment](#Reporting_a_judgment "wikilink")).
 </div>
 <div class="clics">
 
 1.  The validator must give a judgment (see Section 4 [Reporting a
-</div>
     judgment](#Reporting_a_judgment "wikilink")).
+</div>
 2.  The validator may give additional feedback, e.g., an explanation of
 <div class="problemarchive">
-
     the judgment to humans (see [Reporting Additional
     Feedback](#Reporting_Additional_Feedback "wikilink")).
 </div>
 <div class="clics">
-
     the judgment to human judges. This is described in Section 5
     [Reporting Additional
     Feedback](#Reporting_Additional_Feedback "wikilink").
@@ -74,53 +84,27 @@ of reporting back to the Contest Control System that invoked it:
 
 When invoked the output validator will be passed at least three command
 line parameters and the output stream to validate on stdin.
-</div>
-<div class="clics">
-
-The CCS will invoke the validator and passing it at least four command
-line parameters.
-</div>
-
-<div class="problemarchive">
 
 The validator should be possible to use as follows on the command line:
-</div>
-<div class="clics">
-
-The usage of the validator is as follows:
-</div>
-
-<div class="problemarchive">
 
 `./validator input judge_answer feedback_dir [additional_arguments] < team_output [ > team_input ]`
 </div>
 <div class="clics">
 
-`validator input judgeanswer feedbackdir < teamoutput`
-</div>
+The CCS will invoke the validator and passing it at least four command
+line parameters.
 
-<div class="problemarchive">
+The usage of the validator is as follows:
+
+`validator input judge_answer feedback_dir < team_output`
+</div>
 
 The meaning of the parameters listed above are:
-</div>
-<div class="clics">
-
-The four parameters are:
-</div>
 
   - input: a string specifying the name of the input data ﬁle which was
     used to test the program whose results are being validated.
 
-<!-- end list -->
-
-<div class="problemarchive">
-
   - judge\_answer: a string specifying the name of an arbitrary “answer
-</div>
-<div class="clics">
-
-  - judgeanswer: a string specifying the name of an arbitrary “answer
-</div>
     ﬁle” which acts as input to the validator program. The answer ﬁle
     may, but is not necessarily required to, contain the “correct
     answer” for the problem. For example, it might contain the output
@@ -130,16 +114,7 @@ The four parameters are:
     validator in some way about how to accomplish its task. The meaning
     of the contents of the answer ﬁle is not defined by this standard.
 
-<!-- end list -->
-
-<div class="problemarchive">
-
   - feedback\_dir: a string which specifies the name of a “feedback
-</div>
-<div class="clics">
-
-  - feedbackdir: a string which specifies the name of a “feedback
-</div>
     directory” in which the validator can produce "feedback files" in
     order to report additional information on the validation of the
     output ﬁle. The feedbackdir must end with a path separator
@@ -147,26 +122,16 @@ The four parameters are:
     simply appending a filename to feedbackdir gives the path to a file
     in the feedback directory.
 
-<!-- end list -->
-
 <div class="problemarchive">
 
   - additional\_arguments: in case the problem specifies additional
     validator\_flags, these are passed as additional arguments to the
     validator on the command line.
 
-<!-- end list -->
+</div>
 
   - team\_output: the output produced by the program being validated is
     given on the validator's standard input pipe.
-
-<!-- end list -->
-</div>
-<div class="clics">
-
-  - teamoutput: the output ﬁle which was produced by the program being
-    validated is given on the validator's standard input pipe.
-</div>
 
 <div class="problemarchive">
 
@@ -175,19 +140,12 @@ The four parameters are:
     to the program being validated. Please note that when running
     interactive the program will only receive the output produced by the
     validator and will not have direct access to the input file.
+</div>
 
 The two files pointed to by input and judge\_answer must exist (though
 they are allowed to be empty) and the validator program must be allowed
 to open them for reading. The directory pointed to by feedback\_dir must
 also exist.
-</div>
-<div class="clics">
-
-The two ﬁles pointed to by input and judgeanswer must exist (though they
-are allowed to be empty) and the validator program must be allowed to
-open them for reading. The directory pointed to by feedbackdir must also
-exist.
-</div>
 
 ## Reporting a judgment
 
@@ -258,15 +216,6 @@ An example of a teammessage.txt file:
 
 ### Validator standard output and standard error
 
-<div class="problemarchive">
-
 A valididator program is allowed to write any kind of debug information
 to its standard error pipe. This information may be displayed to the
 user upon invocation of the validator.
-</div>
-<div class="clics">
-
-  -   
-    A valididator program is allowed to write any kind of debug
-    information to its standard output and standard error pipes.
-</div>
