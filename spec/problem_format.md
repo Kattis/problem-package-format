@@ -8,14 +8,10 @@ show_diff_buttons: true
 
 <div class="problemarchive">
 
-This is a draft. Sections <s>highlighted in yellow</s> have not been
+Sections <s>highlighted in yellow</s> have not been
 implemented in the reference implementation of the problem format tool
 chain. This might imply that that part of the specification is more in
 flux. Sections <s class="dep">highlighted in red</s> are deprecated.
-</div>
-<div class="clics">
-
-This is a draft.
 </div>
 
 ## Overview
@@ -62,26 +58,13 @@ sequences defined by IEEE 754-2008 and may use up to double precision.
 ### Programs
 
 There are a number of different kinds of programs that may be provided
-<div class="problemarchive">
-
 in the problem package; submissions, input validators, output
-validators, graders and generators. All programs are always represented
-by a single file or directory. In other words, if a program consists of
-several files, these must be provided in a single directory. The name of
-the program, for the purpose of referring to it within the package is
-the base name of the file or the name of the directory. There can't be
-two programs of the same kind with the same name.
-</div>
-<div class="clics">
-
-in the problem package; submissions, input validators and output
-validators. All programs are always represented by a single file or
-directory. In other words, if a program consists of several files, these
-must be provided in a single directory. The name of the program, for the
-purpose of referring to it within the package is the base name of the
-file or the name of the directory. There can't be two programs of the
-same kind with the same name.
-</div>
+validators<s class="problemarchive">, graders and generators</s>.
+All programs are always represented by a single file or directory. In other
+words, if a program consists of several files, these must be provided in a
+single directory. The name of the program, for the purpose of referring to it
+within the package is the base name of the file or the name of the directory.
+There can't be two programs of the same kind with the same name.
 
 Validators and graders, but not submissions, in the form of a directory
 may include two POSIX-compliant scripts "build" and "run". Either both
@@ -124,10 +107,15 @@ entry point in the table below will be used.
 | <s class="problemarchive"> rust       </s> | <s class="problemarchive"> Rust        </s> | <s class="problemarchive">                     </s> | <s class="problemarchive"> .rs                       </s> | <s class="problemarchive">                                                                                              </s> |
 | scala      | Scala       |                     | .scala                    |                                                                                              |
 
+```note
+
+Should we merge the three new languages to the CLICS spec as well?
+```
 
 <div class="problemarchive">
 
 ### Problem types
+
 
 There are two types of problems: <em>pass-fail</em> problems and
 <em>scoring</em> problems. In pass-fail problems, submissions are
@@ -153,23 +141,28 @@ stated. Any unknown keys should be treated as an error.
 | - | - | - | - |
 | <s class="problemarchive"> <s>name</s>                               </s> | <s class="problemarchive"> <s>String or map of strings</s>      </s> | <s class="problemarchive">                                                         </s> | <s class="problemarchive"> <s>Required. If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>                                                                  </s> |
 | <s class="problemarchive"> type                                      </s> | <s class="problemarchive"> String                               </s> | <s class="problemarchive"> pass-fail                                               </s> | <s class="problemarchive"> One of "pass-fail" and "scoring".                                                                                                                                                                                                                                                                                                              </s> |
-| <s class="clics"> uuid             </s> | <s class="clics"> String                         </s> | <s class="clics">                                                         </s> | <s class="clics"> UUID identifying the problem.                                                                                                                                                                                                                                         </s> |
 | author                                    | String                               |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.                                                                          |
 | source                                    | String                               |                                                         | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.                                                                                                                                                                                                        |
 | source\_url                               | String                               |                                                         | Link to page for source event. Must not be given if source is not.                                                                                                                                                                                                                                                                             |
 | license                                   | String                               | unknown                                                 | License under which the problem may be used. Value has to be one of the ones defined below.                                                                                                                                                                                                                                                    |
 | rights\_owner                             | String                               | Value of author, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".                                                                                                   |
-| <s class="clics"> keywords         </s> | <s class="clics"> String or sequence of strings  </s> | <s class="clics">                                                         </s> | <s class="clics"> Set of keywords.                                                                                                                                                                                                                                                      </s> |
 | limits                                    | Map with keys as defined below       | see definition below                                    |                                                                                                                                                                                                                                                                                                                                                |
-| <s class="problemarchive"> validation                                </s> | <s class="problemarchive"> String                               </s> | <s class="problemarchive"> default                                                 </s> | <s class="problemarchive"> One of "default" or "custom". If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive score". </s> |
-| <s class="clics"> validation       </s> | <s class="clics"> String                         </s> | <s class="clics"> default                                                 </s> | <s class="clics"> One of "default" or "custom".                                                                                                                                                                                                                                         </s> |
+| validation                                 |  String                                |  default                                                  |  One of "default" or "custom". <s class="problemarchive">If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive score". </s> |
 | validator\_flags                          | String                               |                                                         | Will be passed as command-line arguments to each of the output validators.                                                                                                                                                                                                                                                                     |
 | <s class="problemarchive"> <s class="dep">grading</s> <s>scoring</s> </s> | <s class="problemarchive"> Map with keys as defined below       </s> | <s class="problemarchive"> See definition below                                    </s> | <s class="problemarchive"> Must only be used on scoring problems.                                                                                                                                                                                                                                                                                                         </s> |
-| <s class="problemarchive"> keywords                                  </s> | <s class="problemarchive"> <s>String or sequence of strings</s> </s> | <s class="problemarchive">                                                         </s> | <s class="problemarchive"> Set of keywords.                                                                                                                                                                                                                                                                                                                               </s> |
-| <s class="problemarchive"> <s>uuid</s>                               </s> | <s class="problemarchive"> <s>String</s>                        </s> | <s class="problemarchive">                                                         </s> | <s class="problemarchive"> <s>UUID identifying the problem.</s>                                                                                                                                                                                                                                                                                                           </s> |
+|  keywords                                   |  <s>String or sequence of strings</s>  |                                                           |  Set of keywords. |
+|  <s>uuid</s>                                |  <s>String</s>                         |                                                           |  <s>UUID identifying the problem.</s>                                                                                                                                                                                                                                                                                                            |
 | <s class="problemarchive"> <s>libraries</s>                          </s> | <s class="problemarchive"> <s>String or sequence of strings</s> </s> | <s class="problemarchive">                                                         </s> | <s class="problemarchive"> <s>Set of libraries as defined below.</s>                                                                                                                                                                                                                                                                                                      </s> |
 | <s class="problemarchive"> <s>languages</s>                          </s> | <s class="problemarchive"> <s>String or sequence of strings</s> </s> | <s class="problemarchive"> <s>all</s>                                              </s> | <s class="problemarchive"> <s>Set of languages or "all".</s>                                                                                                                                                                                                                                                                                                              </s> |
 
+```note
+
+`uuid` is part of the CLICS spec, while `name` is not. Shouldn't that be the other way around? I've never seen `uuid` been used.
+
+We should allow the `validation: custom interactive` for CLICS as well.
+
+Do we need `keywords` in CLICS?
+```
 
 ### license
 
@@ -248,13 +241,18 @@ languages listed. </s>
 
 ### languages
 
-<s> A space separated list of language code from the table in the
+<s>
+
+A space separated list of language code from the table in the
 overview section or *all*.
 
 If a list is given, the problem may only be solved using those
-languages. </s>
+languages.
+
+</s>
 
 </div>
+
 ## Problem Statements
 
 The problem statement of the problem is provided in the directory
@@ -263,46 +261,34 @@ The problem statement of the problem is provided in the directory
 This directory must contain one file per language, for at least one
 language, named `problem.`<language>`.`<filetype>, that contains the
 problem text itself, including input and output specifications, but not
-<div class="problemarchive">
-
-sample input and output. <s class='dep'>Language must be given as an ISO
+sample input and output. <s class='dep problemarchive'>Language must be given as an ISO
 639-1 alpha-2 language code.</s> <s>Language must be given as the
 shortest ISO 639 code. If needed a hyphen and a ISO 3166-1 alpha-2 code
 may be appended to ISO 639 code.</s> Optionally, the language code can
 be left out, the default is then English (`en`). Filetype can be either
-`tex` for LaTeX files<s>, `md` for Markdown, or `pdf` for PDF</s>.
+`tex` for LaTeX files<s class='problemarchive'><s>, `md` for Markdown, or `pdf` for PDF</s></s>.
+
+<div class="problemarchive">
 
 Please note that many kinds of transformations on the problem
 statements, such as conversion to HTML or styling to fit in a single
 document containing many problems will not be possible for PDF problem
 statements, so using this format should be avoided if at all possible.
-</div>
-<div class="clics">
 
-sample input and output. Language must be given as the shortest ISO 639
-code. If needed a hyphen and a ISO 3166-1 alpha-2 code may be appended
-to ISO 639 code. Optionally, the language code can be left out, the
-default is then English (`en`). Filetype must be `tex` for LaTeX files.
 </div>
 
 Auxiliary files needed by the problem statement files must all be in
-<short_name>`/problem_statement/` , `problem.`<language>`.`<filetype>
+`<short_name>/problem_statement/`. `problem.<language>.<filetype>`
 should reference auxiliary files as if the working directory is
-<short_name>`/problem_statement/`. Image file formats supported are
+`<short_name>/problem_statement/`. Image file formats supported are
 `.png`, `.jpg`, `.jpeg`, and `.pdf`.
 
-<div class="problemarchive">
 
 A LaTeX file may include the Problem name using the LaTeX command
-`\problemname` in case LaTeX formatting of the title is wanted. <s>If
-it's not included the problem name specified in `problem.yaml` will be
-used.</s>
-</div>
-<div class="clics">
-
-The LaTeX file may include the Problem name using the LaTeX command
 `\problemname` in case LaTeX formatting of the title is wanted.
-</div>
+<s class="problemarchive"><s>If
+it's not included the problem name specified in `problem.yaml` will be
+used.</s> </s>
 
 The problem statements must only contain the actual problem statement,
 no sample data.
@@ -321,9 +307,13 @@ problem statement and sample test data are provided in the directory
 
 <div class="problemarchive">
 
-<s> If input generators are used the files described here might not be
+<s>
+
+If input generators are used the files described here might not be
 available in this directory. This section describes what must be the
-case after running the generators. </s>
+case after running the generators.
+
+</s>
 
 </div>
 The test data are provided in subdirectories of `data/`. The sample data
@@ -355,6 +345,11 @@ name.
 
 ### Test Data Groups
 
+```note
+
+Are testdata groups intentionally part of the CLICS spec?
+```
+
 The test data for the problem can be organized into a tree-like
 structure. Each node of this tree is represented by a directory and
 referred to as a test data group. Each test data group may consist of
@@ -370,8 +365,8 @@ The <em>result</em> of a test data group is computed by applying a
 the group. See [Graders](#Graders "wikilink") for more details.
 
 Test files and groups will be used in lexicographical order on file base
-name. If a specific order is desired a numbered prefix such as 00, 01,
-02, 03, and so on, can be used.
+name. If a specific order is desired a numbered prefix such as `00`, `01`,
+`02`, `03`, and so on, can be used.
 
 In each test data group, a file `testdata.yaml` may be placed to specify
 how the result of the test data group should be computed. If such a file
@@ -384,13 +379,11 @@ group will be used. The format of `testdata.yaml` is as follows:
 | <s class="problemarchive"> on\_reject                                  </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> break        </s> | <s class="problemarchive"> One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test files and subgroups within the group. </s> |
 | <s class="problemarchive"> grading                                     </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> default      </s> | <s class="problemarchive"> One of "default" and "custom".                                                                                                                                                                                                                                                                                    </s> |
 | <s class="problemarchive"> grader\_flags                               </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> empty string </s> | <s class="problemarchive"> arguments passed to the grader for this test data group.                                                                                                                                                                                                                                                          </s> |
-| <s class="problemarchive"> input\_validator<s class="dep">\_flags</s>  </s> | <s class="problemarchive"> String <s>or map with the keys "name" and "flags"</s> </s> | <s class="problemarchive"> empty string </s> | <s class="problemarchive"> <s class="dep">arguments passed to the input validator for this test data group.</s> <s>If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>                       </s> |
-| <s class="problemarchive"> output\_validator<s class="dep">\_flags</s> </s> | <s class="problemarchive"> String <s>or map with the keys "name" and "flags"</s> </s> | <s class="problemarchive"> empty string </s> | <s class="problemarchive"> <s class="dep">arguments passed to the output validator for this test data group.</s> <s>If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>                    </s> |
+| input\_validator<s class="dep problemarchive">\_flags</s></s> |  String <s>or map with the keys "name" and "flags"</s> |  empty string  |  <s class="dep problemarchive">arguments passed to the input validator for this test data group.</s> <s>If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>                       </s> |
+| output\_validator<s class="dep problemarchive">\_flags</s></s> |  String <s>or map with the keys "name" and "flags"</s> |  empty string  |  <s class="dep problemarchive">arguments passed to the output validator for this test data group.</s> <s>If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>                    </s> |
 | <s class="problemarchive"> accept\_score                               </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> 1            </s> | <s class="problemarchive"> Default score for accepted input files. May only be specified for scoring problems.                                                                                                                                                                                                                               </s> |
 | <s class="problemarchive"> reject\_score                               </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> 0            </s> | <s class="problemarchive"> Default score for rejected input files. May only be specified for scoring problems.                                                                                                                                                                                                                               </s> |
 | <s class="problemarchive"> range                                       </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> \-inf +inf   </s> | <s class="problemarchive"> Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.                                                                                                                                              </s> |
-| <s class="clics"> input\_validator  </s> | <s class="clics"> String or map with the keys "name" and "flags" </s> | <s class="clics"> empty string </s> | <s class="clics"> If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.       </s> |
-| <s class="clics"> output\_validator </s> | <s class="clics"> String or map with the keys "name" and "flags" </s> | <s class="clics"> empty string </s> | <s class="clics"> If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s> |
 
 <div class="problemarchive">
 
@@ -426,10 +419,14 @@ subdirectories of `submissions/`. The possible subdirectories are:
 
 <div class="problemarchive">
 
-<s>For submissions of type `accepted` and scoring problems, the expected
+<s>
+
+For submissions of type `accepted` and scoring problems, the expected
 score can be specified by including the string `@EXPECTED_SCORE@:`
 followed by the expected score somewhere in the source code, e.g. in a
-comment.</s>
+comment.
+
+</s>
 
 </div>
 
@@ -443,15 +440,8 @@ to standard output.
 ## Input Validators
 
 Input Validators, for verifying the correctness of the input files, are
-<div class="problemarchive">
-
-provided in <s class="dep">`input_format_validators/`</s>
+provided in <s class="dep problemarchive">`input_format_validators/`</s>
 <s>`input_validators/`</s>. Input validators can be specified as
-</div>
-<div class="clics">
-
-provided in `input_validators/`. Input validators can be specified as
-</div>
 VIVA-files (with file ending `.viva`), Checktestdata-file (with file
 ending `.ctd`), or as a program.
 
@@ -471,7 +461,7 @@ When invoked the input validator will get the input file on stdin.
 
 The validator should be possible to use as follows on the command line:
 
-` ./validator [arguments] < inputfile`
+`./validator [arguments] < inputfile`
 
 ### Output
 
@@ -553,7 +543,7 @@ on stdin and is expected to produce an aggregate result on stdout.
 
 The grader should be possible to use as follows on the command line:
 
-`./grader [arguments] < judgeresults`
+`./grader [arguments] < judgeresults`
 
 On success, the grader must exit with exit code 0.
 
@@ -626,12 +616,23 @@ modes are given, the last one is used. Their meaning are as follows.
 
 ## <s>Generators</s>
 
-<s> Input generators are programs that generates input. They are
-provided in `generators/`. </s>
+<s>
+
+Input generators are programs that generates input. They are
+provided in `generators/`.
+
+```note
+
+TODO: Add the new `generators.yaml` specification.
+```
+
+</s>
 
 ### <s>Invocation</s>
 
-<s> A generator program must be an application (executable or
+<s>
+
+A generator program must be an application (executable or
 interpreted) capable of being invoked with a command line call.
 
 The generators will be run with the test data directory (`data/`) as the
@@ -640,15 +641,16 @@ directory and should create any kind of test data file as defined in the
 test data section. The generator may not read or write anything outside
 the test data directory. The generators will be run in lexicographical
 order on name. If a specific order is desired a numbered prefix such as
-00, 01, 02, 03, and so on, can be used.
+`00`, `01`, `02`, `03`, and so on, can be used.
 
 The generators must be deterministic, i.e. always produce the same input
 file when give the same arguments.
 
 The generators must be idempotent, i.e. running them multiple times
 should result in the same contents of the test data directory as running
-them once. </s>
+them once.
 
+</s>
 </div>
 
 ## See also

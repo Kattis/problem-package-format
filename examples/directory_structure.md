@@ -4,58 +4,95 @@ permalink: /examples/directory_structure
 ---
 # Directory structure
 
-<short_name>`/`  
-`      problem.yaml - problem configuration file`  
-`      problem_statement/`  
-`              problem.tex - problem statement`  
-`              - any files that problem.tex needs to include, e.g. images`  
-`      data/`  
-`              sample/`  
-`                      *.in - sample input files`  
-`                      *.ans - sample answer files`  
-`              secret/`  
-`                      *.in - input files`  
-`                      *.ans - answer files`  
-`                      *.txt - optional data file description`  
-`      include/`  
-`              `<language>`/`  
-`                      - any files that should be included with all submissions in `<language>  
-`      submissions/`  
-`              - single file or directory per solution`  
-`      input_format_validators/`  
-`              - single file or directory per validator`  
-`      output_validators/`  
-`              - single file or directory per validator`
+```text
+<short_name>/
+      problem.yaml - problem configuration file
+      problem_statement/
+              problem.tex - problem statement
+              - any files that problem.tex needs to include, e.g. images
+      data/
+              sample/
+                      *.in - sample input files
+                      *.ans - sample answer files
+              secret/
+                      *.in - input files
+                      *.ans - answer files
+                      *.hint - optional hint for the team
+                      *.desc - optional data description
+                      *.jpg, *.png, *.svg - visualization of the testcase
+      include/
+              <language>/
+                      - any files that should be included with all submissions in <language>
+      submissions/
+              accepted/
+                - single file or directory per solution
+              time_limit_exceeded/
+                - single file or directory per solution
+              wrong_answer/
+                - single file or directory per solution
+              run_time_error/
+                - single file or directory per solution
+      input_validators/
+              - single file or directory per validator
+      output_validators/
+              - single file or directory per validator
+```
 
 #### Sample Directory / Filenames
 
-This is a sample list of directories/files for a problem named *squares*
+This is a sample list of directories/files for a problem named `heightprofile`:
 
-`squares/problem.yaml`  
-`squares/problem_statement/problem.en.tex`  
-`squares/problem_statement/problem.sv.tex`  
-`squares/problem_statement/square1.png`  
-`squares/problem_statement/square2.png`  
-`squares/data/sample/squares_sample1.in `  
-`squares/data/sample/squares_sample1.ans`  
-`squares/data/sample/squares_sample2.in `  
-`squares/data/sample/squares_sample2.ans`  
-`squares/data/secret/squares1.in `  
-`squares/data/secret/squares1.ans`  
-`squares/data/secret/squares1.txt`  
-`squares/data/secret/squares2_cornercases.in `  
-`squares/data/secret/squares2_cornercases.ans`  
-`squares/data/secret/squares3_bigcases.in`  
-`squares/data/secret/squares3_bigcases.ans`  
-`squares/submissions/squares.cpp`  
-`squares/submissions/Squares.java`  
-`squares/submissions/squares.c`  
-`squares/submissions/wrong.cpp`  
-`squares/submissions/tle.c`  
-`squares/submissions/rte.c`  
-`squares/input_format_validators/squares_input_checker1.py`  
-`squares/input_format_validators/squares_input_checker2/check.c`  
-`squares/input_format_validators/squares_input_checker2/data.h`  
-`squares/output_validators/squares_validator/validator.f`  
-`squares/output_validators/squares_validator/build`  
-`squares/output_validators/squares_validator/run`
+```sh
+heightprofile
+├── problem.yaml
+├── problem_statement
+│   ├── bike.eps
+│   ├── problem.en.tex
+│   ├── profile.asy
+│   └── profile.pdf
+├── data
+│   ├── sample
+│   │   ├── 1.ans
+│   │   ├── 1.in
+│   │   ├── 1.png
+│   │   ├── 2.ans
+│   │   ├── 2.in
+│   │   └── 2.png
+│   ├── secret
+│   │   ├── 01.ans
+│   │   ├── 01.desc
+│   │   ├── 01.in
+│   │   ├── 01.png
+│   │   ├── 02.ans
+│   │   ├── 02.in
+│   │   ├── 02.png
+│   │   └── ...
+├── input_validators
+│   ├── input_validator
+│   │   ├── input_validator.cpp
+│   │   └── validation.h
+│   ├── profile.ctd
+│   └── validate.py
+├── output_validators
+│   └── validate.ctd
+└── submissions
+    ├── accepted
+    │   ├── alex.java
+    │   ├── paul.cpp
+    │   ├── ragnar.cpp
+    │   └── tobi.java
+    ├── time_limit_exceeded
+    │   ├── jeroen_n2k.java
+    │   ├── lukas_n2k.cc
+    │   ├── lukas_n2k_sse.cc
+    │   ├── lukas_n2k_v2.cc
+    │   └── lukas_n2k_v2_sse.cc
+    └── wrong_answer
+        ├── jeroen_parsingerror.java
+        ├── paul-unstable-sort.cpp
+        ├── ragnar-2.cpp
+        ├── ragnar-4.cpp
+        ├── ragnar.cpp
+        └── tobi.cpp
+
+```
