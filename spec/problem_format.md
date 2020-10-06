@@ -16,21 +16,9 @@ flux. Sections <s class="dep">highlighted in red</s> are deprecated.
 
 ## Overview
 
-<div class="problemarchive">
-
 This document describes the format of a *Kattis problem package*, used
 for distributing and sharing problems for algorithmic programming
 contests as well as educational use.
-</div>
-<div class="clics">
-
-This document describes the problem format used at the ICPC World
-Finals. It is intended to be a proper subset of the [Kattis problem
-package
-format](http://www.problemarchive.org/wiki/index.php/Problem_Format),
-i.e. problems following this spec should be valid according to the
-Kattis format as well, with no changes, but not necessarily vice versa.
-</div>
 
 ### General Requirements
 
@@ -95,22 +83,18 @@ entry point in the table below will be used.
 | java       | Java        | Main                | .java                     |                                                                                              |
 | javascript | JavaScript  | main.js             | .js                       |                                                                                              |
 | kotlin     | Kotlin      | MainKt              | .kt                       |                                                                                              |
-| <s class="problemarchive"> lisp       </s> | <s class="problemarchive"> Common Lisp </s> | <s class="problemarchive"> main.{lisp,cl}      </s> | <s class="problemarchive"> .lisp .cl                 </s> | <s class="problemarchive">                                                                                              </s> |
+| lisp       | Common Lisp | main.{lisp,cl}      | .lisp, .cl                 |                                                                                              |
 | objectivec | Objective-C |                     | .m                        |                                                                                              |
-| <s class="problemarchive"> ocaml      </s> | <s class="problemarchive"> OCaml       </s> | <s class="problemarchive">                     </s> | <s class="problemarchive"> \*.ml                     </s> | <s class="problemarchive">                                                                                              </s> |
+| ocaml      | OCaml       |                     | .ml                     |                                                                                              |
 | pascal     | Pascal      |                     | .pas                      |                                                                                              |
 | php        | PHP         | main.php            | .php                      |                                                                                              |
 | prolog     | Prolog      |                     | .pl                       |                                                                                              |
 | python2    | Python 2    | main.py             | .py                       | Matches the regex "`^#!.*python2`", and default if shebang does not match any other language |
 | python3    | Python 3    | main.py             | .py                       | Matches the regex "`^#!.*python3`"                                                           |
 | ruby       | Ruby        |                     | .rb                       |                                                                                              |
-| <s class="problemarchive"> rust       </s> | <s class="problemarchive"> Rust        </s> | <s class="problemarchive">                     </s> | <s class="problemarchive"> .rs                       </s> | <s class="problemarchive">                                                                                              </s> |
+| rust       | Rust        |                     | .rs                       |                                                                                              |
 | scala      | Scala       |                     | .scala                    |                                                                                              |
 
-```note
-
-Should we merge the three new languages to the CLICS spec as well?
-```
 
 <div class="problemarchive">
 
@@ -147,7 +131,7 @@ stated. Any unknown keys should be treated as an error.
 | license                                   | String                               | unknown                                                 | License under which the problem may be used. Value has to be one of the ones defined below.                                                                                                                                                                                                                                                    |
 | rights\_owner                             | String                               | Value of author, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".                                                                                                   |
 | limits                                    | Map with keys as defined below       | see definition below                                    |                                                                                                                                                                                                                                                                                                                                                |
-| validation                                 |  String                                |  default                                                  |  One of "default" or "custom". <s class="problemarchive">If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive score". </s> |
+| validation                                |  String                              |  default                                                |  One of "default" or "custom". If "custom", may be followed by <s class="problemarchive">some subset of "score" and</s> "interactive", where<s class="problemarchive"> "score" indicates that the validator produces a score (this is only valid for scoring problems), and</s> "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive<s class="problemarchive"> score</s>". |
 | validator\_flags                          | String                               |                                                         | Will be passed as command-line arguments to each of the output validators.                                                                                                                                                                                                                                                                     |
 | <s class="problemarchive"> <s class="dep">grading</s> <s>scoring</s> </s> | <s class="problemarchive"> Map with keys as defined below       </s> | <s class="problemarchive"> See definition below                                    </s> | <s class="problemarchive"> Must only be used on scoring problems.                                                                                                                                                                                                                                                                                                         </s> |
 |  keywords                                   |  <s>String or sequence of strings</s>  |                                                           |  Set of keywords. |
@@ -157,11 +141,7 @@ stated. Any unknown keys should be treated as an error.
 
 ```note
 
-`uuid` is part of the CLICS spec, while `name` is not. Shouldn't that be the other way around? I've never seen `uuid` been used.
-
-We should allow the `validation: custom interactive` for CLICS as well.
-
-Do we need `keywords` in CLICS?
+TODO: Further discussion over the `name` key is needed.
 ```
 
 ### license
@@ -261,12 +241,16 @@ The problem statement of the problem is provided in the directory
 This directory must contain one file per language, for at least one
 language, named `problem.`<language>`.`<filetype>, that contains the
 problem text itself, including input and output specifications, but not
-sample input and output. <s class='dep problemarchive'>Language must be given as an ISO
-639-1 alpha-2 language code.</s> <s>Language must be given as the
+sample input and output. Language must be given as the
 shortest ISO 639 code. If needed a hyphen and a ISO 3166-1 alpha-2 code
-may be appended to ISO 639 code.</s> Optionally, the language code can
+may be appended to ISO 639 code. Optionally, the language code can
 be left out, the default is then English (`en`). Filetype can be either
-`tex` for LaTeX files<s class='problemarchive'><s>, `md` for Markdown, or `pdf` for PDF</s></s>.
+`tex` for LaTeX files<s>, `md` for Markdown,</s><s class='problemarchive'><s> or `pdf` for PDF</s></s>.
+
+```note
+
+TODO: More discussion is needed over allowing PDF in the CLICS spec.
+```
 
 <div class="problemarchive">
 
@@ -293,15 +277,11 @@ used.</s> </s>
 The problem statements must only contain the actual problem statement,
 no sample data.
 
-<div class="problemarchive">
-
 ## Attachments
 
 Public, i.e. non-secret, files to be made available in addition to the
 problem statement and sample test data are provided in the directory
 `attachments/`.
-
-</div>
 
 ## Test data
 
@@ -345,10 +325,7 @@ name.
 
 ### Test Data Groups
 
-```note
-
-Are testdata groups intentionally part of the CLICS spec?
-```
+<s class="problemarchive">
 
 The test data for the problem can be organized into a tree-like
 structure. Each node of this tree is represented by a directory and
@@ -356,17 +333,24 @@ referred to as a test data group. Each test data group may consist of
 zero or more test cases (i.e., input-answer files) and zero or more
 subgroups of test data (i.e., subdirectories).
 
+</s>
+
 At the top level, the test data is divided into exactly two groups:
-`sample` and `secret`, but these two groups may be further split into
-subgroups as desired.
+`sample` and `secret`. <s class="problemarchive">These two groups may be further split into subgroups as desired. </s>
+
+<s class="problemarchive">
 
 The <em>result</em> of a test data group is computed by applying a
 <em>grader</em> to all of the sub-results (test cases and subgroups) in
 the group. See [Graders](#Graders "wikilink") for more details.
 
+</s>
+
 Test files and groups will be used in lexicographical order on file base
 name. If a specific order is desired a numbered prefix such as `00`, `01`,
 `02`, `03`, and so on, can be used.
+
+<s class="problemarchive">
 
 In each test data group, a file `testdata.yaml` may be placed to specify
 how the result of the test data group should be computed. If such a file
@@ -376,14 +360,16 @@ group will be used. The format of `testdata.yaml` is as follows:
 
 | Key                                         | Type                                                  | Default      | Comments                                                                                                                                                                                                                                                                                                          |
 | - | - | - | - |
-| <s class="problemarchive"> on\_reject                                  </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> break        </s> | <s class="problemarchive"> One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test files and subgroups within the group. </s> |
-| <s class="problemarchive"> grading                                     </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> default      </s> | <s class="problemarchive"> One of "default" and "custom".                                                                                                                                                                                                                                                                                    </s> |
-| <s class="problemarchive"> grader\_flags                               </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> empty string </s> | <s class="problemarchive"> arguments passed to the grader for this test data group.                                                                                                                                                                                                                                                          </s> |
-| input\_validator<s class="dep problemarchive">\_flags</s></s> |  String <s>or map with the keys "name" and "flags"</s> |  empty string  |  <s class="dep problemarchive">arguments passed to the input validator for this test data group.</s> <s>If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>                       </s> |
-| output\_validator<s class="dep problemarchive">\_flags</s></s> |  String <s>or map with the keys "name" and "flags"</s> |  empty string  |  <s class="dep problemarchive">arguments passed to the output validator for this test data group.</s> <s>If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>                    </s> |
-| <s class="problemarchive"> accept\_score                               </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> 1            </s> | <s class="problemarchive"> Default score for accepted input files. May only be specified for scoring problems.                                                                                                                                                                                                                               </s> |
-| <s class="problemarchive"> reject\_score                               </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> 0            </s> | <s class="problemarchive"> Default score for rejected input files. May only be specified for scoring problems.                                                                                                                                                                                                                               </s> |
-| <s class="problemarchive"> range                                       </s> | <s class="problemarchive"> String                                                </s> | <s class="problemarchive"> \-inf +inf   </s> | <s class="problemarchive"> Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.                                                                                                                                              </s> |
+| on\_reject                                  | String                                                | break        | One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test files and subgroups within the group. |
+| grading                                     | String                                                | default      | One of "default" and "custom".                                                                                                                                                                                                                                                                                    |
+| grader\_flags                               | String                                                | empty string | arguments passed to the grader for this test data group.                                                                                                                                                                                                                                                          |
+| input\_validator<s class="dep problemarchive">\_flags</s></s> |  Stringor map with the keys "name" and "flags"</s> |  empty string  | arguments passed to the input validator for this test data group.</s>If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>                       |
+| output\_validator<s class="dep problemarchive">\_flags</s></s> |  Stringor map with the keys "name" and "flags"</s> |  empty string  | arguments passed to the output validator for this test data group.</s>If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>                    |
+| accept\_score                               | String                                                | 1            | Default score for accepted input files. May only be specified for scoring problems.                                                                                                                                                                                                                               |
+| reject\_score                               | String                                                | 0            | Default score for rejected input files. May only be specified for scoring problems.                                                                                                                                                                                                                               |
+| range                                       | String                                                | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.                                                                                                                                              |
+
+</s>
 
 <div class="problemarchive">
 

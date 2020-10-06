@@ -2,21 +2,8 @@
 layout: default
 permalink: /spec/output_validators
 sort: 2
-show_diff_buttons: true
 ---
 # Output Validators
-
-<div class="clics">
-
-## Summary
-
-This document describes a standard for Output Validators for Programming
-Contest Control Systems. It is designed especially with ACM ICPC-style
-contests in mind. This includes being well suited for use in the ICPC
-World Finals, but also being useful in other ICPC-related activities
-(such as regional contests, local training contests, or even evaluation
-of programming assignments in courses).
-</div>
 
 ## Overview
 

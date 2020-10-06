@@ -4,6 +4,11 @@ sort: 1
 ---
 # Quick Introduction to the Kattis Problem Format
 
+```note
+
+TODO: Rewrite this page and explain differences between CLICS and Kattis specs.
+```
+
 This document is a quick introduction to writing problems for the Kattis
 Problem Format and using Kattis Problem Tools. For more thorough
 documentation about the Kattis Problem Format, please refer to
