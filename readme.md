@@ -2,11 +2,25 @@
 title: Main page
 sort: 1
 ---
-# Quick Introduction to the Kattis Problem Format
+
+# Problem Package Format Specification
+
+This site contains the specification for the (Kattis) Problem Package Format.
+It is available in two places:
+
+- The latest version: <https://www.kattis.com/problem-package-format>.
+- The version used in the current ICPC World Finals cycle: <https://icpc.io/problem-package-format>.
+
+Development happens in the GitHub repository: <https://github.com/Kattis/problem-package-format>.
+
+The ICPC uses a strict subset of the larger Kattis version of the spec.
+Click `ICPC` or `Kattis` in the sidebar on the [problem package format](spec/problem_package_format) page to select the version.
+
+## Overview
 
 ```note
-
-TODO: Rewrite this page and explain differences between CLICS and Kattis specs.
+TODO: Should we create a separate `overview` page instead? Or maybe just link to one of the examples?
+The main page doesn't have the TOC in the sidebar, so I think it's best to keep this page concise.
 ```
 
 This document is a quick introduction to writing problems for the Kattis
@@ -24,6 +38,10 @@ download.) These were the ones used for NCPC 2015. You can see how they
 appear on Kattis in HTML here: <https://ncpc15.kattis.com/problems>
 
 ## Kattis Problem Tools
+
+```note
+TODO: We could create a separate page with a quick tooling overview for this.
+```
 
 Here is the source to the Kattis problemtools:
 <https://github.com/Kattis/problemtools> You can install these on Ubuntu
@@ -115,3 +133,13 @@ When judging on Kattis, Kattis's default output validator is lenient on
 whitespace changing differences, but this can be made strict. Also,
 floating-point outputs can be judged to be correct within some specified
 tolerance (relative or absolute), which is really nice.
+
+
+
+
+## Development notes
+
+Run this website locally using `bundle exec jekyll serve` from the repository root.
+
+`bundle` is a Ruby package manager and can be installed with the `ruby-bundler` package.
+Run `bundle install` from the repository root to install the gems needed to build the website.

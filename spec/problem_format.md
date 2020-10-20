@@ -6,8 +6,10 @@ show_diff_buttons: true
 ---
 # Problem Package Format
 
-<div class="problemarchive">
+This is the <s class="icpc">ICPC</s><s class="kattis">Kattis</s> version of the specification.
+Click on <s class="icpc">Kattis</s><s class="kattis">ICPC</s> in the sidebar to switch.
 
+<div class="kattis">
 Sections <s>highlighted in yellow</s> have not been
 implemented in the reference implementation of the problem format tool
 chain. This might imply that that part of the specification is more in
@@ -47,7 +49,7 @@ sequences defined by IEEE 754-2008 and may use up to double precision.
 
 There are a number of different kinds of programs that may be provided
 in the problem package; submissions, input validators, output
-validators<s class="problemarchive">, graders and generators</s>.
+validators<s class="kattis">, graders and generators</s>.
 All programs are always represented by a single file or directory. In other
 words, if a program consists of several files, these must be provided in a
 single directory. The name of the program, for the purpose of referring to it
@@ -96,7 +98,7 @@ entry point in the table below will be used.
 | scala      | Scala       |                     | .scala                    |                                                                                              |
 
 
-<div class="problemarchive">
+<div class="kattis">
 
 ### Problem types
 
@@ -123,21 +125,21 @@ stated. Any unknown keys should be treated as an error.
 
 | Key                                       | Type                                 | Default                                                 | Comments                                                                                                                                                                                                                                                                                                                                       |
 | - | - | - | - |
-| <s class="problemarchive"> <s>name</s>                               </s> | <s class="problemarchive"> <s>String or map of strings</s>      </s> | <s class="problemarchive">                                                         </s> | <s class="problemarchive"> <s>Required. If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>                                                                  </s> |
-| <s class="problemarchive"> type                                      </s> | <s class="problemarchive"> String                               </s> | <s class="problemarchive"> pass-fail                                               </s> | <s class="problemarchive"> One of "pass-fail" and "scoring".                                                                                                                                                                                                                                                                                                              </s> |
+| <s class="kattis"> <s>name</s>                               </s> | <s class="kattis"> <s>String or map of strings</s>      </s> | <s class="kattis">                                                         </s> | <s class="kattis"> <s>Required. If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>                                                                  </s> |
+| <s class="kattis"> type                                      </s> | <s class="kattis"> String                               </s> | <s class="kattis"> pass-fail                                               </s> | <s class="kattis"> One of "pass-fail" and "scoring".                                                                                                                                                                                                                                                                                                              </s> |
 | author                                    | String                               |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.                                                                          |
 | source                                    | String                               |                                                         | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.                                                                                                                                                                                                        |
 | source\_url                               | String                               |                                                         | Link to page for source event. Must not be given if source is not.                                                                                                                                                                                                                                                                             |
 | license                                   | String                               | unknown                                                 | License under which the problem may be used. Value has to be one of the ones defined below.                                                                                                                                                                                                                                                    |
 | rights\_owner                             | String                               | Value of author, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".                                                                                                   |
 | limits                                    | Map with keys as defined below       | see definition below                                    |                                                                                                                                                                                                                                                                                                                                                |
-| validation                                |  String                              |  default                                                |  One of "default" or "custom". If "custom", may be followed by <s class="problemarchive">some subset of "score" and</s> "interactive", where<s class="problemarchive"> "score" indicates that the validator produces a score (this is only valid for scoring problems), and</s> "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive<s class="problemarchive"> score</s>". |
+| validation                                |  String                              |  default                                                |  One of "default" or "custom". If "custom", may be followed by <s class="kattis">some subset of "score" and</s> "interactive", where<s class="kattis"> "score" indicates that the validator produces a score (this is only valid for scoring problems), and</s> "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive<s class="kattis"> score</s>". |
 | validator\_flags                          | String                               |                                                         | Will be passed as command-line arguments to each of the output validators.                                                                                                                                                                                                                                                                     |
-| <s class="problemarchive"> <s class="dep">grading</s> <s>scoring</s> </s> | <s class="problemarchive"> Map with keys as defined below       </s> | <s class="problemarchive"> See definition below                                    </s> | <s class="problemarchive"> Must only be used on scoring problems.                                                                                                                                                                                                                                                                                                         </s> |
+| <s class="kattis"> <s class="dep">grading</s> <s>scoring</s> </s> | <s class="kattis"> Map with keys as defined below       </s> | <s class="kattis"> See definition below                                    </s> | <s class="kattis"> Must only be used on scoring problems.                                                                                                                                                                                                                                                                                                         </s> |
 |  keywords                                   |  <s>String or sequence of strings</s>  |                                                           |  Set of keywords. |
 |  <s>uuid</s>                                |  <s>String</s>                         |                                                           |  <s>UUID identifying the problem.</s>                                                                                                                                                                                                                                                                                                            |
-| <s class="problemarchive"> <s>libraries</s>                          </s> | <s class="problemarchive"> <s>String or sequence of strings</s> </s> | <s class="problemarchive">                                                         </s> | <s class="problemarchive"> <s>Set of libraries as defined below.</s>                                                                                                                                                                                                                                                                                                      </s> |
-| <s class="problemarchive"> <s>languages</s>                          </s> | <s class="problemarchive"> <s>String or sequence of strings</s> </s> | <s class="problemarchive"> <s>all</s>                                              </s> | <s class="problemarchive"> <s>Set of languages or "all".</s>                                                                                                                                                                                                                                                                                                              </s> |
+| <s class="kattis"> <s>libraries</s>                          </s> | <s class="kattis"> <s>String or sequence of strings</s> </s> | <s class="kattis">                                                         </s> | <s class="kattis"> <s>Set of libraries as defined below.</s>                                                                                                                                                                                                                                                                                                      </s> |
+| <s class="kattis"> <s>languages</s>                          </s> | <s class="kattis"> <s>String or sequence of strings</s> </s> | <s class="kattis"> <s>all</s>                                              </s> | <s class="kattis"> <s>Set of languages or "all".</s>                                                                                                                                                                                                                                                                                                              </s> |
 
 ```note
 
@@ -183,14 +185,14 @@ This can vary, but you SHOULD assume that it's reasonable. Only specify
 limits when the problem needs a specific limit, but do specify limits
 even if the "typical system default" is what is needed.
 
-<div class="problemarchive">
+<div class="kattis">
 
 ### <s class="dep">grading</s> <s>scoring</s>
 
 A map with the following keys:
 
 </div>
-<div class="problemarchive">
+<div class="kattis">
 
 | Key                      | Type    | Default | Comments                                                                                 |
 | - | - | - | - |
@@ -199,7 +201,7 @@ A map with the following keys:
 |                          |         |         |                                                                                          |
 
 </div>
-<div class="problemarchive">
+<div class="kattis">
 
 
 ### libraries
@@ -208,7 +210,7 @@ A map with the following keys:
 languages listed. </s>
 
 </div>
-<div class="problemarchive">
+<div class="kattis">
 
 | Value | Library                                             | Languages |
 | - | - | - |
@@ -216,7 +218,7 @@ languages listed. </s>
 | boost | Boost                                               | C++       |
 
 </div>
-<div class="problemarchive">
+<div class="kattis">
 
 
 ### languages
@@ -252,7 +254,7 @@ be left out, the default is then English (`en`). Filetype can be either
 TODO: More discussion is needed over allowing PDF in the CLICS spec.
 ```
 
-<div class="problemarchive">
+<div class="kattis">
 
 Please note that many kinds of transformations on the problem
 statements, such as conversion to HTML or styling to fit in a single
@@ -270,7 +272,7 @@ should reference auxiliary files as if the working directory is
 
 A LaTeX file may include the Problem name using the LaTeX command
 `\problemname` in case LaTeX formatting of the title is wanted.
-<s class="problemarchive"><s>If
+<s class="kattis"><s>If
 it's not included the problem name specified in `problem.yaml` will be
 used.</s> </s>
 
@@ -285,7 +287,7 @@ problem statement and sample test data are provided in the directory
 
 ## Test data
 
-<div class="problemarchive">
+<div class="kattis">
 
 <s>
 
@@ -325,7 +327,7 @@ name.
 
 ### Test Data Groups
 
-<s class="problemarchive">
+<s class="kattis">
 
 The test data for the problem can be organized into a tree-like
 structure. Each node of this tree is represented by a directory and
@@ -336,9 +338,9 @@ subgroups of test data (i.e., subdirectories).
 </s>
 
 At the top level, the test data is divided into exactly two groups:
-`sample` and `secret`. <s class="problemarchive">These two groups may be further split into subgroups as desired. </s>
+`sample` and `secret`. <s class="kattis">These two groups may be further split into subgroups as desired. </s>
 
-<s class="problemarchive">
+<s class="kattis">
 
 The <em>result</em> of a test data group is computed by applying a
 <em>grader</em> to all of the sub-results (test cases and subgroups) in
@@ -350,7 +352,7 @@ Test files and groups will be used in lexicographical order on file base
 name. If a specific order is desired a numbered prefix such as `00`, `01`,
 `02`, `03`, and so on, can be used.
 
-<s class="problemarchive">
+<s class="kattis">
 
 In each test data group, a file `testdata.yaml` may be placed to specify
 how the result of the test data group should be computed. If such a file
@@ -363,15 +365,15 @@ group will be used. The format of `testdata.yaml` is as follows:
 | on\_reject                                  | String                                                | break        | One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test files and subgroups within the group. |
 | grading                                     | String                                                | default      | One of "default" and "custom".                                                                                                                                                                                                                                                                                    |
 | grader\_flags                               | String                                                | empty string | arguments passed to the grader for this test data group.                                                                                                                                                                                                                                                          |
-| input\_validator<s class="dep problemarchive">\_flags</s></s> |  Stringor map with the keys "name" and "flags"</s> |  empty string  | arguments passed to the input validator for this test data group.</s>If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>                       |
-| output\_validator<s class="dep problemarchive">\_flags</s></s> |  Stringor map with the keys "name" and "flags"</s> |  empty string  | arguments passed to the output validator for this test data group.</s>If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>                    |
+| input\_validator<s class="dep kattis">\_flags</s></s> |  Stringor map with the keys "name" and "flags"</s> |  empty string  | arguments passed to the input validator for this test data group.</s>If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>                       |
+| output\_validator<s class="dep kattis">\_flags</s></s> |  Stringor map with the keys "name" and "flags"</s> |  empty string  | arguments passed to the output validator for this test data group.</s>If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>                    |
 | accept\_score                               | String                                                | 1            | Default score for accepted input files. May only be specified for scoring problems.                                                                                                                                                                                                                               |
 | reject\_score                               | String                                                | 0            | Default score for rejected input files. May only be specified for scoring problems.                                                                                                                                                                                                                               |
 | range                                       | String                                                | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.                                                                                                                                              |
 
 </s>
 
-<div class="problemarchive">
+<div class="kattis">
 
 
 ## Included Code
@@ -397,13 +399,13 @@ subdirectories of `submissions/`. The possible subdirectories are:
 | Value                 | Requirement                                                                                                                        | Comment                                  |
 | - | - | - |
 | accepted              | Accepted as a correct solution for all test files                                                                                  | At least one is required.                |
-| <s class="problemarchive"> partially\_accepted   </s> | <s class="problemarchive"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min. </s> | <s class="problemarchive"> Must not be used for pass-fail problems. </s> |
+| <s class="kattis"> partially\_accepted   </s> | <s class="kattis"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min. </s> | <s class="kattis"> Must not be used for pass-fail problems. </s> |
 | wrong\_answer         | Wrong answer for some test file, but is not too slow and does not crash for any test file                                          |                                          |
 | time\_limit\_exceeded | Too slow for some test file. May also give wrong answer but not crash for any test file.                                           |                                          |
 | run\_time\_error      | Crashes for some test file                                                                                                         |                                          |
 
 
-<div class="problemarchive">
+<div class="kattis">
 
 <s>
 
@@ -426,7 +428,7 @@ to standard output.
 ## Input Validators
 
 Input Validators, for verifying the correctness of the input files, are
-provided in <s class="dep problemarchive">`input_format_validators/`</s>
+provided in <s class="dep kattis">`input_format_validators/`</s>
 <s>`input_validators/`</s>. Input validators can be specified as
 VIVA-files (with file ending `.viva`), Checktestdata-file (with file
 ending `.ctd`), or as a program.
@@ -503,7 +505,7 @@ token of `3.14000000e-2` in the output file would be accepted. If no
 floating point tolerance has been set, floating point tokens are treated
 just like any other token and has to match exactly.
 
-<div class="problemarchive">
+<div class="kattis">
 
 ## Graders
 
@@ -542,7 +544,7 @@ the code from the table below, followed by whitespace, followed by the
 score. <s>Format to be extended.</s>
 
 </div>
-<div class="problemarchive">
+<div class="kattis">
 
 | Code | Meaning             |
 | - | - |
@@ -552,7 +554,7 @@ score. <s>Format to be extended.</s>
 | TLE  | Time-Limit Exceeded |
 
 </div>
-<div class="problemarchive">
+<div class="kattis">
 
 
 The score is taken from the `score.txt` files produced by the ouput
@@ -583,7 +585,7 @@ the "grader\_flags" option in
 modes are given, the last one is used. Their meaning are as follows.
 
 </div>
-<div class="problemarchive">
+<div class="kattis">
 
 | Argument                                     | Type         | Description                                                                                                                                                                                                                                                                                                     |
 | - | - | - |
@@ -597,7 +599,7 @@ modes are given, the last one is used. Their meaning are as follows.
 | `ignore_sample`                              | flag         | Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.                                                                                                                                                          |
 | `accept_if_any_accepted`                     | flag         | Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.                                                                                                                                                                                                       |
 </div>
-<div class="problemarchive">
+<div class="kattis">
 
 
 ## <s>Generators</s>

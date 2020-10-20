@@ -16,25 +16,28 @@ div.buttons {
     display: flex;
     justify-content: space-evenly;
 }
-div.buttons button.clics_button {
-    color: blue
+div.buttons button.unified_button {
+	display: none
 }
-div.buttons button.problemarchive_button {
-    color: red
+div.buttons button.icpc_button {
+    /*color: blue
+}
+div.buttons button.kattis_button {
+    /*color: red*/
 }
 
 /* Unified view: colours per section */
-.unified_view .clics, .unified_view .clics td, .unified_view .clics code {
+.unified_view .icpc, .unified_view .icpc td, .unified_view .icpc code {
     color: blue;
 }
-.unified_view .problemarchive, .unified_view .problemarchive td, .unified_view .problemarchive code {
+.unified_view .kattis, .unified_view .kattis td, .unified_view .kattis code {
     color: red;
 }
 
 /* Single view: hide irrelevant sections. */
-.clics_view .problemarchive {
+.icpc_view .kattis {
 	display: none
 }
-.problemarchive_view .clics {
+.kattis_view .icpc {
 	display: none
 }
