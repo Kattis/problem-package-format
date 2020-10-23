@@ -597,47 +597,13 @@ modes are given, the last one is used. Their meaning are as follows.
 | `ignore_sample`                              | flag         | Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.                                                                                                                                                          |
 | `accept_if_any_accepted`                     | flag         | Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.                                                                                                                                                                                                       |
 </div>
-<div class="problemarchive">
 
+## Generators
 
-## <s>Generators</s>
-
-<s>
-
-Input generators are programs that generates input. They are
-provided in `generators/`.
-
-```note
-
-TODO: Add the new `generators.yaml` specification.
-```
-
-</s>
-
-### <s>Invocation</s>
-
-<s>
-
-A generator program must be an application (executable or
-interpreted) capable of being invoked with a command line call.
-
-The generators will be run with the test data directory (`data/`) as the
-working directory. The generator may read any existing files in that
-directory and should create any kind of test data file as defined in the
-test data section. The generator may not read or write anything outside
-the test data directory. The generators will be run in lexicographical
-order on name. If a specific order is desired a numbered prefix such as
-`00`, `01`, `02`, `03`, and so on, can be used.
-
-The generators must be deterministic, i.e. always produce the same input
-file when give the same arguments.
-
-The generators must be idempotent, i.e. running them multiple times
-should result in the same contents of the test data directory as running
-them once.
-
-</s>
-</div>
+Generators are used to generate test cases.
+They are provided in the `generators/` directory together with the file
+`generators/generators.yaml` which specifies how to invoke the generators to generate the test cases.
+This directory must adhere to the [**Generators specification**](./generators) .
 
 ## See also
 

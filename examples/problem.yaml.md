@@ -4,7 +4,7 @@ permalink: /examples/problem_yaml
 ---
 # Problem.yaml
 
-Typical problem.yaml:
+## Typical problem.yaml
 
 ```yaml
 # Problem configuration
@@ -13,7 +13,7 @@ author: John von Judge
 rights_owner: ICPC
 ```
 
-Maximal problem.yaml:
+## Maximal problem.yaml
 
 ```yaml
 # Problem configuration
