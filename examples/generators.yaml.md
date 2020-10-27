@@ -142,7 +142,7 @@ data:
 
 # Types of generator programs.
       '01': stdout.py  3   # stdout of the command is written to 01.in.
-      '02': stdout.cpp 4   # c++ is compiled as for validators, and the resulting binary is run with argumetn `4`.
+      '02': stdout.cpp 4   # c++ is compiled as for validators, and the resulting binary is run with argument `4`.
       '03': dir 5          # directories are OK as for validators
       '04': tree 5         # keys from the global generators: dictionary may also be used.
       '05': a 5            # idem
@@ -234,7 +234,9 @@ data:
               data:
                 - c: stdout.py c
                   d: stdout.py d
-# This is forbidden because the parent `data:` key in `hard_cases_group` is a (numbered) list, and (unnumbered) dictionaries are not allowed to appear within (numbered) lists.
+# Replacing the `data:` object above (a list) with the following (a dictionary)
+# is forbidden because the parent directory (`hard_cases_group`) is numbered, and
+# unnumbered dictionaries are not allowed to appear within numbered directories.
              #data:
              #  c: stdout.py c
           - e: stdout.py e
