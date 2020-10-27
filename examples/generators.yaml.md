@@ -73,7 +73,7 @@ random_salt: abcd
 #   - generators/gen/tree.cpp
 #   - generators/gen/lib.h
 #   This will be compiled and run the same way as directory validators. Build
-#   and run scripts may be used.
+#   and run scripts may be used, as explained in ../spec/problem_package_format#programs.
 # - 'implicit' generators whose dependencies are specified in the `generators:`
 #   key below. The dependencies may refer to any files relative to generators/.
 #   The generator will be built and run as if they formed a separate directory.
