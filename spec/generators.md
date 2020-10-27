@@ -5,7 +5,8 @@ sort: 3
 # Generators
 
 Generators are provided in the `generators/` directory and may be used to
-generate test cases.  If it is present, the file `generators/generators.yaml`
+generate test cases. 
+The file `generators/generators.yaml`, if present,
 specifies which testcases should be generated and which commands should be run
 to generate them.
 Please have a look at [**the generator examples**](../examples/generators.yaml) to quickly get a feeling of what a typical `generators.yaml` file looks like.
@@ -39,14 +40,14 @@ A **Directory** is a YAML dictionary with the following supported keys.
 * `solution`
     * Type: **Command**
     * Optional invocation of a solution to be used to generate `.ans` files in this directory and its children.
-      Set to empty to disable generating `.ans`.
+      Set to empty to disable generating `.ans` files.
       (Useful for e.g. the `data/samples/` directory.)
       This must be an absolute path relative to the problem root.
 
       Solutions must write the answer to standard output, or take the `{name}` argument and write the answer file directly.
 * `visualizer`
     * Type: **Command**
-    * Optional invocation of a visualizer to generate visualizations for each test case in this directory and its children.
+    * Optional invocation of a program to generate visualizations for each test case in this directory and its children.
       This must be an absolute path relative to the problem root. Set to empty to disable.
 
        _Visualizers should take the `{name}` argument and write to `{name}.ext` where `ext` is a supported image extension._
@@ -68,7 +69,7 @@ The root of the `generators.yaml` file is a **Directory** object with one option
 
       When this dictionary contains a name that is also a file in `generators/`, the version specified in the `generators` dictionary will have priority.
 
-      Generators specified in the `generators` dictionary are built by coping the list of files into a new directory, and then building the resulting program as usual. The first dependency listed will be used to determine the entry point.
+      Generators specified in the `generators` dictionary are built by coping the list of files into a new directory, and then building the resulting program as described in [programs](../spec/problem_package_format#programs). The first dependency listed will be used to determine the entry point.
       An example is [here](../examples/generators.yaml).
 
       Other generators are built as (file or directory) [programs](../spec/Problem_Format#Programs).
@@ -94,7 +95,7 @@ A **Command** is a string that specified how to invoke a generator. The form is:
 ```
 Generators are run from an unspecified working directory. _In particular, they must not assume that the working directory is either the directory of the target testcase (e.g. `data/secret`) or the directory of the program (e.g. `visualizers/my_visualizer/`)._
 
-Generators must be deterministic, i.e. always produce the same input file when give the same arguments.
+Generators must be deterministic, i.e. always produce the same input file when give the same arguments, but see the `{seed}` keyword below.
 
 Generators must be idempotent, i.e. running them multiple times should result in the same output as running them once.
 
@@ -102,11 +103,19 @@ Generators must be idempotent, i.e. running them multiple times should result in
 * The generator will be invoked with `<arguments>`.
   Arguments are separated by white space (space, tab, newline). Quoting white space is not supported.
   Two special values are available, that will be substituted before calling the generator.
-    * `{name}`: refers to the name of the testcase. The generator may read/write the files `{name}.<ext>`, where `<ext>` is a file extension recognised by the problem format. Reading or writing other files is not allowed.
+    * `{name}`: refers to the path (directory and name) of the testcase. The
+      generator may read/write the files `{name}.<ext>`, where `<ext>` is a
+      file extension recognized by the problem format. Reading or writing other
+      files is not allowed.
+
+      The value of `{name}` is otherwise unspecified: it may point to any
+      existing directory, and the basename of `{name}` does not
+      have to correspond to the actual test case name, as long as the
+      generator is able to read and write the necessary files.
 
       _Note that `{name}` does not have to be in the currently working directory,
       and may not be inside the `data/` directory._
-    * `{seed}` or `{seed:(0-9)+}`: will be replaced by a pseudo random seed deterministically generated from the generator invocation. Use `{seed:1}`, `{seed:2}`, ..., to use different seeds for multiple otherwise identical generator invocations.
+    * `{seed}` or `{seed:[0-9]+}`: will be replaced by a pseudo random seed deterministically generated from the generator invocation. Use `{seed:1}`, `{seed:2}`, ..., to use different seeds for multiple otherwise identical generator invocations.
 
 ## CUE specification.
 
