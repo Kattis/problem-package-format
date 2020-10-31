@@ -222,7 +222,10 @@ data:
 # the given name is not empty). All items in a given dictionary will get the
 # same number. Use a list of 1-item dictionaries for incremental numbering.
 #
-# Any testgroup inside a list must contain a list object as data:.
+# Any testgroup inside a list must contain a list object as `data:`. Thus, if
+# in a directory/testgroup the test cases are numbered (i.e. `data:`) contains
+# a list), then `data:` must contain a list in all directories/testgroups below
+# it.
 #
 # Numbering is per directory. Testcases/testgroups are ordered by the order of lists
 # and alphabetical for dictionaries.
