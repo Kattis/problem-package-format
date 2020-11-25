@@ -170,22 +170,18 @@ data:
      #01-second: stdout.py 6                     # Collision with rule 01 above.
      #hard_cases_group-01: stdout.py 7           # Collision with hard_cases_group below.
 
-# {name} may be used to reference the path to the current test case/dictionary.
+# {name} may be used to reference the current test case.
+# It is equal to the name of the testcase, including the number if this is a numbered testcases.
 # The value of {name} is unspecified, and it may point to a file outside of the
 # current working directory.
-# 
 #
-# Commands are allowed to write files in the current working directory as long
-# as they do not overwrite existing files. Files starting with the current
-# {name} may always be written to.
-# Commands may only read files that they have written themselves.
+# Commands are allowed to only allowed to read and write files of the form
+# {name}.<ext>, where <ext> is a known file extension in 
+# .in, .ans, .hint, .desc, .png, .jpg, .svg.
+# Any such written files will be saved.
 #
-# Any written files matching `{name}.<ext>` where `<ext>` is a know extension in
-# .in, .ans, .hint, .desc, .png, .jpg, ..svg
-# will be saved.
-#
-# In case a generator program writes {name}.in, stdout will be ignored.
-# In case {name}.in is not created, stdout will be used as input.
+# In case a generator program writes {name}.in, its stdout will be ignored.
+# In case {name}.in is not created, stdout will be used as the input for the testcase.
 #
 # The generator below generates and writes both {name}.in and {name}.ans, and
 # the optionally specified `solution:` will not be called.
@@ -250,8 +246,7 @@ data:
           - j: stdout.py j
           - k: stdout.py k
           # {name} May also be used in numbered lists.
-          # It is unspecified whether the {name} passed as argument is `l` or
-          # `11-l` or something else.
+          # In this case, it will be equal to `11-l`.
           - l: stdout.py {name}
 
 # The above data: list is equivalent to the map:

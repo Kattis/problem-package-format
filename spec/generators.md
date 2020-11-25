@@ -103,18 +103,11 @@ Generators must be idempotent, i.e. running them multiple times should result in
 * The generator will be invoked with `<arguments>`.
   Arguments are separated by white space (space, tab, newline). Quoting white space is not supported.
   Two special values are available, that will be substituted before calling the generator.
-    * `{name}`: refers to the path (directory and name) of the testcase. The
-      generator may read/write the files `{name}.<ext>`, where `<ext>` is a
+    * `{name}` is replaced by the name of the testcase, including the optional testcase number prefix. The
+      generator may read/write the files `{name}.<ext>` in the current working directory, where `<ext>` is a
       file extension recognized by the problem format. Reading or writing other
       files is not allowed.
 
-      The value of `{name}` is otherwise unspecified: it may point to any
-      existing directory, and the basename of `{name}` does not
-      have to correspond to the actual test case name, as long as the
-      generator is able to read and write the necessary files.
-
-      _Note that `{name}` does not have to be in the currently working directory,
-      and may not be inside the `data/` directory._
     * `{seed}` or `{seed:[0-9]+}`: will be replaced by a pseudo random seed deterministically generated from the generator invocation. Use `{seed:1}`, `{seed:2}`, ..., to use different seeds for multiple otherwise identical generator invocations.
 
 ## CUE specification.
