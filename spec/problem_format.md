@@ -396,12 +396,16 @@ subdirectories of `submissions/`. The possible subdirectories are:
 
 | Value                 | Requirement                                                                                                                        | Comment                                  |
 | - | - | - |
-| accepted              | Accepted as a correct solution for all test files                                                                                  | At least one is required.                |
+| `accepted`              | Accepted as a correct solution for all test files                                                                                  | At least one is required.                |
 | <s class="problemarchive"> partially\_accepted   </s> | <s class="problemarchive"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min. </s> | <s class="problemarchive"> Must not be used for pass-fail problems. </s> |
-| wrong\_answer         | Wrong answer for some test file, but is not too slow and does not crash for any test file                                          |                                          |
-| time\_limit\_exceeded | Too slow for some test file. May also give wrong answer but not crash for any test file.                                           |                                          |
-| run\_time\_error      | Crashes for some test file                                                                                                         |                                          |
+| `wrong_answer`         | Wrong answer for some test file, but is not too slow and does not crash for any test file                                          |                                          |
+| `time_limit_exceeded` | Too slow for some test file. May also give wrong answer but not crash for any test file.                                           |                                          |
+| `run_time_error`      | Crashes for some test file                                                                                                         |                                          |
+| `mixed_result` | The submission contains `@EXPECTED_RESULTS@:` with expected verdicts, as explained below. | Use when the result is not deterministic. |
 
+```todo
+`mixed` vs `multiple` and `result` vs `verdict`.
+```
 
 <div class="problemarchive">
 
@@ -422,6 +426,32 @@ filenames. It is mandatory to provide at least one accepted solution.
 
 Submissions must read input data from standard input, and write output
 to standard output.
+
+### EXPECTED_RESULTS
+
+Submissions in the `submissions/mixed_result` directory must contain an
+`@EXPECTED_RESULTS@: ` tag (including the final space) exactly once in one
+of their source files. This must be followed (on the same line) by a non-empty
+comma separated subset of:
+
+- `ACCEPTED`
+- `WRONG_ANSWER`
+- `RUN_TIME_ERROR` 
+- `TIME_LIMIT_EXCEEDED` 
+- <s class="problemarchive"><s>`PARTIALLY_ACCEPTED` (for scoring problems only).</s></s>
+
+Additional white space is ignored and the tags are not case sensitive.
+
+This tag implies that the submission may get any of the listed verdicts as
+final verdict. Single testcases may still result in a verdict not in the list.
+In particular `ACCEPTED` does not have to be listed unless the submission is
+allowed to pass *all* testcases.
+
+If `@EXPECTED_RESULTS@: ` is found in a submission in any of the other
+directories, a warning is raised when the directory verdict is not listed. Note
+that this does not have other other effect, and in particular only the
+directory verdict is an allowed.
+
 
 ## Input Validators
 
