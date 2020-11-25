@@ -55,12 +55,12 @@ within the package is the base name of the file or the name of the directory.
 There can't be two programs of the same kind with the same name.
 
 Validators and graders, but not submissions, in the form of a directory
-may include two POSIX-compliant scripts "build" and "run". Either both
-or none of these scripts must be included. If the scripts are present,
-then:
+may include two POSIX-compliant scripts `build` and `run`.
+If at least one of these two files is included:
 
-  - the program will be compiled by executing the build script.
-  - the program will be run by executing the run script.
+  1. If the `build` script is present, it will be run. The working directory
+     will be (a copy of) the program directory. The `run` file must exist after `build` is done.
+  2. The `run` file must exist and be executable, and will be invoked with the same arguments and working directory as a single file program.
 
 Programs without build and run scripts are built and run according to
 what language is used. Language is determined by looking at the file
