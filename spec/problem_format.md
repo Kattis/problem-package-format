@@ -54,7 +54,7 @@ single directory. The name of the program, for the purpose of referring to it
 within the package is the base name of the file or the name of the directory.
 There can't be two programs of the same kind with the same name.
 
-Validators and graders, but not submissions, in the form of a directory
+Validators, graders, and generators, but not submissions, in the form of a directory
 may include two POSIX-compliant scripts "build" and "run". Either both
 or none of these scripts must be included. If the scripts are present,
 then:
