@@ -175,7 +175,7 @@ data:
 # The value of {name} is unspecified, and it may point to a file outside of the
 # current working directory.
 #
-# Commands are allowed to only allowed to read and write files of the form
+# Commands are only allowed to read and write files of the form
 # {name}.<ext>, where <ext> is a known file extension in 
 # .in, .ans, .hint, .desc, .png, .jpg, .svg.
 # Any such written files will be saved.
