@@ -401,7 +401,7 @@ subdirectories of `submissions/`. The possible subdirectories are:
 | `wrong_answer`         | Wrong answer for some test file, but is not too slow and does not crash for any test file                                          |                                          |
 | `time_limit_exceeded` | Too slow for some test file. May also give wrong answer but not crash for any test file.                                           |                                          |
 | `run_time_error`      | Crashes for some test file                                                                                                         |                                          |
-| `mixed_result` | The submission contains `@EXPECTED_RESULTS@:` with expected verdicts, as explained below. | Use when the result is not deterministic. |
+| `mixed_result` | The submission contains `@EXPECTED_VERDICTS@:` with expected verdicts, as explained below. | Use when the result is not deterministic. |
 
 ```todo
 `mixed` vs `multiple` and `result` vs `verdict`.
@@ -427,30 +427,27 @@ filenames. It is mandatory to provide at least one accepted solution.
 Submissions must read input data from standard input, and write output
 to standard output.
 
-### EXPECTED_RESULTS
+### EXPECTED_VERDICTS
 
 Submissions in the `submissions/mixed_result` directory must contain an
-`@EXPECTED_RESULTS@: ` tag (including the final space) exactly once in one
+`@EXPECTED_VERDICTS@: ` tag (including the final space) exactly once in one
 of their source files. This must be followed (on the same line) by a non-empty
 comma separated subset of:
 
-- `ACCEPTED`
-- `WRONG_ANSWER`
-- `RUN_TIME_ERROR` 
-- `TIME_LIMIT_EXCEEDED` 
-- <s class="problemarchive"><s>`PARTIALLY_ACCEPTED` (for scoring problems only).</s></s>
+- `AC`
+- `WA`
+- `TLE`
+- `RTE`
 
 Additional white space is ignored and the tags are not case sensitive.
 
 This tag implies that the submission may get any of the listed verdicts as
-final verdict. Single testcases may still result in a verdict not in the list.
-In particular `ACCEPTED` does not have to be listed unless the submission is
-allowed to pass *all* testcases.
+final verdict.
 
 If `@EXPECTED_RESULTS@: ` is found in a submission in any of the other
 directories, a warning is raised when the directory verdict is not listed. Note
-that this does not have other other effect, and in particular only the
-directory verdict is an allowed.
+that this does not have any other effect, and in particular only the
+verdict matching the directory is allowed.
 
 
 ## Input Validators
