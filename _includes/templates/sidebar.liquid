@@ -12,10 +12,10 @@
             </form>
         </div>
         {% if page.show_diff_buttons == true %}
-        <div class="wy-menu wy-menu-vertical buttons" data-spy="affix" role="navigation" aria-label="main navigation">{% include assets/buttons.html %}</div>
+        <div class="wy-menu wy-menu-vertical buttons" data-spy="affix" role="navigation" aria-label="main navigation">{% include templates/buttons.html %}</div>
         {% endif %}
         <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation">
-            {% include class/_toctree.liquid %}
+            {% include templates/toctree.liquid %}
         </div>
     </div>
 </div>
