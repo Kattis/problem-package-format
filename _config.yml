@@ -7,6 +7,7 @@ readme_index:
 
 theme: null
 
+# https://github.com/rundocs/jekyll-rtd-theme
 remote_theme: rundocs/jekyll-rtd-theme
 
 plugins:
