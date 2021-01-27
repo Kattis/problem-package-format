@@ -19,9 +19,9 @@ reporting back the results of validating:
 
 
 1.  The validator must give a judgment (see [Reporting a
-    judgment](#Reporting_a_judgment "wikilink")).
+    judgment](#reporting-a-judgment "wikilink")).
 2.  The validator may give additional feedback, e.g., an explanation of
-    the judgment to humans (see [Reporting Additional Feedback](#Reporting_Additional_Feedback "wikilink")).
+    the judgment to humans (see [Reporting Additional Feedback](#reporting-additional-feedback "wikilink")).
 
 ## Invocation
 

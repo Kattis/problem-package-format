@@ -344,7 +344,7 @@ At the top level, the test data is divided into exactly two groups:
 
 The <em>result</em> of a test data group is computed by applying a
 <em>grader</em> to all of the sub-results (test cases and subgroups) in
-the group. See [Graders](#Graders "wikilink") for more details.
+the group. See [Graders](#graders "wikilink") for more details.
 
 </s>
 
@@ -474,7 +474,7 @@ arguments.
 Output Validators are used if the problem requires more complicated
 output validation than what is provided by the default diff variant
 described below. They are provided in `output_validators/`, and must
-adhere to the [Output validator](Output_validator "wikilink")
+adhere to the [Output validator](output_validators "wikilink")
 specification.
 
 All output validators provided will be run on the output for every test
@@ -581,7 +581,7 @@ modes for aggregating the score -- *sum*, *avg*, *min*, *max* -- and two
 flags -- *ignore\_sample* and *accept\_if\_any\_accepted*. These modes
 can be set by providing their names as command line arguments (through
 the "grader\_flags" option in
-[testdata.yaml](#Test_Data_Groups "wikilink")). If multiple conflicting
+[testdata.yaml](#test-data-groups "wikilink")). If multiple conflicting
 modes are given, the last one is used. Their meaning are as follows.
 
 </div>
@@ -643,9 +643,7 @@ them once.
 
 ## See also
 
-  - [Output validator](Output_validator "wikilink")
-  - [Sample problem.yaml](Sample_problem.yaml "wikilink")
-  - [Problem format directory
-    structure](Problem_format_directory_structure "wikilink")
-  - [Problem Format
-    Verification](Problem_Format_Verification "wikilink")
+  - [Output validator](output_validators "wikilink")
+  - [Sample problem.yaml](/examples/problem_yaml "wikilink")
+  - [Problem format directory structure](problem_format_directory_structure "wikilink") (TBD)
+  - [Problem Format Verification](problem_format_verification "wikilink") (TBD)
