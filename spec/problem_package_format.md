@@ -557,7 +557,7 @@ score. <s>Format to be extended.</s>
 <div class="kattis">
 
 
-The score is taken from the `score.txt` files produced by the ouput
+The score is taken from the `score.txt` files produced by the output
 validator. If no `score.txt` exists the score will be as defined by the
 grading accept\_score and reject\_score setting from problem.yaml.
 
