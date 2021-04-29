@@ -103,13 +103,15 @@ entry point in the table below will be used.
 ### Problem types
 
 
-There are two types of problems: <em>pass-fail</em> problems and
-<em>scoring</em> problems. In pass-fail problems, submissions are
+There are three types of problems: <em>pass-fail</em> problems,
+<em>scoring</em> problems, and <em>pvp</em> problems. In pass-fail problems, submissions are
 basically judged as either accepted or rejected (though the "rejected"
 judgement is more fine-grained and divided into results such as "Wrong
 Answer", "Time Limit Exceeded", etc). In scoring problems, a submission
 that is accepted is additionally given a score, which is a numeric value
-(and the goal is to either maximize or minimize this value).
+(and the goal is to either maximize or minimize this value). A pvp problem
+is a problem where users can write submissions that are pitted against
+each other to determine which submission is the best.
 
 </div>
 
@@ -126,7 +128,7 @@ stated. Any unknown keys should be treated as an error.
 | Key                                       | Type                                 | Default                                                 | Comments                                                                                                                                                                                                                                                                                                                                       |
 | - | - | - | - |
 | <s class="kattis"> <s>name</s>                               </s> | <s class="kattis"> <s>String or map of strings</s>      </s> | <s class="kattis">                                                         </s> | <s class="kattis"> <s>Required. If a string this is the name of the problem in english. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>                                                                  </s> |
-| <s class="kattis"> type                                      </s> | <s class="kattis"> String                               </s> | <s class="kattis"> pass-fail                                               </s> | <s class="kattis"> One of "pass-fail" and "scoring".                                                                                                                                                                                                                                                                                                              </s> |
+| <s class="kattis"> type                                      </s> | <s class="kattis"> String                               </s> | <s class="kattis"> pass-fail                                               </s> | <s class="kattis"> One of "pass-fail",  "scoring", or "pvp".                                                                                                                                                                                                                                                                                                              </s> |
 | author                                    | String                               |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.                                                                          |
 | source                                    | String                               |                                                         | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.                                                                                                                                                                                                        |
 | source\_url                               | String                               |                                                         | Link to page for source event. Must not be given if source is not.                                                                                                                                                                                                                                                                             |
@@ -521,6 +523,10 @@ problems, one common grader behaviour would be to always set the verdict
 to Accepted, with the score being the sum of scores of the items in the
 test group.
 
+When grading a pvp problem, the codes get new meanings. AC and WA mean
+that the first submisison won or lost, respectively. PAC means that two
+submissions tied.
+
 ### Invocation
 
 A grader program must be an application (executable or interpreted)
@@ -575,14 +581,18 @@ be displayed to the user upon invocation of the grader.
 
 ### Default Grader Specification
 
-The default grader has three different modes for aggregating the verdict
--- *worst\_error*, *first\_error* and *always\_accept* -- four different
+The default grader has six different modes for aggregating the verdict
+-- *worst\_error*, *first\_error*, *always\_accept*, *plurality\_wins*, 
+*majority\_wins*, and *all\_wins* -- four different
 modes for aggregating the score -- *sum*, *avg*, *min*, *max* -- and two
 flags -- *ignore\_sample* and *accept\_if\_any\_accepted*. These modes
 can be set by providing their names as command line arguments (through
 the "grader\_flags" option in
 [testdata.yaml](#test-data-groups "wikilink")). If multiple conflicting
-modes are given, the last one is used. Their meaning are as follows.
+modes are given, the last one is used. Note that it is only valid to use
+the flags *plurality\_wins*, *majority\_wins*, and *all\_wins* for PvP
+problems and the flags *worst\_error*, *first\_error*, and *always\_accept*
+for non-PvP problems. Their meaning are as follows.
 
 </div>
 <div class="kattis">
@@ -592,6 +602,9 @@ modes are given, the last one is used. Their meaning are as follows.
 | `worst_error` <s class="dep">`no_errors`</s> | verdict mode | Default. Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group. Note that in combination with the on\_reject:break policy in testdata.yaml, the result will be the first error encountered. |
 | `first_error`                                | verdict mode | Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.                 |
 | `always_accept`                              | verdict mode | Verdict is always accepted.                                                                                                                                                                                                                                                                                     |
+| `plurality_wins` | verdict mode | Awards a win to a player if they won the most matches and at least a third of them. |
+| `majority_wins` | verdict mode | Awards a win to a player if they won at least a half of the matches. |
+| `all_wins` | verdict mode | Awards a win to a player if they won all the matches. |
 | `sum`                                        | scoring mode | Default. Score is sum of input scores.                                                                                                                                                                                                                                                                          |
 | `avg`                                        | scoring mode | score is average of input scores.                                                                                                                                                                                                                                                                               |
 | `min`                                        | scoring mode | score is minimum of input scores.                                                                                                                                                                                                                                                                               |

@@ -34,6 +34,13 @@ The validator should be possible to use as follows on the command line:
 ./validator input judge_answer feedback_dir [additional_arguments] < team_output [ > team_input ]
 ```
 
+PvP problems are treated differently however. They should be able to be invoked
+with the command:
+
+```sh
+./validator input judge_answer feedback_dir p1_output p1_input p2_output p2_input [additional_arguments] < team_output [ > team_input ]
+```
+
 The meaning of the parameters listed above are:
 
   - input: a string specifying the name of the input data file which was
@@ -69,6 +76,22 @@ The meaning of the parameters listed above are:
     to the program being validated. Please note that when running
     interactive the program will only receive the output produced by the
     validator and will not have direct access to the input file.
+
+  - p1\_output: a string that specifies the name of a named pipe that
+    player one's stdout will be redirected to.
+
+  - p1\_input: a string that specifies the name of a named pipe that
+    data written to it will get redirected to stdin of player one. For
+    example, if the validator writes `foo` to `p1_input`, player one
+    can then read `foo` from its stdin.
+
+  - p2\_output: a string that specifies the name of a named pipe that
+    player two's stdout will be redirected to.
+
+  - p2\_input: a string that specifies the name of a named pipe that
+    data written to it will get redirected to stdin of player two. For
+    example, if the validator writes `foo` to `p2_input`, player one
+    can then read `foo` from its stdin.
 
 The two files pointed to by input and judge\_answer must exist (though
 they are allowed to be empty) and the validator program must be allowed
