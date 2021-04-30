@@ -523,10 +523,6 @@ problems, one common grader behaviour would be to always set the verdict
 to Accepted, with the score being the sum of scores of the items in the
 test group.
 
-When grading a pvp problem, the codes get new meanings. AC and WA mean
-that the first submisison won or lost, respectively. PAC means that two
-submissions tied.
-
 ### Invocation
 
 A grader program must be an application (executable or interpreted)
@@ -558,6 +554,7 @@ score. <s>Format to be extended.</s>
 | WA   | Wrong Answer        |
 | RTE  | Run-Time Error      |
 | TLE  | Time-Limit Exceeded |
+| PAC  | Partially Accepted  |
 
 </div>
 <div class="kattis">
@@ -566,6 +563,10 @@ score. <s>Format to be extended.</s>
 The score is taken from the `score.txt` files produced by the output
 validator. If no `score.txt` exists the score will be as defined by the
 grading accept\_score and reject\_score setting from problem.yaml.
+
+When grading a PvP problem, the codes get new meanings. AC and WA mean
+that the first submisison won or lost, respectively. PAC means that two
+submissions tied.
 
 ### Output
 
