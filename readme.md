@@ -33,7 +33,7 @@ Tools, please refer to <https://github.com/Kattis/problemtools>
 
 To start with, it probably helps to see some examples. Here's a set of
 problems that are written in the format:
-<http://ncpc.idi.ntnu.no/ncpc2015/ncpc2015all.tar.bz2> (Warning: 22+ MB
+<https://nordic.icpc.io/ncpc2015/ncpc2015all.tar.bz2> (Warning: 22+ MB
 download.) These were the ones used for NCPC 2015. You can see how they
 appear on Kattis in HTML here: <https://ncpc15.kattis.com/problems>
 
