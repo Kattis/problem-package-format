@@ -25,10 +25,10 @@ contests as well as educational use.
 ### General Requirements
 
 The package consists of a single directory containing files as described
-below, or alternatively, a ZIP compressed archive of the same files
-using the file extension `.kpp` . The name of the directory or the base
-name of the archive must consisting solely of lower case letters a-z and
-digits 0-9.
+below. The name of the directory must consist solely of lower case
+letters a-z and digits 0-9. Alternatively it can be a ZIP compressed
+archive of such a directory with identical base name and extension
+`.kpp` or `.zip`.
 
 All file names for files included in the package must match the
 following regexp
