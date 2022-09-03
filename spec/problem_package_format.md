@@ -138,7 +138,6 @@ stated. Any unknown keys should be treated as an error.
 | <s class="kattis"> <s class="dep">grading</s> <s>scoring</s> </s> | <s class="kattis"> Map with keys as defined below       </s> | <s class="kattis"> See definition below                                    </s> | <s class="kattis"> Must only be used on scoring problems.                                                                                                                                                                                                                                                                                                         </s> |
 |  keywords                                   |  <s>String or sequence of strings</s>  |                                                           |  Set of keywords. |
 |  <s>uuid</s>                                |  <s>String</s>                         |                                                           |  <s>UUID identifying the problem.</s>                                                                                                                                                                                                                                                                                                            |
-| <s class="kattis"> <s>libraries</s>                          </s> | <s class="kattis"> <s>String or sequence of strings</s> </s> | <s class="kattis">                                                         </s> | <s class="kattis"> <s>Set of libraries as defined below.</s>                                                                                                                                                                                                                                                                                                      </s> |
 | <s class="kattis"> <s>languages</s>                          </s> | <s class="kattis"> <s>String or sequence of strings</s> </s> | <s class="kattis"> <s>all</s>                                              </s> | <s class="kattis"> <s>Set of languages or "all".</s>                                                                                                                                                                                                                                                                                                              </s> |
 
 ```note
@@ -202,24 +201,6 @@ A map with the following keys:
 
 </div>
 <div class="kattis">
-
-
-### libraries
-
-<s> A set from elements below. A library will be available for the
-languages listed. </s>
-
-</div>
-<div class="kattis">
-
-| Value | Library                                             | Languages |
-| - | - | - |
-| gmp   | GMP - The GNU Multiple Precision Arithmetic Library | C, C++    |
-| boost | Boost                                               | C++       |
-
-</div>
-<div class="kattis">
-
 
 ### languages
 
