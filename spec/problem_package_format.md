@@ -384,6 +384,10 @@ subdirectories of `submissions/`. The possible subdirectories are:
 | wrong\_answer         | Wrong answer for some test file, but is not too slow and does not crash for any test file                                          |                                          |
 | time\_limit\_exceeded | Too slow for some test file. May also give wrong answer but not crash for any test file.                                           |                                          |
 | run\_time\_error      | Crashes for some test file                                                                                                         |                                          |
+| rejected              | Receives a rejected verdict (wrong answer, time limit exceeded or run-time error) on some test file.                               |                                          |
+
+The `rejected` subdirectory is primarily intended for submissions that may be rejected for multiple reasons.
+Prefer using one of the other subdirectories for solutions with a single, clear reason for rejection.
 
 
 <div class="kattis">
