@@ -305,6 +305,16 @@ information illustrating the related test file.
 
 Input, answer, description, hint and image files are matched by the base
 name.
+  
+### Interactive Problems
+
+For interactive problems, any sample test cases must provide an interaction protocol with the extension `.interaction` for each sample demonstrating the communication between the submission and the output validator, meant to be displayed in the problem statement.
+An interaction protocol consists of a series of lines starting with `>` and `<`.
+Lines starting with `>` signify an output from the submission to the output validator, while `<` signify an output from the output validator to the submission.
+                                                                                                 
+A sample test case may have only an `.interaction file without a corresponding `.in` and `.ans` file.
+However, if either of a `.in` or a `.ans` file is present the other one must also be present.
+Unlike `.in` and `.ans` files for non-interactive problem, interactive `.in` and `.ans` files are not meant to be displayed in the problem statement. 
 
 ### Test Data Groups
 
