@@ -314,7 +314,8 @@ Lines starting with `>` signify an output from the submission to the output vali
                                                                                                  
 A sample test case may have only an `.interaction` file without a corresponding `.in` and `.ans` file.
 However, if either of a `.in` or a `.ans` file is present the other one must also be present.
-Unlike `.in` and `.ans` files for non-interactive problem, interactive `.in` and `.ans` files are not meant to be displayed in the problem statement. 
+Unlike `.in` and `.ans` files for non-interactive problem, interactive `.in` and `.ans` files are not meant to be displayed in the problem statement.
+If you want to provide files related to interactive problems (such as testing tools or input files) you can use [attachments](#attachments).
 
 ### Test Data Groups
 
