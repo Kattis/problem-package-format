@@ -139,6 +139,7 @@ stated. Any unknown keys should be treated as an error.
 |  keywords                                   |  <s>String or sequence of strings</s>  |                                                           |  Set of keywords. |
 |  <s>uuid</s>                                |  <s>String</s>                         |                                                           |  <s>UUID identifying the problem.</s>                                                                                                                                                                                                                                                                                                            |
 | <s class="kattis"> <s>languages</s>                          </s> | <s class="kattis"> <s>String or sequence of strings</s> </s> | <s class="kattis"> <s>all</s>                                              </s> | <s class="kattis"> <s>Set of languages or "all".</s>                                                                                                                                                                                                                                                                                                              </s> |
+| constants                                 | map of strings |  | Global constant values used by the problem. See definition below. |
 
 ```note
 
@@ -215,6 +216,34 @@ languages.
 </s>
 
 </div>
+
+### constants
+
+A map of names to values. Names must not contain whitespace, and neither names nor values shall contain the character `@`. *Constant sequences* have the form `@@name@@` or `@@name@format@@`, where `name` is a string not containing whitespace or the character `@` and `format` is specified below. All instances of constant sequences in the following files will be replaced by the value of the corresponding constant, formatted as described below:
+  - problem statements
+  - input and output validators
+  - included code
+  - `testdata.yaml`
+  
+All constant sequences corresponding to the first `name` in `constants` are replaced first, then all constant sequences corresponding to the second name, etc. Constant sequences must not remain in any of the above files at the end of the replacement process.
+
+If a `format` is not specified, the constant sequence is replaced by the verbatim corresponding value. A `format`, if present, must consist of one or more of the following character sequence flags, in any order, with each type of flag appearing at most once, and with no extraneous characters or whitespace:
+| Flag                      | Meaning |
+|---------------------------|---------|
+| `e`                       | If the value is an integer or floating-point number, formats the number in Latex using scientific notation. Integers will be expressed as `a \times 10^b` for integers `a` and `b`, using the mantissa with fewest possible digits for which this expression is exactly equal to the value. For floating-point numbers, scientific notation follows the usual IEEE 754 conventions. |
+| `wn`, *n* a positive integer | Groups floating-point and integer digits into delimiter-separated blocks of *n*. By default, digits are grouped in blocks of three. |
+| `sq`, *q* a single character or quoted string | Inserts *q* as a delimiter between blocks of digits. By default, no delimiter is used. |
+| `pq`, *q* a single character or quoted string | For floating-point values, uses *q* in place of the default decimal point `.`. |
+
+#### Examples
+For the constant `max_n` with value `5000000`:
+| Constant Sequence | Replacement |
+|-------------------|-------------|
+| `@@max_n@@` | `5000000` |
+| `@@max_n@s"\,"@@` | `5\,000\,000` |
+| `@@max_n@s,w4@@` | `500,0000` |
+| `@@max_n@e@@` | `5 \times 10^6` |
+
 
 ## Problem Statements
 
