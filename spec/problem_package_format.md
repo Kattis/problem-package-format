@@ -219,21 +219,23 @@ languages.
 
 ### constants
 
-A map of names to values. Names must not contain whitespace, and neither names nor values shall contain the character `@`. *Constant sequences* have the form `@@name@@` or `@@name@format@@`, where `name` is a string not containing whitespace or the character `@` and `format` is specified below. All instances of constant sequences in the following files will be replaced by the value of the corresponding constant, formatted as described below:
+A map of names to values. Names must consist only of ASCII lowercase letters (`a`--`z`) and digits (`0`--`9`). *Constant sequences* are tokens (regex words) of the form `XnameX` or `XnameXformatX`, where `name` and `format` are nonempty strings of ASCII lowercase letters or digits. All constant sequences in the following files will be replaced by the value of the corresponding constant, formatted as described below:
   - problem statements
   - input and output validators
   - included code
+  - example submissions
   - `testdata.yaml`
-  
-All constant sequences corresponding to the first `name` in `constants` are replaced first, then all constant sequences corresponding to the second name, etc. Constant sequences must not remain in any of the above files at the end of the replacement process.
+    
+Constant sequences are **not** replaced in test data files.
 
-If a `format` is not specified, the constant sequence is replaced by the verbatim corresponding value. A `format`, if present, must consist of one or more of the following character sequence flags, in any order, with each type of flag appearing at most once, and with no extraneous characters or whitespace:
+The `name` in every constant sequence must be a valid constant name, and `format` must consist of exactly one of the following characters: `e`, `s`, or `c`. If a `format` is not specified, the constant sequence is replaced verbatim by the corresponding value. Format flags have the following effects:
 | Flag                      | Meaning |
 |---------------------------|---------|
-| `e`                       | If the value is an integer or floating-point number, formats the number in Latex using scientific notation. Integers will be expressed as `a \times 10^b` for integers `a` and `b`, using the mantissa with fewest possible digits for which this expression is exactly equal to the value. For floating-point numbers, scientific notation follows the usual IEEE 754 conventions. |
-| `wn`, *n* a positive integer | Groups floating-point and integer digits into delimiter-separated blocks of *n*. By default, digits are grouped in blocks of three. |
-| `sq`, *q* a single character or quoted string | Inserts *q* as a delimiter between blocks of digits. By default, no delimiter is used. |
-| `pq`, *q* a single character or quoted string | For floating-point values, uses *q* in place of the default decimal point `.`. |
+| `e`                       | Formats an integer or floating-point value in Latex using scientific notation (as `a \cdot 10^{b}`). For integer values, `a` is an integer and `b` is the number of trailing zeros in the value. For floating-point numbers, the mantissa and exponent follow the usual IEEE 754 conventions. |
+| `s`                       | Groups floating-point and integer digits into blocks of three, separated by a Latex thin space `\,`. |
+| `c`                       | Groups floating-point and integer digits into blocks of three, separated by a comma `,`. |
+
+These format flags must only appear in constant expressions whose values are integer or floating-point numbers.
 
 #### Examples
 For the constant `max_n` with value `5000000`:
