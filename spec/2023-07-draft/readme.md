@@ -1,4 +1,4 @@
 ---
-title: Specification
+title: Draft specification
 sort: 1
 ---

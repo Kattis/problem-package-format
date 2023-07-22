@@ -1,4 +1,4 @@
 ---
-title: Specification
+title: Legacy specification
 sort: 1
 ---
