@@ -233,7 +233,7 @@ Constant sequences are **not** replaced in test data files or in `problem.yaml` 
 The `name` in every constant sequence must be a valid constant name, and `format` must consist of exactly one of the following characters: `e`, `s`, or `c`. If a `format` is not specified, the constant sequence is replaced verbatim by the corresponding value. Format flags have the following effects:
 | Flag                      | Meaning |
 |---------------------------|---------|
-| `e`                       | Formats an integer or floating-point value in Latex using scientific notation (as `a \cdot 10^{b}`). For integer values, `a` is an integer and `b` is the number of trailing zeros in the value. For floating-point numbers, the mantissa and exponent follow the usual IEEE 754 conventions. |
+| `e`                       | Formats an integer or floating-point value in LaTeX using scientific notation (as `a \cdot 10^{b}`). For integer values, `a` is an integer and `b` is the number of trailing zeros in the value. For floating-point numbers, the mantissa and exponent follow the usual IEEE 754 conventions. |
 | `s`                       | Groups floating-point and integer digits into blocks of three, separated by a Latex thin space `\,`. |
 | `c`                       | Groups floating-point and integer digits into blocks of three, separated by a comma `,`. |
 
