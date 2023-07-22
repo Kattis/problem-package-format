@@ -141,6 +141,7 @@ stated. Any unknown keys should be treated as an error.
 |  keywords                                   |  <s>String or sequence of strings</s>  |                                                           |  Set of keywords. |
 |  <s>uuid</s>                                |  <s>String</s>                         |                                                           |  <s>UUID identifying the problem.</s>                                                                                                                                                                                                                                                                                                            |
 | <s class="kattis"> <s>languages</s>                          </s> | <s class="kattis"> <s>String or sequence of strings</s> </s> | <s class="kattis"> <s>all</s>                                              </s> | <s class="kattis"> <s>Set of languages or "all".</s>                                                                                                                                                                                                                                                                                                              </s> |
+| constants                                 | map of strings to int, float, or string|  | Global constant values used by the problem. See definition below. |
 
 ```note
 
@@ -217,6 +218,26 @@ languages.
 </s>
 
 </div>
+
+### constants
+
+A map of names to values. Names must consist only of ASCII lowercase letters (`a`--`z`) and digits (`0`--`9`). *Constant sequences* are tokens (regex words) of the form `XnameX` or `XnameXformatX`, where `name` and `format` are nonempty strings of ASCII lowercase letters or digits. All constant sequences in the following files will be replaced by the value of the corresponding constant, formatted as described below:
+  - problem statements
+  - input and output validators
+  - included code
+  - example submissions
+  - `testdata.yaml`
+    
+Constant sequences are **not** replaced in test data files or in `problem.yaml` itself.
+
+The `name` in every constant sequence must be a valid constant name, and `format` must consist of exactly one of the following characters: `e`, `s`, or `c`. If a `format` is not specified, the constant sequence is replaced verbatim by the corresponding value. Format flags have the following effects:
+| Flag                      | Meaning |
+|---------------------------|---------|
+| `e`                       | Formats an integer or floating-point value in Latex using scientific notation (as `a \cdot 10^{b}`). For integer values, `a` is an integer and `b` is the number of trailing zeros in the value. For floating-point numbers, the mantissa and exponent follow the usual IEEE 754 conventions. |
+| `s`                       | Groups floating-point and integer digits into blocks of three, separated by a Latex thin space `\,`. |
+| `c`                       | Groups floating-point and integer digits into blocks of three, separated by a comma `,`. |
+
+These format flags must only appear in constant expressions whose values are integer or floating-point numbers.
 
 ## Problem Statements
 
