@@ -233,12 +233,6 @@ statement and sample test data are provided in the directory `attachments/`.
 
 ## Test data
 
-<div class="not-icpc">
-If input generators are used the files described here might not be available
-in this directory. This section describes what must be the case after running
-the generators.
-</div>
-
 The test data are provided in subdirectories of `data/`. The sample data in
 `data/sample/` and the secret data in `data/secret/`.
 
