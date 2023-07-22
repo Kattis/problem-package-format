@@ -311,6 +311,11 @@ The format of `testdata.yaml` is as follows:
 | range                                       | String                                                | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.                                                                                                                                              |
 </div>
 
+### Rejected Input Files
+In the `data/` directory, there may be an `invalid_inputs/` directory containing input files that must be rejected by at least one input validator.
+The rejected input files can be organized into a tree-like structure similar to the test data.
+There may be `testdata.yaml` files within this structure, but they may only contain the key `input_validator_flags`.
+
 <div class="not-icpc">
 ## Included Code
 
