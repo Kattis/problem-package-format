@@ -11,8 +11,8 @@ import "strconv"
 	grading: *"default" | "custom"
 	grader_flags:  *"" | string
     if grading == "default" { grader_flags? : #default_grader_flags }
-	input_validator_flags: *"" | string
-	output_validator_flags: *"" |string
+	input_validator_flags: *"" | string | { [string]: string }
+	output_validator_flags: *"" | string
 	accept_score: *"1" | #score
 	reject_score: *"0" | #score
 	range: *"-inf +inf" | string
