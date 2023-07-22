@@ -149,19 +149,19 @@ a value.
 
 A map with the following keys:
 
-| Key                  | Comments             | Default        | Typical system default |
+| Key                  | Comments                   | Default        | Typical system default |
 | - | - | - | - |
-| time\_multipliers     | optional             | see below     |                        |
-| time\_limit          | optional float, in seconds       | see below      |                        |
-| time\_resolution     | optional float, in seconds       | 1.0              |                        |
-| memory               | optional, in MiB     | system default | 2048                   |
-| output               | optional, in MiB     | system default | 8                      |
-| code                 | optional, in kiB     | system default | 128                    |
-| compilation\_time    | optional, in seconds | system default | 60                     |
-| compilation\_memory  | optional, in MiB     | system default | 2048                   |
-| validation\_time     | optional, in seconds | system default | 60                     |
-| validation\_memory   | optional, in MiB     | system default | 2048                   |
-| validation\_output   | optional, in MiB     | system default | 8                      |
+| time\_multipliers    | optional                   | see below      |                        |
+| time\_limit          | optional float, in seconds | see below      |                        |
+| time\_resolution     | optional float, in seconds | 1.0            |                        |
+| memory               | optional, in MiB           | system default | 2048                   |
+| output               | optional, in MiB           | system default | 8                      |
+| code                 | optional, in kiB           | system default | 128                    |
+| compilation\_time    | optional, in seconds       | system default | 60                     |
+| compilation\_memory  | optional, in MiB           | system default | 2048                   |
+| validation\_time     | optional, in seconds       | system default | 60                     |
+| validation\_memory   | optional, in MiB           | system default | 2048                   |
+| validation\_output   | optional, in MiB           | system default | 8                      |
 
 For most keys the system default will be used if nothing is specified. This
 can vary, but you SHOULD assume that it's reasonable. Only specify limits
@@ -174,8 +174,8 @@ the "typical system default" is what is needed.
 
 | Key                  | Comments             | Default        |
 |----------------------|----------------------|----------------|
-| accepted_to_limit    | optional float             | 5.0              |
-| limit_to_exceeded    | optional float             | 1.4            |
+| accepted_to_limit    | optional float       | 5.0            |
+| limit_to_exceeded    | optional float       | 1.4            |
 
 The value of `time_limit` is an integer or floating-point problem time limit, in seconds. The time multipliers specify safety margins relative to the slowest accepted submission `Tac` and fastest time\_limit\_exceeded submission `Ttle`. The `time_limit` must satisfy `Tac * accepted_to_limit <= time_limit` and `time_limit * limit_to_exceeded <= Ttle`. In these calculations, `Ttle` is treated as infinity if the problem does not provide at least one time\_limit\_exceeded submission.
 
