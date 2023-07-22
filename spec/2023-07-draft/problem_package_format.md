@@ -171,9 +171,9 @@ the "typical system default" is what is needed.
 
 A map with the following keys:
 
-| Key                      | Type    | Default | Comments                                                                                 |
-| - | - | - | - |
-| show\_test\_data\_groups | boolean | false   | Specifies whether test group results should be shown to the end user.                    |
+| Key                      | Type    | Default | Comments
+| -                        | -       | -       | -
+| show\_test\_data\_groups | boolean | false   | Specifies whether test group results should be shown to the end user.
 </div>
 
 <div class="not-icpc">
