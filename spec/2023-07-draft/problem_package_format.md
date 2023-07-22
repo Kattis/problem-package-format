@@ -250,7 +250,7 @@ All files and folders associated to a single test case have the same base name w
 | `.files`                        | Input                | Input available via file I/O           | 
 
 ### Input
-Each test case can supply input via standard input, command-line arguments, and/or the file system. These options are not exclusive. For a test case with base name `test`, the file `test.in` (if it exists) is piped to each submission as standard input. The submission's filename is passed as the first command-line argument, followed by the whitespace-separated tokens in `test.args` (if this file exists).
+Each test case can supply input via standard input, command-line arguments, and/or the file system. These options are not exclusive. For a test case with base name `test`, the file `test.in` (if it exists) is piped to the submission as standard input. The submission's filename is passed as the first command-line argument, followed by the whitespace-separated tokens in `test.args` (if this file exists).
 
 `test.files`, if it exists, must be a folder, and contains privileged data files available to the submission via file I/O. All files in this folder are copied into the submission's working directory after compiling but before executing the submission (possibly overwriting the compiled submission file or included data in the case of name conflicts).
 
