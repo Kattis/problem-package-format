@@ -318,7 +318,7 @@ If a specific order is desired a numbered prefix such as `00`, `01`, `02`,
 `03`, and so on, can be used.
 
 <div class="not-icpc">
-   In each test data group, a file `testdata.yaml` may be placed to specify how
+In each test data group, a file `testdata.yaml` may be placed to specify how
 the result of the test data group should be computed. If a test data group
 has no `testdata.yaml` file, the `testdata.yaml` in the closest ancestor
 group that has one will be used. If there is no `testdata.yaml` file in the
