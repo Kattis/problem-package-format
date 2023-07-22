@@ -38,7 +38,7 @@ defined by IEEE 754-2008 and may use up to double precision.
 
 ### Programs
 
-There are a number of different kinds of programs that may be provided in the problem package; submissions, input validators, output validators.
+There are a number of different kinds of programs that may be provided in the problem package: submissions, input validators, and output validators.
 All programs are always represented by a single file or directory.
 In other words, if a program consists of several files, these must be provided in a single directory.
 The name of the program, for the purpose of referring to it within the package is the base name of the file or the name of the directory.
