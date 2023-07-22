@@ -90,7 +90,7 @@ New in version `2023-07`: `.py` files now default to Python 3, and using shebang
 
 <div class="not-icpc">
 
-### Problem types
+### Problem Types
 
 There are two types of problems: <em>pass-fail</em> problems and
 <em>scoring</em> problems. In pass-fail problems, submissions are basically
