@@ -65,27 +65,29 @@ For languages where there could be several entry points, the default entry
 point in the table below will be used.
 
 
-| Code       | Language    | Default entry point | File endings              | Shebang |
-| -          | -           | -                   | -                         | -       |
-| c          | C           |                     | .c                        |         |
-| cpp        | C++         |                     | .cc, .cpp, .cxx, .c++, .C |         |
-| csharp     | C\#         |                     | .cs                       |         |
-| go         | Go          |                     | .go                       |         |
-| haskell    | Haskell     |                     | .hs                       |         |
-| java       | Java        | Main                | .java                     |         |
-| javascript | JavaScript  | main.js             | .js                       |         |
-| kotlin     | Kotlin      | MainKt              | .kt                       |         |
-| lisp       | Common Lisp | main.{lisp,cl}      | .lisp, .cl                |         |
-| objectivec | Objective-C |                     | .m                        |         |
-| ocaml      | OCaml       |                     | .ml                       |         |
-| pascal     | Pascal      |                     | .pas                      |         |
-| php        | PHP         | main.php            | .php                      |         |
-| prolog     | Prolog      |                     | .pl                       |         |
-| python2    | Python 2    | main.py             | .py                       | Matches the regex "`^#!.*python2`" |
-| python3    | Python 3    | main.py             | .py                       | Matches the regex "`^#!.*python3`", and default if shebang does not match any other language (new in version 2023-07, earlier versions default to Python 2)
-| ruby       | Ruby        |                     | .rb                       |         |
-| rust       | Rust        |                     | .rs                       |         |
-| scala      | Scala       |                     | .scala                    |         |
+| Code       | Language    | Default entry point | File endings              |
+| -          | -           | -                   | -                         |
+| c          | C           |                     | .c                        |
+| cpp        | C++         |                     | .cc, .cpp, .cxx, .c++, .C |
+| csharp     | C\#         |                     | .cs                       |
+| go         | Go          |                     | .go                       |
+| haskell    | Haskell     |                     | .hs                       |
+| java       | Java        | Main                | .java                     |
+| javascript | JavaScript  | main.js             | .js                       |
+| kotlin     | Kotlin      | MainKt              | .kt                       |
+| lisp       | Common Lisp | main.{lisp,cl}      | .lisp, .cl                |
+| objectivec | Objective-C |                     | .m                        |
+| ocaml      | OCaml       |                     | .ml                       |
+| pascal     | Pascal      |                     | .pas                      |
+| php        | PHP         | main.php            | .php                      |
+| prolog     | Prolog      |                     | .pl                       |
+| python2    | Python 2    | main.py2            | .py2                      |
+| python3    | Python 3    | main.py             | .py                       |
+| ruby       | Ruby        |                     | .rb                       |
+| rust       | Rust        |                     | .rs                       |
+| scala      | Scala       |                     | .scala                    |
+
+New in 2023-07: `.py` files now default to Python 3, and using shebans are on longer supported; Python 2 has to be explicitly indicated by the `.py2` extension.
 
 <div class="not-icpc">
 ### Problem types
