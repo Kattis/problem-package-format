@@ -173,12 +173,12 @@ the "typical system default" is what is needed.
 
 | Key                  | Comments             | Default        |
 |----------------------|----------------------|----------------|
-| accepted_to_limit    | optional float       | 2.0            |
-| limit_to_exceeded    | optional float       | 1.5            |
+| ac_to_time_limit     | float                | 2.0            |
+| time_limit_to_tle    | float                | 1.5            |
 
-The value of `time_limit` is an integer or floating-point problem time limit, in seconds. The time multipliers specify safety margins relative to the slowest accepted submission `Tac` and fastest time\_limit\_exceeded submission `Ttle`. The `time_limit` must satisfy `Tac * accepted_to_limit <= time_limit` and `time_limit * limit_to_exceeded <= Ttle`. In these calculations, `Ttle` is treated as infinity if the problem does not provide at least one time\_limit\_exceeded submission.
+The value of `time_limit` is an integer or floating-point problem time limit, in seconds. The time multipliers specify safety margins relative to the slowest accepted submission `T_ac` and fastest time\_limit\_exceeded submission `T_tle`. The `time_limit` must satisfy `T_ac * ac_to_time_limit <= time_limit` and `time_limit * time_limit_to_tle <= T_tle`. In these calculations, `T_tle` is treated as infinity if the problem does not provide at least one time\_limit\_exceeded submission.
 
-If no `time_limit` is provided, the default value is the smallest integer multiple of `time_resolution` that satisfies the above inequalities. It is an error if no such multiple exists. The `time_resolution` key is ignored if the problem provides an explicit time limit (and in particular, the time limit is not required to be a multiple of the resolution).
+If no `time_limit` is provided, the default value is the smallest integer multiple of `time_resolution` that satisfies the above inequalities. It is an error if no such multiple exists. The `time_resolution` key is ignored if the problem provides an explicit time limit (and in particular, the time limit is not required to be a multiple of the resolution). Since time multipliers are more future-proof than absolute time limits, avoid specifying `time_limit` whenever practical.
 
 Contest systems should make a best effort to respect the problem time limit, and should warn when importing a problem whose time limit is specified with precision greater than can be resolved by system timers.
 
