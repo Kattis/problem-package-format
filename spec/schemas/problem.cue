@@ -2,6 +2,7 @@ import "strings"
 
 #problem_settings: {
     name: string | { [#language_code]: string }
+    problem_format_version?: *"legacy" | "draft" | =~ "\d\d\d\d-\d\d(-draft)?"
     type?: *"pass-fail" | "scoring"
     author?: string
     source?: string
