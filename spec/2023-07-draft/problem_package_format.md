@@ -418,9 +418,9 @@ capable of being invoked with a command line call. The details of this
 invocation are described below. The validator program has two ways of
 reporting back the results of validating:
 
-1.  The validator must give a judgment (see [Reporting a judgment](#reporting-a-judgment "wikilink")).
+1.  The validator must give a judgement (see [Reporting a judgement](#reporting-a-judgement "wikilink")).
 2.  The validator may give additional feedback, e.g., an explanation of
-    the judgment to humans (see [Reporting Additional Feedback](#reporting-additional-feedback "wikilink")).
+    the judgement to humans (see [Reporting Additional Feedback](#reporting-additional-feedback "wikilink")).
 
 A custom output validator is used if the problem requires more complicated output
 validation than what is provided by the default diff variant described below.
@@ -507,9 +507,9 @@ they are allowed to be empty) and the validator program must be allowed
 to open them for reading. The directory pointed to by feedback\_dir must
 also exist.
 
-### Reporting a judgment
+### Reporting a judgement
 
-A validator program is required to report its judgment by exiting with
+A validator program is required to report its judgement by exiting with
 specific exit codes:
 
   - If the output is a correct output for the input file (i.e., the
@@ -526,7 +526,7 @@ these somewhat exotic exit codes is to avoid conflict with other exit
 codes that results when the validator crashes. For instance, if the
 validator is written in Java, any unhandled exception results in the
 program crashing with an exit code of 1, making it unsuitable to assign
-a judgment meaning to this exit code.
+a judgement meaning to this exit code.
 
 ### Reporting Additional Feedback
 
