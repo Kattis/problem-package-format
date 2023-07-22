@@ -81,8 +81,8 @@ point in the table below will be used.
 | pascal     | Pascal      |                     | .pas                      |         |
 | php        | PHP         | main.php            | .php                      |         |
 | prolog     | Prolog      |                     | .pl                       |         |
-| python2    | Python 2    | main.py             | .py                       | Matches the regex "`^#!.*python2`", and default if shebang does not match any other language |
-| python3    | Python 3    | main.py             | .py                       | Matches the regex "`^#!.*python3`" |
+| python2    | Python 2    | main.py             | .py                       | Matches the regex "`^#!.*python2`" |
+| python3    | Python 3    | main.py             | .py                       | Matches the regex "`^#!.*python3`", and default if shebang does not match any other language (new in version 2023-07, earlier versions default to Python 2)
 | ruby       | Ruby        |                     | .rb                       |         |
 | rust       | Rust        |                     | .rs                       |         |
 | scala      | Scala       |                     | .scala                    |         |
