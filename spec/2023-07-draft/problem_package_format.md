@@ -6,7 +6,7 @@ show_diff_buttons: true
 ---
 # Problem Package Format
 
-This is the legacy version of the specification
+This is the `2023-07-draft` version of the specification
 and the <s class="icpc">ICPC</s><s class="kattis">Kattis</s> variant.
 Click on <s class="icpc">Kattis</s><s class="kattis">ICPC</s> in the sidebar to switch.
 
@@ -126,6 +126,7 @@ stated. Any unknown keys should be treated as an error.
 
 | Key                                       | Type                                 | Default                                                 | Comments                                                                                                                                                                                                                                                                                                                                       |
 | - | - | - | - |
+| problem\_format\_version                  | String                               | `legacy`                                                | Version of the Problem Package Format used for this package. If using this version of the Format must be the string `2023-07-draft`. Will be on the form `<yyyy>-<mm>` for a stable version, `<yyyy>-<mm>-draft` or `draft` for a draft version, or `legacy` for the version before the addition of problem_format_version. Documentation for version `<version>` is available at https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>. |
 | <s class="kattis"> <s>name</s>                               </s> | <s class="kattis"> <s>String or map of strings</s>      </s> | <s class="kattis">                                                         </s> | <s class="kattis"> <s>Required. If a string this is the name of the problem in English. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.</s>                                                                  </s> |
 | <s class="kattis"> type                                      </s> | <s class="kattis"> String                               </s> | <s class="kattis"> pass-fail                                               </s> | <s class="kattis"> One of "pass-fail" and "scoring".                                                                                                                                                                                                                                                                                                              </s> |
 | author                                    | String                               |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.                                                                          |
@@ -306,13 +307,13 @@ information illustrating the related test file.
 
 Input, answer, description, hint and image files are matched by the base
 name.
-  
+
 ### Interactive Problems
 
 For interactive problems, any sample test cases must provide an interaction protocol with the extension `.interaction` for each sample demonstrating the communication between the submission and the output validator, meant to be displayed in the problem statement.
 An interaction protocol consists of a series of lines starting with `>` and `<`.
 Lines starting with `>` signify an output from the submission to the output validator, while `<` signify an input from the output validator to the submission.
-                                                                                                 
+
 A sample test case may have just an `.interaction` file without a corresponding `.in` and `.ans` file.
 However, if either of a `.in` or a `.ans` file is present the other one must also be present.
 Unlike `.in` and `.ans` files for non-interactive problem, interactive `.in` and `.ans` files are not meant to be displayed in the problem statement.
