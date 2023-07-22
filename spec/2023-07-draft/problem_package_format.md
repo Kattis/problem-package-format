@@ -56,10 +56,7 @@ these scripts must be included. If the scripts are present, then:
 
 Programs without build and run scripts are built and run according to what
 language is used. Language is determined by looking at the file endings. If a
-single language from the table below can't be determined, building fails. In
-the case of Python 2 and 3 which share the same file ending, language will be
-determined by looking at the shebang line which must match the regular
-expressions in the table below.
+single language from the table below can't be determined, building fails.
 
 For languages where there could be several entry points, the default entry
 point in the table below will be used.
