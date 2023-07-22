@@ -123,7 +123,6 @@ unknown keys should be treated as an error.
 | limits                   | Map with keys as defined below       | see definition below
 | validation               |  String                              | default                                                 | One of "default" or "custom". If "custom", may be followed by <span class="not-icpc">some subset of "score" and</span> "interactive", where<span class="not-icpc"> "score" indicates that the validator produces a score (this is only valid for scoring problems), and</span> "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive<span class="not-icpc"> score</span>".
 | validator\_flags         | String                               |                                                         | Will be passed as command-line arguments to each of the output validators.
-| <span class="not-icpc">scoring</span> | <span class="not-icpc">Map with keys as defined below</span> | <span class="not-icpc">See definition below</span> | <span class="not-icpc"> Must only be used on scoring problems.</span>
 | keywords                 | String or sequence of strings        |                                                         | Set of keywords.
 | <span class="not-icpc">languages</span> | <span class="not-icpc">String or sequence of strings</span> | <span class="not-icpc">all</span>| <span class="not-icpc">Set of languages or "all".</span>
 
@@ -165,15 +164,6 @@ For most keys the system default will be used if nothing is specified. This
 can vary, but you SHOULD assume that it's reasonable. Only specify limits
 when the problem needs a specific limit, but do specify limits even if
 the "typical system default" is what is needed.
-
-<div class="not-icpc">
-### scoring
-
-A map with the following keys:
-
-| Key                      | Type    | Default | Comments
-| -                        | -       | -       | -
-</div>
 
 <div class="not-icpc">
 ### languages
