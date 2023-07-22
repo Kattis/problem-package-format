@@ -1,7 +1,7 @@
 import "strings"
 
 #problem_settings: {
-    name: string | { [#language_code]: string }
+    name: string | close({ [#language_code]: string })
     problem_format_version?: *"legacy" | "draft" | =~ "\d\d\d\d-\d\d(-draft)?"
     type?: *"pass-fail" | "scoring"
     author?: string
@@ -17,7 +17,7 @@ import "strings"
     constants?: { [string] : number | string }
 }
 
-// The problem's (natural) language code is ISO 639, 
+// The problem's (natural) language code in ISO 639, 
 // optionally followed by ISO 3166-1 alpha-2 
 #language_code: =~ "^[a-z]{2,4}(-[A-Z][A-Z])?$" 
 
