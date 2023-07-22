@@ -236,8 +236,23 @@ statement and sample test data are provided in the directory `attachments/`.
 The test data are provided in subdirectories of `data/`. The sample data in
 `data/sample/` and the secret data in `data/secret/`.
 
-All input and answer files have the filename extension `.in` and `.ans`
-respectively.
+All files and folders associated to a single test case have the same base name with varying extensions. The table below summarizes the supported test data:
+
+| Extension                       | Described In         | Summmary                               |
+|---------------------------------|----------------------|----------------------------------------|
+| `.in`                           | Input                | Input piped to standard input          |
+| `.ans`                          |                      | Expected (AC) answer                   |
+| `.hint`                         | Annotations          | Hint for solving the test case         |
+| `.desc`                         | Annotations          | Purpose of the test                    |
+| `.png`, `.jpg`, `.jpeg`, `.svg` | Annotations          | Illustration of the test case          |
+| `.interaction`                  | Interactive Problems | Interaction protocol sample            |
+| `.args`                         | Input                | Input passed as command-line arguments |
+| `.files`                        | Input                | Input available via file I/O           | 
+
+### Input
+Each test case can supply input via standard input, command-line arguments, and/or the file system. These options are not exclusive. For a test case with base name `test`, the file `test.in` (if it exists) is piped to each submission as standard input. The submission's filename is passed as the first command-line argument, followed by the whitespace-separated tokens in `test.args` (if this file exists).
+
+`test.files`, if it exists, must be a folder, and contains privileged data files available to the submission via file I/O. All files in this folder are copied into the submission's working directory after compiling but before executing the submission (possibly overwriting the compiled submission file or included data in the case of name conflicts).
 
 ### Annotations
 
