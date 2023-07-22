@@ -219,7 +219,7 @@ languages.
 
 </div>
 
-### constants
+### Constants
 
 A map of names to values. Names must consist only of ASCII lowercase letters (`a`--`z`) and digits (`0`--`9`). *Constant sequences* are tokens (regex words) of the form `XnameX` or `XnameXformatX`, where `name` and `format` are nonempty strings of ASCII lowercase letters or digits. All constant sequences in the following files will be replaced by the value of the corresponding constant, formatted as described below:
   - problem statements
