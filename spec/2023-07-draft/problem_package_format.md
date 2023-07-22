@@ -39,8 +39,8 @@ defined by IEEE 754-2008 and may use up to double precision.
 ### Programs
 
 There are a number of different kinds of programs that may be provided in the
-problem package; submissions, input validators, output validators<s
-class="not-icpc">, graders and generators</s>. All programs are always
+problem package; submissions, input validators, output validators<span
+class="not-icpc">, graders and generators</span>. All programs are always
 represented by a single file or directory. In other words, if a program
 consists of several files, these must be provided in a single directory. The
 name of the program, for the purpose of referring to it within the package is
@@ -114,18 +114,18 @@ unknown keys should be treated as an error.
 | problem\_format\_version | String                               | `legacy`                                                | Version of the Problem Package Format used for this package. If using this version of the Format must be the string `2023-07-draft`. Will be on the form `<yyyy>-<mm>` for a stable version, `<yyyy>-<mm>-draft` or `draft` for a draft version, or `legacy` for the version before the addition of problem_format_version. Documentation for version `<version>` is available at https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>.
 | name                     | String or map of strings |    | Required. If a string this is the name of the problem in English. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.
 | uuid                     | String                               |                                                         | UUID identifying the problem.
-| <s class="not-icpc">type</s> | <s class="not-icpc">String</s> | <s class="not-icpc">pass-fail</s> | <s class="not-icpc">One of "pass-fail" and "scoring".</s>
+| <span class="not-icpc">type</span> | <span class="not-icpc">String</span> | <span class="not-icpc">pass-fail</span> | <span class="not-icpc">One of "pass-fail" and "scoring".</span>
 | author                   | String                               |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 | source                   | String                               |                                                         | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 | source\_url              | String                               |                                                         | Link to page for source event. Must not be given if source is not.
 | license                  | String                               | unknown                                                 | License under which the problem may be used. Value has to be one of the ones defined below.
 | rights\_owner            | String                               | Value of author, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".
 | limits                   | Map with keys as defined below       | see definition below
-| validation               |  String                              | default                                                 | One of "default" or "custom". If "custom", may be followed by <s class="not-icpc">some subset of "score" and</s> "interactive", where<s class="not-icpc"> "score" indicates that the validator produces a score (this is only valid for scoring problems), and</s> "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive<s class="kattis"> score</s>".
+| validation               |  String                              | default                                                 | One of "default" or "custom". If "custom", may be followed by <span class="not-icpc">some subset of "score" and</span> "interactive", where<span class="not-icpc"> "score" indicates that the validator produces a score (this is only valid for scoring problems), and</span> "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive<span class="not-icpc"> score</span>".
 | validator\_flags         | String                               |                                                         | Will be passed as command-line arguments to each of the output validators.
-| <s class="not-icpc">scoring</s> | <s class="not-icpc">Map with keys as defined below</s> | <s class="not-icpc">See definition below</s> | <s class="not-icpc"> Must only be used on scoring problems.</s>
+| <span class="not-icpc">scoring</span> | <span class="not-icpc">Map with keys as defined below</span> | <span class="not-icpc">See definition below</span> | <span class="not-icpc"> Must only be used on scoring problems.</span>
 | keywords                 | String or sequence of strings        |                                                         | Set of keywords.
-| <s class="not-icpc">languages</s> | <s class="not-icpc">String or sequence of strings</s> | <s class="not-icpc">all</s>| <s class="not-icpc">Set of languages or "all".</s>
+| <span class="not-icpc">languages</span> | <span class="not-icpc">String or sequence of strings</span> | <span class="not-icpc">all</span>| <span class="not-icpc">Set of languages or "all".</span>
 
 ### license
 
@@ -192,7 +192,7 @@ The problem statement of the problem is provided in the directory
 `problem_statement/`.
 
 This directory must contain one file per language, for at least one language,
-named `problem.`<language>`.`<filetype>, that contains the problem text
+named `problem.`\<language\>`.`\<filetype\>, that contains the problem text
 itself, including input and output specifications, but not sample input and
 output. Language must be given as the shortest ISO 639 code. If needed a
 hyphen and a ISO 3166-1 alpha-2 code may be appended to ISO 639 code.
@@ -213,9 +213,9 @@ reference auxiliary files as if the working directory is
 
 
 A LaTeX file may include the Problem name using the LaTeX command
-`\problemname` in case LaTeX formatting of the title is wanted. <s
+`\problemname` in case LaTeX formatting of the title is wanted. <span
 class="not-icpc">If it's not included the problem name specified in
-`problem.yaml` will be used.</s>
+`problem.yaml` will be used.</span>
 
 The problem statements must only contain the actual problem statement, no
 sample data.
@@ -288,8 +288,8 @@ test data group. Each test data group may consist of zero or more test cases
 </div>
 
 At the top level, the test data is divided into exactly two groups: `sample`
-and `secret`. <s class="not-icpc">These two groups may be further split into
-subgroups as desired. </s>
+and `secret`. <span class="not-icpc">These two groups may be further split into
+subgroups as desired. </span>
 
 <div class="not-icpc">
 The <em>result</em> of a test data group is computed by applying a
@@ -343,7 +343,7 @@ of `submissions/`. The possible subdirectories are:
 | Value                 | Requirement                                                                                                                        | Comment                                  |
 | - | - | - |
 | accepted              | Accepted as a correct solution for all test files                                                                                  | At least one is required.                |
-| <s class="not-icpc"> partially\_accepted</s> | <s class="not-icpc"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min.</s> | <s class="not-icpc"> Must not be used for pass-fail problems.</s> |
+| <span class="not-icpc"> partially\_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min.</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span> |
 | wrong\_answer         | Wrong answer for some test file, but is not too slow and does not crash for any test file                                          |                                          |
 | time\_limit\_exceeded | Too slow for some test file. May also give wrong answer but not crash for any test file.                                           |                                          |
 | run\_time\_error      | Crashes for some test file                                                                                                         |                                          |
