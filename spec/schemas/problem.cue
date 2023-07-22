@@ -10,7 +10,7 @@ import "strings"
     license?: *"unknown" | "public domain" | "cc0" | "cc by" | "cc by-sa" | "educational" | "permission"
     rights_owner?: string
     limits?: #limits
-    validation?: *"default" | #custom_validation
+    validation?: *"default" | "custom" | "interactive" | "score" | "interactive score"
     keywords?: string | [...string]
     uuid?: string
     languages?: *"all" | [...string]
@@ -18,17 +18,7 @@ import "strings"
 
 // The problem's (natural) language code is ISO 639, 
 // optionally followed by ISO 3166-1 alpha-2 
-#language_code: =~ "^[a-z][a-z](-[A-Z][A-Z])?$" 
-
-#custom_validation: this={
-    string
-    _as_struct: { for w in strings.Split(this, " ")  { (w): _ } }
-    _as_struct: close({ 
-        custom: _,       // Must include "custom",
-        score?: _,       // can include "score" ...
-        interactive?: _  // ... and "interactive"
-})
-}
+#language_code: =~ "^[a-z]{2,4}(-[A-Z][A-Z])?$" 
 
 #limits: { 
     time_multiplier?: *5 | >0
