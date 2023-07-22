@@ -1,5 +1,4 @@
 ---
-sort: 2
 permalink: /examples/problem_yaml
 ---
 # Problem.yaml

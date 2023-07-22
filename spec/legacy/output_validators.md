@@ -1,7 +1,6 @@
 ---
 layout: default
-permalink: /spec/output_validators
-sort: 2
+permalink: /legacy/output_validators
 ---
 # Output Validators
 

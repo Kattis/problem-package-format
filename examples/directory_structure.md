@@ -1,5 +1,4 @@
 ---
-sort: 1
 permalink: /examples/directory_structure
 ---
 # Directory structure
