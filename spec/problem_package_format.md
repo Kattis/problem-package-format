@@ -226,7 +226,7 @@ A map of names to values. Names must consist only of ASCII lowercase letters (`a
   - example submissions
   - `testdata.yaml`
     
-Constant sequences are **not** replaced in test data files.
+Constant sequences are **not** replaced in test data files or in `problem.yaml` itself.
 
 The `name` in every constant sequence must be a valid constant name, and `format` must consist of exactly one of the following characters: `e`, `s`, or `c`. If a `format` is not specified, the constant sequence is replaced verbatim by the corresponding value. Format flags have the following effects:
 | Flag                      | Meaning |
