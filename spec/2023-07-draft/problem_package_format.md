@@ -315,7 +315,9 @@ The format of `testdata.yaml` is as follows:
 In the `data/` directory, there may be an `invalid_inputs/` directory containing input files that must be rejected by at least one input validator.
 These are meant to only test the input validators, and are not used for judging.
 The rejected input files can be organized into a tree-like structure similar to the test data.
+<div class="not-icpc">
 There may be `testdata.yaml` files within this structure, but they may only contain the key `input_validator_flags`.
+</div>
 
 <div class="not-icpc">
 ## Included Code
