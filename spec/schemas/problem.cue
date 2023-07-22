@@ -1,7 +1,7 @@
 import "strings"
 
 #problem_settings: {
-    name: string | { [string]: string }
+    name: string | { [#language_code]: string }
     type?: *"pass-fail" | "scoring"
     author?: string
     source?: string
@@ -15,6 +15,10 @@ import "strings"
     uuid?: string
     languages?: *"all" | [...string]
 }
+
+// The problem's (natural) language code is ISO 639, 
+// optionally followed by ISO 3166-1 alpha-2 
+#language_code: =~ "^[a-z][a-z](-[A-Z][A-Z])?$" 
 
 #custom_validation: this={
     string
