@@ -47,14 +47,17 @@ name of the program, for the purpose of referring to it within the package is
 the base name of the file or the name of the directory. There can't be two
 programs of the same kind with the same name.
 
-Validators and graders, but not submissions, in the form of a directory may
-include two POSIX-compliant scripts "build" and "run". Either both or none of
-these scripts must be included. If the scripts are present, then:
+Validators and graders, but not submissions, in the form of a directory
+may include two POSIX-compliant scripts `build` and `run`.
+If at least one of these two files is included:
 
-  - the program will be compiled by executing the build script.
-  - the program will be run by executing the run script.
+  1. First, if the `build` script is present, it will be run. The
+     working directory will be (a copy of) the program directory. The
+     `run` file must exist after `build` is done.
+  2. Then, the `run` file (which now exists) must be executable, and
+     will be invoked in the same way as a single file program.
 
-Programs without build and run scripts are built and run according to what
+Programs without `build` and `run` scripts are built and run according to what
 language is used. Language is determined by looking at the file endings. If a
 single language from the table below can't be determined, building fails.
 
