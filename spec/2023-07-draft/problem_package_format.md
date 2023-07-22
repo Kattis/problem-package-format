@@ -99,7 +99,7 @@ judged as either accepted or rejected (though the "rejected" judgement is
 more fine-grained and divided into results such as "Wrong Answer", "Time
 Limit Exceeded", etc). In scoring problems, a submission that is accepted is
 additionally given a score, which is a numeric value(and the goal is to
-either maximize or minimize this value). 
+either maximize or minimize this value).
 </div>
 
 ## Problem Metadata
@@ -333,7 +333,7 @@ from the submission in the case of name collision. Language must be given as
 one of the language codes in the language table in the overview section. If
 any of the included files are supposed to be the main file (i.e. a driver),
 that file must have the language dependent name as given in the table
-referred above. 
+referred above.
 </div>
 
 ## Example Submissions
@@ -442,7 +442,7 @@ accepted if all sub-results in the group were accepted and otherwise select
 the "worst" error in the group (see below for definition of
 "worst"), though it is possible to write a custom grader which e.g.
 accepts if at least half the sub-results are accepted. For scoring
-problems, one common grader behaviour would be to always set the verdict
+problems, one common grader behavior would be to always set the verdict
 to Accepted, with the score being the sum of scores of the items in the
 test group.
 
