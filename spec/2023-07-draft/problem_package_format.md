@@ -173,8 +173,8 @@ the "typical system default" is what is needed.
 
 | Key                  | Comments             | Default        |
 |----------------------|----------------------|----------------|
-| accepted_to_limit    | optional float       | 5.0            |
-| limit_to_exceeded    | optional float       | 1.4            |
+| accepted_to_limit    | optional float       | 2.0            |
+| limit_to_exceeded    | optional float       | 1.5            |
 
 The value of `time_limit` is an integer or floating-point problem time limit, in seconds. The time multipliers specify safety margins relative to the slowest accepted submission `Tac` and fastest time\_limit\_exceeded submission `Ttle`. The `time_limit` must satisfy `Tac * accepted_to_limit <= time_limit` and `time_limit * limit_to_exceeded <= Ttle`. In these calculations, `Ttle` is treated as infinity if the problem does not provide at least one time\_limit\_exceeded submission.
 
