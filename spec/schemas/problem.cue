@@ -11,7 +11,6 @@ import "strings"
     rights_owner?: string
     limits?: #limits
     validation?: *"default" | #custom_validation
-    validator_flags?: *"" |  string
     keywords?: string | [...string]
     uuid?: string
     languages?: *"all" | [...string]
