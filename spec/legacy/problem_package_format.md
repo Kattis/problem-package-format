@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: /legacy/problem_package_format
 show_diff_buttons: true
 ---
 # Problem Package Format

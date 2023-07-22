@@ -1,6 +1,5 @@
 ---
 layout: default
-permalink: /legacy/output_validators
 ---
 # Output Validators
 
