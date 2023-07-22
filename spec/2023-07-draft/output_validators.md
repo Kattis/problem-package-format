@@ -136,7 +136,7 @@ A multi-pass validator can be used for problems that should run the submission m
 To signal that the submission should be run once more, the output validator must exit with code 42 and output the new input in the file `nextpass.in` in the feedback directtory.
 
 It is a judge error to create the "nextpass" file and exit with any other code than 42.
-</s>
+</div>
 
 ### Examples
 
