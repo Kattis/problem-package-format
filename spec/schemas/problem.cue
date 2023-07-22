@@ -14,6 +14,7 @@ import "strings"
     keywords?: string | [...string]
     uuid?: string
     languages?: *"all" | [...string]
+    constants?: { [string] : number | string }
 }
 
 // The problem's (natural) language code is ISO 639, 
@@ -22,8 +23,8 @@ import "strings"
 
 #limits: { 
     time_multiplier?: {
-        accepted_to_limit: *2.0 | float
-        limit_to_exceeded: *1.5 | float
+        ac_to_timelimit: *2.0 | float
+        timelimit_to_tle: *1.5 | float
      }
     time_limit?: >0
     time_resolution?: *1.0 | float
