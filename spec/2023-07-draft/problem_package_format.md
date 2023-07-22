@@ -137,8 +137,8 @@ a value.
 | unknown       | The default value. In practice means that the problem can not be used.       |                                                  |
 | public domain | There are no known copyrights on the problem, anywhere in the world.         | <http://creativecommons.org/about/pdm>           |
 | cc0           | CC0, "no rights reserved"                                                    | <http://creativecommons.org/about/cc0>           |
-| cc by         | CC attribution                                                               | <http://creativecommons.org/licenses/by/3.0/>    |
-| cc by-sa      | CC attribution, share alike                                                  | <http://creativecommons.org/licenses/by-sa/3.0/> |
+| cc by         | CC attribution                                                               | <http://creativecommons.org/licenses/by/4.0/>    |
+| cc by-sa      | CC attribution, share alike                                                  | <http://creativecommons.org/licenses/by-sa/4.0/> |
 | educational   | May be freely used for educational purposes                                  |                                                  |
 | permission    | Used with permission. The author must be contacted for every additional use. |                                                  |
 
