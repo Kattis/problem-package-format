@@ -87,7 +87,7 @@ point in the table below will be used.
 | rust       | Rust        |                     | .rs                       |
 | scala      | Scala       |                     | .scala                    |
 
-New in version `2023-07`: `.py` files now default to Python 3, and using shebangs are on longer supported; Python 2 has to be explicitly indicated by the `.py2` extension.
+New in version `2023-07`: `.py` files now default to Python 3, and using shebangs are no longer supported; Python 2 has to be explicitly indicated by the `.py2` extension.
 
 <div class="not-icpc">
 ### Problem types
