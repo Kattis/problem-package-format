@@ -7,8 +7,14 @@ import "strings"
     author?: string
     source?: string
     if source != _|_ { source_url?: string } // only allow source_url if source is specified
+   
     license?: *"unknown" | "public domain" | "cc0" | "cc by" | "cc by-sa" | "educational" | "permission"
-    rights_owner?: string
+    // Problem can have rights_owner if it's not public domain
+    if license != "public domain" { rights_owner?: string }
+    // TODO (CUE version > 0.5.0)
+    // if license =~ "unknown|public domain" {
+    //    numexists(>=1, rights_owner, author, source)
+    //} 
     limits?: #limits
     validation?: *"default" | "custom" | "interactive" | "score" | "interactive score"
     keywords?: string | [...string]
