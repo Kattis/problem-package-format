@@ -38,17 +38,13 @@ defined by IEEE 754-2008 and may use up to double precision.
 
 ### Programs
 
-There are a number of different kinds of programs that may be provided in the
-problem package; submissions, input validators, an output validator<span
-class="not-icpc">, and graders</span>. All programs are always
-represented by a single file or directory. In other words, if a program
-consists of several files, these must be provided in a single directory. The
-name of the program, for the purpose of referring to it within the package is
-the base name of the file or the name of the directory. There can't be two
-programs of the same kind with the same name.
+There are a number of different kinds of programs that may be provided in the problem package; submissions, input validators, output validators.
+All programs are always represented by a single file or directory.
+In other words, if a program consists of several files, these must be provided in a single directory.
+The name of the program, for the purpose of referring to it within the package is the base name of the file or the name of the directory.
+There can't be two programs of the same kind with the same name.
 
-Validators and graders, but not submissions, in the form of a directory
-may include two POSIX-compliant scripts `build` and `run`.
+Validators, but not submissions, in the form of a directory may include two POSIX-compliant scripts "build" and "run".
 If at least one of these two files is included:
 
   1. First, if the `build` script is present, it will be run. The
@@ -98,8 +94,7 @@ judged as either accepted or rejected (though the "rejected" judgement is
 more fine-grained and divided into results such as "Wrong Answer", "Time
 Limit Exceeded", etc). In scoring problems, a submission that is accepted is
 additionally given a score, which is a numeric value(and the goal is to
-either maximize or minimize this value).
-
+maximize this value).
 </div>
 
 ## Problem Metadata
@@ -330,13 +325,11 @@ The format of `testdata.yaml` is as follows:
 | ------------------------ | ----------------------------------- | ------------ | --------
 | on\_reject               | String                              | break        | One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test files and subgroups within the group. |
 | grading                  | String                              | default      | One of "default" and "custom". |
-| grader\_flags            | String                              | empty string | arguments passed to the grader for this test data group. |
-| input\_validator\_flags  | String or map of strings to strings | empty string | arguments passed to each input validator for this test data group. If a string then those are the flags that will be passed to each input validator for this test data group. If a map then each key is the name of the input validator and the value is the flags to pass to that input validator for this test data group. Validators not present in the map are run without flags. |
-| output\_validator\_flags | String                              | empty string | arguments passed to the output validator for this test data group. |
-| accept\_score            | String                              | 1            | If an output validator outputs a score for an accepted input file, it is multiplied by the `accept_score` of the group. Otherwise, the score for the input file is the `accept_score` of the group. May only be specified for scoring problems.                                                                                                                                                                                                                               |
-| reject\_score            | String                              | 0            | If an output validator outputs a score for a rejected input file, it is multiplied by the `reject_score` of the group. Otherwise, the score for the output file is the `reject_score` of the group. May only be specified for scoring problems.                                                                                                                                                                                                                               |
-| range                    | String                              | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems. |
-
+| grader\_flags            | String                              | empty string | Arguments describing how the results of the group test cases and subgroups should be aggregated. |
+| input\_validator\_flags  | String or map of strings to strings | empty string | Arguments passed to each input validator for this test data group. If a string then those are the flags that will be passed to each input validator for this test data group. If a map then each key is the name of the input validator and the value is the flags to pass to that input validator for this test data group. Validators not present in the map are run without flags. |
+| output\_validator\_flags | String                              | empty string | Arguments passed to the output validator for this test data group. |
+| score                    | String                              | 1            | If an output validator outputs a score for an accepted input file, it is multiplied by the `score` of the group. Otherwise, the score for the input file is the `score` of the group. May only be specified for scoring problems. |
+| max_score                | String                              | +inf         | A number specifying the maximum score allowed for this test group. May only be specified for scoring problems. |
 </div>
 
 ### Invalid Input Files
@@ -374,7 +367,7 @@ of `submissions/`. The possible subdirectories are:
 | Value                 | Requirement                                                                               | Comment
 | --------------------- | ----------------------------------------------------------------------------------------- | -------
 | accepted              | Accepted as a correct solution for all test files                                         | At least one is required.
-| <span class="not-icpc"> partially\_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min.</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span>  |
+| <span class="not-icpc"> partially\_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must not be max of range .</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span>  |
 | wrong\_answer         | Wrong answer for some test file, but is not too slow and does not crash for any test file |
 | time\_limit\_exceeded | Too slow for some test file. May also give wrong answer but not crash for any test file.  |
 | run\_time\_error      | Crashes for some test file                                                                |
@@ -619,86 +612,22 @@ user upon invocation of the validator.
 
 <div class="not-icpc">
 
-## Graders
+## Grading
+A test data group can be configured to agregate the results of the test cases and subgroups it contains using the `grader_flags` flag.
+There are three different modes for aggregating the verdict: -- *worst\_error*, *first\_error* and *always\_accept*.
+Furthermore, there are four different modes for aggregating the score -- *sum*, *avg*, *min*, *max*.
+Finally, two flags -- *ignore\_sample* and *accept\_if\_any\_accepted* modify the behaviour.
+Their meaning are as follows:
 
-Graders are programs that are given the sub-results of a test data group and
-aggregate a result for the group. They are provided in `graders/` .
-
-For pass-fail problems, this grader will typically just set the verdict to
-accepted if all sub-results in the group were accepted and otherwise select
-the "worst" error in the group (see below for definition of "worst"), though
-it is possible to write a custom grader which e.g. accepts if at least half
-the sub-results are accepted. For scoring problems, one common grader
-behavior would be to always set the verdict to Accepted, with the score being
-the sum of scores of the items in the test group.
-
-### Invocation
-
-A grader program must be an application (executable or interpreted) capable of
-being invoked with a command line call.
-
-When invoked the grader will get the judgement for test files or groups on
-stdin and is expected to produce an aggregate result on stdout.
-
-The grader should be possible to use as follows on the command line:
-
-`./grader [arguments] < judgeresults`
-
-On success, the grader must exit with exit code 0.
-
-### Input
-
-A grader simply takes a list of results on standard input, and produces a
-single result on standard output. The input file will have the one line per
-test file containing the result of judging the testfile, using the code from
-the table below, followed by whitespace, followed by the score.
-
-| Code | Meaning             |
-| ---- | ------------------- |
-| AC   | Accepted            |
-| WA   | Wrong Answer        |
-| RTE  | Run-Time Error      |
-| TLE  | Time-Limit Exceeded |
-
-The score is taken from the `score.txt` files produced by the output
-validator. If no `score.txt` exists the score will be as defined by the
-grading accept\_score and reject\_score setting from problem.yaml.
-
-### Output
-
-The grader must output the aggregate result on stdout in the same format as
-its input. Any other output, including no output, will result in a Judging
-Error.
-
-For pass-fail problems, or for non-Accepted results on scoring problems, the
-score provided by the grader will always be ignored.
-
-The grader may output debug information on stderr. This information may be
-displayed to the user upon invocation of the grader.
-
-### Default Grader Specification
-
-The default grader has three different modes for aggregating the verdict
--- *worst\_error*, *first\_error* and *always\_accept* -- four different
-modes for aggregating the score -- *sum*, *avg*, *min*, *max* -- and two
-flags -- *ignore\_sample* and *accept\_if\_any\_accepted*. These modes
-can be set by providing their names as command line arguments (through
-the "grader\_flags" option in
-[testdata.yaml](#test-data-groups "wikilink")). If multiple conflicting
-modes are given, the last one is used. Their meaning are as follows.
-
-| Argument                 | Type         | Description
-| ------------------------ | ------------ | -----------
-| `worst_error`            | verdict mode | Default. Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group. Note that in combination with the on\_reject:break policy in testdata.yaml, the result will be the first error encountered.
-| `first_error`            | verdict mode | Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.
-| `always_accept`          | verdict mode | Verdict is always accepted.
-| `sum`                    | scoring mode | Default. Score is sum of input scores.
-| `avg`                    | scoring mode | score is average of input scores.
-| `min`                    | scoring mode | score is minimum of input scores.
-| `max`                    | scoring mode | score is maximum of input scores.
-| `ignore_sample`          | flag         | Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.
-| `accept_if_any_accepted` | flag         | Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.
-
+| Argument                                     | Type         | Description                                                                                                                                                                                                                                                                                                     |
+| - | - | - |
+| `worst_error` | verdict mode | Default. Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group. Note that in combination with the on\_reject:break policy in testdata.yaml, the result will be the first error encountered. |
+| `first_error`                                | verdict mode | Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.                 |
+| `always_accept`                              | verdict mode | Verdict is always accepted.                                                                                                                                                                                                                                                                                     |
+| `sum`                                        | scoring mode | Default. Score is sum of input scores.                                                                                                                                                                                                                                                                          |
+| `min`                                        | scoring mode | Score is minimum of input scores.                                                                                                                                                                                                                                                                               |
+| `ignore_sample`                              | flag         | Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.                                                                                                                                                          |
+| `accept_if_any_accepted`                     | flag         | Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.                                                                                                                                                                                                       |
 </div>
 
 ## See also
