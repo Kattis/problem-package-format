@@ -613,7 +613,7 @@ user upon invocation of the validator.
 <div class="not-icpc">
 
 ## Grading
-A test data group can be configured to agregate the results of the test cases and subgroups it contains using the `grader_flags` flag.
+A test data group can be configured to aggregate the results of the test cases and subgroups it contains using the `grader_flags` flag.
 There are three different modes for aggregating the verdict: -- *worst\_error*, *first\_error* and *always\_accept*.
 Furthermore, there are four different modes for aggregating the score -- *sum*, *avg*, *min*, *max*.
 Finally, two flags -- *ignore\_sample* and *accept\_if\_any\_accepted* modify the behaviour.
