@@ -21,8 +21,12 @@ import "strings"
 #language_code: =~ "^[a-z]{2,4}(-[A-Z][A-Z])?$" 
 
 #limits: { 
-    time_multiplier?: *5 | >0
-    time_safety_margin?: *2 | >0
+    time_multiplier?: {
+        accepted_to_limit: *2.0 | float
+        limit_to_exceeded: *1.5 | float
+     }
+    time_limit?: >0
+    time_resolution?: *1.0 | float
     memory?: int
     output?: int
     code?: int
