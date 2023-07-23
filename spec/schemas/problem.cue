@@ -16,7 +16,11 @@ import "strings"
     //    numexists(>=1, rights_owner, author, source)
     //} 
     limits?: #limits
-    validation?: *"default" | "custom" | "interactive" | "score" | "interactive score"
+    validation?: *"default" | "custom" | {
+        multipass: *false | true
+        interaction: *false | true
+        scoring: *false | true
+    }
     keywords?: string | [...string]
     uuid?: string
     languages?: *"all" | [...string]
