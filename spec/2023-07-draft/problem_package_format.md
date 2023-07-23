@@ -363,7 +363,7 @@ of `submissions/`. The possible subdirectories are:
 | Value                 | Requirement                                                                               | Comment
 | --------------------- | ----------------------------------------------------------------------------------------- | -------
 | accepted              | Accepted as a correct solution for all test files                                         | At least one is required.
-| <span class="not-icpc"> partially\_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must not be max of range .</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span>  |
+| <span class="not-icpc"> partially\_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must be less than `max_score`.</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span>  |
 | wrong\_answer         | Wrong answer for some test file, but is not too slow and does not crash for any test file |
 | time\_limit\_exceeded | Too slow for some test file. May also give wrong answer but not crash for any test file.  |
 | run\_time\_error      | Crashes for some test file                                                                |
