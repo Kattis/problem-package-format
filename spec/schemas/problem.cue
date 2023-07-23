@@ -33,8 +33,8 @@ import "strings"
 
 #limits: { 
     time_multiplier?: {
-        ac_to_timelimit: *2.0 | float
-        timelimit_to_tle: *1.5 | float
+        ac_to_time_limit: *2.0 | float
+        time_limit_to_tle: *1.5 | float
      }
     time_limit?: >0
     time_resolution?: *1.0 | float
