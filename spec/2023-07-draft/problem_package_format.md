@@ -612,7 +612,7 @@ For pass-fail problems, the verdict of a submission is the first non-accepted ve
 <div class="not-icpc">
 For scoring problems, the behaviour is configured by the following flags under `grading` in `testdata.yaml`:
 
-| Argument | Type | Description |
+| Key | Type | Description |
 | - | - | - |
 | score | String | The score assigned to an accepted input file in the group. If a scoring output validator is used, this score is **multiplied** by the score from the validator. |
 | max_score | String | A number specifying the maximum score allowed for this test group. |
