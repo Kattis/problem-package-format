@@ -232,14 +232,35 @@ reference auxiliary files as if the working directory is
 `<short_name>/problem_statement/`. Image file formats supported are `.png`,
 `.jpg`, `.jpeg`, and `.pdf`.
 
-
-A LaTeX file may include the Problem name using the LaTeX command
-`\problemname` in case LaTeX formatting of the title is wanted. <span
-class="not-icpc">If it's not included the problem name specified in
-`problem.yaml` will be used.</span>
-
 The problem statements must only contain the actual problem statement, no
 sample data.
+
+### LaTeX Environment and Supported Subset
+
+Problem statements provided in LaTeX must consist only of the problem statement body (i.e., the content that would be placed within a `document` environment). It is the contest system's responsibility to wrap this text in an appropriate LaTeX class and to append the sample data, problem name and ID, time limit, and other contest headers/footers/logos.
+
+The LaTeX class shall provide the convenience environments `Input`, `Output`, and `Interaction` for delineating sections of the problem statement. It shall also provide the following commands:
+
+ - `\problemname[name]`, which must be the first line of the problem statement. `name` is an optional argument giving a LaTeX-formatted problem name to be used in place of the `name` value from `problem.yaml` when rendering the problem statement header.
+ 
+ - `\illustration{width}{filename}{caption}`, a convenience command for adding a figure to the problem statement. `width` is a floating-point argument specifying the width of the figure, as a fraction of the total width of the problem statement; `filename` is the image to display and `caption` the text to include below the figure. The illustration should be flushed right with text flowing around it (as in a `wrapfigure`).
+
+Arbitrary LaTeX is not guaranteed to render correctly by HTML-based contest systems. However, contest systems must make a best effort to correctly render **at minimum** the following LaTeX subset when displaying a LaTeX problem statement:
+
+1. All [MathJax-supported TeX commands](https://docs.mathjax.org/en/latest/input/tex/macros/index.html) within inline (`$ $`) and display (`$$ $$`) math mode.
+
+2. The following text-mode environments: `itemize`, `enumerate`, `lstlisting`, `verbatim`, `quote`, `center`, `tabular`, `figure`, `wrapfigure` (from the `wrapfig` package).
+
+3. `\item` within list environments and `\hline`, `\cline`, `\multirow`, `\multicol` within tables.
+
+4. The following typesetting constructs: smart quotes  (`' '`, `<< >>`, ` `` '' `), dashes (`--`, `---`), non-breaking space (`~`), ellipses (`\ldots` and `\textellipsis`), and `\noindent`.
+
+5. The following font weight and size modifiers:  `\bf`, `\textbf`, `\it`, `\textit`, `\t`, `\tt`, `\texttt`, `\emph`, `\underline`, `\sout`, `\textsc`, `\tiny`, `\scriptsize`, `\small`, `\normalsize`, `\large`, `\Large`, `\LARGE`, `\huge`, `\Huge`.
+
+6. `\includegraphics` (from the package `graphicx`), including the Polygon-style workaround for scaling the image using `\def \htmlPixelsInCm`.
+
+7. The miscellaneous commands `\url`, `\href`, `\section`, `\subsection`, and `\epigraph`.
+
 
 ## Attachments
 
