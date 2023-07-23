@@ -607,7 +607,7 @@ to its standard error pipe. This information may be displayed to the
 user upon invocation of the validator.
 
 ## Grading
-For pass-fail problems, the verdict of a submission is the first non-accepted verdict, where test cases are run in lexicographical order of their full file paths (note that `sample` come before `secret` in this order).
+For pass-fail problems, the verdict of a submission is the first non-accepted verdict, where test cases are run in lexicographical order of their full file paths (note that `sample` comes before `secret` in this order).
 
 <div class="not-icpc">
 For scoring problems, the behaviour is configured by the following flags under `grading` in `testdata.yaml`:
