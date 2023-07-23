@@ -243,7 +243,7 @@ sample data.
 
 ### LaTeX Environment and Supported Subset
 
-Problem statements provided in LaTeX must consist only of the problem statement body (i.e., the content that would be placed within a `document` environment). It is the contest system's responsibility to wrap this text in an appropriate LaTeX class and to append the sample data, problem ID, and time limit, and contest headers/footers.
+Problem statements provided in LaTeX must consist only of the problem statement body (i.e., the content that would be placed within a `document` environment). It is the contest system's responsibility to wrap this text in an appropriate LaTeX class and to append the sample data, problem name and ID, time limit, and other contest headers/footers/logos.
 
 The LaTeX class shall provide the convenience environments `Input`, `Output`, and `Interaction` for delineating sections of the problem statement. It shall also provide the following commands:
 
