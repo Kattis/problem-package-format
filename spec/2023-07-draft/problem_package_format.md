@@ -621,7 +621,7 @@ For scoring problems, the behaviour is configured by the following flags under `
 
 The defaults are as follows:
 
-- The *data* and *secret* group: `score` is 1, `scoring` is sum, `verdict` is `accept_if_any_accepted. # Accepted (0) `ignore_sample`
+- The *data* and *secret* group: `score` is 1, `scoring` is sum, `verdict` is `accept_if_any_accepted.
 - The *sample* group: `score` is 0, `scoring` is `min`, `verdict` is `first_error`.
 - Other groups: score is `1`, `scoring` is `min`, verdict is `first_error`.
 - `max_score` is the sum of the `max_score` of the subresults if `scoring` is sum, and the minimum of the `max_score` of the subresults of `scoring` is `min`. For individual testcases, the `max_score` here means the `score` value of the group it is in.
