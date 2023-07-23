@@ -615,7 +615,7 @@ For scoring problems, the behaviour is configured by the following flags under `
 | Key | Type | Description |
 | - | - | - |
 | score | String | The score assigned to an accepted input file in the group. If a scoring output validator is used, this score is **multiplied** by the score from the validator. |
-| max_score | String | A number specifying the maximum score allowed for this test group. |
+| max_score | String | A number specifying the maximum score allowed for this test group. It is an error to exceed this. |
 | aggregation | `sum` or `min` | If sum, the score is the sum of the subresult scores. If min, the score is the minimum of the subresult scores. |
 | verdict | `first_error`, `accept_if_any_accepted` | If `first_error`, the verdict is that of the first non-accepted subresult. If `accept_if_any_accepted`, the verdict is accepted if any subresult is accepted, otherwise that of the first non-accepted subresult. |
 
