@@ -251,7 +251,7 @@ The LaTeX class shall provide the convenience environments `Input`, `Output`, an
  
  - `\illustration{width}{filename}{caption}`, a convenience command for adding a figure to the problem statement. `width` is a floating-point argument specifying the width of the figure, as a fraction of the total width of the problem statement; `filename` is the image to display and `caption` the text to include below the figure. The illustration should be flushed right with text flowing around it (as in a `wrapfigure`).
 
-Arbitrary LaTeX is not guaranteed to render correctly by HTML-based contest systems. However, contest systems must make a best effort to correctly render the following LaTeX subset when displaying a LaTeX problem statement:
+Arbitrary LaTeX is not guaranteed to render correctly by HTML-based contest systems. However, contest systems must make a best effort to correctly render **at minimum** the following LaTeX subset when displaying a LaTeX problem statement:
 
 1. All [MathJax-supported TeX commands](https://docs.mathjax.org/en/latest/input/tex/macros/index.html) within inline (`$ $`) and display (`$$ $$`) math mode.
 
