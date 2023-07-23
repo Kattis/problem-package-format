@@ -232,16 +232,16 @@ reference auxiliary files as if the working directory is
 `<short_name>/problem_statement/`. Image file formats supported are `.png`,
 `.jpg`, `.jpeg`, and `.pdf`.
 
-The problem statements must only contain the actual problem statement, no
-sample data.
+For problem statements provided in LaTeX or Markdown, the problem statements must only contain the actual problem statement and no
+sample data. It is the contest system's responsibility to append the sample data, problem name and ID, time limit, and other contest headers/footers/logos. For problem statement PDFs, the problem statement is displayed unmodified and must include this information.
 
 ### LaTeX Environment and Supported Subset
 
-Problem statements provided in LaTeX must consist only of the problem statement body (i.e., the content that would be placed within a `document` environment). It is the contest system's responsibility to wrap this text in an appropriate LaTeX class and to append the sample data, problem name and ID, time limit, and other contest headers/footers/logos.
+Problem statements provided in LaTeX must consist only of the problem statement body (i.e., the content that would be placed within a `document` environment). It is the contest system's responsibility to wrap this text in an appropriate LaTeX class.
 
 The LaTeX class shall provide the convenience environments `Input`, `Output`, and `Interaction` for delineating sections of the problem statement. It shall also provide the following commands:
 
- - `\problemname{name}`, which must be the first line of the problem statement. `name` gives a LaTeX-formatted problem name to be used when rendering the problem statement header. This argument can be empty, in which case the `name` value from `problem.yaml` is used instead.
+ - `\problemname{name}`, which must be the first line of the problem statement. `name` gives a LaTeX-formatted problem name to be used when rendering the problem statement header. This argument can be empty, in which case the `name` value matching the problem statement's language from `problem.yaml` is used instead.
  
  - `\illustration{width}{filename}{caption}`, a convenience command for adding a figure to the problem statement. `width` is a floating-point argument specifying the width of the figure, as a fraction of the total width of the problem statement; `filename` is the image to display and `caption` the text to include below the figure. The illustration should be flushed right with text flowing around it (as in a `wrapfigure`).
 
