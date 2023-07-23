@@ -241,7 +241,7 @@ Problem statements provided in LaTeX must consist only of the problem statement 
 
 The LaTeX class shall provide the convenience environments `Input`, `Output`, and `Interaction` for delineating sections of the problem statement. It shall also provide the following commands:
 
- - `\problemname[name]`, which must be the first line of the problem statement. `name` is an optional argument giving a LaTeX-formatted problem name to be used in place of the `name` value from `problem.yaml` when rendering the problem statement header.
+ - `\problemname{name}`, which must be the first line of the problem statement. `name` gives a LaTeX-formatted problem name to be used when rendering the problem statement header. This argument can be empty, in which case the `name` value from `problem.yaml` is used instead.
  
  - `\illustration{width}{filename}{caption}`, a convenience command for adding a figure to the problem statement. `width` is a floating-point argument specifying the width of the figure, as a fraction of the total width of the problem statement; `filename` is the image to display and `caption` the text to include below the figure. The illustration should be flushed right with text flowing around it (as in a `wrapfigure`).
 
