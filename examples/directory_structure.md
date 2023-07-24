@@ -1,43 +1,43 @@
----
-permalink: /examples/directory_structure
----
 # Directory structure
 
 ```text
 <short_name>/
-      problem.yaml - problem configuration file
-      problem_statement/
-              problem.tex - problem statement
-              - any files that problem.tex needs to include, e.g. images
-      data/
-              sample/
-                      *.in - sample input files
-                      *.ans - sample answer files
-              secret/
-                      *.in - input files
-                      *.ans - answer files
-                      *.hint - optional hint for the team
-                      *.desc - optional data description
-                      *.jpg, *.png, *.svg - visualization of the testcase
-      include/
-              <language>/
-                      - any files that should be included with all submissions in <language>
-      submissions/
-              accepted/
-                - single file or directory per solution
-              time_limit_exceeded/
-                - single file or directory per solution
-              wrong_answer/
-                - single file or directory per solution
-              run_time_error/
-                - single file or directory per solution
-      input_validators/
-              - single file or directory per validator
-      output_validators/
-              - single file or directory per validator
+  problem.yaml - problem configuration file
+  problem_statement/
+    problem.en.tex - problem statement
+    problem.nl.tex - problem statement
+    - any files that problem.xy.tex needs to include, e.g. images
+  data/
+    sample/
+      *.in - sample input files
+      *.ans - sample answer files
+    secret/
+      *.in - input files
+      *.ans - answer files
+      *.hint - optional hint for the team
+      *.desc - optional data description
+      *.jpg, *.png, *.svg - visualization of the testcase
+  include/
+    <language>/
+      - any files that should be included with all submissions in <language>
+  submissions/
+    accepted/
+      - a file/directory for each submission with final verdict AC
+    time_limit_exceeded/
+      - a file/directory for each submission with final verdict TLE
+    wrong_answer/
+      - a file/directory for each submission with final verdict WA
+    run_time_error/
+      - a file/directory for each submission with final verdict RTE
+  input_validators/
+    - single file or directory per validator
+  output_validator/
+    - a single output validator consisting of one or multiple files
+  attachments/
+    - public files available to contestants
 ```
 
-#### Sample Directory / Filenames
+## Example
 
 This is a sample list of directories/files for a problem named `heightprofile`:
 
@@ -72,7 +72,7 @@ heightprofile
 │   │   └── validation.h
 │   ├── profile.ctd
 │   └── validate.py
-├── output_validators
+├── output_validator
 │   └── validate.ctd
 └── submissions
     ├── accepted
