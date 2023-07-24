@@ -346,7 +346,7 @@ to standard output.
 ## Input Validators
 
 Input Validators, for verifying the correctness of the input files, are
-provided in `input_validators/` (or the deprtecated `input_format_validators/`). 
+provided in `input_validators/` (or the deprecated `input_format_validators/`). 
 Input validators can be specified as VIVA-files (with file ending `.viva`), Checktestdata-file (with file ending `.ctd`), or as a program.
 
 All input validators provided will be run on every input file.
