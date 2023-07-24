@@ -4,13 +4,14 @@ permalink: /spec/problem_package_format
 sort: 1
 show_diff_buttons: true
 ---
+
 # Problem Package Format
 
 This is the `2023-07-draft` version of the specification.
 
 ## Overview
 
-This document describes the format of a *Kattis problem package*, used for
+This document describes the format of a _Kattis problem package_, used for
 distributing and sharing problems for algorithmic programming contests as
 well as educational use.
 
@@ -47,11 +48,11 @@ There can't be two programs of the same kind with the same name.
 Validators, but not submissions, in the form of a directory may include two POSIX-compliant scripts "build" and "run".
 If at least one of these two files is included:
 
-  1. First, if the `build` script is present, it will be run. The
-     working directory will be (a copy of) the program directory. The
-     `run` file must exist after `build` is done.
-  2. Then, the `run` file (which now exists) must be executable, and
-     will be invoked in the same way as a single file program.
+1. First, if the `build` script is present, it will be run. The
+   working directory will be (a copy of) the program directory. The
+   `run` file must exist after `build` is done.
+2. Then, the `run` file (which now exists) must be executable, and
+   will be invoked in the same way as a single file program.
 
 Programs without `build` and `run` scripts are built and run according to what
 language is used. Language is determined by looking at the file endings. If a
@@ -107,56 +108,56 @@ the package.
 The keys are defined as below. Keys are optional unless explicitly stated. Any
 unknown keys should be treated as an error.
 
-| Key                      | Type                                 | Default                                                 | Comments
-| ------------------------ | -------------------------------------| ------------------------------------------------------- | --------
-| problem\_format\_version | String                               | `legacy`                                                | Version of the Problem Package Format used for this package. If using this version of the Format must be the string `2023-07-draft`. Will be on the form `<yyyy>-<mm>` for a stable version, `<yyyy>-<mm>-draft` or `draft` for a draft version, or `legacy` for the version before the addition of problem_format_version. Documentation for version `<version>` is available at https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>.
-| name                     | String or map of strings |    | Required. If a string this is the name of the problem in English. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.
-| uuid                     | String                               |                                                         | UUID identifying the problem.
-| <span class="not-icpc">type</span> | <span class="not-icpc">String</span> | <span class="not-icpc">pass-fail</span> | <span class="not-icpc">One of "pass-fail" and "scoring".</span>
-| author                   | String                               |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
-| source                   | String                               |                                                         | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
-| source\_url              | String                               |                                                         | Link to page for source event. Must not be given if source is not.
-| license                  | String                               | unknown                                                 | License under which the problem may be used. Value has to be one of the ones defined below.
-| rights\_owner            | String                               | Value of author, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".
-| limits                   | Map with keys as defined below       | see definition below
-| validation               |  String                              | default                                                 | One of "default" or "custom". If "custom", may be followed by <span class="not-icpc">some subset of "score", "multipass" and</span> "interactive", where <span class="not-icpc">"score" indicates that the validator produces a score (this is only valid for scoring problems), "multipass" indicates that the submission should run multiple times with inputs generated by the validator, and</span> "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive<span class="not-icpc"> score</span>".
-| keywords                 | String or sequence of strings        |                                                         | Set of keywords.
-| <span class="not-icpc">languages</span> | <span class="not-icpc">String or sequence of strings</span> | <span class="not-icpc">all</span>| <span class="not-icpc">Set of languages or "all".</span>
+| Key                                     | Type                                                        | Default                                                 | Comments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| problem_format_version                  | String                                                      | `legacy`                                                | Version of the Problem Package Format used for this package. If using this version of the Format must be the string `2023-07-draft`. Will be on the form `<yyyy>-<mm>` for a stable version, `<yyyy>-<mm>-draft` or `draft` for a draft version, or `legacy` for the version before the addition of problem_format_version. Documentation for version `<version>` is available at https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>.                                                                                            |
+| name                                    | String or map of strings                                    |                                                         | Required. If a string this is the name of the problem in English. If a map the keys are language codes and the values are the name of the problem in that language. It is an error for a language to be missing if there exists a problem statement for that language.                                                                                                                                                                                                                                                                                            |
+| uuid                                    | String                                                      |                                                         | UUID identifying the problem.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| <span class="not-icpc">type</span>      | <span class="not-icpc">String</span>                        | <span class="not-icpc">pass-fail</span>                 | <span class="not-icpc">One of "pass-fail" and "scoring".</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| author                                  | String                                                      |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.                                                                                                                                                                                                                                                                                             |
+| source                                  | String                                                      |                                                         | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| source_url                              | String                                                      |                                                         | Link to page for source event. Must not be given if source is not.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| license                                 | String                                                      | unknown                                                 | License under which the problem may be used. Value has to be one of the ones defined below.                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| rights_owner                            | String                                                      | Value of author, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".                                                                                                                                                                                                                                                                                                                      |
+| limits                                  | Map with keys as defined below                              | see definition below                                    |
+| validation                              | String                                                      | default                                                 | One of "default" or "custom". If "custom", may be followed by <span class="not-icpc">some subset of "score", "multipass" and</span> "interactive", where <span class="not-icpc">"score" indicates that the validator produces a score (this is only valid for scoring problems), "multipass" indicates that the submission should run multiple times with inputs generated by the validator, and</span> "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive<span class="not-icpc"> score</span>". |
+| keywords                                | String or sequence of strings                               |                                                         | Set of keywords.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| <span class="not-icpc">languages</span> | <span class="not-icpc">String or sequence of strings</span> | <span class="not-icpc">all</span>                       | <span class="not-icpc">Set of languages or "all".</span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 ### license
 
 Allowed values for license.
 
-Values other than *unknown* or *public domain* requires rights\_owner to have
+Values other than _unknown_ or _public domain_ requires rights_owner to have
 a value.
 
-| Value         | Comments                                                                     | Link          |
-| ------------- | ---------------------------------------------------------------------------- | ------------- |
-| unknown       | The default value. In practice means that the problem can not be used.       |               |
-| public domain | There are no known copyrights on the problem, anywhere in the world.         | <http://creativecommons.org/about/pdm> |
-| cc0           | CC0, "no rights reserved"                                                    | <http://creativecommons.org/about/cc0> |
-| cc by         | CC attribution                                                               | <http://creativecommons.org/licenses/by/4.0/> |
+| Value         | Comments                                                                     | Link                                             |
+| ------------- | ---------------------------------------------------------------------------- | ------------------------------------------------ |
+| unknown       | The default value. In practice means that the problem can not be used.       |                                                  |
+| public domain | There are no known copyrights on the problem, anywhere in the world.         | <http://creativecommons.org/about/pdm>           |
+| cc0           | CC0, "no rights reserved"                                                    | <http://creativecommons.org/about/cc0>           |
+| cc by         | CC attribution                                                               | <http://creativecommons.org/licenses/by/4.0/>    |
 | cc by-sa      | CC attribution, share alike                                                  | <http://creativecommons.org/licenses/by-sa/4.0/> |
-| educational   | May be freely used for educational purposes                                  |               |
-| permission    | Used with permission. The author must be contacted for every additional use. |               |
+| educational   | May be freely used for educational purposes                                  |                                                  |
+| permission    | Used with permission. The author must be contacted for every additional use. |                                                  |
 
 ### limits
 
 A map with the following keys:
 
-| Key                  | Comments                   | Default        | Typical system default |
-| -------------------- | -------------------------- | -------------- | ---------------------- |
-| time\_multipliers    | optional                   | see below      |                        |
-| time\_limit          | optional float, in seconds | see below      |                        |
-| time\_resolution     | optional float, in seconds | 1.0            |                        |
-| memory               | optional, in MiB           | system default | 2048                   |
-| output               | optional, in MiB           | system default | 8                      |
-| code                 | optional, in kiB           | system default | 128                    |
-| compilation\_time    | optional, in seconds       | system default | 60                     |
-| compilation\_memory  | optional, in MiB           | system default | 2048                   |
-| validation\_time     | optional, in seconds       | system default | 60                     |
-| validation\_memory   | optional, in MiB           | system default | 2048                   |
-| validation\_output   | optional, in MiB           | system default | 8                      |
+| Key                | Comments                   | Default        | Typical system default |
+| ------------------ | -------------------------- | -------------- | ---------------------- |
+| time_multipliers   | optional                   | see below      |                        |
+| time_limit         | optional float, in seconds | see below      |                        |
+| time_resolution    | optional float, in seconds | 1.0            |                        |
+| memory             | optional, in MiB           | system default | 2048                   |
+| output             | optional, in MiB           | system default | 8                      |
+| code               | optional, in kiB           | system default | 128                    |
+| compilation_time   | optional, in seconds       | system default | 60                     |
+| compilation_memory | optional, in MiB           | system default | 2048                   |
+| validation_time    | optional, in seconds       | system default | 60                     |
+| validation_memory  | optional, in MiB           | system default | 2048                   |
+| validation_output  | optional, in MiB           | system default | 8                      |
 
 For most keys the system default will be used if nothing is specified. This
 can vary, but you SHOULD assume that it's reasonable. Only specify limits
@@ -167,18 +168,18 @@ the "typical system default" is what is needed.
 
 `time_multipliers` is a map with the following keys:
 
-| Key                  | Comments             | Default        |
-|----------------------|----------------------|----------------|
-| ac_to_time_limit     | float                | 2.0            |
-| time_limit_to_tle    | float                | 1.5            |
+| Key               | Comments | Default |
+| ----------------- | -------- | ------- |
+| ac_to_time_limit  | float    | 2.0     |
+| time_limit_to_tle | float    | 1.5     |
 
 The value of `time_limit` is an integer or floating-point problem time limit,
 in seconds. The time multipliers specify safety margins relative to the
-slowest accepted submission `T_ac` and fastest time\_limit\_exceeded
+slowest accepted submission `T_ac` and fastest time_limit_exceeded
 submission `T_tle`. The `time_limit` must satisfy `T_ac * ac_to_time_limit <=
 time_limit` and `time_limit * time_limit_to_tle <= T_tle`. In these
 calculations, `T_tle` is treated as infinity if the problem does not provide
-at least one time\_limit\_exceeded submission.
+at least one time_limit_exceeded submission.
 
 If no `time_limit` is provided, the default value is the smallest integer
 multiple of `time_resolution` that satisfies the above inequalities. It is an
@@ -197,7 +198,7 @@ precision greater than can be resolved by system timers.
 ### languages
 
 A space separated list of language code from the table in the overview section
-or *all*.
+or _all_.
 
 If a list is given, the problem may only be solved using those languages.
 
@@ -227,7 +228,6 @@ Auxiliary files needed by the problem statement files must all be in
 reference auxiliary files as if the working directory is
 `<short_name>/problem_statement/`. Image file formats supported are `.png`,
 `.jpg`, `.jpeg`, and `.pdf`.
-
 
 A LaTeX file may include the Problem name using the LaTeX command
 `\problemname` in case LaTeX formatting of the title is wanted. <span
@@ -327,11 +327,12 @@ root `data` group, one is implicitly added with the default values.
 
 The format of `testdata.yaml` is as follows:
 
-| Key                      | Type                                | Default      | Comments |
-| ------------------------ | ----------------------------------- | ------------ | --------
-| grading                  | Map                                 | [See Grading](#grading) | Description of how the results of the group test cases and subgroups should be aggregated. |
-| input\_validator\_flags  | String or map of strings to strings | empty string | Arguments passed to each input validator for this test data group. If a string then those are the flags that will be passed to each input validator for this test data group. If a map then each key is the name of the input validator and the value is the flags to pass to that input validator for this test data group. Validators not present in the map are run without flags. |
-| output\_validator\_flags | String                              | empty string | Arguments passed to the output validator for this test data group. |
+| Key                    | Type                                | Default                 | Comments                                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------- | ----------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| grading                | Map                                 | [See Grading](#grading) | Description of how the results of the group test cases and subgroups should be aggregated.                                                                                                                                                                                                                                                                                            |
+| input_validator_flags  | String or map of strings to strings | empty string            | Arguments passed to each input validator for this test data group. If a string then those are the flags that will be passed to each input validator for this test data group. If a map then each key is the name of the input validator and the value is the flags to pass to that input validator for this test data group. Validators not present in the map are run without flags. |
+| output_validator_flags | String                              | empty string            | Arguments passed to the output validator for this test data group.                                                                                                                                                                                                                                                                                                                    |
+
 </div>
 
 ### Invalid Input Files
@@ -366,14 +367,13 @@ referred above.
 Correct and incorrect solutions to the problem are provided in subdirectories
 of `submissions/`. The possible subdirectories are:
 
-
-| Value                 | Requirement                                                                               | Comment
-| --------------------- | ----------------------------------------------------------------------------------------- | -------
-| accepted              | Accepted as a correct solution for all test files                                         | At least one is required.
-| <span class="not-icpc"> partially\_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must be less than `max_score`.</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span>  |
-| wrong\_answer         | Wrong answer for some test file, but is not too slow and does not crash for any test file |
-| time\_limit\_exceeded | Too slow for some test file. May also give wrong answer but not crash for any test file.  |
-| run\_time\_error      | Crashes for some test file                                                                |
+| Value                                             | Requirement                                                                                                   | Comment                                                                 |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| accepted                                          | Accepted as a correct solution for all test files                                                             | At least one is required.                                               |
+| <span class="not-icpc"> partially_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must be less than `max_score`.</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span> |
+| wrong_answer                                      | Wrong answer for some test file, but is not too slow and does not crash for any test file                     |
+| time_limit_exceeded                               | Too slow for some test file. May also give wrong answer but not crash for any test file.                      |
+| run_time_error                                    | Crashes for some test file                                                                                    |
 
 Every file or directory in these directories represents a separate solution.
 Same requirements as for submissions with regards to filenames. It is
@@ -457,13 +457,13 @@ mode, it tokenizes the files to compare and compares them token by token. It
 supports the following command-line arguments to control how tokens are
 compared.
 
-| Arguments                    | Description
-| ---------------------------- | -----------
-| `case_sensitive`             | indicates that comparisons should be case-sensitive.
-| `space_change_sensitive`     | indicates that changes in the amount of whitespace should be rejected (the default is that any sequence of 1 or more whitespace characters are equivalent).
-| `float_relative_tolerance ε` | indicates that floating-point tokens should be accepted if they are within relative error ≤ ε (see below for details).
-| `float_absolute_tolerance ε` | indicates that floating-point tokens should be accepted if they are within absolute error ≤ ε (see below for details).
-| `float_tolerance ε`          | short-hand for applying ε as both relative and absolute tolerance.
+| Arguments                    | Description                                                                                                                                                 |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `case_sensitive`             | indicates that comparisons should be case-sensitive.                                                                                                        |
+| `space_change_sensitive`     | indicates that changes in the amount of whitespace should be rejected (the default is that any sequence of 1 or more whitespace characters are equivalent). |
+| `float_relative_tolerance ε` | indicates that floating-point tokens should be accepted if they are within relative error ≤ ε (see below for details).                                      |
+| `float_absolute_tolerance ε` | indicates that floating-point tokens should be accepted if they are within absolute error ≤ ε (see below for details).                                      |
+| `float_tolerance ε`          | short-hand for applying ε as both relative and absolute tolerance.                                                                                          |
 
 When supplying both a relative and an absolute tolerance, the semantics are
 that a token is accepted if it is within either of the two tolerances. When a
@@ -486,43 +486,43 @@ The validator should be possible to use as follows on the command line:
 
 The meaning of the parameters listed above are:
 
-  - input: a string specifying the name of the input data file which was
-    used to test the program whose results are being validated.
+- input: a string specifying the name of the input data file which was
+  used to test the program whose results are being validated.
 
-  - judge\_answer: a string specifying the name of an arbitrary "answer
-    file" which acts as input to the validator program. The answer file
-    may, but is not necessarily required to, contain the "correct
-    answer" for the problem. For example, it might contain the output
-    which was produced by a judge's solution for the problem when run
-    with input file as input. Alternatively, the "answer file" might
-    contain information, in arbitrary format, which instructs the
-    validator in some way about how to accomplish its task. The meaning
-    of the contents of the answer file is not defined by this standard.
+- judge_answer: a string specifying the name of an arbitrary "answer
+  file" which acts as input to the validator program. The answer file
+  may, but is not necessarily required to, contain the "correct
+  answer" for the problem. For example, it might contain the output
+  which was produced by a judge's solution for the problem when run
+  with input file as input. Alternatively, the "answer file" might
+  contain information, in arbitrary format, which instructs the
+  validator in some way about how to accomplish its task. The meaning
+  of the contents of the answer file is not defined by this standard.
 
-  - feedback\_dir: a string which specifies the name of a "feedback
-    directory" in which the validator can produce "feedback files" in
-    order to report additional information on the validation of the
-    output file. The feedbackdir must end with a path separator
-    (typically '/' or '\\' depending on operating system), so that
-    simply appending a filename to feedbackdir gives the path to a file
-    in the feedback directory.
+- feedback_dir: a string which specifies the name of a "feedback
+  directory" in which the validator can produce "feedback files" in
+  order to report additional information on the validation of the
+  output file. The feedbackdir must end with a path separator
+  (typically '/' or '\\' depending on operating system), so that
+  simply appending a filename to feedbackdir gives the path to a file
+  in the feedback directory.
 
-  - additional\_arguments: in case the problem specifies additional
-    validator\_flags, these are passed as additional arguments to the
-    validator on the command line.
+- additional_arguments: in case the problem specifies additional
+  validator_flags, these are passed as additional arguments to the
+  validator on the command line.
 
-  - team\_output: the output produced by the program being validated is
-    given on the validator's standard input pipe.
+- team_output: the output produced by the program being validated is
+  given on the validator's standard input pipe.
 
-  - team\_input: when running the validator in interactive mode
-    everything written on the validator's standard output pipe is given
-    to the program being validated. Please note that when running
-    interactive the program will only receive the output produced by the
-    validator and will not have direct access to the input file.
+- team_input: when running the validator in interactive mode
+  everything written on the validator's standard output pipe is given
+  to the program being validated. Please note that when running
+  interactive the program will only receive the output produced by the
+  validator and will not have direct access to the input file.
 
-The two files pointed to by input and judge\_answer must exist (though
+The two files pointed to by input and judge_answer must exist (though
 they are allowed to be empty) and the validator program must be allowed
-to open them for reading. The directory pointed to by feedback\_dir must
+to open them for reading. The directory pointed to by feedback_dir must
 also exist.
 
 ### Reporting a judgement
@@ -530,12 +530,12 @@ also exist.
 A validator program is required to report its judgement by exiting with
 specific exit codes:
 
-  - If the output is a correct output for the input file (i.e., the
-    submission that produced the output is to be Accepted), the
-    validator exits with exit code 42.
-  - If the output is incorrect (i.e., the submission that produced the
-    output is to be judged as Wrong Answer), the validator exits with
-    exit code 43.
+- If the output is a correct output for the input file (i.e., the
+  submission that produced the output is to be Accepted), the
+  validator exits with exit code 42.
+- If the output is incorrect (i.e., the submission that produced the
+  output is to be judged as Wrong Answer), the validator exits with
+  exit code 43.
 
 Any other exit code (including 0\!) indicates that the validator did not
 operate properly, and the contest control system invoking the validator
@@ -616,22 +616,23 @@ to its standard error pipe. This information may be displayed to the
 user upon invocation of the validator.
 
 ## Grading
+
 For pass-fail problems, the verdict of a submission is the first non-accepted verdict, where test cases are run in lexicographical order of their full file paths (note that `sample` comes before `secret` in this order).
 
 <div class="not-icpc">
 For scoring problems, the behaviour is configured by the following flags under `grading` in `testdata.yaml`:
 
-| Key | Type | Description |
-| - | - | - |
-| score | String | The score assigned to an accepted input file in the group. If a scoring output validator is used, this score is **multiplied** by the score from the validator. |
-| max_score | String | A number specifying the maximum score allowed for this test group. It is an error to exceed this. |
-| aggregation | `sum` or `min` | If sum, the score is the sum of the subresult scores. If min, the score is the minimum of the subresult scores. |
-| verdict | `first_error`, `accept_if_any_accepted` | If `first_error`, the verdict is that of the first non-accepted subresult. If `accept_if_any_accepted`, the verdict is accepted if any subresult is accepted, otherwise that of the first non-accepted subresult. |
+| Key         | Type                                    | Description                                                                                                                                                                                                       |
+| ----------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| score       | String                                  | The score assigned to an accepted input file in the group. If a scoring output validator is used, this score is **multiplied** by the score from the validator.                                                   |
+| max_score   | String                                  | A number specifying the maximum score allowed for this test group. It is an error to exceed this.                                                                                                                 |
+| aggregation | `sum` or `min`                          | If sum, the score is the sum of the subresult scores. If min, the score is the minimum of the subresult scores.                                                                                                   |
+| verdict     | `first_error`, `accept_if_any_accepted` | If `first_error`, the verdict is that of the first non-accepted subresult. If `accept_if_any_accepted`, the verdict is accepted if any subresult is accepted, otherwise that of the first non-accepted subresult. |
 
 The defaults are as follows:
 
-- The *data* and *secret* group: `score` is 1, `scoring` is sum, `verdict` is `accept_if_any_accepted`.
-- The *sample* group: `score` is 0, `scoring` is `min`, `verdict` is `first_error`.
+- The _data_ and _secret_ group: `score` is 1, `scoring` is sum, `verdict` is `accept_if_any_accepted`.
+- The _sample_ group: `score` is 0, `scoring` is `min`, `verdict` is `first_error`.
 - Other groups: score is `1`, `scoring` is `min`, verdict is `first_error`.
 - `max_score` is the sum of the `max_score` of the subresults if `scoring` is sum, and the minimum of the `max_score` of the subresults of `scoring` is `min`. For individual testcases, the `max_score` here means the `score` value of the group it is in.
 
