@@ -230,17 +230,6 @@ problem statement and sample test data are provided in the directory
 
 ## Test data
 
-<div class="kattis">
-
-<s>
-
-If input generators are used the files described here might not be
-available in this directory. This section describes what must be the
-case after running the generators.
-
-</s>
-
-</div>
 The test data are provided in subdirectories of `data/`. The sample data
 in `data/sample/` and the secret data in `data/secret/`.
 
@@ -552,47 +541,6 @@ modes are given, the last one is used. Their meaning are as follows.
 | `max`                                        | scoring mode | score is maximum of input scores.                                                                                                                                                                                                                                                                               |
 | `ignore_sample`                              | flag         | Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.                                                                                                                                                          |
 | `accept_if_any_accepted`                     | flag         | Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.                                                                                                                                                                                                       |
-</div>
-<div class="kattis">
-
-
-## <s>Generators</s>
-
-<s>
-
-Input generators are programs that generates input. They are
-provided in `generators/`.
-
-```note
-
-TODO: Add the new `generators.yaml` specification.
-```
-
-</s>
-
-### <s>Invocation</s>
-
-<s>
-
-A generator program must be an application (executable or
-interpreted) capable of being invoked with a command line call.
-
-The generators will be run with the test data directory (`data/`) as the
-working directory. The generator may read any existing files in that
-directory and should create any kind of test data file as defined in the
-test data section. The generator may not read or write anything outside
-the test data directory. The generators will be run in lexicographical
-order on name. If a specific order is desired a numbered prefix such as
-`00`, `01`, `02`, `03`, and so on, can be used.
-
-The generators must be deterministic, i.e. always produce the same input
-file when give the same arguments.
-
-The generators must be idempotent, i.e. running them multiple times
-should result in the same contents of the test data directory as running
-them once.
-
-</s>
 </div>
 
 ## See also
