@@ -42,13 +42,15 @@ There can't be two programs of the same kind with the same name.
 
 Validators and graders, but not submissions, 
 in the form of a directory may include two POSIX-compliant scripts "build" and "run". 
-Either both or none of these scripts must be included. 
-If the scripts are present, then:
+If at least one of these two files is included:
 
-- the program will be compiled by executing the build script.
-- the program will be run by executing the run script.
+1. First, if the `build` script is present, it will be run. 
+   The working directory will be (a copy of) the program directory. 
+   The `run` file must exist after `build` is done.
+2. Then, the `run` file (which now exists) must be executable, 
+   and will be invoked in the same way as a single file program.
 
-Programs without build and run scripts are built and run according to what language is used. 
+Programs without `build` and `run` scripts are built and run according to what language is used. 
 Language is determined by looking at the file endings. 
 If a single language from the table below can't be determined, building fails. 
 In the case of Python 2 and 3 which share the same file ending, 
@@ -80,7 +82,7 @@ For languages where there could be several entry points, the default entry point
 
 <div class="not-icpc">
 
-### Problem types
+### Problem Types
 
 There are two types of problems: <em>pass-fail</em> problems and <em>scoring</em> problems. 
 In pass-fail problems, submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and divided into results such as "Wrong Answer", "Time Limit Exceeded", etc). 
@@ -94,7 +96,7 @@ Metadata about the problem (e.g., source, license, limits) are provided in a UTF
 
 The keys are defined as below. 
 Keys are optional unless explicitly stated. 
-Any unknown keys should be treated as an error.
+Any unknown keys should be treated as an error. 
 
 | Key                                   | Type                                                          | Default                                                 | Comments                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -133,8 +135,8 @@ A map with the following keys:
 
 | Key                | Comments             | Default        | Typical system default |
 | ------------------ | -------------------- | -------------- | ---------------------- |
-| time_multiplier    | optional             | 5              |                        |
-| time_safety_margin | optional             | 2              |                        |
+| time_multiplier    | optional float       | 5              |                        |
+| time_safety_margin | optional float       | 2              |                        |
 | memory             | optional, in MiB     | system default | 2048                   |
 | output             | optional, in MiB     | system default | 8                      |
 | code               | optional, in kiB     | system default | 128                    |
@@ -144,7 +146,7 @@ A map with the following keys:
 | validation_memory  | optional, in MiB     | system default | 2048                   |
 | validation_output  | optional, in MiB     | system default | 8                      |
 
-For most keys the system default will be used if nothing is specified.
+For most keys the system default will be used if nothing is specified. 
 This can vary, but you SHOULD assume that it's reasonable. 
 Only specify limits when the problem needs a specific limit, but do specify limits even if the "typical system default" is what is needed.
 
@@ -180,7 +182,7 @@ Auxiliary files needed by the problem statement files must all be in `<short_nam
 `problem.<language>.<filetype>` should reference auxiliary files as if the working directory is `<short_name>/problem_statement/`. 
 Image file formats supported are `.png`, `.jpg`, `.jpeg`, and `.pdf`.
 
-A LaTeX file may include the Problem name using the LaTeX command `\problemname` in case LaTeX formatting of the title is wanted.
+A LaTeX file may include the Problem name using the LaTeX command `\problemname` in case LaTeX formatting of the title is wanted. 
 
 The problem statements must only contain the actual problem statement, no sample data.
 
@@ -214,14 +216,15 @@ Input, answer, description, hint and image files are matched by the base name.
 
 For interactive problems, any sample test cases must provide an interaction protocol with the extension `.interaction` for each sample demonstrating the communication between the submission and the output validator, 
 meant to be displayed in the problem statement. 
-An interaction protocol consists of a series of lines starting with `>` and `<`.
+An interaction protocol consists of a series of lines starting with `>` and `<`. 
 Lines starting with `>` signify an output from the submission to the output validator, 
 while `<` signify an input from the output validator to the submission.
 
-A sample test case may have just an `.interaction` file without a corresponding `.in` and `.ans` file.
-However, if either of a `.in` or a `.ans` file is present the other one must also be present.
-Unlike `.in` and `.ans` files for non-interactive problem, interactive `.in` and `.ans` files are not meant to be displayed in the problem statement.
-If you want to provide files related to interactive problems (such as testing tools or input files) you can use [attachments](#attachments).
+A sample test case may have just an `.interaction` file without a corresponding `.in` and `.ans` file. 
+However, if either of a `.in` or a `.ans` file is present the other one must also be present. 
+Unlike `.in` and `.ans` files for non-interactive problem, interactive `.in` and `.ans` files must not be displayed to teams: 
+not in the problem statement, nor as part of sample input download. 
+If you want to provide files related to interactive problems (such as testing tools or input files) you can use [attachments](#attachments). 
 
 ### Test Data Groups
 
@@ -239,19 +242,20 @@ At the top level, the test data is divided into exactly two groups: `sample` and
 <div class="not-icpc">
 
 The <em>result</em> of a test data group is computed by applying a <em>grader</em> to all of the sub-results (test cases and subgroups) in the group. 
-See [Graders](#graders "wikilink") for more details.
+See [Graders](#graders "wikilink") for more details. 
 
 </div>
 
 Test files and groups will be used in lexicographical order on file base name. 
-If a specific order is desired a numbered prefix such as `00`, `01`, `02`, `03`, and so on, can be used.
+If a specific order is desired a numbered prefix such as `00`, `01`, `02`, `03`, and so on, can be used. 
 
 <div class="not-icpc">
 
 In each test data group, a file `testdata.yaml` may be placed to specify how the result of the test data group should be computed. 
-If such a file is not provided for a test data group then the settings for the parent group will be used. 
+If a test data group has no `testdata.yaml` file, the `testdata.yaml` in the closest ancestor group that has one will be used. 
+If there is no `testdata.yaml` file in the root `data` group, one is implicitly added with the default values. 
 
-The format of `testdata.yaml` is as follows:
+The format of `testdata.yaml` is as follows: 
 
 | Key                    | Type                                           | Default      | Comments                                                                                                                                                                                                                                                                                                          |
 | ---------------------- | ---------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -268,13 +272,13 @@ The format of `testdata.yaml` is as follows:
 
 ## Included Code
 
-Code that should be included with all submissions are provided in one directory per supported language, called `include/`\<language\>`/`.
+Code that should be included with all submissions are provided in one directory per supported language, called `include/<language>/`. 
 
 The files should be copied from a language directory based on the language of the submission, 
-to the submission files before compiling, overwriting files from the submission in the case of name collision.
+to the submission files before compiling, overwriting files from the submission in the case of name collision. 
 Language must be given as one of the language codes in the language table in the overview section. 
 If any of the included files are supposed to be the main file (i.e. a driver), 
-that file must have the language dependent name as given in the table referred above.
+that file must have the language dependent name as given in the table referred above. 
 
 </div>
 
@@ -293,45 +297,45 @@ The possible subdirectories are:
 
 Every file or directory in these directories represents a separate solution. 
 Same requirements as for submissions with regards to filenames. 
-It is mandatory to provide at least one accepted solution.
+It is mandatory to provide at least one accepted solution. 
 
-Submissions must read input data from standard input, and write output to standard output.
+Submissions must read input data from standard input, and write output to standard output. 
 
 ## Input Validators
 
-Input Validators, for verifying the correctness of the input files, are provided in `input_validators/` (or the deprecated `input_format_validators/`).
-Input validators can be specified as VIVA-files (with file ending `.viva`), Checktestdata-file (with file ending `.ctd`), or as a program.
+Input Validators, for verifying the correctness of the input files, are provided in `input_validators/` (or the deprecated `input_format_validators/`). 
+Input validators can be specified as VIVA-files (with file ending `.viva`), Checktestdata-file (with file ending `.ctd`), or as a program. 
 
-All input validators provided will be run on every input file.
-Validation fails if any validator fails.
+All input validators provided will be run on every input file. 
+Validation fails if any validator fails. 
 
 ### Invocation
 
-An input validator program must be an application (executable or interpreted) capable of being invoked with a command line call.
+An input validator program must be an application (executable or interpreted) capable of being invoked with a command line call. 
 
-All input validators provided will be run on every test data file using the arguments specified for the test data group they are part of.
-Validation fails if any validator fails.
+All input validators provided will be run on every test data file using the arguments specified for the test data group they are part of. 
+Validation fails if any validator fails. 
 
-When invoked the input validator will get the input file on stdin.
+When invoked the input validator will get the input file on stdin. 
 
-The validator should be possible to use as follows on the command line:
+The validator should be possible to use as follows on the command line: 
 
 `./validator [arguments] < inputfile`
 
 ### Output
 
-The input validator may output debug information on stdout and stderr.
-This information may be displayed to the user upon invocation of the validator.
+The input validator may output debug information on stdout and stderr. 
+This information may be displayed to the user upon invocation of the validator. 
 
 ### Exit codes
 
 The input validator must exit with code 42 on successful validation. 
-Any other exit code means that the input file could not be confirmed as valid.
+Any other exit code means that the input file could not be confirmed as valid. 
 
 #### Dependencies
 
 The validator MUST NOT read any files outside those defined in the Invocation section. 
-Its result MUST depend only on these files and the arguments.
+Its result MUST depend only on these files and the arguments. 
 
 ## Output Validators
 
@@ -346,9 +350,9 @@ A validator program must be an application (executable or interpreted) capable o
 The details of this invocation are described below. 
 The validator program has two ways of reporting back the results of validating:
 
-1.  The validator must give a judgment (see [Reporting a judgment](#reporting-a-judgment "wikilink")).
+1.  The validator must give a judgement (see [Reporting a judgement](#reporting-a-judgement "wikilink")).
 2.  The validator may give additional feedback, 
-    e.g., an explanation of the judgment to humans (see [Reporting Additional Feedback](#reporting-additional-feedback "wikilink")).
+    e.g., an explanation of the judgement to humans (see [Reporting Additional Feedback](#reporting-additional-feedback "wikilink")).
 
 Custom output Validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below. 
 They are provided in `output_validators/`, and must adhere to the [Output validator](output_validators "wikilink") specification.
@@ -415,9 +419,9 @@ The meaning of the parameters listed above are:
 The two files pointed to by input and judge_answer must exist (though they are allowed to be empty) and the validator program must be allowed to open them for reading. 
 The directory pointed to by feedback_dir must also exist.
 
-### Reporting a judgment
+### Reporting a judgement
 
-A validator program is required to report its judgment by exiting with specific exit codes:
+A validator program is required to report its judgement by exiting with specific exit codes:
 
 - If the output is a correct output for the input file (i.e., the submission that produced the output is to be Accepted), 
   the validator exits with exit code 42.
@@ -428,7 +432,7 @@ Any other exit code (including 0\!) indicates that the validator did not operate
 and the contest control system invoking the validator must take measures to report this to contest personnel. 
 The purpose of these somewhat exotic exit codes is to avoid conflict with other exit codes that results when the validator crashes. 
 For instance, if the validator is written in Java, any unhandled exception results in the program crashing with an exit code of 1, 
-making it unsuitable to assign a judgment meaning to this exit code.
+making it unsuitable to assign a judgement meaning to this exit code.
 
 ### Reporting Additional Feedback
 
@@ -438,15 +442,14 @@ Using the feedback directory is optional for a validator program, so if one just
 The validator is free to create different files in the feedback directory, 
 in order to provide different kinds of information to the contest control system, in a simple but organized way. 
 For instance, there may be a "judgemessage.txt" file, 
-the contents of which gives a message that is presented to a judge reviewing the current submission
+the contents of which gives a message that is presented to a judge reviewing the current submission 
 (typically used to help the judge verify why the submission was judged as incorrect, by specifying exactly what was wrong with its output).
 Other examples of files that may be useful in some contexts (though not in the ICPC) are a score.txt file, 
 giving the submission a score based on other factors than correctness, 
 or a teammessage.txt file, giving a message to the team that submitted the solution, providing additional feedback on the submission.
 
 A contest control system that implements this standard must support the judgemessage.txt file described above 
-(I.e., content of the "judgemessage.txt" file, if produced by the validator, must be provided by the contest control system to a human judge examining the
-submission). 
+(I.e., content of the "judgemessage.txt" file, if produced by the validator, must be provided by the contest control system to a human judge examining the submission). 
 Having the Contest Control System support other files is optional.
 
 Note that a validator may choose to ignore the feedback directory entirely. 
@@ -472,20 +475,20 @@ Almost all test cases failed, are you even trying to solve the problem?
 
 #### Validator standard output and standard error
 
-A valididator program is allowed to write any kind of debug information to its standard error pipe. 
-This information may be displayed to the user upon invocation of the validator.
+A validator program is allowed to write any kind of debug information to its standard error pipe. 
+This information may be displayed to the user upon invocation of the validator. 
 
 <div class="not-icpc">
 
 ## Graders
 
 Graders are programs that are given the sub-results of a test data group and aggregate a result for the group. 
-They are provided in `graders/` .
+They are provided in `graders/`. 
 
 For pass-fail problems, this grader will typically just set the verdict to accepted if all sub-results in the group were accepted and otherwise select the "worst" error in the group (see below for definition of "worst"), 
 though it is possible to write a custom grader which e.g. accepts if at least half the sub-results are accepted. 
 For scoring problems, one common grader behaviour would be to always set the verdict to Accepted, 
-with the score being the sum of scores of the items in the test group.
+with the score being the sum of scores of the items in the test group. 
 
 ### Invocation
 
