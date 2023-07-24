@@ -655,9 +655,3 @@ modes are given, the last one is used. Their meaning are as follows.
 | `ignore_sample`                              | flag         | Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.                                                                                                                                                          |
 | `accept_if_any_accepted`                     | flag         | Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.                                                                                                                                                                                                       |
 </div>
-
-## See also
-
-  - [Sample problem.yaml](../examples/problem_yaml "wikilink")
-  - [Problem format directory structure](problem_format_directory_structure "wikilink") (TBD)
-  - [Problem Format Verification](problem_format_verification "wikilink") (TBD)
