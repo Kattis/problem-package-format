@@ -405,7 +405,7 @@ The meaning of the parameters listed above are:
   The answer file may, but is not necessarily required to, contain the "correct answer" for the problem. 
   For example, it might contain the output which was produced by a judge's solution for the problem when run with input file as input. 
   Alternatively, the "answer file" might contain information, in arbitrary format, which instructs the validator in some way about how to accomplish its task. 
-  The meaning of the contents of the answer file is not defined by this standard.
+  The meaning of the contents of the answer file is not defined by this format. 
 
 - feedback_dir: 
   a string which specifies the name of a "feedback directory" in which the validator can produce "feedback files" in order to report additional information on the validation of the output file. 
@@ -454,7 +454,7 @@ Other examples of files that may be useful in some contexts (though not in the I
 giving the submission a score based on other factors than correctness, 
 or a teammessage.txt file, giving a message to the team that submitted the solution, providing additional feedback on the submission.
 
-A judging system that implements this standard must support the judgemessage.txt file described above 
+A judging system that implements this format must support the judgemessage.txt file described above 
 (I.e., content of the "judgemessage.txt" file, if produced by the validator, must be provided by the judging system to a human judge examining the submission). 
 Having the judging system support other files is optional.
 
