@@ -134,7 +134,7 @@ stated. Any unknown keys should be treated as an error.
 | limits                                    | Map with keys as defined below       | see definition below                                    |                                                                                                                                                                                                                                                                                                                                                |
 | validation                                |  String                              |  default                                                |  One of "default" or "custom". If "custom", may be followed by <span class="not-icpc">some subset of "score" and</span> "interactive", where<span class="not-icpc"> "score" indicates that the validator produces a score (this is only valid for scoring problems), and</span> "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive<span class="not-icpc"> score</span>". |
 | validator\_flags                          | String                               |                                                         | Will be passed as command-line arguments to each of the output validators.                                                                                                                                                                                                                                                                     |
-| <s class="kattis"> <s class="dep">grading</s> <s>scoring</s> </s> | <s class="kattis"> Map with keys as defined below       </s> | <s class="kattis"> See definition below                                    </s> | <s class="kattis"> Must only be used on scoring problems.                                                                                                                                                                                                                                                                                                         </s> |
+| <span class="not-icpc">scoring</span> | <span class="not-icpc"> Map with keys as defined below</span> | <span class="not-icpc">See definition below</span> | <span class="not-icpc"> Must only be used on scoring problems.</span> |
 |  keywords                                   |  <s>String or sequence of strings</s>  |                                                           |  Set of keywords. |
 |  <s>uuid</s>                                |  <s>String</s>                         |                                                           |  <s>UUID identifying the problem.</s>                                                                                                                                                                                                                                                                                                            |
 | <s class="kattis"> <s>languages</s>                          </s> | <s class="kattis"> <s>String or sequence of strings</s> </s> | <s class="kattis"> <s>all</s>                                              </s> | <s class="kattis"> <s>Set of languages or "all".</s>                                                                                                                                                                                                                                                                                                              </s> |
@@ -183,14 +183,11 @@ This can vary, but you SHOULD assume that it's reasonable. Only specify
 limits when the problem needs a specific limit, but do specify limits
 even if the "typical system default" is what is needed.
 
-<div class="kattis">
+<div class="not-icpc">
 
-### <s class="dep">grading</s> <s>scoring</s>
+### scoring
 
 A map with the following keys:
-
-</div>
-<div class="kattis">
 
 | Key                      | Type    | Default | Comments                                                                                 |
 | - | - | - | - |
@@ -199,6 +196,7 @@ A map with the following keys:
 |                          |         |         |                                                                                          |
 
 </div>
+
 <div class="kattis">
 
 ### languages
