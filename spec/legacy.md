@@ -1,7 +1,7 @@
 ---
 layout: default
-show_diff_buttons: true
 title: Legacy
+show_diff_buttons: true
 sort: 3
 ---
 
