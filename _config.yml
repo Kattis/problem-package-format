@@ -16,5 +16,6 @@ plugins:
 
 markdown: CommonMarkGhPages
 commonmark:
-  options: ['SMART']
-  extensions: ['table']
+  # Unsafe allows passthrough of <div class="not-icpc">
+  options: ["SMART", "UNSAFE"]
+  extensions: ["table"]

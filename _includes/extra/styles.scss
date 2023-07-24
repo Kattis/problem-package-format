@@ -1,43 +1,23 @@
-s {
-	text-decoration: initial;
-}
-s:not([class]), s:not([class]) code {
-	background: yellow;
-}
-s.dep, s.dep code {
-	color: lightpink;
-}
-p {
-	color: inherit;
-    background: inherit;
-}
-div.buttons {
-	padding-top: 12px;
-    display: flex;
-    justify-content: space-evenly;
-}
-div.buttons button.unified_button {
-	display: none
-}
-div.buttons button.icpc_button {
-    /*color: blue
-}
-div.buttons button.kattis_button {
-    /*color: red*/
+.not-icpc:not(.full_view):not(.icpc_view),
+.not-icpc:not(.full_view):not(.icpc_view) td,
+.not-icpc:not(.full_view):not(.icpc_view) code {
+  color: red;
 }
 
-/* Unified view: colours per section */
-.unified_view .icpc, .unified_view .icpc td, .unified_view .icpc code {
-    color: blue;
-}
-.unified_view .kattis, .unified_view .kattis td, .unified_view .kattis code {
-    color: red;
+.not-icpc.full_view,
+.not-icpc.full_view td,
+.not-icpc.full_view code {
 }
 
-/* Single view: hide irrelevant sections. */
-.icpc_view .kattis {
-	display: none
+.not-icpc.icpc_view,
+.not-icpc.icpc_view td,
+.not-icpc.icpc_view code {
+  display: none;
 }
-.kattis_view .icpc {
-	display: none
+
+.buttons {
+  width: fit-content;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
