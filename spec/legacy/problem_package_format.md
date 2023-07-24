@@ -190,22 +190,6 @@ A map with the following keys:
 
 </div>
 
-<div class="kattis">
-
-### languages
-
-<s>
-
-A space separated list of language code from the table in the
-overview section or *all*.
-
-If a list is given, the problem may only be solved using those
-languages.
-
-</s>
-
-</div>
-
 ## Problem Statements
 
 The problem statement of the problem is provided in the directory
