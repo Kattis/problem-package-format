@@ -18,7 +18,7 @@ import "strings"
     limits?: #limits
     validation?: *"default" | "custom" | {
         multipass?: *false | true
-        interaction?: *false | true
+        interactive?: *false | true
         scoring?: *false | true
     }
     keywords?: string | [...string]
