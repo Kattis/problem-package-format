@@ -21,6 +21,7 @@
 - Only allow a single output validator, remove `validator_flags` from
   `problem.yaml`, update `{input,output}_validator_flags` in
   `testdata.yaml`.
+- make `name` required and allow a map from language code to name in that language.
 
 ## Legacy version (changes since beginning 2021)
 
