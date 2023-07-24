@@ -209,15 +209,6 @@ as conversion to HTML or styling to fit in a single document containing many
 problems will not be possible for PDF problem statements, so using this
 format should be avoided if at all possible.
 
-<div class="kattis">
-
-Please note that many kinds of transformations on the problem
-statements, such as conversion to HTML or styling to fit in a single
-document containing many problems will not be possible for PDF problem
-statements, so using this format should be avoided if at all possible.
-
-</div>
-
 Auxiliary files needed by the problem statement files must all be in
 `<short_name>/problem_statement/`. `problem.<language>.<filetype>`
 should reference auxiliary files as if the working directory is
