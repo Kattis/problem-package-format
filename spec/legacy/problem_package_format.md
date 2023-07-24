@@ -431,7 +431,7 @@ token of `3.14000000e-2` in the output file would be accepted. If no
 floating point tolerance has been set, floating point tokens are treated
 just like any other token and has to match exactly.
 
-<div class="kattis">
+<div class="not-icpc">
 
 ## Graders
 
@@ -467,10 +467,7 @@ A grader simply takes a list of results on standard input, and produces
 a single result on standard output. The input file will have the one
 line per test file containing the result of judging the testfile, using
 the code from the table below, followed by whitespace, followed by the
-score. <s>Format to be extended.</s>
-
-</div>
-<div class="kattis">
+score. 
 
 | Code | Meaning             |
 | - | - |
@@ -478,10 +475,6 @@ score. <s>Format to be extended.</s>
 | WA   | Wrong Answer        |
 | RTE  | Run-Time Error      |
 | TLE  | Time-Limit Exceeded |
-
-</div>
-<div class="kattis">
-
 
 The score is taken from the `score.txt` files produced by the output
 validator. If no `score.txt` exists the score will be as defined by the
@@ -510,12 +503,9 @@ the "grader\_flags" option in
 [testdata.yaml](#test-data-groups "wikilink")). If multiple conflicting
 modes are given, the last one is used. Their meaning are as follows.
 
-</div>
-<div class="kattis">
-
 | Argument                                     | Type         | Description                                                                                                                                                                                                                                                                                                     |
 | - | - | - |
-| `worst_error` <s class="dep">`no_errors`</s> | verdict mode | Default. Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group. Note that in combination with the on\_reject:break policy in testdata.yaml, the result will be the first error encountered. |
+| `worst_error` | verdict mode | Default. Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group. Note that in combination with the on\_reject:break policy in testdata.yaml, the result will be the first error encountered. |
 | `first_error`                                | verdict mode | Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.                 |
 | `always_accept`                              | verdict mode | Verdict is always accepted.                                                                                                                                                                                                                                                                                     |
 | `sum`                                        | scoring mode | Default. Score is sum of input scores.                                                                                                                                                                                                                                                                          |
