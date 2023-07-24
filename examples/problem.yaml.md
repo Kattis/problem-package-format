@@ -7,6 +7,7 @@ permalink: /examples/problem_yaml
 ## Minimal
 
 ```yaml
+problem_format_version: 2023-07-draft
 name: Sample problem
 source: ICPC Mid-Atlantic Regional Contest
 author: John von Judge

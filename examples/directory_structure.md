@@ -1,5 +1,7 @@
 # Directory structure
 
+These examples are for the latest version of the spec, `2023-07-draft`.
+
 ```text
 <short_name>/
   problem.yaml - problem configuration file
