@@ -4,16 +4,7 @@ show_diff_buttons: true
 ---
 # Problem Package Format
 
-This is the legacy version of the specification
-and the <s class="icpc">ICPC</s><s class="kattis">Kattis</s> variant.
-Click on <s class="icpc">Kattis</s><s class="kattis">ICPC</s> in the sidebar to switch.
-
-<div class="kattis">
-Sections <s>highlighted in yellow</s> have not been
-implemented in the reference implementation of the problem format tool
-chain. This might imply that that part of the specification is more in
-flux. Sections <s class="dep">highlighted in red</s> are deprecated.
-</div>
+This is the `legacy` version of the specification
 
 ## Overview
 
