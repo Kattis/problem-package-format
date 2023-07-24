@@ -1,9 +1,10 @@
-<button onclick="unified()" class="unified_button">
-    unified
-</button>
-<button onclick="icpc()" class="icpc_button">
-    ICPC
-</button>
-<button onclick="kattis()" class="kattis_button">
-    Kattis
-</button>
+<script src="/assets/js/script.js"></script>
+<div class="buttons">
+    Variant:
+    <input type="radio" name="variant" id="icpc" value="icpc" onclick="icpc()">
+    <label for="icpc">ICPC</label>
+    <input type="radio" name="variant" id="full" value="full" onclick="full()">
+    <label for="full">Full</label>
+    <input type="radio" name="variant" id="unified" value="unified" onclick="unified()" checked>
+    <label for="unified">Unified</label>
+</div>
