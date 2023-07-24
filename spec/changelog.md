@@ -1,3 +1,9 @@
+---
+layout: default
+title: Changelog
+sort: 1
+---
+
 # Changelog
 
 ## Version 2023-07-draft

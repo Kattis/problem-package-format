@@ -1,7 +1,7 @@
 ---
 layout: default
 show_diff_buttons: true
-title: Version Legacy
+title: Legacy
 sort: 3
 ---
 # Problem Package Format
