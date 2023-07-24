@@ -136,7 +136,6 @@ stated. Any unknown keys should be treated as an error.
 | validator\_flags                          | String                               |                                                         | Will be passed as command-line arguments to each of the output validators.                                                                                                                                                                                                                                                                     |
 | <span class="not-icpc">scoring</span> | <span class="not-icpc"> Map with keys as defined below</span> | <span class="not-icpc">See definition below</span> | <span class="not-icpc"> Must only be used on scoring problems.</span> |
 |  keywords                                   |  String or sequence of strings  |                                                           |  Set of keywords. |
-| <s class="kattis"> <s>languages</s>                          </s> | <s class="kattis"> <s>String or sequence of strings</s> </s> | <s class="kattis"> <s>all</s>                                              </s> | <s class="kattis"> <s>Set of languages or "all".</s>                                                                                                                                                                                                                                                                                                              </s> |
 
 ```note
 
