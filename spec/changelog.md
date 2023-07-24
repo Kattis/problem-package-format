@@ -20,6 +20,7 @@
 - make `name` required and allow a map from language code to name in that language.
 - Add `uuid` to `problem.yaml`.
 - Add `languages` to `problem.yaml`.
+- Add support for Markdown problem statements.
 
 ## Legacy version (changes since beginning 2021)
 
