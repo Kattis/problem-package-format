@@ -340,24 +340,10 @@ subdirectories of `submissions/`. The possible subdirectories are:
 | Value                 | Requirement                                                                                                                        | Comment                                  |
 | - | - | - |
 | accepted              | Accepted as a correct solution for all test files                                                                                  | At least one is required.                |
-| <s class="kattis"> partially\_accepted   </s> | <s class="kattis"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min. </s> | <s class="kattis"> Must not be used for pass-fail problems. </s> |
+| <span class="not-icpc"> partially\_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min.</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span> |
 | wrong\_answer         | Wrong answer for some test file, but is not too slow and does not crash for any test file                                          |                                          |
 | time\_limit\_exceeded | Too slow for some test file. May also give wrong answer but not crash for any test file.                                           |                                          |
 | run\_time\_error      | Crashes for some test file                                                                                                         |                                          |
-
-
-<div class="kattis">
-
-<s>
-
-For submissions of type `accepted` and scoring problems, the expected
-score can be specified by including the string `@EXPECTED_SCORE@:`
-followed by the expected score somewhere in the source code, e.g. in a
-comment.
-
-</s>
-
-</div>
 
 Every file or directory in these directories represents a separate
 solution. Same requirements as for submissions with regards to
