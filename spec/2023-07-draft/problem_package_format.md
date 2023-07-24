@@ -95,6 +95,7 @@ more fine-grained and divided into results such as "Wrong Answer", "Time
 Limit Exceeded", etc). In scoring problems, a submission that is accepted is
 additionally given a score, which is a numeric value(and the goal is to
 maximize this value).
+
 </div>
 
 ## Problem Metadata
@@ -291,11 +292,13 @@ interactive problems (such as testing tools or input files) you can use
 ### Test Data Groups
 
 <div class="not-icpc">
+
 The test data for the problem can be organized into a tree-like structure.
 Each node of this tree is represented by a directory and referred to as a
 test data group. Each test data group may consist of zero or more test cases
 (i.e., input-answer files) and zero or more subgroups of test data
 (i.e., subdirectories).
+
 </div>
 
 At the top level, the test data is divided into exactly two groups: `sample`
@@ -303,9 +306,11 @@ and `secret`. <span class="not-icpc">These two groups may be further split into
 subgroups as desired. </span>
 
 <div class="not-icpc">
+
 The <em>result</em> of a test data group is computed by applying a
 <em>grader</em> to all of the sub-results (test cases and subgroups) in the
-group. See [Graders](#graders "wikilink") for more details.
+group. See [Graders](#graders) for more details.
+
 </div>
 
 Test files and groups will be used in lexicographical order on file base name.
@@ -313,6 +318,7 @@ If a specific order is desired a numbered prefix such as `00`, `01`, `02`,
 `03`, and so on, can be used.
 
 <div class="not-icpc">
+
 In each test data group, a file `testdata.yaml` may be placed to specify how
 the result of the test data group should be computed. If a test data group
 has no `testdata.yaml` file, the `testdata.yaml` in the closest ancestor
@@ -334,16 +340,16 @@ In the `data/` directory, there may be an `invalid_inputs/` directory
 containing input files that must be rejected by at least one input validator.
 These are meant to only test the input validators, and are not used for
 judging. The rejected input files can be organized into a tree-like structure
-similar to the test data. <div class="not-icpc"> There may be `testdata.yaml`
+similar to the test data. <span class="not-icpc"> There may be `testdata.yaml`
 files within this structure, but they may only contain the key
-`input_validator_flags`. </div>
+`input_validator_flags`. </span>
 
 <div class="not-icpc">
 
 ## Included Code
 
 Code that should be included with all submissions are provided in one
-directory per supported language, called `include/`\<language\>`/`.
+directory per supported language, called `include/<language>/`.
 
 The files should be copied from a language directory based on the language of
 the submission, to the submission files before compiling, overwriting files
@@ -352,6 +358,7 @@ one of the language codes in the language table in the overview section. If
 any of the included files are supposed to be the main file (i.e. a driver),
 that file must have the language dependent name as given in the table
 referred above.
+
 </div>
 
 ## Example Submissions
@@ -581,6 +588,7 @@ To signal that the submission should be run again, the output validator must exi
 Judging stops if no `nextpass.in` was created, or the output validator exited with any other code.
 
 It is a judge error to create the `nextpass.in` file and exit with any other code than 42.
+
 </div>
 
 #### Examples
