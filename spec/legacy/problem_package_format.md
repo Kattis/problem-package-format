@@ -196,18 +196,18 @@ The problem statement of the problem is provided in the directory
 `problem_statement/`.
 
 This directory must contain one file per language, for at least one
-language, named `problem.`<language>`.`<filetype>, that contains the
+language, named `problem.`\<language\>`.`\<filetype\>, that contains the
 problem text itself, including input and output specifications, but not
 sample input and output. Language must be given as the
 shortest ISO 639 code. If needed a hyphen and a ISO 3166-1 alpha-2 code
 may be appended to ISO 639 code. Optionally, the language code can
 be left out, the default is then English (`en`). Filetype can be either
-`tex` for LaTeX files<s>, `md` for Markdown,</s><s class='problemarchive'><s> or `pdf` for PDF</s></s>.
+`tex` for LaTeX files, `md` for Markdown, or `pdf` for PDF.
 
-```note
-
-TODO: More discussion is needed over allowing PDF in the CLICS spec.
-```
+Please note that many kinds of transformations on the problem statements, such
+as conversion to HTML or styling to fit in a single document containing many
+problems will not be possible for PDF problem statements, so using this
+format should be avoided if at all possible.
 
 <div class="kattis">
 
