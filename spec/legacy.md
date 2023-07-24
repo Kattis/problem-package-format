@@ -302,6 +302,8 @@ group will be used. The format of `testdata.yaml` is as follows:
 | reject_score           | String                                         | 0            | Default score for rejected input files. May only be specified for scoring problems.                                                                                                                                                                                                                               |
 | range                  | String                                         | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.                                                                                                                                              |
 
+</div>
+
 <div class="not-icpc">
 
 ## Included Code
