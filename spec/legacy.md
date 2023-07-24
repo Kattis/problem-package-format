@@ -7,7 +7,11 @@ sort: 3
 
 # Problem Package Format
 
-This is the `legacy` version of the specification
+This is the `legacy` version of the specification.
+
+There are two variants of this specification: the Full version, and the ICPC subset.
+Use the buttons in the sidebar to select one of them. The unified view
+shows text that is not in the ICPC-subset in <span style="color:red">red</span>.
 
 ## Overview
 
