@@ -314,13 +314,12 @@ group will be used. The format of `testdata.yaml` is as follows:
 | reject\_score                               | String                                                | 0            | Default score for rejected input files. May only be specified for scoring problems.                                                                                                                                                                                                                               |
 | range                                       | String                                                | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.                                                                                                                                              |
 
-<div class="kattis">
-
+<div class="not-icpc">
 
 ## Included Code
 
 Code that should be included with all submissions are provided in one
-directory per supported language, called `include/`<language>`/`.
+directory per supported language, called `include/`\<language\>`/`.
 
 The files should be copied from a language directory based on the
 language of the submission, to the submission files before compiling,
@@ -329,6 +328,7 @@ Language must be given as one of the language codes in the language
 table in the overview section. If any of the included files are supposed
 to be the main file (i.e. a driver), that file must have the language
 dependent name as given in the table referred above.
+
 </div>
 
 ## Example Submissions
