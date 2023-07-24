@@ -218,9 +218,6 @@ should reference auxiliary files as if the working directory is
 
 A LaTeX file may include the Problem name using the LaTeX command
 `\problemname` in case LaTeX formatting of the title is wanted.
-<s class="kattis"><s>If
-it's not included the problem name specified in `problem.yaml` will be
-used.</s> </s>
 
 The problem statements must only contain the actual problem statement,
 no sample data.
