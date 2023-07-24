@@ -127,7 +127,7 @@ stated. Any unknown keys should be treated as an error.
 | <span class="not-icpc">scoring</span> | <span class="not-icpc"> Map with keys as defined below</span> | <span class="not-icpc">See definition below</span>      | <span class="not-icpc"> Must only be used on scoring problems.</span>                                                                                                                                                                                                                                                                                                                                                                    |
 | keywords                              | String or sequence of strings                                 |                                                         | Set of keywords.                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
-### license
+### License
 
 Allowed values for license.
 
@@ -144,7 +144,7 @@ have a value.
 | educational   | May be freely used for educational purposes                                  |                                                  |
 | permission    | Used with permission. The author must be contacted for every additional use. |                                                  |
 
-### limits
+### Limits
 
 A map with the following keys:
 
@@ -168,7 +168,7 @@ even if the "typical system default" is what is needed.
 
 <div class="not-icpc">
 
-### scoring
+### Scoring
 
 A map with the following keys:
 
