@@ -137,11 +137,6 @@ stated. Any unknown keys should be treated as an error.
 | <span class="not-icpc">scoring</span> | <span class="not-icpc"> Map with keys as defined below</span> | <span class="not-icpc">See definition below</span> | <span class="not-icpc"> Must only be used on scoring problems.</span> |
 |  keywords                                   |  String or sequence of strings  |                                                           |  Set of keywords. |
 
-```note
-
-TODO: Further discussion over the `name` key is needed.
-```
-
 ### license
 
 Allowed values for license.
