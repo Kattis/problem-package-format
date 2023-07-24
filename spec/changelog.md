@@ -2,8 +2,6 @@
 
 ## Version 2023-07-draft
 
-- Removed parts of the specification marked deprecated and some "todo"
-  and "to be discussed" notes.
 - Removed scoring objective; this now always is "maximize".
 - Removed `scoring` keyword from `problem.yaml`.
 - Python 3 is now used for `.py` files; for backward compatibility
