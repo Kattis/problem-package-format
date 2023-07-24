@@ -39,7 +39,7 @@ sequences defined by IEEE 754-2008 and may use up to double precision.
 
 There are a number of different kinds of programs that may be provided
 in the problem package; submissions, input validators, output
-validators<s class="kattis">, graders and generators</s>.
+validators<span class="not-icpc">, graders and generators</span>.
 All programs are always represented by a single file or directory. In other
 words, if a program consists of several files, these must be provided in a
 single directory. The name of the program, for the purpose of referring to it
@@ -88,7 +88,7 @@ entry point in the table below will be used.
 | scala      | Scala       |                     | .scala                    |                                                                                              |
 
 
-<div class="kattis">
+<div class="not-icpc">
 
 ### Problem types
 
