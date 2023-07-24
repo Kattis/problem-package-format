@@ -17,9 +17,9 @@ import "strings"
     //} 
     limits?: #limits
     validation?: *"default" | "custom" | {
-        multipass: *false | true
-        interaction: *false | true
-        scoring: *false | true
+        multipass?: *false | true
+        interaction?: *false | true
+        scoring?: *false | true
     }
     keywords?: string | [...string]
     uuid?: string
