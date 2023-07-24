@@ -270,7 +270,7 @@ If you want to provide files related to interactive problems (such as testing to
 
 ### Test Data Groups
 
-<s class="kattis">
+<div class="not-icpc">
 
 The test data for the problem can be organized into a tree-like
 structure. Each node of this tree is represented by a directory and
@@ -278,24 +278,24 @@ referred to as a test data group. Each test data group may consist of
 zero or more test cases (i.e., input-answer files) and zero or more
 subgroups of test data (i.e., subdirectories).
 
-</s>
+</div>
 
 At the top level, the test data is divided into exactly two groups:
-`sample` and `secret`. <s class="kattis">These two groups may be further split into subgroups as desired. </s>
+`sample` and `secret`. <span class="not-icpc">These two groups may be further split into subgroups as desired. </span>
 
-<s class="kattis">
+<div class="not-icpc">
 
 The <em>result</em> of a test data group is computed by applying a
 <em>grader</em> to all of the sub-results (test cases and subgroups) in
 the group. See [Graders](#graders "wikilink") for more details.
 
-</s>
+</div>
 
 Test files and groups will be used in lexicographical order on file base
 name. If a specific order is desired a numbered prefix such as `00`, `01`,
 `02`, `03`, and so on, can be used.
 
-<s class="kattis">
+<div class="not-icpc">
 
 In each test data group, a file `testdata.yaml` may be placed to specify
 how the result of the test data group should be computed. If such a file
@@ -308,13 +308,11 @@ group will be used. The format of `testdata.yaml` is as follows:
 | on\_reject                                  | String                                                | break        | One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test files and subgroups within the group. |
 | grading                                     | String                                                | default      | One of "default" and "custom".                                                                                                                                                                                                                                                                                    |
 | grader\_flags                               | String                                                | empty string | arguments passed to the grader for this test data group.                                                                                                                                                                                                                                                          |
-| input\_validator<s class="dep kattis">\_flags</s></s> |  String or map with the keys "name" and "flags"</s> |  empty string  | arguments passed to the input validator for this test data group.</s> If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.</s>                       |
-| output\_validator<s class="dep kattis">\_flags</s></s> |  String or map with the keys "name" and "flags"</s> |  empty string  | arguments passed to the output validator for this test data group.</s> If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.</s>                    |
+| input\_validator\_flags |  String or map with the keys "name" and "flags" |  empty string  | arguments passed to the input validator for this test data group. If a string this is the name of the input validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the input validator.                      |
+| output\_validator\_flags |  String or map with the keys "name" and "flags" |  empty string  | arguments passed to the output validator for this test data group. If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.                    |
 | accept\_score                               | String                                                | 1            | Default score for accepted input files. May only be specified for scoring problems.                                                                                                                                                                                                                               |
 | reject\_score                               | String                                                | 0            | Default score for rejected input files. May only be specified for scoring problems.                                                                                                                                                                                                                               |
 | range                                       | String                                                | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.                                                                                                                                              |
-
-</s>
 
 <div class="kattis">
 
