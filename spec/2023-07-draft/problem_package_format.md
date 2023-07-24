@@ -639,10 +639,3 @@ If `verdict` is `first_error`, only test cases in the group up to the first non-
 If `verdict` is `accept_if_any_accepted`, all test cases in the group are judged.
 
 </div>
-
-## See also
-
-  - [Output validator](output_validators "wikilink")
-  - [Sample problem.yaml](../examples/problem_yaml "wikilink")
-  - [Problem format directory structure](problem_format_directory_structure "wikilink") (TBD)
-  - [Problem Format Verification](problem_format_verification "wikilink") (TBD)
