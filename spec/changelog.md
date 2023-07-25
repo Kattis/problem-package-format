@@ -23,7 +23,7 @@ sort: 1
 - Only allow a single output validator, remove `validator_flags` from
   `problem.yaml`, update `{input,output}_validator_flags` in
   `testdata.yaml`.
-- make `name` required and allow a map from language code to name in that language.
+- Make `name` required and allow a map from language code to name in that language.
 - Add `uuid` to `problem.yaml`.
 - Add `languages` to `problem.yaml`.
 - Add support for Markdown problem statements.
