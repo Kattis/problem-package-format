@@ -4,8 +4,8 @@
 	type:                    *"pass-fail" | "scoring"
 
 	_icpc: *false | true
-	if problem_format_version != _|_ { _icpc: problem_format_version =~ "icpc"}
-	if _icpc { type?: "pass-fail"}
+	if problem_format_version != _|_ {_icpc: problem_format_version =~ "icpc"}
+	if _icpc {type?: "pass-fail"}
 
 	author?:     string
 	source?:     string
@@ -45,9 +45,9 @@
 	#problem_settings_icpc
 	validation?: close({["multipass" | "interactive" | "scoring"]: *false | true})
 	if validation.scoring != _|_ {
-        if validation.scoring == true {
-            type?: "scoring"
-        }
+		if validation.scoring == true {
+			type?: "scoring"
+		}
 	}
 	keywords?:  string | [...string]
 	languages?: *"all" | [...string]
@@ -55,10 +55,11 @@
 
 #testdata_settings: {
 	#testdata_settings_icpc
-	grading?:
-		score?: number
-	max_score:             number
-	aggregation:           "sum" | "min"
-	verdict:               "first_error" | "accept_if_any_accepted"
+	grading?: {
+		score?:               number
+		max_score?:           number
+		score_aggregation?:   "sum" | "min"
+		verdict_aggregation?: "first_error" | "accept_if_any_accepted"
+	}
 	input_validator_flags: *"" | string | {[string]: string}
 }
