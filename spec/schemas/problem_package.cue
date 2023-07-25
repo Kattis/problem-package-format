@@ -1,17 +1,21 @@
 #problem_settings_icpc: {
 	name:                    string | close({[#language_code]: string})
-	problem_format_version?: *"legacy" | "draft" | =~"^[0-9]{4}-[0-9]{2}(-icpc)(-draft)?$"
-	type?:                   *"pass-fail" | "scoring"
-	if problem_format_version !~ "icpc" {type?: "pass-fail"}
+	problem_format_version?: *"legacy" | "draft" | =~"^[0-9]{4}-[0-9]{2}(-icpc)?(-draft)?$"
+	type?: *"pass-fail" | "scoring"
 
-	["author" | "source"]: string
-	if source != _|_ {source_url?: string}
+    _icpc: *false | true
+	if problem_format_version != _|_ { _icpc: problem_format_version =~ "icpc" }
+    if _icpc { type?: "pass-fail" }
+
+	author?: string
+    source?: string
+    source_url?: string // only allow if source exists
 
 	license?: *"unknown" | "public domain" | "cc0" | "cc by" | "cc by-sa" | "educational" | "permission"
-	if license != _|_ && license != "public domain" {
-		rights_owner?: string
-		// if license =~ "unknown" { numexists(>=1, rights_owner, author, source) }
-	}
+    rights_owner?: string
+    // if license =~ "unknown" { numexists(>=1, rights_owner, author, source) }
+    // right_owner may only exist for certain licenses
+
 	limits?: {
 		time_multiplier?: {
 			ac_to_time_limit:  *2.0 | float
@@ -29,6 +33,7 @@
 	uuid?:     string
 	constants?: {[string]: number | string}
 }
+
 
 #language_code: =~"^[a-z]{2,4}(-[A-Z][A-Z])?$"
 #other_limits:  "memory" | "output" | "code" | "compilation_time" | "compilation_memory" | "validation_time" | "validation_memory" | "validation_output"
