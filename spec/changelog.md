@@ -27,6 +27,8 @@ sort: 1
 - Add `uuid` to `problem.yaml`.
 - Add `languages` to `problem.yaml`.
 - Add support for Markdown problem statements.
+- Change `languages:` and `keywords:` in `problem.yaml` to be lists of strings
+  rather than a string of space separated words.
 
 ## Legacy version (changes since beginning 2021)
 

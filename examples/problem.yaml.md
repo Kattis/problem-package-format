@@ -62,7 +62,7 @@ limits:
 
 validation: custom
 
-keywords: graph dijkstra
+keywords: [graph, dijkstra]
 
-languages: c cpp java kotlin python3
+languages: [c, cpp, java, kotlin, python3]
 ```
