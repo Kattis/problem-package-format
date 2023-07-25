@@ -1,14 +1,16 @@
 #problem_settings_icpc: {
 	name:                    string | close({[#language_code]: string})
-	problem_format_version?: *"legacy" | "draft" | =~"^[0-9]{4}-[0-2][0-9](-draft)?$"
-	author?:                 string
-	source?:                 string
+	problem_format_version?: *"legacy" | "draft" | =~"^[0-9]{4}-[0-9]{2}(-icpc)(-draft)?$"
+	type?:                   *"pass-fail" | "scoring"
+	if problem_format_version !~ "icpc" {type?: "pass-fail"}
+
+	["author" | "source"]: string
 	if source != _|_ {source_url?: string}
 
 	license?: *"unknown" | "public domain" | "cc0" | "cc by" | "cc by-sa" | "educational" | "permission"
 	if license != _|_ && license != "public domain" {
 		rights_owner?: string
-		// if license =~ "unknown" {  numexists(>=1, rights_owner, author, source) }
+		// if license =~ "unknown" { numexists(>=1, rights_owner, author, source) }
 	}
 	limits?: {
 		time_multiplier?: {
@@ -37,10 +39,10 @@
 
 #problem_settings: {
 	#problem_settings_icpc
-	type?:       *"pass-fail" | "scoring"
-	validation?: close({["multipass" | "interactive" | "scoring"]: *false | true})
-	keywords?:   string | [...string]
-	languages?:  *"all" | [...string]
+	problem_format_version?: !~"icpc"
+	validation?:             close({["multipass" | "interactive" | "scoring"]: *false | true})
+	keywords?:               string | [...string]
+	languages?:              *"all" | [...string]
 }
 
 #testdata_settings: {
