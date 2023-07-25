@@ -1,0 +1,5 @@
+name: ICPC but also wants to be a Scoring Problem
+problem_format_version: 2023-07-icpc
+validation: 
+  scoring: true
+

@@ -1,20 +1,20 @@
 #problem_settings_icpc: {
 	name:                    string | close({[#language_code]: string})
 	problem_format_version?: *"legacy" | "draft" | =~"^[0-9]{4}-[0-9]{2}(-icpc)?(-draft)?$"
-	type?: *"pass-fail" | "scoring"
+	type:                    *"pass-fail" | "scoring"
 
-    _icpc: *false | true
-	if problem_format_version != _|_ { _icpc: problem_format_version =~ "icpc" }
-    if _icpc { type?: "pass-fail" }
+	_icpc: *false | true
+	if problem_format_version != _|_ { _icpc: problem_format_version =~ "icpc"}
+	if _icpc { type?: "pass-fail"}
 
-	author?: string
-    source?: string
-    source_url?: string // only allow if source exists
+	author?:     string
+	source?:     string
+	source_url?: string // only allow if source exists
 
-	license?: *"unknown" | "public domain" | "cc0" | "cc by" | "cc by-sa" | "educational" | "permission"
-    rights_owner?: string
-    // if license =~ "unknown" { numexists(>=1, rights_owner, author, source) }
-    // right_owner may only exist for certain licenses
+	license?:      *"unknown" | "public domain" | "cc0" | "cc by" | "cc by-sa" | "educational" | "permission"
+	rights_owner?: string
+	// if license =~ "unknown" { numexists(>=1, rights_owner, author, source) }
+	// right_owner may only exist for certain licenses
 
 	limits?: {
 		time_multiplier?: {
@@ -34,7 +34,6 @@
 	constants?: {[string]: number | string}
 }
 
-
 #language_code: =~"^[a-z]{2,4}(-[A-Z][A-Z])?$"
 #other_limits:  "memory" | "output" | "code" | "compilation_time" | "compilation_memory" | "validation_time" | "validation_memory" | "validation_output"
 
@@ -44,10 +43,14 @@
 
 #problem_settings: {
 	#problem_settings_icpc
-	problem_format_version?: !~"icpc"
-	validation?:             close({["multipass" | "interactive" | "scoring"]: *false | true})
-	keywords?:               string | [...string]
-	languages?:              *"all" | [...string]
+	validation?: close({["multipass" | "interactive" | "scoring"]: *false | true})
+	if validation.scoring != _|_ {
+        if validation.scoring == true {
+            type?: "scoring"
+        }
+	}
+	keywords?:  string | [...string]
+	languages?: *"all" | [...string]
 }
 
 #testdata_settings: {

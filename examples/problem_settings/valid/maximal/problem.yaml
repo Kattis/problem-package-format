@@ -1,8 +1,8 @@
 name: 
-  en: Maximally Specified ICPC Problem
-  de: Maksimal spezifiziertes ICPC-Problem
-problem_format_version: 2023-07-icpc
-type: pass-fail
+  en: Maximally Specified Problem
+  de: Maksimal spezifiziertes Problem
+problem_format_version: 2023-07
+type: scoring
 author: Maxine Maximus
 source: MCPC 2023
 source_url: http://maximal-contest.2023.com
@@ -17,8 +17,11 @@ limits:
   memory: 1024
   validation_time: 21
 validation:
+  interactive: true
   multipass: true
+  scoring: false # redundant
 keywords: [greedy, multipass, needs big integers]
 constants:
   max_n: 1000
   bases: ACTG
+languages: [apl, pascal, fortran]

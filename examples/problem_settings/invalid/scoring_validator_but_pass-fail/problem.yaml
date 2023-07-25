@@ -1,0 +1,4 @@
+name: Not Necessarily ICPC but Scoring Pass/Fail
+type: pass-fail
+validation:
+  scoring: true
