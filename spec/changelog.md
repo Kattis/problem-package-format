@@ -29,6 +29,8 @@ sort: 1
 - Add support for Markdown problem statements.
 - Change `languages:` and `keywords:` in `problem.yaml` to be lists of strings
   rather than a string of space separated words.
+- Only allow a single output validator.
+- Remove `validator_flags` from problem.yaml.
 
 ## Legacy version (changes since beginning 2021)
 
