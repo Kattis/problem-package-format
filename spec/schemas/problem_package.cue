@@ -1,11 +1,7 @@
-#problem_settings_icpc: {
+#problem_settings_base: {
 	name:                    string | close({[#language_code]: string})
-	problem_format_version?: *"legacy" | "draft" | =~"^[0-9]{4}-[0-9]{2}(-icpc)?(-draft)?$"
-	type:                    *"pass-fail" | "scoring"
-
-	_icpc: *false | true
-	if problem_format_version != _|_ {_icpc: problem_format_version =~ "icpc"}
-	if _icpc {type?: "pass-fail"}
+	problem_format_version?: *"legacy" | "draft" | =~"^[0-9]{4}-[0-9]{2}(-draft)?$"
+	type?:                   *"pass-fail" | "scoring"
 
 	author?:     string
 	source?:     string
@@ -25,33 +21,32 @@
 		time_resolution?: *1.0 | float
 		[#other_limits]:  int
 	}
-	validation?: *"default" | "custom" | {
-		"interactive": *false | true
-		... // other keys are allowed but ignored
-	}
+	validation?: [string]: *false | true
 	keywords?: string | [...string]
 	uuid?:     string
 	constants?: {[string]: number | string}
+}
+
+#problem_settings_icpc: {
+    #problem_settings_base
+    type?: "pass-fail"
+	validation?: { interactive?: _ }
+}
+
+#problem_settings: {
+	#problem_settings_base
+	keywords?:   string | [...string]
+    validation: close({["multipass" | "interactive" | "scoring"]: _})
+    if validation.scoring != _|_ {
+        type: "scoring"
+    }
+	languages?:  *"all" | [...string]
 }
 
 #language_code: =~"^[a-z]{2,4}(-[A-Z][A-Z])?$"
 #other_limits:  "memory" | "output" | "code" | "compilation_time" | "compilation_memory" | "validation_time" | "validation_memory" | "validation_output"
 
 #testdata_settings_icpc: output_validator_flags: *"" | string
-
-// Full specification extends the ICPC subset:
-
-#problem_settings: {
-	#problem_settings_icpc
-	validation?: close({["multipass" | "interactive" | "scoring"]: *false | true})
-	if validation.scoring != _|_ {
-		if validation.scoring == true {
-			type?: "scoring"
-		}
-	}
-	keywords?:  string | [...string]
-	languages?: *"all" | [...string]
-}
 
 #testdata_settings: {
 	#testdata_settings_icpc
