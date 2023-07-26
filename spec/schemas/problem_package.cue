@@ -30,7 +30,7 @@
 #problem_settings_icpc: {
     #problem_settings_base
     type?: "pass-fail"
-	validation?: { interactive?: _ }
+	validation?: close({ interactive?: _ })
 }
 
 #problem_settings: {
