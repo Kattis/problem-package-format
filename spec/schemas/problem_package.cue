@@ -14,11 +14,11 @@
 
 	limits?: {
 		time_multiplier?: {
-			ac_to_time_limit:  *2.0 | float
-			time_limit_to_tle: *1.5 | float
+			ac_to_time_limit:  *2.0 | number 
+			time_limit_to_tle: *1.5 | number 
 		}
 		time_limit?:      number & >0
-		time_resolution?: *1.0 | float
+		time_resolution?: *1.0 | number
 		[#other_limits]:  int
 	}
 	validation?: [string]: *false | true
