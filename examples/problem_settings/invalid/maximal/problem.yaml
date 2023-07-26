@@ -1,11 +1,3 @@
----
-sort: 2
-permalink: /examples/problem_yaml
----
-# Problem.yaml
-
-Typical problem.yaml:
-
 # Problem configuration
 source: ICPC Mid-Atlantic Regional Contest
 # Note that a list of strings is not supported.

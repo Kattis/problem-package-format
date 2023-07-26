@@ -1,7 +1,7 @@
 name: 
   en: Maximally Specified ICPC Problem
   de: Maksimal spezifiziertes ICPC-Problem
-problem_format_version: 2023-07-icpc
+problem_format_version: 2023-07
 type: pass-fail
 author: Maxine Maximus
 source: MCPC 2023
