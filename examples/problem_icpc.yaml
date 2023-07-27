@@ -8,7 +8,15 @@ author: Alice McAuthorson
 ---
 # Can set type, but it's redundant
 name: Hello World!
-type: pass-fail
+type: pass-fail # no other value allowed
+---
+# Can set validation to default, but it's redundant
+name: Hello World!
+validation: default # "default" is the default
+---
+# Specify presence of custom output validator
+name: Hello World!
+validation: custom
 ---
 # Use all available fields
 name: 

@@ -30,6 +30,23 @@ type: scoring
 validation:
   interactive: true
 ---
+name: An Scoring Problem with Non-Scoring Validator
+type: scoring
+validation:
+  scoring: false
+---
+# Different way of doing the same
+name: Another Scoring Problem with Non-Scoring Validator
+type: scoring
+validation: "custom"
+---
+name: An Scoring Problem Using the Default Validator
+type: scoring
+---
+name: Another Scoring Problem Using the Default Validator
+type: scoring
+validation: default
+---
 # Maximally specified problem
 name:
   en: Maximally Specified Problem

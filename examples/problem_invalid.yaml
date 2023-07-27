@@ -29,6 +29,16 @@ name: Laissez Faire
 validation:
   multipass: 5
 ---
+# Don't specify validation.scoring for pass-fail
+# problems, *even* if you (redudantly) set it to false
+name: Weird Pass-Fail Problem
+type: pass-fail
+validation:
+  scoring: false
+# What as meant was just this:
+# name: Weird Pass-Fail Problem
+# type: pass-fail # redundant
+---
 # Legacy example problem.yaml
 # Invalid because missing name
 # Problem configuration
