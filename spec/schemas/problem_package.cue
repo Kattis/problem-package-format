@@ -13,8 +13,8 @@
 
 	limits?: {
 		time_multiplier?: {
-			ac_to_time_limit:  *2.0 | number
-			time_limit_to_tle: *1.5 | number
+			ac_to_time_limit?:  *2.0 | number
+			time_limit_to_tle?: *1.5 | number
 		}
 		time_limit?:      number & >0
 		time_resolution?: *1.0 | number
@@ -43,7 +43,7 @@ languages?: *"all" | [...string]
 #language_code: =~"^[a-z]{2,4}(-[A-Z][A-Z])?$"
 #other_limits:  "memory" | "output" | "code" | "compilation_time" | "compilation_memory" | "validation_time" | "validation_memory" | "validation_output"
 
-#testdata_settings_icpc: output_validator_flags: *"" | string
+#testdata_settings_icpc: output_validator_flags?: *"" | string
 
 #testdata_settings: {
 	#testdata_settings_icpc
@@ -53,5 +53,5 @@ languages?: *"all" | [...string]
 		score_aggregation?:   "sum" | "min"
 		verdict_aggregation?: "first_error" | "accept_if_any_accepted"
 	}
-	input_validator_flags: *"" | string | {[string]: string}
+	input_validator_flags?: *"" | string | {[string]: string}
 }
