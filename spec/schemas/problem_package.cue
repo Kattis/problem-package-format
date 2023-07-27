@@ -28,19 +28,17 @@
 
 #license_with_rights: "cc0" | "cc by" | "cc by-sa" | "educational" | "permission"
 
-#problem_settings_icpc: {
+#icpc: {
     #problem_settings_base
     type?: "pass-fail"
 	validation?: close({ interactive: _ })
 }
 
-#problem_settings: {
-	#problem_settings_base
-	keywords?:   string | [...string]
-    validation?: close({["multipass" | "interactive" | "scoring"]: _})
-    if validation.scoring != _|_ { type: "scoring" }
-	languages?:  *"all" | [...string]
-}
+#problem_settings_base
+keywords?:   string | [...string]
+validation?: close({["multipass" | "interactive" | "scoring"]: _})
+if validation.scoring != _|_ { type: "scoring" }
+languages?:  *"all" | [...string]
 
 #language_code: =~"^[a-z]{2,4}(-[A-Z][A-Z])?$"
 #other_limits:  "memory" | "output" | "code" | "compilation_time" | "compilation_memory" | "validation_time" | "validation_memory" | "validation_output"
