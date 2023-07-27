@@ -1,0 +1,57 @@
+# Name missing
+author: Alice McAuthorson
+---
+# Name present but illegal key also present:
+name: Hello World!
+has_illegal_key: true
+---
+# Name present but wrong type
+name: 42
+---
+# Invalid because public domain may not have rights_owner
+name: "Hello World!"
+license: "public domain"
+rights_owner: "Niccolo Machiavelli"
+---
+# If validation is scoring, then type cannot be pass-fail
+name: Scoring Validator but Pass/Fail
+type: pass-fail
+validation:
+  scoring: true
+---
+# Invalid validation mode
+name: Laissez Faire
+validation:
+  random: true
+---
+# Invalid validation value
+name: Laissez Faire
+validation:
+  multipass: 5
+---
+# Legacy example problem.yaml
+# Invalid because missing name
+# Problem configuration
+source: ICPC Mid-Atlantic Regional Contest
+# Note that a list of strings is not supported.
+author:  John von Judge and Jon Judgeson
+license: cc by-sa
+rights_owner: ICPC
+
+limits:
+   time_multiplier: 5
+   time_safety_margin: 2
+   memory: 4096
+   output: 16
+   compilation_time: 240
+   validation_time: 240
+   validation_memory: 3072
+   validation_output: 4
+
+validator: space_change_sensitive float_absolute_tolerance 1e-6
+---
+# Legacy problem.yaml example missing name
+# Problem configuration
+source: ICPC Mid-Atlantic Regional Contest
+author: John von Judge
+rights_owner: ICPC
