@@ -1,5 +1,5 @@
-# All of these validate against the #problem_settings schema
-# but not against #problem_settings_icpc
+# All of these validate against the schema
+# but not against its #icpc subset
 name: I am not an ICPC problem
 type: scoring
 validation:
