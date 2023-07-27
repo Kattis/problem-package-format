@@ -1,12 +1,2 @@
-echo "Valid problem.yaml"
-echo "=================="
-echo 
-
-for f in ../../examples/problem_settings/*/*/problem.yaml; do
-	echo $f
-	cue vet problem_package.cue "$f" -d "#problem_settings"
-	echo $? 
-	cue vet problem_package.cue "$f" -d "#problem_settings_icpc"
-	echo $? 
-	echo
-done
+cue vet ../../examples/problem_full.yaml problem_package.cue  -d "#problem_settings"
+cue vet ../../examples/problem_icpc.yaml problem_package.cue  -d "#problem_settings_icpc"

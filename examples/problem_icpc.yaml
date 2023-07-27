@@ -1,3 +1,16 @@
+# Minimal
+name: Hello World!
+---
+# Typical
+name: Hello World!
+license: cc by-sa
+author: Alice McAuthorson
+---
+# Can set type, but it's redundant
+name: Hello World!
+type: pass-fail
+---
+# Use all available fields
 name: 
   en: Maximally Specified ICPC Problem
   de: Maksimal spezifiziertes ICPC-Problem
@@ -17,8 +30,8 @@ limits:
   memory: 1024
   validation_time: 21
 validation:
-  multipass: true
-keywords: [greedy, multipass, needs big integers]
+  interactive: true
+keywords: [greedy, interactive, needs big integers]
 constants:
   max_n: 1000
   bases: ACTG

@@ -1,0 +1,60 @@
+# All of these validate against the #problem_settings schema
+# but not against #problem_settings_icpc
+name: I am not an ICPC problem
+type: scoring
+validation:
+  interactive: true
+  multipass: true
+  scoring: false # default, hence redundant
+languages: [apl, pascal, fortran]
+---
+# Some useful combinations:
+name: Scoring problem with scoring output validator
+type: scoring
+validation:
+  scoring: true
+---
+name: A Multipass Problem
+type: pass-fail # redundant (default)
+validation:
+  multipass: true
+---
+name: An Interactive Scoring Problem with Scoring Validotor
+type: scoring
+validation:
+  interactive: true
+  scoring: true
+---
+name: An Interactive Scoring Problem with Non-Scoring Validator
+type: scoring
+validation:
+  interactive: true
+---
+# Maximally specified problem
+name:
+  en: Maximally Specified Problem
+  de: Maksimal spezifiziertes Problem
+problem_format_version: 2023-07
+type: scoring
+author: Maxine Maximus
+source: MCPC 2023
+source_url: http://maximal-contest.2023.com
+license: cc by-sa
+rights_owner: Momma Maximus
+limits:
+  time_multiplier:
+    ac_to_time_limit: 3.0
+    time_limit_to_tle: 1.4
+  time_limit: 1
+  time_resolution: .5
+  memory: 1024
+  validation_time: 21
+validation:
+  interactive: true
+  multipass: true
+  scoring: false # redundant
+keywords: [greedy, multipass, needs big integers]
+constants:
+  max_n: 1000
+  bases: ACTG
+languages: [apl, pascal, fortran]
