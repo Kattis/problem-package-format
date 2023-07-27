@@ -7,10 +7,9 @@
 	source?:     string
 	source_url?: string // only allow if source exists
 
-	license?:      *"unknown" | "public domain" | "cc0" | "cc by" | "cc by-sa" | "educational" | "permission"
-	rights_owner?: string
-	// if license =~ "unknown" { numexists(>=1, rights_owner, author, source) }
-	// right_owner may only exist for certain licenses
+    license?:  *"unknown" | "public domain" | #license_with_rights
+    rights_owner?: string
+    if rights_owner != _|_ { license?: #license_with_rights }
 
 	limits?: {
 		time_multiplier?: {
@@ -27,19 +26,19 @@
 	constants?: {[string]: number | string}
 }
 
+#license_with_rights: "cc0" | "cc by" | "cc by-sa" | "educational" | "permission"
+
 #problem_settings_icpc: {
     #problem_settings_base
     type?: "pass-fail"
-	validation?: close({ interactive?: _ })
+	validation?: close({ interactive: _ })
 }
 
 #problem_settings: {
 	#problem_settings_base
 	keywords?:   string | [...string]
-    validation: close({["multipass" | "interactive" | "scoring"]: _})
-    if validation.scoring != _|_ {
-        type: "scoring"
-    }
+    validation?: close({["multipass" | "interactive" | "scoring"]: _})
+    if validation.scoring != _|_ { type: "scoring" }
 	languages?:  *"all" | [...string]
 }
 
