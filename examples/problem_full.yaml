@@ -1,6 +1,7 @@
 # All of these validate against the schema
 # but not against its #icpc subset
 name: I am not an ICPC problem
+problem_format_version: 2023-07
 type: scoring
 validation:
   interactive: true
@@ -13,27 +14,32 @@ name: Scoring problem with scoring output validator
 type: scoring
 validation:
   scoring: true
+problem_format_version: 2023-07
 ---
 name: A Multipass Problem
 type: pass-fail # redundant (default)
 validation:
   multipass: true
+problem_format_version: 2023-07
 ---
 name: An Interactive Scoring Problem with Scoring Validotor
 type: scoring
 validation:
   interactive: true
   scoring: true
+problem_format_version: 2023-07
 ---
 name: An Interactive Scoring Problem with Non-Scoring Validator
 type: scoring
 validation:
   interactive: true
+problem_format_version: 2023-07
 ---
 name: An Scoring Problem with Non-Scoring Validator
 type: scoring
 validation:
   scoring: false
+problem_format_version: 2023-07
 ---
 # Different way of doing the same
 name: Another Scoring Problem with Non-Scoring Validator

@@ -3,6 +3,7 @@ name: Hello World!
 ---
 # Typical
 name: Hello World!
+problem_format_version: 2023-07
 license: cc by-sa
 author: Alice McAuthorson
 ---
