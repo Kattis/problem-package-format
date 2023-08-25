@@ -29,6 +29,7 @@ sort: 1
 - Add support for Markdown problem statements.
 - Change `languages:` and `keywords:` in `problem.yaml` to be lists of strings
   rather than a string of space separated words.
+- Clarified when code limit is applied in the case of included code
 
 ## Legacy version (changes since beginning 2021)
 
