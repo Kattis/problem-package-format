@@ -257,7 +257,7 @@ Arbitrary LaTeX is not guaranteed to render correctly by HTML-based judging syst
 
 5. The following font weight and size modifiers:  `\bf`, `\textbf`, `\it`, `\textit`, `\t`, `\tt`, `\texttt`, `\emph`, `\underline`, `\sout`, `\textsc`, `\tiny`, `\scriptsize`, `\small`, `\normalsize`, `\large`, `\Large`, `\LARGE`, `\huge`, `\Huge`.
 
-6. `\includegraphics` (from the package `graphicx`), including the Polygon-style workaround for scaling the image using `\def \htmlPixelsInCm`.
+6. `\includegraphics` from the package `graphicx`, including the Polygon-style workaround for scaling the image using `\def \htmlPixelsInCm`.
 
 7. The miscellaneous commands `\url`, `\href`, `\section`, `\subsection`, and `\epigraph`.
 
