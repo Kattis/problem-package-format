@@ -293,13 +293,13 @@ that file must have the language dependent name as given in the table referred a
 Correct and incorrect solutions to the problem are provided in subdirectories of `submissions/`.
 The possible subdirectories are:
 
-| Value                                             | Requirement                                                                                                                                                       | Comment                                                                 |
-| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| accepted                                          | Accepted as a correct solution for all test files                                                                                                                 | At least one is required.                                               |
-| <span class="not-icpc"> partially_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min.</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span> |
-| wrong_answer                                      | Wrong answer for some test file, but is not too slow and does not crash for any test file                                                                         |                                                                         |
-| time_limit_exceeded                               | Too slow for some test file. May also give wrong answer but not crash for any test file.                                                                          |                                                                         |
-| run_time_error                                    | Crashes for some test file                                                                                                                                        |                                                                         |
+| Value                                             | Requirement                                                                                                                                                       | Comment
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------
+| accepted                                          | Accepted as a correct solution for all test files                                                                                                                 | At least one is required.
+| <span class="not-icpc"> partially_accepted</span> | <span class="not-icpc"> Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min.</span> | <span class="not-icpc"> Must not be used for pass-fail problems.</span>
+| wrong_answer                                      | Wrong answer for some test file, but is not too slow and does not crash for any test file                                                                         |
+| time_limit_exceeded                               | Too slow for some test file. May also give wrong answer but not crash for any test file.                                                                          |
+| run_time_error                                    | Crashes for some test file                                                                                                                                        |
 
 Every file or directory in these directories represents a separate solution.
 Same requirements as for submissions with regards to filenames.
