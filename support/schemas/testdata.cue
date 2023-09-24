@@ -4,8 +4,8 @@ package problem_package
 	input_validator_flags?:  *"" | string | {[string]: string}
 	output_validator_flags?: *"" | string
         grading?: {
-		score?:       string
-		max_score?:   string
+		score?:       number
+		max_score?:   number
 		aggregation?: "sum" | "min"
 	}
 }
