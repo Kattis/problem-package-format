@@ -30,6 +30,7 @@ sort: 1
 - Change `languages:` and `keywords:` in `problem.yaml` to be lists of strings
   rather than a string of space separated words.
 - Clarified when code limit is applied in the case of included code
+- Make `uuid` required in `problem.yaml`.
 
 ## Legacy version (changes since beginning 2021)
 
