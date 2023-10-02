@@ -24,7 +24,7 @@ package problem_package
 	}
 	constants?: {[=~"^[a-z0-9]+$"]: number | string}
 	keywords?: string | [...string]
-	uuid?:     string
+	uuid!: =~"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
 	keywords?: string | [...string]
 	if validation.scoring != _|_ {type: "scoring"}
 	languages?: *"all" | [...string]
