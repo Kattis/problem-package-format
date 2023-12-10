@@ -31,6 +31,7 @@ sort: 1
   rather than a string of space separated words.
 - Clarified when code limit is applied in the case of included code
 - Make `uuid` required in `problem.yaml`.
+- Add `/submissions/rejected` directory.
 
 ## Legacy version (changes since beginning 2021)
 
