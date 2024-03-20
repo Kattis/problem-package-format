@@ -32,6 +32,7 @@ sort: 1
 - Clarified when code limit is applied in the case of included code
 - Make `uuid` required in `problem.yaml`.
 - Add `/submissions/rejected` directory.
+- Clarify working directories for submissions and validators.
 
 ## Legacy version (changes since beginning 2021)
 
