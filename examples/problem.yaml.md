@@ -9,6 +9,7 @@ permalink: /examples/problem_yaml
 ```yaml
 problem_format_version: 2023-07-draft
 name: Sample problem
+uuid: b9f846aa-c233-45ee-a70a-473aecc8fe77
 source: ICPC Mid-Atlantic Regional Contest
 author: John von Judge
 rights_owner: ICPC
@@ -19,6 +20,7 @@ rights_owner: ICPC
 ```yaml
 problem_format_version: 2023-07-draft
 name: Sample problem
+uuid: 7594abe6-08e3-4743-8cf9-15c4693cdbf5
 author: John von Judge
 source: ICPC World Finals 2023
 source_url: https://2023.icpc.global
