@@ -104,21 +104,21 @@ The keys are defined as below.
 Keys are optional unless explicitly stated.
 Any unknown keys should be treated as an error.
 
-| Key                                   | Type                                                          | Default                                                 | Comments
-| ------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------- | --------
-| problem_format_version                | String                                                        | `legacy`                                                | Version of the Problem Package Format used for this package. If using this version of the Format, it must be the string `legacy` (which is also the default). Documentation for version `<version>` is available at `https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>`.
-| name                                  | String                                                        |                                                         | The name of the problem.
-| type                                  | String                                                        | pass-fail                                               | One of `pass-fail` and `scoring`.
-| author                                | String                                                        |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
-| source                                | String                                                        |                                                         | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
-| source_url                            | String                                                        |                                                         | Link to page for source event. Must not be given if source is not.
-| license                               | String                                                        | unknown                                                 | License under which the problem may be used. Value has to be one of the ones defined below.
-| rights_owner                          | String                                                        | Value of author, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".
-| limits                                | Map with keys as defined below                                | see definition below                                    |
-| validation                            | String                                                        | default                                                 | One of "default" or "custom". If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive score".
-| validator_flags                       | String                                                        |                                                         | Will be passed as command-line arguments to each of the output validators.
-| scoring                               | Map with keys as defined below                                | See definition below                                    | Must only be used on scoring problems.
-| keywords                              | String                                                        |                                                         | String of space separated keywords.
+| Key                    | Type                           | Default                                                 | Comments
+| ---------------------- | ------------------------------ | ------------------------------------------------------- | --------
+| problem_format_version | String                         | `legacy`                                                | Version of the Problem Package Format used for this package. If using this version of the Format, it must be the string `legacy` (which is also the default). Documentation for version `<version>` is available at `https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>`.
+| name                   | String                         |                                                         | The name of the problem.
+| type                   | String                         | pass-fail                                               | One of `pass-fail` and `scoring`.
+| author                 | String                         |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
+| source                 | String                         |                                                         | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
+| source_url             | String                         |                                                         | Link to page for source event. Must not be given if source is not.
+| license                | String                         | unknown                                                 | License under which the problem may be used. Value has to be one of the ones defined below.
+| rights_owner           | String                         | Value of author, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".
+| limits                 | Map with keys as defined below | see definition below                                    |
+| validation             | String                         | default                                                 | One of "default" or "custom". If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive score".
+| validator_flags        | String                         |                                                         | Will be passed as command-line arguments to each of the output validators.
+| scoring                | Map with keys as defined below | See definition below                                    | Must only be used on scoring problems.
+| keywords               | String                         |                                                         | String of space separated keywords.
 
 ### License
 
@@ -276,13 +276,13 @@ that file must have the language dependent name as given in the table referred a
 Correct and incorrect solutions to the problem are provided in subdirectories of `submissions/`.
 The possible subdirectories are:
 
-| Value                                             | Requirement                                                                                                                                                       | Comment
-| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------
-| accepted                                          | Accepted as a correct solution for all test files                                                                                                                 | At least one is required.
-| partially_accepted                                | Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min.                                | Must not be used for pass-fail problems.
-| wrong_answer                                      | Wrong answer for some test file, but is not too slow and does not crash for any test file                                                                         |
-| time_limit_exceeded                               | Too slow for some test file. May also give wrong answer but not crash for any test file.                                                                          |
-| run_time_error                                    | Crashes for some test file                                                                                                                                        |
+| Value               | Requirement                                                                                                                        | Comment
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------
+| accepted            | Accepted as a correct solution for all test files                                                                                  | At least one is required.
+| partially_accepted  | Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min. | Must not be used for pass-fail problems.
+| wrong_answer        | Wrong answer for some test file, but is not too slow and does not crash for any test file                                          |
+| time_limit_exceeded | Too slow for some test file. May also give wrong answer but not crash for any test file.                                           |
+| run_time_error      | Crashes for some test file                                                                                                         |
 
 Every file or directory in these directories represents a separate solution.
 Same requirements as for submissions with regards to filenames.
