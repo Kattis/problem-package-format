@@ -1,0 +1,10 @@
+problem_format_version: 2023-07-draft # or `legacy` for the previous version of the Problem Package Format
+type: pass-fail submit-answer
+name: Sample problem
+uuid: ...
+credits:
+  authors: Author One <author1@judge.com>
+source: My Contest 2024
+source_url: https://my.contest.com/2024
+license: cc by-sa
+rights_owner: My Contest
