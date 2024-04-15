@@ -1,12 +1,13 @@
 ---
 layout: default
-title: Legacy
-sort: 3
+title: Legacy (ICPC)
+sort: 4
 ---
 
 # Problem Package Format
 
-This is the `legacy` version of the Kattis problem package format.
+This is the `legacy-icpc` version of the Kattis problem package format.
+It is also known as the ICPC subset.
 
 ## Overview
 
@@ -33,7 +34,7 @@ All floating point numbers must be given as the external character sequences def
 
 ### Programs
 
-There are a number of different kinds of programs that may be provided in the problem package; submissions, input validators, output validators, and graders.
+There are a number of different kinds of programs that may be provided in the problem package; submissions, input validators, output validators.
 All programs are always represented by a single file or directory.
 In other words, if a program consists of several files, these must be provided in a single directory.
 The name of the program, for the purpose of referring to it within the package is the base name of the file or the name of the directory.
@@ -90,11 +91,15 @@ For languages where there could be several entry points, the default entry point
 | typescript  | TypeScript   |                     | .ts                       |                                                                                              |
 | visualbasic | Visual Basic |                     | .vb                       |                                                                                              |
 
+<div class="not-icpc">
+
 ### Problem Types
 
 There are two types of problems: <em>pass-fail</em> problems and <em>scoring</em> problems.
 In pass-fail problems, submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and divided into results such as "Wrong Answer", "Time Limit Exceeded", etc).
 In scoring problems, a submission that is accepted is additionally given a score, which is a numeric value (and the goal is to either maximize or minimize this value).
+
+</div>
 
 ## Problem Metadata
 
@@ -107,16 +112,14 @@ Any unknown keys should be treated as an error.
 | Key                                   | Type                                                          | Default                                                 | Comments
 | ------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------- | --------
 | name                                  | String                                                        |                                                         | The name of the problem.
-| type                                  | String                                                        | pass-fail                                               | One of `pass-fail` and `scoring`.
 | author                                | String                                                        |                                                         | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 | source                                | String                                                        |                                                         | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 | source_url                            | String                                                        |                                                         | Link to page for source event. Must not be given if source is not.
 | license                               | String                                                        | unknown                                                 | License under which the problem may be used. Value has to be one of the ones defined below.
 | rights_owner                          | String                                                        | Value of author, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, author is owner. If author is not present either, source is owner. Required if license is something other than "unknown" or "public domain". Forbidden if license is "public domain".
 | limits                                | Map with keys as defined below                                | see definition below                                    |
-| validation                            | String                                                        | default                                                 | One of "default" or "custom". If "custom", may be followed by some subset of "score" and "interactive", where "score" indicates that the validator produces a score (this is only valid for scoring problems), and "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive score".
+| validation                            | String                                                        | default                                                 | One of "default" or "custom". If "custom", may be followed by "interactive", where "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive".
 | validator_flags                       | String                                                        |                                                         | Will be passed as command-line arguments to each of the output validators.
-| scoring                               | Map with keys as defined below                                | See definition below                                    | Must only be used on scoring problems.
 | keywords                              | String                                                        |                                                         | String of space separated keywords.
 
 ### License
@@ -155,15 +158,6 @@ A map with the following keys:
 For most keys the system default will be used if nothing is specified.
 This can vary, but you SHOULD assume that it's reasonable.
 Only specify limits when the problem needs a specific limit, but do specify limits even if the "typical system default" is what is needed.
-
-### Scoring
-
-A map with the following keys:
-
-| Key                   | Type    | Default | Comments                                                                                 |
-| --------------------- | ------- | ------- | ---------------------------------------------------------------------------------------- |
-| objective             | String  | max     | One of "min" or "max" specifying whether it is a minimization or a maximization problem. |
-| show_test_data_groups | boolean | false   | Specifies whether test group results should be shown to the end user.                    |
 
 ## Problem Statements
 
@@ -230,45 +224,10 @@ If you want to provide files related to interactive problems (such as testing to
 
 ### Test Data Groups
 
-The test data for the problem can be organized into a tree-like structure.
-Each node of this tree is represented by a directory and referred to as a test data group.
-Each test data group may consist of zero or more test cases (i.e., input-answer files) and zero or more subgroups of test data (i.e., subdirectories).
-
 At the top level, the test data is divided into exactly two groups: `sample` and `secret`.
-These two groups may be further split into subgroups as desired.
-
-The <em>result</em> of a test data group is computed by applying a <em>grader</em> to all of the sub-results (test cases and subgroups) in the group.
-See [Graders](#graders "wikilink") for more details.
 
 Test files and groups will be used in lexicographical order on file base name.
 If a specific order is desired a numbered prefix such as `00`, `01`, `02`, `03`, and so on, can be used.
-
-In each test data group, a file `testdata.yaml` may be placed to specify how the result of the test data group should be computed.
-If a test data group has no `testdata.yaml` file, the `testdata.yaml` in the closest ancestor group that has one will be used.
-If there is no `testdata.yaml` file in the root `data` group, one is implicitly added with the default values.
-
-The format of `testdata.yaml` is as follows:
-
-| Key                    | Type                                           | Default      | Comments
-| ---------------------- | ---------------------------------------------- | ------------ | --------
-| on_reject              | String                                         | break        | One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test file or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test files and subgroups within the group.
-| grading                | String                                         | default      | One of "default" and "custom".
-| grader_flags           | String                                         | empty string | arguments passed to the grader for this test data group.
-| input_validator_flags  | String or map with the keys "name" and "flags" | empty string | arguments passed to the input validator for this test data group. If a string then those are the flags that will be passed to each input validator for this test data group. If a map then this is the name of the input validator as well as the flags to pass to that input validator for this test data group. Validators not present in the map are run without flags.
-| output_validator_flags | String or map with the keys "name" and "flags" | empty string | arguments passed to the output validator for this test data group. If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.
-| accept_score           | String                                         | 1            | Default score for accepted input files. May only be specified for scoring problems.
-| reject_score           | String                                         | 0            | Default score for rejected input files. May only be specified for scoring problems.
-| range                  | String                                         | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.
-
-## Included Code
-
-Code that should be included with all submissions are provided in one directory per supported language, called `include/<language>/`.
-
-The files should be copied from a language directory based on the language of the submission,
-to the submission files before compiling, overwriting files from the submission in the case of name collision.
-Language must be given as one of the language codes in the language table in the overview section.
-If any of the included files are supposed to be the main file (i.e. a driver),
-that file must have the language dependent name as given in the table referred above.
 
 ## Example Submissions
 
@@ -278,7 +237,6 @@ The possible subdirectories are:
 | Value                                             | Requirement                                                                                                                                                       | Comment
 | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------
 | accepted                                          | Accepted as a correct solution for all test files                                                                                                                 | At least one is required.
-| partially_accepted                                | Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min.                                | Must not be used for pass-fail problems.
 | wrong_answer                                      | Wrong answer for some test file, but is not too slow and does not crash for any test file                                                                         |
 | time_limit_exceeded                               | Too slow for some test file. May also give wrong answer but not crash for any test file.                                                                          |
 | run_time_error                                    | Crashes for some test file                                                                                                                                        |
@@ -465,74 +423,3 @@ Almost all test cases failed, are you even trying to solve the problem?
 
 A validator program is allowed to write any kind of debug information to its standard error pipe.
 This information may be displayed to the user upon invocation of the validator.
-
-## Graders
-
-Graders are programs that are given the sub-results of a test data group and aggregate a result for the group.
-They are provided in `graders/`.
-
-For pass-fail problems, this grader will typically just set the verdict to accepted if all sub-results in the group were accepted and otherwise select the "worst" error in the group (see below for definition of "worst"),
-though it is possible to write a custom grader which e.g. accepts if at least half the sub-results are accepted.
-For scoring problems, one common grader behaviour would be to always set the verdict to Accepted,
-with the score being the sum of scores of the items in the test group.
-
-### Invocation
-
-A grader program must be an application (executable or interpreted) capable of being invoked with a command line call.
-
-When invoked the grader will get the judgement for test files or groups on stdin and is expected to produce an aggregate result on stdout.
-
-The grader should be possible to use as follows on the command line:
-
-`./grader [arguments] < judgeresults`
-
-On success, the grader must exit with exit code 0.
-
-### Input
-
-A grader simply takes a list of results on standard input, and produces a single result on standard output.
-The input file will have the one line per test file containing the result of judging the testfile,
-using the code from the table below, followed by whitespace, followed by the score.
-
-| Code | Meaning             |
-| ---- | ------------------- |
-| AC   | Accepted            |
-| WA   | Wrong Answer        |
-| RTE  | Run-Time Error      |
-| TLE  | Time-Limit Exceeded |
-
-The score is taken from the `score.txt` files produced by the output validator.
-If no `score.txt` exists the score will be as defined by the grading accept_score and reject_score setting from problem.yaml.
-
-### Output
-
-The grader must output the aggregate result on stdout in the same format as its input.
-Any other output, including no output, will result in a Judging Error.
-
-For pass-fail problems, or for non-Accepted results on scoring problems, the score provided by the grader will always be ignored.
-
-The grader may output debug information on stderr.
-This information may be displayed to the user upon invocation of the grader.
-
-### Default Grader Specification
-
-The default grader has three different modes for aggregating the verdict
--- _worst_error_, _first_error_ and _always_accept_ --
-four different modes for aggregating the score
--- _sum_, _avg_, _min_, _max_ --
-and two flags
--- _ignore_sample_ and _accept_if_any_accepted_.
-These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [testdata.yaml](#test-data-groups "wikilink")).
-If multiple conflicting modes are given, the last one is used. Their meaning are as follows.
-
-| Argument                 | Type         | Description
-| ------------------------ | ------------ | -----------
-| `worst_error`            | verdict mode | Default. Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group. Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.
-| `first_error`            | verdict mode | Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.
-| `always_accept`          | verdict mode | Verdict is always accepted.
-| `sum`                    | scoring mode | Default. Score is sum of input scores.
-| `avg`                    | scoring mode | score is average of input scores.
-| `min`                    | scoring mode | score is minimum of input scores.
-| `max`                    | scoring mode | score is maximum of input scores.
-| `ignore_sample`          | flag         | Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.
-| `accept_if_any_accepted` | flag         | Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.
