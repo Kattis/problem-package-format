@@ -1,5 +1,5 @@
-problem_format_version: 2023-07-draft # or `legacy` for the previous version of the Problem Package Format
-type: scoring 
+problem_format_version: 2023-07-draft
+type: scoring
 name: Sample Scoring problem
 uuid: ...
 credits:
