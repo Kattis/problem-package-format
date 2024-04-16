@@ -1,1 +1,1 @@
-print(int(input()) - 50)
+print(abs(int(input())))
