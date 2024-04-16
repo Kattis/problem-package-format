@@ -91,16 +91,6 @@ For languages where there could be several entry points, the default entry point
 | typescript  | TypeScript   |                     | .ts                       |                                                                                              |
 | visualbasic | Visual Basic |                     | .vb                       |                                                                                              |
 
-<div class="not-icpc">
-
-### Problem Types
-
-There are two types of problems: <em>pass-fail</em> problems and <em>scoring</em> problems.
-In pass-fail problems, submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and divided into results such as "Wrong Answer", "Time Limit Exceeded", etc).
-In scoring problems, a submission that is accepted is additionally given a score, which is a numeric value (and the goal is to either maximize or minimize this value).
-
-</div>
-
 ## Problem Metadata
 
 Metadata about the problem (e.g., source, license, limits) are provided in a UTF-8 encoded YAML file named `problem.yaml` placed in the root directory of the package.
