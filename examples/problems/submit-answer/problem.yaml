@@ -1,4 +1,4 @@
-problem_format_version: 2023-07-draft # or `legacy` for the previous version of the Problem Package Format
+problem_format_version: 2023-07-draft
 type: pass-fail submit-answer
 name: Sample problem
 uuid: ...
