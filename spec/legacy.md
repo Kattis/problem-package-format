@@ -202,18 +202,23 @@ All input and answer files have the filename extension `.in` and `.ans` respecti
 
 ### Annotations
 
-Optionally a hint, a description and an illustration file may be provided.
+One hint, description, and/or illustration file may be provided per test case.
+The files must share the base name of the associated test case.
+Description and illustration files are meant to be privileged information.
 
-The hint file is a text file with filename extension`.hint` giving a hint for solving an input file.
-The hint file is meant to be given as feedback, i.e. to somebody that fails to solve the problem.
+Category     | File type | Filename extension                 | Remark
+------------ | --------- | ---------------------------------- | ----------------------
+hint         | text      | `.hint`                            |
+description  | text      | `.desc`                            | privileged information
+illustration | image     | `.png`, `.jpg`, `.jpeg`, or `.svg` | privileged information
 
-The description file is a text file with filename extension `.desc` describing the purpose of an input file.
-The description file is meant to be privileged information that explains the purpose of the related test file, e.g. what cases it's supposed to test.
+- A *hint* provides feedback for solving a test case to, e.g., somebody whose submission didn't pass.
 
-The Illustration is an image file with filename extension `.png`, `.jpg`, `.jpeg`, or `.svg`.
-The illustration is meant to be privileged information illustrating the related test file.
+- A *description* conveys the purpose of a test case.
+  It is an explanation of what aspect or edge case of the solution that the input file is meant to test.
 
-Input, answer, description, hint and image files are matched by the base name.
+- An *illustration* provides a visualization of the associated test case.
+  Note that at most one image file may exist for each test case.
 
 ### Interactive Problems
 
