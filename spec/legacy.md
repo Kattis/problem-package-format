@@ -92,7 +92,7 @@ For languages where there could be several entry points, the default entry point
 
 ### Problem Types
 
-There are two types of problems: <em>pass-fail</em> problems and <em>scoring</em> problems.
+There are two types of problems: *pass-fail* problems and *scoring* problems.
 In pass-fail problems, submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and divided into results such as "Wrong Answer", "Time Limit Exceeded", etc).
 In scoring problems, a submission that is accepted is additionally given a score, which is a numeric value (and the goal is to either maximize or minimize this value).
 
@@ -238,7 +238,7 @@ Each test data group may consist of zero or more test cases (i.e., input-answer 
 At the top level, the test data is divided into exactly two groups: `sample` and `secret`.
 These two groups may be further split into subgroups as desired.
 
-The <em>result</em> of a test data group is computed by applying a <em>grader</em> to all of the sub-results (test cases and subgroups) in the group.
+The *result* of a test data group is computed by applying a *grader* to all of the sub-results (test cases and subgroups) in the group.
 See [Graders](#graders "wikilink") for more details.
 
 Test files and groups will be used in lexicographical order on file base name.
