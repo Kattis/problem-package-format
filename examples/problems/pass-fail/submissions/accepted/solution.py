@@ -1,1 +1,1 @@
-print(input())
+print(int(input()) + 1)
