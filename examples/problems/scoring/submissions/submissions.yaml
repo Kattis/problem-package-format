@@ -1,0 +1,6 @@
+accepted/*:
+  authors: Author <author@judge.com>
+partially_accepted/*:
+  authors: Author <author@judge.com>
+wrong_answer/*:
+  authors: Author <author@judge.com>
