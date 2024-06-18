@@ -6,47 +6,30 @@ sort: 1
 # Problem Package Format Specification
 
 This site contains the specification for the (Kattis) Problem Package Format.
-It is available in two places:
+There are currently three versions:
 
-- The latest version: <https://www.kattis.com/problem-package-format>.
-- The version used in the current ICPC World Finals cycle: <https://icpc.io/problem-package-format>.
+- The latest (draft) version: <https://www.kattis.com/problem-package-format/spec/2023-07-draft.html>.
+- The current version: <https://www.kattis.com/problem-package-format/spec/legacy.html>.
+- The ICPC subset of the current version: <https://icpc.io/problem-package-format/spec/legacy-icpc.html>.
+
+The latest version is not yet widely supported, 
+but if you're building tools and systems you should definitely take a look at it. 
+If you're craeting problems for official ICPC contests you should not assume more than the ICPC subset without talking to your technical staff.
 
 Development happens in the GitHub repository: <https://github.com/Kattis/problem-package-format>.
 
-The ICPC uses a strict subset of the larger Kattis version of the spec.
-Click `ICPC` or `Kattis` in the sidebar on the [problem package format](spec/problem_package_format) page to select the version.
-
-## Overview
-
-```note
-TODO: Should we create a separate `overview` page instead? Or maybe just link to one of the examples?
-The main page doesn't have the TOC in the sidebar, so I think it's best to keep this page concise.
-```
-
-This document is a quick introduction to writing problems for the Kattis
-Problem Format and using Kattis Problem Tools. For more thorough
-documentation about the Kattis Problem Format, please refer to
-\[Problem\_Format\]. For more information about the Kattis Problem
-Tools, please refer to <https://github.com/Kattis/problemtools>
-
 ## Example Problems
 
-To start with, it probably helps to see some examples. Here's a set of
-problems that are written in the format:
-<https://github.com/icpc/ncpc-web/releases/download/ncpc2015-data/ncpc2015all.tar.bz2> (Warning: 22+ MB
-download.) These were the ones used for NCPC 2015. You can see how they
-appear on Kattis in HTML here: <https://ncpc15.kattis.com/problems>
+To start with, it probably helps to see some examples. 
+Here's a set of problems that are written in the (current) format: <https://github.com/icpc/ncpc-web/releases/download/ncpc2015-data/ncpc2015all.tar.bz2> (Warning: 22+ MB download.) 
+These were the problems used for NCPC 2015. 
+You can see how they appear on Kattis in HTML here: <https://ncpc15.kattis.com/problems>
 
 ## Kattis Problem Tools
 
-```note
-TODO: We could create a separate page with a quick tooling overview for this.
-```
-
-Here is the source to the Kattis problemtools:
-<https://github.com/Kattis/problemtools> You can install these on Ubuntu
-(see the README on that page). The three key programs you need from this
-are `verifyproblem`, `problem2pdf`, and `problem2html`.
+Here is the source to the Kattis problemtools: <https://github.com/Kattis/problemtools>. 
+You can install these on Ubuntu (see the README on that page). 
+The three key programs you need from this are `verifyproblem`, `problem2pdf`, and `problem2html`.
 
 ### verifyproblem
 
@@ -133,13 +116,3 @@ When judging on Kattis, Kattis's default output validator is lenient on
 whitespace changing differences, but this can be made strict. Also,
 floating-point outputs can be judged to be correct within some specified
 tolerance (relative or absolute), which is really nice.
-
-
-
-
-## Development notes
-
-Run this website locally using `bundle exec jekyll serve` from the repository root.
-
-`bundle` is a Ruby package manager and can be installed with the `ruby-bundler` package.
-Run `bundle install` from the repository root to install the gems needed to build the website.
