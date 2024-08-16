@@ -5,11 +5,17 @@ try:
 except IndexError:
 	sys.exit(43) # Rejected
 
-output: str = sys.stdin.read()
+try:
+	output: str = str(sys.stdin.read())
+except UnicodeDecodeError:
+	sys.exit(43) # Rejected
 
-indata: str
-with open(in_file) as f:
-	indata = f.read()
+try:
+	indata: str
+	with open(in_file) as f:
+		indata = f.read()
+except:
+	sys.exit(43) # Rejected
 
 try:
 	if abs(int(output) - int(indata)) == {{example_constant}}:
