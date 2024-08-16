@@ -25,4 +25,4 @@ limits: # There are many more limits that can be set...
 keywords: []
 languages: [python3, cpp]
 constants:
-  example_constant: 42
+  example_constant: 1
