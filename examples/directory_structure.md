@@ -22,6 +22,8 @@ These examples are for the latest version of the spec, `2023-07-draft`.
   include/
     <language>/
       - any files that should be included with all submissions in <language>
+    default/
+      - any files that should be included with all submissions in any other language
   submissions/
     accepted/
       - a file/directory for each submission with final verdict AC
