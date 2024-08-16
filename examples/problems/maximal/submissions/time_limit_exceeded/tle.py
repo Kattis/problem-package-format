@@ -1,2 +1,2 @@
-while True:
-	pass
+import time
+time.sleep(10000)
