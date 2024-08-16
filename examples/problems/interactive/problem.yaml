@@ -1,7 +1,7 @@
 problem_format_version: 2023-07-draft # or `legacy` for the previous version of the Problem Package Format
 type: pass-fail interactive
 name: Sample problem
-uuid: 01020304-0506-4708-a904-0a0b0c0d0e0f
+uuid: 117b564d-429b-44d4-bf8c-c264a3703e07
 credits:
   authors: Author One <author1@judge.com>
 source: My Contest 2024
