@@ -1,7 +1,7 @@
 problem_format_version: 2023-07-draft
 type: scoring
 name: Sample Scoring problem
-uuid: ...
+uuid: 01020304-0506-4708-a902-0a0b0c0d0e0f
 credits:
   authors: Author <author@judge.com>
 source: My Contest 2024
