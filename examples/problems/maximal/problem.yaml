@@ -3,7 +3,7 @@ type: pass-fail
 name: # May be just a string if there's only a problem statement for one language
   en: Sample problem
   sv: Exempel problem
-uuid: 01020304-0506-4708-a900-0a0b0c0d0e0f
+uuid: 01020304-0506-4708-a901-0a0b0c0d0e0f
 credits:
   authors:
     - Author One <author1@judge.com>
