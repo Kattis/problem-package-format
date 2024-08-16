@@ -57,38 +57,59 @@ language will be determined by looking at the shebang line which must match the 
 
 For languages where there could be several entry points, the default entry point in the table below will be used.
 
-| Code        | Language     | Default entry point | File endings              | Shebang                                                                                      |
-| ----------- | ------------ | ------------------- | ------------------------- | -------------------------------------------------------------------------------------------- |
-| apl         | APL          |                     | .apl                      |                                                                                              |
-| bash        | Bash         |                     | .sh                       |                                                                                              |
-| ada         | Ada          |                     | .adb, .ads                |                                                                                              |
-| c           | C            |                     | .c                        |                                                                                              |
-| cobol       | COBOL        |                     | .cob                      |                                                                                              |
-| cpp         | C++          |                     | .cc, .cpp, .cxx, .c++, .C |                                                                                              |
-| csharp      | C\#          |                     | .cs                       |                                                                                              |
-| dart        | Dart         |                     | .dart                     |                                                                                              |
-| fsharp      | F\#          |                     | .fs                       |                                                                                              |
-| fortran     | Fortran      |                     | .f90                      |                                                                                              |
-| gerbil      | Gerbil       |                     | .ss                       |                                                                                              |
-| go          | Go           |                     | .go                       |                                                                                              |
-| haskell     | Haskell      |                     | .hs                       |                                                                                              |
-| java        | Java         | Main                | .java                     |                                                                                              |
-| javascript  | JavaScript   | main.js             | .js                       |                                                                                              |
-| julia       | Julia        |                     | .jl                       |                                                                                              |
-| kotlin      | Kotlin       | MainKt              | .kt                       |                                                                                              |
-| lisp        | Common Lisp  | main.{lisp,cl}      | .lisp, .cl                |                                                                                              |
-| objectivec  | Objective-C  |                     | .m                        |                                                                                              |
-| ocaml       | OCaml        |                     | .ml                       |                                                                                              |
-| pascal      | Pascal       |                     | .pas                      |                                                                                              |
-| php         | PHP          | main.php            | .php                      |                                                                                              |
-| prolog      | Prolog       |                     | .pl                       |                                                                                              |
-| python2     | Python 2     | main.py2            | .py2                      | Matches the regex "`^#!.*python2`", and default if shebang does not match any other language |
-| python3     | Python 3     | main.py             | .py                       | Matches the regex "`^#!.*python3`"                                                           |
-| ruby        | Ruby         |                     | .rb                       |                                                                                              |
-| rust        | Rust         |                     | .rs                       |                                                                                              |
-| scala       | Scala        |                     | .scala                    |                                                                                              |
-| typescript  | TypeScript   |                     | .ts                       |                                                                                              |
-| visualbasic | Visual Basic |                     | .vb                       |                                                                                              |
+| Code         | Language            | Default entry point | File endings                    | Shebang                                                                                      |
+| ------------ | ------------------- | ------------------- | ------------------------------- | -------------------------------------------------------------------------------------------- |
+| ada          | Ada                 |                     | .adb, .ads                      |                                                                                              |
+| algol68      | Algol 68            |                     | .a68                            |                                                                                              |
+| apl          | APL                 |                     | .apl                            |                                                                                              |
+| bash         | Bash                |                     | .sh                             |                                                                                              |
+| c            | C                   |                     | .c                              |                                                                                              |
+| cgmp         | C with GMP          |                     | (.c)                            |                                                                                              |
+| cobol        | COBOL               |                     | .cob                            |                                                                                              |
+| cpp          | C++                 |                     | .cc, .cpp, .cxx, .c++, .C       |                                                                                              |
+| cppgmp       | C++ with GMP        |                     | (.cc, .cpp, .cxx, .c++, .C)     |                                                                                              |
+| crystal      | Crystal             |                     | .cr                             |                                                                                              |
+| csharp       | C\#                 |                     | .cs                             |                                                                                              |
+| d            | D                   |                     | .d                              |                                                                                              |
+| dart         | Dart                |                     | .dart                           |                                                                                              |
+| elixir       | Elixir              |                     | .ex                             |                                                                                              |
+| erlang       | Erlang              |                     | .erl                            |                                                                                              |
+| forth        | Forth               |                     | .fth,. 4th, .forth, .frt, (.fs) |                                                                                              |
+| fortran      | Fortran             |                     | .f90                            |                                                                                              |
+| fsharp       | F\#                 |                     | .fs                             |                                                                                              |
+| gerbil       | Gerbil              |                     | .ss                             |                                                                                              |
+| go           | Go                  |                     | .go                             |                                                                                              |
+| haskell      | Haskell             |                     | .hs                             |                                                                                              |
+| java         | Java                | Main                | .java                           |                                                                                              |
+| javascript   | JavaScript          | main.js             | .js                             |                                                                                              |
+| julia        | Julia               |                     | .jl                             |                                                                                              |
+| kotlin       | Kotlin              | MainKt              | .kt                             |                                                                                              |
+| lisp         | Common Lisp         | main.{lisp,cl}      | .lisp, .cl                      |                                                                                              |
+| lua          | Lua                 |                     | .lua                            |                                                                                              |
+| modula2      | Modula-2            |                     | .mod, .def                      |                                                                                              |
+| nim          | Nim                 |                     | .nim                            |                                                                                              |
+| objectivec   | Objective-C         |                     | .m                              |                                                                                              |
+| ocaml        | OCaml               |                     | .ml                             |                                                                                              |
+| octave       | Octave              |                     | (.m)                            |                                                                                              |
+| odin         | Odin                |                     | .odin                           |                                                                                              |
+| pascal       | Pascal              |                     | .pas                            |                                                                                              |
+| perl         | Perl                |                     | .pm, (.pl)                      |                                                                                              |
+| php          | PHP                 | main.php            | .php                            |                                                                                              |
+| prolog       | Prolog              |                     | .pl                             |                                                                                              |
+| python2      | Python 2            | main.py2            | (.py), .py2                     | Matches the regex "`^#!.*python2`", and default if shebang does not match any other language |
+| python3      | Python 3            | main.py             | .py, .py3                       | Matches the regex "`^#!.*python3`"                                                           |
+| python3numpy | Python 3 with NumPy | main.py             | (.py, .py3)                     |                                                                                              |
+| racket       | Racket              |                     | .rkt                            |                                                                                              |
+| ruby         | Ruby                |                     | .rb                             |                                                                                              |
+| rust         | Rust                |                     | .rs                             |                                                                                              |
+| scala        | Scala               |                     | .scala                          |                                                                                              |
+| simula       | Simula              |                     | .sim                            |                                                                                              |
+| smalltalk    | Smalltalk           |                     | .st                             |                                                                                              |
+| snobol       | Snobol              |                     | .sno                            |                                                                                              |
+| swift        | Swift               |                     | .swift                          |                                                                                              |
+| typescript   | TypeScript          |                     | .ts                             |                                                                                              |
+| visualbasic  | Visual Basic        |                     | .vb                             |                                                                                              |
+| zig          | Zig                 |                     | .zig                            |                                                                                              |
 
 ### Problem Types
 
