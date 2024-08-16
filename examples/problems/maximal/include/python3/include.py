@@ -1,1 +1,1 @@
-constant = {{example_constant}}
+magic_constant = {{example_constant}}
