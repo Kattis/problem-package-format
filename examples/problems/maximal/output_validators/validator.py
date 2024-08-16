@@ -1,6 +1,10 @@
 import sys
 
-[_, in_file, ans_file, feedback_dir] = sys.argv
+try:
+	in_file: str = sys.argv[1]
+except IndexError:
+	sys.exit(43) # Rejected
+
 output: str = sys.stdin.read()
 
 indata: str
