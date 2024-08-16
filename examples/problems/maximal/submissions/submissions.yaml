@@ -2,7 +2,7 @@ accepted/accepted.py:
   language: python3
   authors: Python Judge <python@judge.com>
 
-accepted/accepted.php:
+accepted/*.php:
   language: php
   authors: PHP Judge <php@judge.com>
 
