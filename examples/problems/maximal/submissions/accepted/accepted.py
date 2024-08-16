@@ -1,3 +1,3 @@
 import include
 
-print(include.constant)
+print(int(input()) + include.magic_constant)
