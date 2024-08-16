@@ -1,7 +1,7 @@
 problem_format_version: 2023-07-draft
 type: pass-fail
 name: Sample problem
-uuid: ...
+uuid: 01020304-0506-0708-090a-0b0c0d0e0f10
 credits:
   authors: Author <author@judge.com>
 source: My Contest 2024
