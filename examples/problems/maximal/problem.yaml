@@ -2,8 +2,8 @@ problem_format_version: 2023-07-draft # or `legacy` for the previous version of 
 type: pass-fail
 name: # May be just a string if there's only a problem statement for one language
   en: Sample problem
-  sv: ...
-uuid: ...
+  sv: Exempel problem
+uuid: 01020304-0506-4708-a900-0a0b0c0d0e0f
 credits:
   authors:
     - Author One <author1@judge.com>
