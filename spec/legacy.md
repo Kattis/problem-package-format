@@ -335,8 +335,9 @@ Validation fails if any validator fails.
 When invoked, the input validator will get the input file on stdin.
 
 The validator should be possible to use as follows on the command line:
-
-`<input_validator_program> [arguments] < inputfile`
+```sh
+<input_validator_program> [arguments] < inputfile
+```
 
 ### Output
 
@@ -400,7 +401,6 @@ If no floating point tolerance has been set, floating point tokens are treated j
 When invoked the output validator will be passed at least three command line parameters and the output stream to validate on stdin.
 
 The validator should be possible to use as follows on the command line:
-
 ```sh
 <output_validator_program> input answer_file feedback_dir [additional_arguments] < team_output [ > team_input ]
 ```
@@ -473,7 +473,6 @@ In particular, the judging system must not assume that the validator program cre
 #### Examples
 
 An example of a `judgemessage.txt` file:
-
 ```text
 Team failed at test case 14.
 Team output: "31", Judge answer: "30".
@@ -483,7 +482,6 @@ Summary: 2 test cases failed.
 ```
 
 An example of a `teammessage.txt` file:
-
 ```text
 Almost all test cases failed — are you even trying to solve the problem?
 ```
@@ -510,8 +508,9 @@ A grader program must be an application (executable or interpreted) capable of b
 When invoked the grader will get the judgement for test cases or groups on stdin and is expected to produce an aggregate result on stdout.
 
 The grader should be possible to use as follows on the command line:
-
-`./grader [arguments] < judgeresults`
+```sh
+<grader_program> [arguments] < judgeresults
+```
 
 On success, the grader must exit with exit code 0.
 
