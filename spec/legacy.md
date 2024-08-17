@@ -20,10 +20,9 @@ used for distributing and sharing problems for algorithmic programming contests 
   Alternatively, the package can be a ZIP-compressed archive of such a directory with identical base name and extension `.kpp` or `.zip`.
 * All file names for files included in the package must match the regexp
   ```regex
-  [a-zA-Z0-9][a-zA-Z0-9_.-]*[a-zA-Z0-9]
+  ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,253}[a-zA-Z0-9]$
   ```
-  i.e., they must be of length at least 2,
-  consist solely of lower or upper case letters a–z, A–Z, digits 0–9, period, dash, or underscore,
+  i.e., they must be of length at least 2, at most 255, consist solely of lower or upper case letters a–z, A–Z, digits 0–9, period, dash, or underscore,
   but must not begin or end with period, dash, or underscore.
 * All text files for a problem must be UTF-8 encoded and not have a byte-order mark (BOM).
 * All floating-point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
