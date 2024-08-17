@@ -433,7 +433,7 @@ An example of a `teammessage.txt` file:
 Almost all test cases failed — are you even trying to solve the problem?
 ```
 
-#### Validator standard output and standard error
+#### Validator standard error
 
 A validator program is allowed to write any kind of debug information to its standard error pipe.
 This information may be displayed to the user upon invocation of the validator.
