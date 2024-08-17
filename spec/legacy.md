@@ -120,7 +120,7 @@ A map with the following keys:
 | validation_output  | optional, in MiB           | system default | 8                      |
 
 For most keys, the system default will be used if nothing is specified.
-This can vary, but you SHOULD assume that it's reasonable.
+This can vary, but you **should** assume that it's reasonable.
 Only specify limits when the problem needs a specific limit, but do specify limits even if the "typical system default" is what is needed.
 
 ### Scoring
@@ -198,7 +198,7 @@ that contains the problem text itself, including input and output specifications
 Language must be given as the shortest ISO 639 code.
 If needed, a hyphen and an ISO 3166-1 alpha-2 code may be appended to an ISO 639 code.
 Optionally, the language code can be left out; the default is then English (`en`).
-Filetype can be either `tex` for LaTeX files, or `pdf` for PDF.
+Filetype can be either `.tex` for LaTeX files, or `.pdf` for PDF.
 
 Please note that many kinds of transformations on the problem statements,
 such as conversion to HTML or styling to fit in a single document containing many problems will not be possible for PDF problem statements,
@@ -353,8 +353,8 @@ Any other exit code means that the input file could not be confirmed as valid.
 
 #### Dependencies
 
-The validator MUST NOT read any files outside those defined in the Invocation section.
-Its result MUST depend only on these files and the arguments.
+The validator **must not** read any files outside those defined in the Invocation section.
+Its result **must** depend only on these files and the arguments.
 
 ## Output Validators
 
