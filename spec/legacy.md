@@ -73,7 +73,7 @@ Any unknown keys should be treated as an error.
 | problem_format_version | String                                                    | `legacy`                                                 | Version of the Problem Package Format used for this package. If using this version of the Format, it must be the string `legacy` (which is also the default). Documentation for version `<version>` is available at `https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>`.
 | type                   | String                                                    | pass-fail                                                | One of `pass-fail` and `scoring`.
 | name                   | String                                                    |                                                          | The name of the problem.
-| uuid                   | String                                                    |                                                          | UUID identifying the problem.
+| uuid                   | String                                                    |                                                          | UUID identifying the problem, see [below](#uuid) for usage.
 | author                 | String                                                    |                                                          | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 | source                 | String                                                    |                                                          | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 | source_url             | String                                                    |                                                          | Link to page for source event. Must not be given if source is not.
@@ -84,6 +84,14 @@ Any unknown keys should be treated as an error.
 | validator_flags        | String                                                    |                                                          | Will be passed as command-line arguments to each of the output validators.
 | scoring                | Map with keys as defined below                            | See definition below                                     | Must only be used on scoring problems.
 | keywords               | String                                                    |                                                          | String of space separated keywords.
+
+### UUID
+
+The `uuid` is meant to track a problem, even if its package name and/or `name` changes.
+For example, it can be used to identify the existing problem to update in an online problem archive and not accidentally upload it as a new one.
+The intention is that a new `uuid` should be assigned if the problem significantly changes.
+
+This specification currently does not imply any more semantic meaning to this field.
 
 ### License
 
