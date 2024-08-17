@@ -141,10 +141,10 @@ Only specify limits when the problem needs a specific limit, but do specify limi
 | go           | Go                  |                     | .go                             |                                                                                              |
 | haskell      | Haskell             |                     | .hs                             |                                                                                              |
 | java         | Java                | Main                | .java                           |                                                                                              |
-| javascript   | JavaScript          | main.js             | .js                             |                                                                                              |
+| javascript   | JavaScript          | `main.js`           | .js                             |                                                                                              |
 | julia        | Julia               |                     | .jl                             |                                                                                              |
 | kotlin       | Kotlin              | MainKt              | .kt                             |                                                                                              |
-| lisp         | Common Lisp         | main.{lisp,cl}      | .lisp, .cl                      |                                                                                              |
+| lisp         | Common Lisp         | `main.{lisp,cl}`    | .lisp, .cl                      |                                                                                              |
 | lua          | Lua                 |                     | .lua                            |                                                                                              |
 | modula2      | Modula-2            |                     | .mod, .def                      |                                                                                              |
 | nim          | Nim                 |                     | .nim                            |                                                                                              |
@@ -154,11 +154,11 @@ Only specify limits when the problem needs a specific limit, but do specify limi
 | odin         | Odin                |                     | .odin                           |                                                                                              |
 | pascal       | Pascal              |                     | .pas                            |                                                                                              |
 | perl         | Perl                |                     | .pm, (.pl)                      |                                                                                              |
-| php          | PHP                 | main.php            | .php                            |                                                                                              |
+| php          | PHP                 | `main.php`          | .php                            |                                                                                              |
 | prolog       | Prolog              |                     | .pl                             |                                                                                              |
-| python2      | Python 2            | main.py2            | (.py), .py2                     | Matches the regex "`^#!.*python2`", and default if shebang does not match any other language |
-| python3      | Python 3            | main.py             | .py, .py3                       | Matches the regex "`^#!.*python3`"                                                           |
-| python3numpy | Python 3 with NumPy | main.py             | (.py, .py3)                     |                                                                                              |
+| python2      | Python 2            | `main.py2`          | (.py), .py2                     | Matches the regex "`^#!.*python2`", and default if shebang does not match any other language |
+| python3      | Python 3            | `main.py`           | .py, .py3                       | Matches the regex "`^#!.*python3`"                                                           |
+| python3numpy | Python 3 with NumPy | `main.py`           | (.py, .py3)                     |                                                                                              |
 | racket       | Racket              |                     | .rkt                            |                                                                                              |
 | ruby         | Ruby                |                     | .rb                             |                                                                                              |
 | rust         | Rust                |                     | .rs                             |                                                                                              |
@@ -282,8 +282,9 @@ Validation fails if any validator fails.
 When invoked, the input validator will get the input file on stdin.
 
 The validator should be possible to use as follows on the command line:
-
-`<input_validator_program> [arguments] < inputfile`
+```sh
+<input_validator_program> [arguments] < inputfile
+```
 
 ### Output
 
@@ -347,7 +348,6 @@ If no floating point tolerance has been set, floating point tokens are treated j
 When invoked the output validator will be passed at least three command line parameters and the output stream to validate on stdin.
 
 The validator should be possible to use as follows on the command line:
-
 ```sh
 <output_validator_program> input answer_file feedback_dir [additional_arguments] < team_output [ > team_input ]
 ```
@@ -403,15 +403,15 @@ Using the feedback directory is optional for a validator program, so if one just
 
 The validator is free to create different files in the feedback directory,
 in order to provide different kinds of information to the judging system, in a simple but organized way.
-For instance, there may be a "judgemessage.txt" file,
+For instance, there may be a `judgemessage.txt` file,
 the contents of which gives a message that is presented to a judge reviewing the current submission
 (typically used to help the judge verify why the submission was judged as incorrect, by specifying exactly what was wrong with its output).
-Other examples of files that may be useful in some contexts (though not in the ICPC) are a score.txt file,
+Other examples of files that may be useful in some contexts (though not in the ICPC) are a `score.txt` file,
 giving the submission a score based on other factors than correctness,
-or a teammessage.txt file, giving a message to the team that submitted the solution, providing additional feedback on the submission.
+or a `teammessage.txt` file, giving a message to the team that submitted the solution, providing additional feedback on the submission.
 
-A judging system that implements this format must support the judgemessage.txt file described above
-(I.e., content of the "judgemessage.txt" file, if produced by the validator, must be provided by the judging system to a human judge examining the submission).
+A judging system that implements this format must support the `judgemessage.txt` file described above
+(I.e., content of the `judgemessage.txt` file, if produced by the validator, must be provided by the judging system to a human judge examining the submission).
 Having the judging system support other files is optional.
 
 Note that a validator may choose to ignore the feedback directory entirely.
@@ -419,8 +419,7 @@ In particular, the judging system must not assume that the validator program cre
 
 #### Examples
 
-An example of a judgemessage.txt file:
-
+An example of a `judgemessage.txt` file:
 ```text
 Team failed at test case 14.
 Team output: "31", Judge answer: "30".
@@ -429,8 +428,7 @@ Team output: "hovercraft", Judge answer: "7".
 Summary: 2 test cases failed.
 ```
 
-An example of a teammessage.txt file:
-
+An example of a `teammessage.txt` file:
 ```text
 Almost all test cases failed — are you even trying to solve the problem?
 ```

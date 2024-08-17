@@ -157,10 +157,10 @@ A map with the following keys:
 | go           | Go                  |                     | .go                             |                                                                                              |
 | haskell      | Haskell             |                     | .hs                             |                                                                                              |
 | java         | Java                | Main                | .java                           |                                                                                              |
-| javascript   | JavaScript          | main.js             | .js                             |                                                                                              |
+| javascript   | JavaScript          | `main.js`           | .js                             |                                                                                              |
 | julia        | Julia               |                     | .jl                             |                                                                                              |
 | kotlin       | Kotlin              | MainKt              | .kt                             |                                                                                              |
-| lisp         | Common Lisp         | main.{lisp,cl}      | .lisp, .cl                      |                                                                                              |
+| lisp         | Common Lisp         | `main.{lisp,cl}`    | .lisp, .cl                      |                                                                                              |
 | lua          | Lua                 |                     | .lua                            |                                                                                              |
 | modula2      | Modula-2            |                     | .mod, .def                      |                                                                                              |
 | nim          | Nim                 |                     | .nim                            |                                                                                              |
@@ -170,11 +170,11 @@ A map with the following keys:
 | odin         | Odin                |                     | .odin                           |                                                                                              |
 | pascal       | Pascal              |                     | .pas                            |                                                                                              |
 | perl         | Perl                |                     | .pm, (.pl)                      |                                                                                              |
-| php          | PHP                 | main.php            | .php                            |                                                                                              |
+| php          | PHP                 | `main.php`          | .php                            |                                                                                              |
 | prolog       | Prolog              |                     | .pl                             |                                                                                              |
-| python2      | Python 2            | main.py2            | (.py), .py2                     | Matches the regex "`^#!.*python2`", and default if shebang does not match any other language |
-| python3      | Python 3            | main.py             | .py, .py3                       | Matches the regex "`^#!.*python3`"                                                           |
-| python3numpy | Python 3 with NumPy | main.py             | (.py, .py3)                     |                                                                                              |
+| python2      | Python 2            | `main.py2`          | (.py), .py2                     | Matches the regex "`^#!.*python2`", and default if shebang does not match any other language |
+| python3      | Python 3            | `main.py`           | .py, .py3                       | Matches the regex "`^#!.*python3`"                                                           |
+| python3numpy | Python 3 with NumPy | `main.py`           | (.py, .py3)                     |                                                                                              |
 | racket       | Racket              |                     | .rkt                            |                                                                                              |
 | ruby         | Ruby                |                     | .rb                             |                                                                                              |
 | rust         | Rust                |                     | .rs                             |                                                                                              |
@@ -335,8 +335,9 @@ Validation fails if any validator fails.
 When invoked, the input validator will get the input file on stdin.
 
 The validator should be possible to use as follows on the command line:
-
-`<input_validator_program> [arguments] < inputfile`
+```sh
+<input_validator_program> [arguments] < inputfile
+```
 
 ### Output
 
@@ -400,7 +401,6 @@ If no floating point tolerance has been set, floating point tokens are treated j
 When invoked the output validator will be passed at least three command line parameters and the output stream to validate on stdin.
 
 The validator should be possible to use as follows on the command line:
-
 ```sh
 <output_validator_program> input answer_file feedback_dir [additional_arguments] < team_output [ > team_input ]
 ```
@@ -456,15 +456,15 @@ Using the feedback directory is optional for a validator program, so if one just
 
 The validator is free to create different files in the feedback directory,
 in order to provide different kinds of information to the judging system, in a simple but organized way.
-For instance, there may be a "judgemessage.txt" file,
+For instance, there may be a `judgemessage.txt` file,
 the contents of which gives a message that is presented to a judge reviewing the current submission
 (typically used to help the judge verify why the submission was judged as incorrect, by specifying exactly what was wrong with its output).
-Other examples of files that may be useful in some contexts (though not in the ICPC) are a score.txt file,
+Other examples of files that may be useful in some contexts (though not in the ICPC) are a `score.txt` file,
 giving the submission a score based on other factors than correctness,
-or a teammessage.txt file, giving a message to the team that submitted the solution, providing additional feedback on the submission.
+or a `teammessage.txt` file, giving a message to the team that submitted the solution, providing additional feedback on the submission.
 
-A judging system that implements this format must support the judgemessage.txt file described above
-(I.e., content of the "judgemessage.txt" file, if produced by the validator, must be provided by the judging system to a human judge examining the submission).
+A judging system that implements this format must support the `judgemessage.txt` file described above
+(I.e., content of the `judgemessage.txt` file, if produced by the validator, must be provided by the judging system to a human judge examining the submission).
 Having the judging system support other files is optional.
 
 Note that a validator may choose to ignore the feedback directory entirely.
@@ -472,8 +472,7 @@ In particular, the judging system must not assume that the validator program cre
 
 #### Examples
 
-An example of a judgemessage.txt file:
-
+An example of a `judgemessage.txt` file:
 ```text
 Team failed at test case 14.
 Team output: "31", Judge answer: "30".
@@ -482,8 +481,7 @@ Team output: "hovercraft", Judge answer: "7".
 Summary: 2 test cases failed.
 ```
 
-An example of a teammessage.txt file:
-
+An example of a `teammessage.txt` file:
 ```text
 Almost all test cases failed — are you even trying to solve the problem?
 ```
@@ -510,8 +508,9 @@ A grader program must be an application (executable or interpreted) capable of b
 When invoked the grader will get the judgement for test cases or groups on stdin and is expected to produce an aggregate result on stdout.
 
 The grader should be possible to use as follows on the command line:
-
-`./grader [arguments] < judgeresults`
+```sh
+<grader_program> [arguments] < judgeresults
+```
 
 On success, the grader must exit with exit code 0.
 
@@ -529,7 +528,7 @@ using the code from the table below, followed by whitespace, followed by the sco
 | TLE  | Time-Limit Exceeded |
 
 The score is taken from the `score.txt` files produced by the output validator.
-If no `score.txt` exists the score will be as defined by the grading accept_score and reject_score setting from problem.yaml.
+If no `score.txt` exists the score will be as defined by the grading accept_score and reject_score setting from `problem.yaml`.
 
 ### Output
 
@@ -549,12 +548,12 @@ four different modes for aggregating the score
 -- _sum_, _avg_, _min_, _max_ --
 and two flags
 -- _ignore_sample_ and _accept_if_any_accepted_.
-These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [testdata.yaml](#test-data-groups "wikilink")).
+These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [`testdata.yaml`](#test-data-groups "wikilink")).
 If multiple conflicting modes are given, the last one is used. Their meaning are as follows.
 
 | Argument                 | Type         | Description
 | ------------------------ | ------------ | -----------
-| `worst_error`            | verdict mode | Default. Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group. Note that in combination with the on_reject:break policy in testdata.yaml, the result will be the first error encountered.
+| `worst_error`            | verdict mode | Default. Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group. Note that in combination with the on_reject:break policy in `testdata.yaml`, the result will be the first error encountered.
 | `first_error`            | verdict mode | Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.
 | `always_accept`          | verdict mode | Verdict is always accepted.
 | `sum`                    | scoring mode | Default. Score is sum of input scores.
