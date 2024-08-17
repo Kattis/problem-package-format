@@ -21,10 +21,9 @@ used for distributing and sharing problems for algorithmic programming contests 
   Alternatively, the package can be a ZIP-compressed archive of such a directory with identical base name and extension `.kpp` or `.zip`.
 * All file names for files included in the package must match the regexp
   ```regex
-  [a-zA-Z0-9][a-zA-Z0-9_.-]*[a-zA-Z0-9]
+  ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,253}[a-zA-Z0-9]$
   ```
-  i.e., they must be of length at least 2,
-  consist solely of lower or upper case letters a–z, A–Z, digits 0–9, period, dash, or underscore,
+  i.e., they must be of length at least 2, at most 255, consist solely of lower or upper case letters a–z, A–Z, digits 0–9, period, dash, or underscore,
   but must not begin or end with period, dash, or underscore.
 * All text files for a problem must be UTF-8 encoded and not have a byte-order mark (BOM).
 * All floating-point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
@@ -68,7 +67,7 @@ Any unknown keys should be treated as an error.
 | ---------------------- | --------------------------------------------------------- | -------------------------------------------------------  | --------
 | problem_format_version | String                                                    | `legacy`                                                 | Version of the Problem Package Format used for this package. If using this version of the Format, it must be the string `legacy-icpc`. Note though, that the default (`legacy`) is a strict superset of `legacy-icpc`. Documentation for version `<version>` is available at `https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>`.
 | name                   | String                                                    |                                                          | The name of the problem.
-| uuid                   | String                                                    |                                                          | UUID identifying the problem.
+| uuid                   | String                                                    |                                                          | UUID identifying the problem, see [below](#uuid) for usage.
 | author                 | String                                                    |                                                          | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 | source                 | String                                                    |                                                          | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 | source_url             | String                                                    |                                                          | Link to page for source event. Must not be given if source is not.
@@ -78,6 +77,14 @@ Any unknown keys should be treated as an error.
 | validation             | String                                                    | default                                                  | One of "default" or "custom". If "custom", may be followed by "interactive", where "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive".
 | validator_flags        | String                                                    |                                                          | Will be passed as command-line arguments to each of the output validators.
 | keywords               | String                                                    |                                                          | String of space separated keywords.
+
+### UUID
+
+The `uuid` is meant to track a problem, even if its package name and/or `name` changes.
+For example, it can be used to identify the existing problem to update in an online problem archive and not accidentally upload it as a new one.
+The intention is that a new `uuid` should be assigned if the problem significantly changes.
+
+This specification currently does not imply any more semantic meaning to this field.
 
 ### License
 
@@ -113,7 +120,7 @@ A map with the following keys:
 | validation_output  | optional, in MiB           | system default | 8                      |
 
 For most keys, the system default will be used if nothing is specified.
-This can vary, but you SHOULD assume that it's reasonable.
+This can vary, but you **should** assume that it's reasonable.
 Only specify limits when the problem needs a specific limit, but do specify limits even if the "typical system default" is what is needed.
 
 ## Languages
@@ -182,7 +189,7 @@ that contains the problem text itself, including input and output specifications
 Language must be given as the shortest ISO 639 code.
 If needed, a hyphen and an ISO 3166-1 alpha-2 code may be appended to an ISO 639 code.
 Optionally, the language code can be left out; the default is then English (`en`).
-Filetype can be either `tex` for LaTeX files, or `pdf` for PDF.
+Filetype can be either `.tex` for LaTeX files, or `.pdf` for PDF.
 
 Please note that many kinds of transformations on the problem statements,
 such as conversion to HTML or styling to fit in a single document containing many problems will not be possible for PDF problem statements,
@@ -300,8 +307,8 @@ Any other exit code means that the input file could not be confirmed as valid.
 
 #### Dependencies
 
-The validator MUST NOT read any files outside those defined in the Invocation section.
-Its result MUST depend only on these files and the arguments.
+The validator **must** not read any files outside those defined in the Invocation section.
+Its result **must** depend only on these files and the arguments.
 
 ## Output Validators
 
