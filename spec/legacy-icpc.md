@@ -142,6 +142,7 @@ Only specify limits when the problem needs a specific limit, but do specify limi
 | go           | Go                  |                     | .go                             |                                                                                              |
 | haskell      | Haskell             |                     | .hs                             |                                                                                              |
 | java         | Java                | Main                | .java                           |                                                                                              |
+| javaalgs4    | Java with Algs4     | Main                | (.java)                         |                                                                                              |
 | javascript   | JavaScript          | `main.js`           | .js                             |                                                                                              |
 | julia        | Julia               |                     | .jl                             |                                                                                              |
 | kotlin       | Kotlin              | MainKt              | .kt                             |                                                                                              |
