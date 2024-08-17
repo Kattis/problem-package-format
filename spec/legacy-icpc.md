@@ -68,6 +68,7 @@ Any unknown keys should be treated as an error.
 | ---------------------- | --------------------------------------------------------- | -------------------------------------------------------  | --------
 | problem_format_version | String                                                    | `legacy`                                                 | Version of the Problem Package Format used for this package. If using this version of the Format, it must be the string `legacy-icpc`. Note though, that the default (`legacy`) is a strict superset of `legacy-icpc`. Documentation for version `<version>` is available at `https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>`.
 | name                   | String                                                    |                                                          | The name of the problem.
+| uuid                   | String                                                    |                                                          | UUID identifying the problem.
 | author                 | String                                                    |                                                          | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
 | source                 | String                                                    |                                                          | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
 | source_url             | String                                                    |                                                          | Link to page for source event. Must not be given if source is not.
@@ -141,6 +142,7 @@ Only specify limits when the problem needs a specific limit, but do specify limi
 | go           | Go                  |                     | .go                             |                                                                                              |
 | haskell      | Haskell             |                     | .hs                             |                                                                                              |
 | java         | Java                | Main                | .java                           |                                                                                              |
+| javaalgs4    | Java with Algs4     | Main                | (.java)                         |                                                                                              |
 | javascript   | JavaScript          | `main.js`           | .js                             |                                                                                              |
 | julia        | Julia               |                     | .jl                             |                                                                                              |
 | kotlin       | Kotlin              | MainKt              | .kt                             |                                                                                              |
@@ -433,7 +435,7 @@ An example of a `teammessage.txt` file:
 Almost all test cases failed — are you even trying to solve the problem?
 ```
 
-#### Validator standard output and standard error
+#### Validator standard error
 
 A validator program is allowed to write any kind of debug information to its standard error pipe.
 This information may be displayed to the user upon invocation of the validator.
