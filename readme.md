@@ -91,7 +91,7 @@ samples before all secrets)
 
 #### Problem Statement
 
-  - `problem_statement/problem.tex` -- required; the LaTeX file
+  - `statement/problem.tex` -- required; the LaTeX file
     describing the problem
 
 #### Submissions (Correct \*\*and\*\* Incorrect)
