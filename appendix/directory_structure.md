@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Languages
+title: Directory Structure
 sort: 5
 ---
 
