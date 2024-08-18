@@ -1,3 +1,9 @@
+---
+layout: default
+title: Languages
+sort: 5
+---
+
 # Directory structure
 
 These examples are for the latest version of the spec, `2023-07-draft`.
