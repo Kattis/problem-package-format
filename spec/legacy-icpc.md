@@ -268,7 +268,6 @@ The possible subdirectories are:
 | run_time_error      | Crashes for some test case.                                                                                                        |
 
 Every file or directory in these directories represents a separate solution.
-Same requirements as for submissions with regards to filenames.
 It is mandatory to provide at least one accepted solution.
 
 Submissions must read input data from standard input, and write output to standard output.
@@ -276,7 +275,9 @@ Submissions must read input data from standard input, and write output to standa
 ## Input Validators
 
 Input Validators, for verifying the correctness of the input files, are provided in `input_validators/` (or the deprecated `input_format_validators/`).
-Input validators can be specified as VIVA-files (with file ending `.viva`), Checktestdata-file (with file ending `.ctd`), or as a program.
+Input validators can be specified as [VIVA](http://viva.vanb.org/)-files (with file ending `.viva`),
+[Checktestdata](https://github.com/DOMjudge/checktestdata)-file (with file ending `.ctd`),
+or as a program.
 
 All input validators provided will be run on every input file.
 Validation fails if any validator fails.
@@ -307,7 +308,7 @@ Any other exit code means that the input file could not be confirmed as valid.
 
 #### Dependencies
 
-The validator **must** not read any files outside those defined in the Invocation section.
+The validator **must not** read any files outside those defined in the Invocation section.
 Its result **must** depend only on these files and the arguments.
 
 ## Output Validators
