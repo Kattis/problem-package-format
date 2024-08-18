@@ -15,7 +15,7 @@ used for distributing and sharing problems for algorithmic programming contests 
 
 ### General Requirements
 
-* The package consists of a single directory containing files as described below.
+* The package must consist of a single directory containing files as described below.
   The directory name must consist solely of lower case letters a–z and digits 0–9.
   Alternatively, the package can be a ZIP-compressed archive of such a directory with identical base name and extension `.kpp` or `.zip`.
 * All file names for files included in the package must match the regexp
@@ -25,6 +25,10 @@ used for distributing and sharing problems for algorithmic programming contests 
   i.e., they must be of length at least 2, at most 255, consist solely of lower or upper case letters a–z, A–Z, digits 0–9, period, dash, or underscore,
   but must not begin or end with period, dash, or underscore.
 * All text files for a problem must be UTF-8 encoded and not have a byte-order mark (BOM).
+* All text files must have Unix-style line endings (newline/LF byte only).
+  Note that LF is line-ending and not line-separating in POSIX, which means that all non-empty text files must end with a newline.
+* Natural language (for example in the [problem statement](#problem-statements) filename) must be specified as 2-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code if it exists, otherwise as a 3-letter code from ISO 639.
+  Optionally, it may be suffixed with a hyphen and an ISO 3166-1 alpha-2 code, as defined in BCP 47, for example `pt-BR` to indicate Brazilian Portuguese.
 * All floating-point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
 
 ### Programs
@@ -32,24 +36,26 @@ used for distributing and sharing problems for algorithmic programming contests 
 There are a number of different kinds of programs that may be provided in the problem package: submissions, input validators, output validators, and graders.
 All programs are always represented by a single file or directory.
 In other words, if a program consists of several files, these must be provided in a single directory.
+In the case that a program is a single file, it is treated as if a directory with the same name takes its place, which contains only that file.
 The name of the program, for the purpose of referring to it within the package, is the base name of the file or the name of the directory.
 There can't be two programs of the same kind with the same name.
 
 Validators and graders, but not submissions,
-in the form of a directory may include two POSIX-compliant scripts, `build` and `run`.
+in the form of a directory may include two POSIX-compliant shell scripts, `build` and `run`.
+These scripts must be executable when they exist or get generated.
 If at least one of these two files is included:
 
 1. First, if the `build` script is present, it will be run.
    The working directory will be (a copy of) the program directory.
    The `run` file must exist after `build` is done.
-2. Then, the `run` file (which now exists) must be executable,
-   and will be invoked in the same way as a single file program.
+2. Then, the `run` file (which now exists)
+   will be invoked in the same way as a single file program.
 
 Programs without `build` and `run` scripts are built and run according to what language is used.
 Language is determined by looking at the file endings as specified in the [languages table](#languages).
-If a single language from the table below can't be determined, building fails.
 In the case of Python 2 and 3 which share the same file ending,
 language will be determined by looking at the shebang line which must match the regular expressions in the [languages table](#languages).
+If a single language can't be determined, building fails.
 
 For languages where there could be several entry points,
 the default entry point in the [languages table](#languages) will be used.
