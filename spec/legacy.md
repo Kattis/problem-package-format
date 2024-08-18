@@ -278,7 +278,7 @@ At the top level, the test data is divided into exactly two groups: `sample` and
 These two groups may be further split into subgroups as desired.
 
 The *result* of a test data group is computed by applying a *grader* to all of the sub-results (test cases and subgroups) in the group.
-See [Graders](#graders "wikilink") for more details.
+See [Graders](#graders) for more details.
 
 Test cases and groups will be used in lexicographical order on file base name.
 If a specific order is desired a numbered prefix such as `00`, `01`, `02`, `03`, and so on, can be used.
@@ -381,12 +381,12 @@ A validator program must be an application (executable or interpreted) capable o
 The details of this invocation are described below.
 The validator program has two ways of reporting back the results of validating:
 
-1.  The validator must give a judgement (see [Reporting a judgement](#reporting-a-judgement "wikilink")).
+1.  The validator must give a judgement (see [Reporting a judgement](#reporting-a-judgement)).
 2.  The validator may give additional feedback,
-    e.g., an explanation of the judgement to humans (see [Reporting Additional Feedback](#reporting-additional-feedback "wikilink")).
+    e.g., an explanation of the judgement to humans (see [Reporting Additional Feedback](#reporting-additional-feedback)).
 
 Custom output validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below.
-They are provided in `output_validators/`, and must adhere to the [Output validator](#output-validators "wikilink") specification.
+They are provided in `output_validators/`, and must adhere to the [Output validator](#output-validators) specification.
 
 All output validators provided will be run on the output for every test data file using the arguments specified for the test data group they are part of.
 Validation fails if any validator fails.
@@ -562,7 +562,7 @@ four different modes for aggregating the score
 -- _sum_, _avg_, _min_, _max_ --
 and two flags
 -- _ignore_sample_ and _accept_if_any_accepted_.
-These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [`testdata.yaml`](#test-data-groups "wikilink")).
+These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [`testdata.yaml`](#test-data-groups)).
 If multiple conflicting modes are given, the last one is used. Their meaning are as follows.
 
 | Argument                 | Type         | Description
