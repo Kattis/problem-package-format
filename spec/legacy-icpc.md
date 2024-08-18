@@ -163,6 +163,21 @@ For most keys, the system default will be used if nothing is specified.
 This can vary, but you **should** assume that it's reasonable.
 Only specify limits when the problem needs a specific limit, but do specify limits even if the "typical system default" is what is needed.
 
+### Validation
+
+`validation` is a space separated list of strings describing how validation is done.
+Must begin with one of `default` or `custom`.
+If `custom`, may be followed by `interactive`,
+where `interactive` specifies that the validator is run interactively with a submission.
+For example, `custom interactive`.
+
+`validator_flags` will be passed as command-line arguments to each of the output validators.
+
+### Keywords
+
+Space separated list of keywords describing the problem.
+Keywords must not contain spaces.
+
 ## Problem Statements
 
 The problem statement of the problem is provided in the directory `problem_statement/`.

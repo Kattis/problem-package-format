@@ -185,6 +185,11 @@ For example, `custom interactive score`.
 
 `validator_flags` will be passed as command-line arguments to each of the output validators.
 
+### Keywords
+
+Space separated list of keywords describing the problem.
+Keywords must not contain spaces.
+
 ### Scoring
 
 Must only be used on scoring problems.
