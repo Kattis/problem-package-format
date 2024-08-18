@@ -7,12 +7,11 @@ uuid: b2792508-b645-480a-8357-da047d57a17d
 credits:
   authors:
     - Author One <author1@judge.com>
-    - name: Author Two
-      email: author2@judge.com
+    - Author Two <author2@judge.com>
   contributors: Contributor <contributor@email.com>
   testers:
-    - name: Tester 1
-    - name: Tester 2 <second@tester.com>
+    - Tester 1
+    - Tester 2 <second@tester.com>
   translators:
     sv: Sven Translator <sven@translator.com>
   acknowledgements: [Inspirational Speaker 1, Inspirational Speaker 2]
