@@ -11,7 +11,7 @@ These examples are for the latest version of the spec, `2023-07-draft`.
 ```text
 <short_name>/
   problem.yaml - problem configuration file
-  problem_statement/
+  statement/
     problem.en.tex - English problem statement as LaTeX
     problem.sv.md - Swedish problem statement as Markdown
     problem.nl.pdf - Dutch problem statement as PDF
@@ -79,7 +79,7 @@ This is a sample list of directories/files for a problem named `heightprofile`:
 ```sh
 heightprofile
 ├── problem.yaml
-├── problem_statement
+├── statement
 │   ├── bike.eps
 │   ├── problem.en.tex
 │   ├── profile.asy
