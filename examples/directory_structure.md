@@ -54,6 +54,8 @@ These examples are for the latest version of the spec, `2023-07-draft`.
       - a file/directory for each submission with verdict TLE for some testcase
     run_time_error/
       - a file/directory for each submission with verdict RTE for some testcase
+    bruteforce/
+      - a file/directory for each submission with either verdict RTE or TLE for some testcase
   input_validators/
     - a single output validator, either as a .viva file, a .ctd file, or a program.
   input_visualizer/
