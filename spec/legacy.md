@@ -30,6 +30,7 @@ used for distributing and sharing problems for algorithmic programming contests 
 * Natural language (for example in the [problem statement](#problem-statements) filename) must be specified as 2-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code if it exists, otherwise as a 3-letter code from ISO 639.
   Optionally, it may be suffixed with a hyphen and an ISO 3166-1 alpha-2 code, as defined in BCP 47, for example `pt-BR` to indicate Brazilian Portuguese.
 * All floating-point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
+* The problem package may include symbolic links to other files in the problem package. Symlinks must not have targets outside of the problem package directory tree.
 
 ### Programs
 
