@@ -6,39 +6,62 @@ These examples are for the latest version of the spec, `2023-07-draft`.
 <short_name>/
   problem.yaml - problem configuration file
   problem_statement/
-    problem.en.tex - problem statement
-    problem.nl.tex - problem statement
-    - any files that problem.xy.tex needs to include, e.g. images
+    problem.en.tex - English problem statement as LaTeX
+    problem.sv.md - Swedish problem statement as Markdown
+    problem.nl.pdf - Dutch problem statement as PDF
+    - any files that problem.xy.{tex,md,pdf} needs to include, e.g. images
+  attachments/
+    - public files available to contestants
+  solution/
+    solution.en.tex - English problem solution as LaTeX
+    solution.sv.md - Swedish problem solution as Markdown
+    solution.nl.pdf - Dutch problem solution as PDF
+    - any files that solution.xy.{tex,md,pdf} needs to include, e.g. images
   data/
     sample/
       *.in - sample input files
-      *.ans - sample answer files
-    secret/
+      *.ans - answer files
+      *.out - sample output files
+      *.interaction - sample interaction protocol files
+      *.args - optional command-line arguments
+      *.files/
+        - any files that should be available to the program when running the current testcase
+    secret/(optional_group)/
       *.in - input files
       *.ans - answer files
       *.hint - optional hint for the team
       *.desc - optional data description
-      *.jpg, *.png, *.svg - visualization of the testcase
+      *.{jpg,png,svg} - visualization of the testcase, at most one per testcase
+      *.args - optional command-line arguments
+      *.files/
+        - any files that should be available to the program when running the current testcase
+  generators/
+    - any generator scripts that were used to generate testcases
   include/
     <language>/
       - any files that should be included with all submissions in <language>
     default/
       - any files that should be included with all submissions in any other language
   submissions/
+    submissions.yaml - sample submissions configuration file
     accepted/
-      - a file/directory for each submission with final verdict AC
-    time_limit_exceeded/
-      - a file/directory for each submission with final verdict TLE
+      - a file/directory for each submission with verdict AC for all testcases (at least one required)
+    rejected /
+      - a file/directory for each submission with final verdict other than AC
     wrong_answer/
-      - a file/directory for each submission with final verdict WA
+      - a file/directory for each submission with verdict WA for some testcase
+    time_limit_exceeded/
+      - a file/directory for each submission with verdict TLE for some testcase
     run_time_error/
-      - a file/directory for each submission with final verdict RTE
+      - a file/directory for each submission with verdict RTE for some testcase
   input_validators/
-    - single file or directory per validator
+    - a single output validator, either as a .viva file, a .ctd file, or a program.
+  input_visualizer/
+    - any tools that were used to generate testcases illustrations
   output_validator/
-    - a single output validator consisting of one or multiple files
-  attachments/
-    - public files available to contestants
+    - a single output validator program.
+  output_visualizer/
+    - a single output visualizer program.
 ```
 
 ## Example
