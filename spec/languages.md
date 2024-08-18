@@ -1,3 +1,9 @@
+---
+layout: default
+title: Languages
+sort: 5
+---
+
 # Languages
 
 File endings in parenthesis are not used for determining language.
