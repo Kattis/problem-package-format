@@ -63,20 +63,31 @@ The keys are defined as below.
 Keys are optional unless explicitly stated.
 Any unknown keys should be treated as an error.
 
-| Key                    | Type                                                      | Default                                                  | Comments
-| ---------------------- | --------------------------------------------------------- | -------------------------------------------------------  | --------
-| problem_format_version | String                                                    | `legacy`                                                 | Version of the Problem Package Format used for this package. If using this version of the Format, it must be the string `legacy-icpc`. Note though, that the default (`legacy`) is a strict superset of `legacy-icpc`. Documentation for version `<version>` is available at `https://www.kattis.com/problem-package-format/spec/problem_package_format/<version>`.
-| name                   | String                                                    |                                                          | The name of the problem.
-| uuid                   | String                                                    |                                                          | UUID identifying the problem, see [below](#uuid) for usage.
-| author                 | String                                                    |                                                          | Who should get author credits. This would typically be the people that came up with the idea, wrote the problem specification and created the test data. This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
-| source                 | String                                                    |                                                          | Who should get source credit. This would typically be the name (and year) of the event where the problem was first used or created for.
-| source_url             | String                                                    |                                                          | Link to page for source event. Must not be given if source is not.
-| license                | String                                                    | unknown                                                  | License under which the problem may be used. Value has to be one of the ones defined below.
-| rights_owner           | String                                                    | Value of authors, if present, otherwise value of source. | Owner of the copyright of the problem. If not present, authors are the owners. If author is not present either, source is owner. Required if license is something other than `unknown` or `public domain`. Forbidden if license is `public domain`.
-| limits                 | Map with keys as defined below                            | see definition below                                     |
-| validation             | String                                                    | default                                                  | One of "default" or "custom". If "custom", may be followed by "interactive", where "interactive" specifies that the validator is run interactively with a submission. For example, "custom interactive".
-| validator_flags        | String                                                    |                                                          | Will be passed as command-line arguments to each of the output validators.
-| keywords               | String                                                    |                                                          | String of space separated keywords.
+| Key                                               | Type                                          | Default if optional
+| ------------------------------------------------- | --------------------------------------------- | -------------------
+| [problem_format_version](#problem-format-version) | String                                        | `legacy`
+| [name](#name)                                     | String                                        |
+| [uuid](#uuid)                                     | String                                        |
+| [author](#author)                                 | String                                        |
+| [source](#source)                                 | String                                        |
+| [source_url](#source)                             | String                                        |
+| [license](#license)                               | String                                        | `unknown`
+| [rights_owner](#license)                          | String                                        | See below
+| [limits](#limits)                                 | Map with keys as defined below                | See below
+| [validation](#validation)                         | String                                        | `default`
+| [validator_flags](#validation)                    | String                                        |
+| [keywords](#keywords)                             | String.                                       |
+
+### Problem format version
+
+Version of the Problem Package Format used for this package.
+If using this version of the Format, it must be the string `legacy-icpc`.
+Note though, that the default (`legacy`) is a strict superset of `legacy-icpc`.
+Documentation for version `<version>` is available at `https://www.kattis.com/problem-package-format/spec/<version>`.
+
+### Name
+
+The name of the problem in one of the languages for which a problem statement exists.
 
 ### UUID
 
@@ -86,11 +97,28 @@ The intention is that a new `uuid` should be assigned if the problem significant
 
 This specification currently does not imply any more semantic meaning to this field.
 
+### Author
+
+Who should get author credits.
+Given as a string separated by `,` or `and`.
+This would typically be the people that came up with the idea, wrote the problem specification and created the test data.
+This is sometimes omitted when authors choose to instead only give source credit, but both may be specified.
+
+### Source
+
+Who should get source credit.
+This would typically be the name (and year) of the event where the problem was first used or created for.
+
+The `source` key contains the source that this problem originates from.
+This should typically contain the name (and year) of the problem set (such as a contest or a course),
+where the problem was first used or for which it was created,
+and the `source_url` key contains a link to the event's page.
+`source_url` must not be given if `source` is not.
+
 ### License
 
-Allowed values for license.
-
-Values other than _unknown_ or _public domain_ require rights_owner to have a value.
+License under which the problem may be used.
+Must be one of the values below.
 
 | Value         | Comments                                                                           | Link                                             |
 | ------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------ |
@@ -102,8 +130,13 @@ Values other than _unknown_ or _public domain_ require rights_owner to have a va
 | educational   | May be freely used for educational purposes.                                       |                                                  |
 | permission    | Used with permission. The rights owner must be contacted for every additional use. |                                                  |
 
+`rights_owner` is the owner of the copyright of the problem.
+Values other than _unknown_ or _public domain_ require `rights_owner` to have a value.
+`rights_owner` defaults to `credits.authors`, if present, otherwise value of `source`.
+
 ### Limits
 
+Time, memory, and other limits to be imposed on submissions.
 A map with the following keys:
 
 | Key                | Comments                   | Default        | Typical system default |
@@ -122,6 +155,21 @@ A map with the following keys:
 For most keys, the system default will be used if nothing is specified.
 This can vary, but you **should** assume that it's reasonable.
 Only specify limits when the problem needs a specific limit, but do specify limits even if the "typical system default" is what is needed.
+
+### Validation
+
+`validation` is a space separated list of strings describing how validation is done.
+Must begin with one of `default` or `custom`.
+If `custom`, may be followed by`interactive`,
+where `interactive` specifies that the validator is run interactively with a submission.
+For example, `custom interactive`.
+
+`validator_flags` will be passed as command-line arguments to each of the output validators.
+
+### Keywords
+
+Space separated list of keywords describing the problem.
+Keywords must not contain spaces.
 
 ## Languages
 
