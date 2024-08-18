@@ -185,11 +185,6 @@ For example, `custom interactive score`.
 
 `validator_flags` will be passed as command-line arguments to each of the output validators.
 
-### Keywords
-
-Space separated list of keywords describing the problem.
-Keywords must not contain spaces.
-
 ### Scoring
 
 Must only be used on scoring problems.
@@ -199,6 +194,11 @@ A map with the following keys:
 | --------------------- | ------- | ------- | ---------------------------------------------------------------------------------------- |
 | objective             | String  | max     | One of "min" or "max" specifying whether it is a minimization or a maximization problem. |
 | show_test_data_groups | boolean | false   | Specifies whether test group results should be shown to the end user.                    |
+
+### Keywords
+
+Space separated list of keywords describing the problem.
+Keywords must not contain spaces.
 
 ## Problem Statements
 
