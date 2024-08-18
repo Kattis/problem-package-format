@@ -31,7 +31,25 @@ used for distributing and sharing problems for algorithmic programming contests 
 * Natural language (for example in the [problem statement](#problem-statements) filename) must be specified as 2-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code if it exists, otherwise as a 3-letter code from ISO 639.
   Optionally, it may be suffixed with a hyphen and an ISO 3166-1 alpha-2 code, as defined in BCP 47, for example `pt-BR` to indicate Brazilian Portuguese.
 * All floating-point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
-* The problem package may include symbolic links to other files in the problem package. Symlinks must not have targets outside of the problem package directory tree.
+* The problem package may include symbolic links to other files in the problem package. 
+  Symlinks must not have targets outside of the problem package directory tree.
+
+### Problem Package Structure Overview
+
+The following table summarizes the elements of a problem package described in this specification:
+
+| File or Folder                                    | Required? | Described In                                  | Description
+| ------------------------------------------------- | --------- | --------------------------------------------- | -----------
+| `problem.yaml`                                    | Yes       | [Problem Metadata](#problem-metadata)         | Metadata about the problem (e.g., source, license, limits)
+| `problem_statement/`                              | Yes       | [Problem Statements](#problem-statements)     | Problem statement files
+| `attachments/`                                    | No        | [Attachments](#attachments)                   | Files available to problem-solvers other than the problem statement and sample test data
+| `data/sample/`                                    | No        | [Test Data](#test-data)                       | Sample test data
+| `data/secret/`                                    | Yes       | [Test Data](#test-data)                       | Secret test data
+| `submissions/`                                    | Yes       | [Example Submissions](#example-submissions)   | Correct and incorrect judge solutions of the problem
+| `input_validators/`                               | Yes       | [Input Validators](#input-validators)         | Programs that verifies correctness of the test data inputs
+| `output_validators/`                              | No        | [Output Validator](#output-validators)        | Custom programs for judging solutions
+
+A minimal problem package must contain `problem.yaml`, a problem statement, a secret test case, an accepted judge solution, and an input validator.
 
 ### Programs
 
