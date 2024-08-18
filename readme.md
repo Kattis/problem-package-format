@@ -14,7 +14,7 @@ There are currently three versions:
 
 The latest version is not yet widely supported, 
 but if you're building tools and systems you should definitely take a look at it. 
-If you're craeting problems for official ICPC contests you should not assume more than the ICPC subset without talking to your technical staff.
+If you're creating problems for official ICPC contests you should not assume more than the ICPC subset without talking to your technical staff.
 
 Development happens in the GitHub repository: <https://github.com/Kattis/problem-package-format>.
 
