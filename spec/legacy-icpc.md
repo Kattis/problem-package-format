@@ -327,7 +327,7 @@ The validator program has two ways of reporting back the results of validating:
     e.g., an explanation of the judgement to humans (see [Reporting Additional Feedback](#reporting-additional-feedback "wikilink")).
 
 Custom output validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below.
-They are provided in `output_validators/`, and must adhere to the [Output validator](output_validators "wikilink") specification.
+They are provided in `output_validators/`, and must adhere to the [Output validator](#output-validators "wikilink") specification.
 
 All output validators provided will be run on the output for every test data file using the arguments specified for the test data group they are part of.
 Validation fails if any validator fails.
