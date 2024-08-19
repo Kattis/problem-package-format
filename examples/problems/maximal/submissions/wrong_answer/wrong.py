@@ -1,1 +1,1 @@
-print('Fourty-Two')
+print('Forty-Two')

@@ -6,7 +6,7 @@ sort: 4
 
 # Languages
 
-File endings in parenthesis are not used for determining language.
+File endings in parentheses are not used for determining language.
 
 | Code         | Language            | Default entry point | File endings                    |
 | ------------ | ------------------- |---------------------| ------------------------------- |
