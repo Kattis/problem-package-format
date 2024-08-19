@@ -587,12 +587,12 @@ If multiple conflicting modes are given, the last one is used. Their meaning are
 
 | Argument                 | Type         | Description
 | ------------------------ | ------------ | -----------
-| `worst_error`            | verdict mode | Default. Verdict is accepted if all subresults are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the subresult of some item in the test case group. Note that in combination with the on_reject:break policy in `testdata.yaml`, the result will be the first error encountered.
-| `first_error`            | verdict mode | Verdict is accepted if all subresults are accepted, otherwise it is the verdict of the first subresult with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.
+| `worst_error`            | verdict mode | Default. Verdict is accepted if all sub-results are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the sub-result of some item in the test case group. Note that in combination with the on_reject:break policy in `testdata.yaml`, the result will be the first error encountered.
+| `first_error`            | verdict mode | Verdict is accepted if all sub-results are accepted, otherwise it is the verdict of the first sub-result with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.
 | `always_accept`          | verdict mode | Verdict is always accepted.
 | `sum`                    | scoring mode | Default. Score is sum of input scores.
 | `avg`                    | scoring mode | score is average of input scores.
 | `min`                    | scoring mode | score is minimum of input scores.
 | `max`                    | scoring mode | score is maximum of input scores.
-| `ignore_sample`          | flag         | Must only be used on the root level. The first subresult (sample) will be ignored, the second subresult (secret) will be used, both verdict and score.
-| `accept_if_any_accepted` | flag         | Verdict is accepted if any subresult is accepted, otherwise as specified by the verdict aggregation mode.
+| `ignore_sample`          | flag         | Must only be used on the root level. The first sub-result (sample) will be ignored, the second sub-result (secret) will be used, both verdict and score.
+| `accept_if_any_accepted` | flag         | Verdict is accepted if any sub-result is accepted, otherwise as specified by the verdict aggregation mode.

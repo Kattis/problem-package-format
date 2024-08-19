@@ -12,7 +12,7 @@ run_time_error/not_defined:
   authors: Python Judge <python@judge.com>
 
 time_limit_exceeded/*:
-  authors: [Committtee Member One <one@committee.com>, Committtee Member Two <two@committee.com>]
+  authors: [Committee Member One <one@committee.com>, Committee Member Two <two@committee.com>]
 
 wrong_answer/*:
   authors: python Judge <python@judge.com>
