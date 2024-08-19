@@ -395,7 +395,7 @@ The meaning of the parameters listed above are:
   so that simply appending a filename to feedbackdir gives the path to a file in the feedback directory.
 
 - additional_arguments:
-  in case the problem specifies additional validator_flags, these are passed as additional arguments to the validator on the command line.
+  in case the problem specifies additional `validator_flags`, these are passed as additional arguments to the validator on the command line.
 
 - team_output:
   the output produced by the program being validated is given on the validator's standard input pipe.

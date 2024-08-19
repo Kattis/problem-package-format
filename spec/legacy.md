@@ -314,8 +314,8 @@ The format of `testdata.yaml` is as follows:
 | on_reject              | String                                         | break        | One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test case or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test cases and subgroups within the group.
 | grading                | String                                         | default      | One of "default" and "custom".
 | grader_flags           | String                                         | empty string | arguments passed to the grader for this test data group.
-| input_validator_flags  | String or map with the keys "name" and "flags" | empty string | arguments passed to the input validator for this test data group. If a string then those are the flags that will be passed to each input validator for this test data group. If a map then this is the name of the input validator as well as the flags to pass to that input validator for this test data group. Validators not present in the map are run without flags.
-| output_validator_flags | String or map with the keys "name" and "flags" | empty string | arguments passed to the output validator for this test data group. If a string this is the name of the output validator that will be used for this test data group. If a map then this is the name as well as the flags that will be passed to the output validator.
+| input_validator_flags  | String or map with the keys "name" and "flags" | empty string | arguments passed to the input validator for this test data group. If a string, then those are the arguments that will be passed to each input validator for this test data group. If a map, then this is the name of the input validator as well as the arguments to pass to that input validator for this test data group. Validators not present in the map are run without any arguments.
+| output_validator_flags | String or map with the keys "name" and "flags" | empty string | arguments passed to the output validator for this test data group. If a string, this is the name of the output validator that will be used for this test data group. If a map, then this is the name as well as the arguments that will be passed to the output validator.
 | accept_score           | String                                         | 1            | Default score for accepted input files. May only be specified for scoring problems.
 | reject_score           | String                                         | 0            | Default score for rejected input files. May only be specified for scoring problems.
 | range                  | String                                         | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.
@@ -456,7 +456,7 @@ The meaning of the parameters listed above are:
   so that simply appending a filename to feedbackdir gives the path to a file in the feedback directory.
 
 - additional_arguments:
-  in case the problem specifies additional validator_flags, these are passed as additional arguments to the validator on the command line.
+  in case the problem specifies additional `validator_flags`, these are passed as additional arguments to the validator on the command line.
 
 - team_output:
   the output produced by the program being validated is given on the validator's standard input pipe.
