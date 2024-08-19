@@ -17,19 +17,19 @@ used for distributing and sharing problems for algorithmic programming contests 
 ### General Requirements
 
 * The package must consist of a single directory containing files as described below.
-  The directory name must consist solely of lower case letters a–z and digits 0–9.
+  The directory name must consist solely of lowercase letters a–z and digits 0–9.
   Alternatively, the package can be a ZIP-compressed archive of such a directory with identical base name and extension `.kpp` or `.zip`.
 * All file names for files included in the package must match the regexp
   ```regex
   ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,253}[a-zA-Z0-9]$
   ```
-  i.e., they must be of length at least 2, at most 255, consist solely of lower or upper case letters a–z, A–Z, digits 0–9, period, dash, or underscore,
-  but must not begin or end with period, dash, or underscore.
+  i.e., they must be of length at least 2, at most 255, consist solely of lower- or uppercase letters a–z, A–Z, digits 0–9, period, dash, or underscore,
+  but must not begin or end with a period, dash, or underscore.
 * All text files for a problem must be UTF-8 encoded and not have a byte-order mark (BOM).
 * All text files must have Unix-style line endings (newline/LF byte only).
   Note that LF is line-ending and not line-separating in POSIX, which means that all non-empty text files must end with a newline.
-* Natural language (for example in the [problem statement](#problem-statements) filename) must be specified as 2-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code if it exists, otherwise as a 3-letter code from ISO 639.
-  Optionally, it may be suffixed with a hyphen and an ISO 3166-1 alpha-2 code, as defined in BCP 47, for example `pt-BR` to indicate Brazilian Portuguese.
+* Natural language (for example, in the [problem statement](#problem-statements) filename) must be specified as 2-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code if it exists, otherwise as a 3-letter code from ISO 639.
+  Optionally, it may be suffixed with a hyphen and an ISO 3166-1 alpha-2 code, as defined in BCP 47, for example, `pt-BR` to indicate Brazilian Portuguese.
 * All floating-point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
 * The problem package may include symbolic links to other files in the problem package. 
   Symlinks must not have targets outside of the problem package directory tree.
@@ -221,7 +221,7 @@ The problem statements must only contain the actual problem statement, no sample
 
 ## Attachments
 
-Public, i.e. non-secret, files to be made available in addition to the problem statement and sample test data are provided in the directory `attachments/`.
+Public, i.e., non-secret, files to be made available in addition to the problem statement and sample test data are provided in the directory `attachments/`.
 
 ## Test data
 
@@ -260,7 +260,7 @@ Additional sample interaction protocols may be defined by creating an `.interact
 
 An interaction protocol consists of a series of lines starting with `>` and `<`.
 Lines starting with `>` signify an output from the submission to the output validator,
-while `<` signify an input from the output validator to the submission.
+while those starting with `<` signify an input from the output validator to the submission.
 
 If you want to provide files related to interactive problems (such as testing tools or input files), you can use [attachments](#attachments).
 
@@ -269,7 +269,7 @@ If you want to provide files related to interactive problems (such as testing to
 At the top level, the test data is divided into exactly two groups: `sample` and `secret`.
 
 Test cases and groups will be used in lexicographical order on file base name.
-If a specific order is desired a numbered prefix such as `00`, `01`, `02`, `03`, and so on, can be used.
+If a specific order is desired, a numbered prefix such as `00`, `01`, `02`, `03`, and so on, can be used.
 
 ## Example Submissions
 
@@ -290,7 +290,7 @@ Submissions must read input data from standard input, and write output to standa
 
 ## Input Validators
 
-Input Validators, for verifying the correctness of the input files, are provided in `input_validators/` (or the deprecated `input_format_validators/`).
+Input Validators, verifying the correctness of the input files, are provided in `input_validators/` (or the deprecated `input_format_validators/`).
 Input validators can be specified as [VIVA](http://viva.vanb.org/)-files (with file ending `.viva`),
 [Checktestdata](https://github.com/DOMjudge/checktestdata)-file (with file ending `.ctd`),
 or as a program.
@@ -365,9 +365,9 @@ It supports the following command-line arguments to control how tokens are compa
 | `float_tolerance ε`          | short-hand for applying ε as both relative and absolute tolerance.                                                                                          |
 
 When supplying both a relative and an absolute tolerance, the semantics are that a token is accepted if it is within either of the two tolerances.
-When a floating-point tolerance has been set, any valid formatting of floating point numbers is accepted for floating point tokens.
+When a floating-point tolerance has been set, any valid formatting of floating-point numbers is accepted for floating-point tokens.
 So, for instance, if a token in the answer file says `0.0314`, a token of `3.14000000e-2` in the output file would be accepted.
-If no floating point tolerance has been set, floating point tokens are treated just like any other token and have to match exactly.
+If no floating-point tolerance has been set, floating-point tokens are treated just like any other token and have to match exactly.
 
 ### Invocation
 
