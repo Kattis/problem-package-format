@@ -15,46 +15,47 @@ used for distributing and sharing problems for algorithmic programming contests 
 
 ### General Requirements
 
-* The package must consist of a single directory containing files as described below.
+- The package must consist of a single directory containing files as described below.
   The directory name must consist solely of lowercase letters a–z and digits 0–9.
   Alternatively, the package can be a ZIP-compressed archive of such a directory with identical base name and extension `.kpp` or `.zip`.
-* All file names for files included in the package must match the regexp
+- All file names for files included in the package must match the regexp
   ```regex
   ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,253}[a-zA-Z0-9]$
   ```
   i.e., they must be of length at least 2, at most 255, consist solely of lower- or uppercase letters a–z, A–Z, digits 0–9, period, dash, or underscore,
   but must not begin or end with a period, dash, or underscore.
-* All text files for a problem must be UTF-8 encoded and not have a byte-order mark (BOM).
-* All text files must have Unix-style line endings (newline/LF byte only).
+- All text files for a problem must be UTF-8 encoded and not have a byte-order mark (BOM).
+- All text files must have Unix-style line endings (newline/LF byte only).
   Note that LF is line-ending and not line-separating in POSIX, which means that all non-empty text files must end with a newline.
-* Natural language (for example, in the [problem statement](#problem-statements) filename) must be specified as 2-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code if it exists, otherwise as a 3-letter code from ISO 639.
+- Natural language (for example, in the [problem statement](#problem-statements) filename) must be specified as 2-letter [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) code if it exists, otherwise as a 3-letter code from ISO 639.
   Optionally, it may be suffixed with a hyphen and an ISO 3166-1 alpha-2 code, as defined in BCP 47, for example, `pt-BR` to indicate Brazilian Portuguese.
-* All floating-point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
-* The problem package may include symbolic links to other files in the problem package.
-  Symlinks must not have targets outside of the problem package directory tree.
+- All floating-point numbers must be given as the external character sequences defined by IEEE 754-2008 and may use up to double precision.
+- The problem package may include symbolic links to other files in the problem package.
+  Symlinks must not have targets outside the problem package directory tree.
 
 ### Problem Package Structure Overview
 
 The following table summarizes the elements of a problem package described in this specification:
 
-| File or Folder                                    | Required? | Described In                                  | Description
-| ------------------------------------------------- | --------- | --------------------------------------------- | -----------
-| `problem.yaml`                                    | Yes       | [Problem Metadata](#problem-metadata)         | Metadata about the problem (e.g., source, license, limits)
-| `problem_statement/`                              | Yes       | [Problem Statements](#problem-statements)     | Problem statement files
-| `attachments/`                                    | No        | [Attachments](#attachments)                   | Files available to problem-solvers other than the problem statement and sample test data
-| `data/sample/`                                    | No        | [Test Data](#test-data)                       | Sample test data
-| `data/secret/`                                    | Yes       | [Test Data](#test-data)                       | Secret test data
-| `include/`                                        | No        | [Included Files](#included-files)             | Files appended to all submitted solutions
-| `submissions/`                                    | Yes       | [Example Submissions](#example-submissions)   | Correct and incorrect judge solutions of the problem
-| `input_validators/`                               | Yes       | [Input Validators](#input-validators)         | Programs that verifies correctness of the test data inputs
-| `input_visualizer/`                               | No        | [Input Visualizer](#input-visualizer)         | Scripts and documentation about how test case illustrations were generated
-| `output_validators/`                              | No        | [Output Validator](#output-validators)         | Custom programs for judging solutions
+File or Folder         | Required? | Described In                                  | Description
+---------------------- | --------- | --------------------------------------------- | -----------
+`problem.yaml`         | Yes       | [Problem Metadata](#problem-metadata)         | Metadata about the problem (e.g., source, license, limits)
+`problem_statement/`   | Yes       | [Problem Statements](#problem-statements)     | Problem statement files
+`attachments/`         | No        | [Attachments](#attachments)                   | Files available to problem-solvers other than the problem statement and sample test data
+`data/sample/`         | No        | [Test Data](#test-data)                       | Sample test data
+`data/secret/`         | Yes       | [Test Data](#test-data)                       | Secret test data
+`include/`             | No        | [Included Files](#included-files)             | Files appended to all submitted solutions
+`submissions/`         | Yes       | [Example Submissions](#example-submissions)   | Correct and incorrect judge solutions of the problem
+`input_validators/`    | Yes       | [Input Validators](#input-validators)         | Programs that verifies correctness of the test data inputs
+`input_visualizer/`    | No        | [Input Visualizer](#input-visualizer)         | Scripts and documentation about how test case illustrations were generated
+`output_validators/`   | No        | [Output Validators](#output-validators)       | Custom programs for judging solutions
 
 A minimal problem package must contain `problem.yaml`, a problem statement, a secret test case, an accepted judge solution, and an input validator.
 
 ### Programs
 
-There are a number of different kinds of programs that may be provided in the problem package: submissions, input validators, output validators, and graders.
+There are a number of different kinds of programs that may be provided in the problem package: 
+submissions, input validators, output validators, and graders.
 All programs are always represented by a single file or directory.
 In other words, if a program consists of several files, these must be provided in a single directory.
 In the case that a program is a single file, it is treated as if a directory with the same name takes its place, which contains only that file.
@@ -89,28 +90,28 @@ In scoring problems, a submission that is accepted is additionally given a score
 
 ## Problem Metadata
 
-Metadata about the problem (e.g., source, license, limits) are provided in a UTF-8 encoded YAML file named `problem.yaml` placed in the root directory of the package.
+Metadata about the problem (e.g., source, license, limits) are provided in a YAML file named `problem.yaml` placed in the root directory of the package.
 
 The keys are defined as below.
 Keys are optional unless explicitly stated.
 Any unknown keys should be treated as an error.
 
-| Key                                               | Type                                          | Default if optional
-| ------------------------------------------------- | --------------------------------------------- | -------------------
-| [problem_format_version](#problem-format-version) | String                                        | `legacy`
-| [type](#type)                                     | String                                        | `pass-fail`
-| [name](#name)                                     | String                                        |
-| [uuid](#uuid)                                     | String                                        |
-| [author](#author)                                 | String                                        |
-| [source](#source)                                 | String                                        |
-| [source_url](#source)                             | String                                        |
-| [license](#license)                               | String                                        | `unknown`
-| [rights_owner](#license)                          | String                                        | See below
-| [limits](#limits)                                 | Map with keys as defined below                | See below
-| [validation](#validation)                         | String                                        | `default`
-| [validator_flags](#validation)                    | String                                        |
-| [scoring](#scoring)                               | Map with keys as defined below                | See below
-| [keywords](#keywords)                             | String.                                       |
+Key                                               | Type                                          | Required  | Default
+------------------------------------------------- | --------------------------------------------- | --------- | -------
+[problem_format_version](#problem-format-version) | String                                        | No        | `legacy`
+[type](#type)                                     | String                                        | No        | `pass-fail`
+[name](#name)                                     | String                                        | No        |
+[uuid](#uuid)                                     | String                                        | No        |
+[author](#author)                                 | String                                        | No        |
+[source](#source)                                 | String                                        | No        |
+[source_url](#source)                             | String                                        | No        |
+[license](#license)                               | String                                        | No        | `unknown`
+[rights_owner](#license)                          | String                                        | See below | See below
+[limits](#limits)                                 | Map with keys as defined below                | No        | See below
+[validation](#validation)                         | String                                        | No        | `default`
+[validator_flags](#validation)                    | String                                        | No        |
+[scoring](#scoring)                               | Map with keys as defined below                | No        | See below
+[keywords](#keywords)                             | String                                        | No        |
 
 ### Problem format version
 
@@ -158,18 +159,18 @@ and the `source_url` key contains a link to the event's page.
 License under which the problem may be used.
 Must be one of the values below.
 
-| Value         | Comments                                                                           | Link                                                 |
-| ------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| unknown       | The default value. In practice means that the problem can not be used.             |                                                      |
-| public domain | There are no known copyrights on the problem, anywhere in the world.               | <http://creativecommons.org/about/pdm>               |
-| cc0           | CC0, "no rights reserved", version 1 or later.                                     | <https://creativecommons.org/publicdomain/zero/1.0/> |
-| cc by         | CC attribution license, version 4 or later.                                        | <http://creativecommons.org/licenses/by/4.0/>        |
-| cc by-sa      | CC attribution, share alike license, version 4 or later.                           | <http://creativecommons.org/licenses/by-sa/4.0/>     |
-| educational   | May be freely used for educational purposes.                                       |                                                      |
-| permission    | Used with permission. The rights owner must be contacted for every additional use. |                                                      |
+Value           | Comments                                                                           | Link
+--------------- | ---------------------------------------------------------------------------------- | ----
+`unknown`       | The default value. In practice means that the problem can not be used.             |
+`public domain` | There are no known copyrights on the problem, anywhere in the world.               | <http://creativecommons.org/about/pdm>
+`cc0`           | CC0, "no rights reserved", version 1 or later.                                     | <https://creativecommons.org/publicdomain/zero/1.0/>
+`cc by`         | CC attribution license, version 4 or later.                                        | <http://creativecommons.org/licenses/by/4.0/>
+`cc by-sa`      | CC attribution, share alike license, version 4 or later.                           | <http://creativecommons.org/licenses/by-sa/4.0/>
+`educational`   | May be freely used for educational purposes.                                       |
+`permission`    | Used with permission. The rights owner must be contacted for every additional use. |
 
 `rights_owner` is the owner of the copyright of the problem.
-Values other than _unknown_ or _public domain_ require `rights_owner` to have a value.
+Values other than `unknown` or `public domain` require `rights_owner` to have a value.
 `rights_owner` defaults to `credits.authors`, if present, otherwise value of `source`.
 
 ### Limits
@@ -177,18 +178,18 @@ Values other than _unknown_ or _public domain_ require `rights_owner` to have a 
 Time, memory, and other limits to be imposed on submissions.
 A map with the following keys:
 
-| Key                | Comments                   | Default        | Typical system default |
-| ------------------ | -------------------------- | -------------- | ---------------------- |
-| time_multiplier    | optional float             | 5              |                        |
-| time_safety_margin | optional float             | 2              |                        |
-| memory             | optional, in MiB           | system default | 2048                   |
-| output             | optional, in MiB           | system default | 8                      |
-| code               | optional, in KiB           | system default | 128                    |
-| compilation_time   | optional, in seconds       | system default | 60                     |
-| compilation_memory | optional, in MiB           | system default | 2048                   |
-| validation_time    | optional, in seconds       | system default | 60                     |
-| validation_memory  | optional, in MiB           | system default | 2048                   |
-| validation_output  | optional, in MiB           | system default | 8                      |
+Key                  | Comments                   | Default        | Typical system default
+-------------------- | -------------------------- | -------------- | ----------------------
+`time_multiplier`    | optional float             | 5              |
+`time_safety_margin` | optional float             | 2              |
+`memory`             | optional, in MiB           | system default | 2048
+`output`             | optional, in MiB           | system default | 8
+`code`               | optional, in KiB           | system default | 128
+`compilation_time`   | optional, in seconds       | system default | 60
+`compilation_memory` | optional, in MiB           | system default | 2048
+`validation_time`    | optional, in seconds       | system default | 60
+`validation_memory`  | optional, in MiB           | system default | 2048
+`validation_output`  | optional, in MiB           | system default | 8
 
 For most keys, the system default will be used if nothing is specified.
 This can vary, but you **should** assume that it's reasonable.
@@ -210,10 +211,10 @@ For example, `custom interactive score`.
 Must only be used on scoring problems.
 A map with the following keys:
 
-| Key                   | Type    | Default | Comments                                                                                 |
-| --------------------- | ------- | ------- | ---------------------------------------------------------------------------------------- |
-| objective             | String  | max     | One of "min" or "max" specifying whether it is a minimization or a maximization problem. |
-| show_test_data_groups | boolean | false   | Specifies whether test group results should be shown to the end user.                    |
+Key                     | Type    | Default | Comments
+----------------------- | ------- | ------- | --------
+`objective`             | String  | max     | One of "min" or "max" specifying whether it is a minimization or a maximization problem.
+`show_test_data_groups` | boolean | false   | Specifies whether test group results should be shown to the end user.
 
 ### Keywords
 
@@ -261,7 +262,7 @@ The files must share the base name of the associated test case.
 Description and illustration files are meant to be privileged information.
 
 Category     | File type | Filename extension                 | Remark
------------- | --------- | ---------------------------------- | ----------------------
+------------ | --------- | ---------------------------------- | ------
 hint         | text      | `.hint`                            |
 description  | text      | `.desc`                            | privileged information
 illustration | image     | `.png`, `.jpg`, `.jpeg`, or `.svg` | privileged information
@@ -309,16 +310,16 @@ If there is no `testdata.yaml` file in the root `data` group, one is implicitly 
 
 The format of `testdata.yaml` is as follows:
 
-| Key                    | Type                                           | Default      | Comments
-| ---------------------- | ---------------------------------------------- | ------------ | --------
-| on_reject              | String                                         | break        | One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test case or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test cases and subgroups within the group.
-| grading                | String                                         | default      | One of "default" and "custom".
-| grader_flags           | String                                         | empty string | arguments passed to the grader for this test data group.
-| input_validator_flags  | String or map with the keys "name" and "flags" | empty string | arguments passed to the input validator for this test data group. If a string, then those are the arguments that will be passed to each input validator for this test data group. If a map, then this is the name of the input validator as well as the arguments to pass to that input validator for this test data group. Validators not present in the map are run without any arguments.
-| output_validator_flags | String or map with the keys "name" and "flags" | empty string | arguments passed to the output validator for this test data group. If a string, this is the name of the output validator that will be used for this test data group. If a map, then this is the name as well as the arguments that will be passed to the output validator.
-| accept_score           | String                                         | 1            | Default score for accepted input files. May only be specified for scoring problems.
-| reject_score           | String                                         | 0            | Default score for rejected input files. May only be specified for scoring problems.
-| range                  | String                                         | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.
+Key                      | Type                                           | Default      | Comments
+------------------------ | ---------------------------------------------- | ------------ | --------
+`on_reject`              | String                                         | break        | One of "break" or "continue". Specifies how judging should proceed when a submission gets a non-Accept judgement on an individual test case or subgroup. If "break", judging proceeds immediately to grading. If "continue", judging continues judging the rest of the test cases and subgroups within the group.
+`grading`                | String                                         | default      | One of "default" and "custom".
+`grader_flags`           | String                                         | empty string | arguments passed to the grader for this test data group.
+`input_validator_flags`  | String or map with the keys "name" and "flags" | empty string | arguments passed to the input validator for this test data group. If a string, then those are the arguments that will be passed to each input validator for this test data group. If a map, then this is the name of the input validator as well as the arguments to pass to that input validator for this test data group. Validators not present in the map are run without any arguments.
+`output_validator_flags` | String or map with the keys "name" and "flags" | empty string | arguments passed to the output validator for this test data group. If a string, this is the name of the output validator that will be used for this test data group. If a map, then this is the name as well as the arguments that will be passed to the output validator.
+`accept_score`           | String                                         | 1            | Default score for accepted input files. May only be specified for scoring problems.
+`reject_score`           | String                                         | 0            | Default score for rejected input files. May only be specified for scoring problems.
+`range`                  | String                                         | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.
 
 ## Included Code
 
@@ -336,13 +337,13 @@ that file must have the language-dependent name as given in the table referred a
 Correct and incorrect solutions to the problem are provided in subdirectories of `submissions/`.
 The possible subdirectories are:
 
-| Value               | Requirement                                                                                                                        | Comment
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------
-| accepted            | Accepted as a correct solution for all test cases.                                                                                 | At least one is required.
-| partially_accepted  | Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min. | Must not be used for pass-fail problems.
-| wrong_answer        | Wrong answer for some test case, but is not too slow and does not crash for any test case.                                         |
-| time_limit_exceeded | Too slow for some test case. May also give wrong answer but not crash for any test case.                                           |
-| run_time_error      | Crashes for some test case.                                                                                                        |
+Value                 | Requirement                                                                                                                        | Comment
+--------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------
+`accepted`            | Accepted as a correct solution for all test cases.                                                                                 | At least one is required.
+`partially_accepted`  | Overall verdict must be Accepted. Overall score must not be max of range if objective is max and min of range if objective is min. | Must not be used for pass-fail problems.
+`wrong_answer`        | Wrong answer for some test case, but is not too slow and does not crash for any test case.                                         |
+`time_limit_exceeded` | Too slow for some test case. May also give wrong answer but not crash for any test case.                                           |
+`run_time_error`      | Crashes for some test case.                                                                                                        |
 
 Every file or directory in these directories represents a separate solution.
 It is mandatory to provide at least one accepted solution.
@@ -417,13 +418,13 @@ The default output validator is essentially a beefed-up diff.
 In its default mode, it tokenizes the output and answer files and compares them token by token.
 It supports the following command-line arguments to control how tokens are compared.
 
-| Arguments                    | Description                                                                                                                                                 |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `case_sensitive`             | indicates that comparisons should be case-sensitive.                                                                                                        |
-| `space_change_sensitive`     | indicates that changes in the amount of whitespace should be rejected (the default is that any sequence of 1 or more whitespace characters are equivalent). |
-| `float_relative_tolerance ε` | indicates that floating-point tokens should be accepted if they are within relative error ≤ ε (see below for details).                                      |
-| `float_absolute_tolerance ε` | indicates that floating-point tokens should be accepted if they are within absolute error ≤ ε (see below for details).                                      |
-| `float_tolerance ε`          | short-hand for applying ε as both relative and absolute tolerance.                                                                                          |
+Arguments                    | Description
+---------------------------- | -----------
+`case_sensitive`             | indicates that comparisons should be case-sensitive.
+`space_change_sensitive`     | indicates that changes in the amount of whitespace should be rejected (the default is that any sequence of 1 or more whitespace characters are equivalent).
+`float_relative_tolerance ε` | indicates that floating-point tokens should be accepted if they are within relative error ≤ ε (see below for details).
+`float_absolute_tolerance ε` | indicates that floating-point tokens should be accepted if they are within absolute error ≤ ε (see below for details).
+`float_tolerance ε`          | short-hand for applying ε as both relative and absolute tolerance.
 
 When supplying both a relative and an absolute tolerance, the semantics are that a token is accepted if it is within either of the two tolerances.
 When a floating-point tolerance has been set, any valid formatting of floating-point numbers is accepted for floating-point tokens.
@@ -443,24 +444,19 @@ The meaning of the parameters listed above are:
 
 - input:
   a string specifying the name of the input data file that was used to test the program whose results are being validated.
-
 - answer_file:
   a string specifying the name of an arbitrary "answer file" which acts as input to the validator program.
   The answer file may, but is not necessarily required to, contain the "correct answer" for the problem.
   For example, it might contain the output that was produced by a judge's solution for the problem when run with input file as input.
   Alternatively, the "answer file" might contain information, in arbitrary format, which instructs the validator in some way about how to accomplish its task.
-
 - feedback_dir:
   a string which specifies the name of a "feedback directory" in which the validator can produce "feedback files" in order to report additional information on the validation of the output file.
   The feedbackdir must end with a path separator (typically '/' or '\\' depending on operating system),
   so that simply appending a filename to feedbackdir gives the path to a file in the feedback directory.
-
 - additional_arguments:
   in case the problem specifies additional `validator_flags`, these are passed as additional arguments to the validator on the command line.
-
 - team_output:
   the output produced by the program being validated is given on the validator's standard input pipe.
-
 - team_input:
   when running the validator in interactive mode everything written on the validator's standard output pipe is given to the program being validated.
   Please note that when running interactive the program will only receive the output produced by the validator and will not have direct access to the input file.
@@ -554,12 +550,12 @@ A grader simply takes a list of results on standard input, and produces a single
 The input file will have the one line per test case containing the result of judging the testfile,
 using the code from the table below, followed by whitespace, followed by the score.
 
-| Code | Meaning             |
-| ---- | ------------------- |
-| AC   | Accepted            |
-| WA   | Wrong Answer        |
-| RTE  | Run-Time Error      |
-| TLE  | Time-Limit Exceeded |
+Code | Meaning
+---- | -------
+AC   | Accepted
+WA   | Wrong Answer
+RTE  | Run-Time Error
+TLE  | Time-Limit Exceeded
 
 The score is taken from the `score.txt` files produced by the output validator.
 If no `score.txt` exists the score will be as defined by the grading accept_score and reject_score setting from `problem.yaml`.
@@ -585,14 +581,14 @@ and two flags
 These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [`testdata.yaml`](#test-data-groups)).
 If multiple conflicting modes are given, the last one is used. Their meaning are as follows.
 
-| Argument                 | Type         | Description
-| ------------------------ | ------------ | -----------
-| `worst_error`            | verdict mode | Default. Verdict is accepted if all sub-results are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the sub-result of some item in the test case group. Note that in combination with the on_reject:break policy in `testdata.yaml`, the result will be the first error encountered.
-| `first_error`            | verdict mode | Verdict is accepted if all sub-results are accepted, otherwise it is the verdict of the first sub-result with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.
-| `always_accept`          | verdict mode | Verdict is always accepted.
-| `sum`                    | scoring mode | Default. Score is sum of input scores.
-| `avg`                    | scoring mode | score is average of input scores.
-| `min`                    | scoring mode | score is minimum of input scores.
-| `max`                    | scoring mode | score is maximum of input scores.
-| `ignore_sample`          | flag         | Must only be used on the root level. The first sub-result (sample) will be ignored, the second sub-result (secret) will be used, both verdict and score.
-| `accept_if_any_accepted` | flag         | Verdict is accepted if any sub-result is accepted, otherwise as specified by the verdict aggregation mode.
+Argument                 | Type         | Description
+------------------------ | ------------ | -----------
+`worst_error`            | verdict mode | Default. Verdict is accepted if all sub-results are accepted, otherwise it is the first of JE, IF, RTE, MLE, TLE, OLE, WA that is the sub-result of some item in the test case group. Note that in combination with the on_reject:break policy in `testdata.yaml`, the result will be the first error encountered.
+`first_error`            | verdict mode | Verdict is accepted if all sub-results are accepted, otherwise it is the verdict of the first sub-result with a non-accepted verdict. Please note `worst_error` and `first_error` always give the same result if `on_reject` is set to `break`, and as such it is recommended to use the default.
+`always_accept`          | verdict mode | Verdict is always accepted.
+`sum`                    | scoring mode | Default. Score is sum of input scores.
+`avg`                    | scoring mode | score is average of input scores.
+`min`                    | scoring mode | score is minimum of input scores.
+`max`                    | scoring mode | score is maximum of input scores.
+`ignore_sample`          | flag         | Must only be used on the root level. The first sub-result (sample) will be ignored, the second sub-result (secret) will be used, both verdict and score.
+`accept_if_any_accepted` | flag         | Verdict is accepted if any sub-result is accepted, otherwise as specified by the verdict aggregation mode.
