@@ -35,6 +35,8 @@ This is an (incomplete?) list of systems supporting Problem Package Format:
 - [DOMjudge](https://www.domjudge.org/):
   Judging system.
 - [PC^2](https://pc2ccs.github.io/):
-  Judging system
+  Judging system.
+- [ICPC Problem Archive](https://github.com/icpc-problem-archive):
+  Archive of all problems from official ICPC contests.
 
 If you have a system that supports or uses the problem package format and want it included here, please make a pull request or an issue on this repository.
