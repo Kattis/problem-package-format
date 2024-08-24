@@ -383,24 +383,19 @@ The meaning of the parameters listed above are:
 
 - input:
   a string specifying the name of the input data file that was used to test the program whose results are being validated.
-
 - answer_file:
   a string specifying the name of an arbitrary "answer file" which acts as input to the validator program.
   The answer file may, but is not necessarily required to, contain the "correct answer" for the problem.
   For example, it might contain the output that was produced by a judge's solution for the problem when run with input file as input.
   Alternatively, the "answer file" might contain information, in arbitrary format, which instructs the validator in some way about how to accomplish its task.
-
 - feedback_dir:
   a string which specifies the name of a "feedback directory" in which the validator can produce "feedback files" in order to report additional information on the validation of the output file.
   The feedbackdir must end with a path separator (typically '/' or '\\' depending on operating system),
   so that simply appending a filename to feedbackdir gives the path to a file in the feedback directory.
-
 - additional_arguments:
   in case the problem specifies additional `validator_flags`, these are passed as additional arguments to the validator on the command line.
-
 - team_output:
   the output produced by the program being validated is given on the validator's standard input pipe.
-
 - team_input:
   when running the validator in interactive mode everything written on the validator's standard output pipe is given to the program being validated.
   Please note that when running interactive the program will only receive the output produced by the validator and will not have direct access to the input file.
