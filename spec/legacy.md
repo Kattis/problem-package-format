@@ -47,7 +47,6 @@ File or Folder         | Required? | Described In                               
 `include/`             | No        | [Included Files](#included-files)             | Files appended to all submitted solutions
 `submissions/`         | Yes       | [Example Submissions](#example-submissions)   | Correct and incorrect judge solutions of the problem
 `input_validators/`    | Yes       | [Input Validators](#input-validators)         | Programs that verifies correctness of the test data inputs
-`input_visualizer/`    | No        | [Input Visualizer](#input-visualizer)         | Scripts and documentation about how test case illustrations were generated
 `output_validators/`   | No        | [Output Validators](#output-validators)       | Custom programs for judging solutions
 
 A minimal problem package must contain `problem.yaml`, a problem statement, a secret test case, an accepted judge solution, and an input validator.
