@@ -33,6 +33,7 @@ sort: 1
 - Make `uuid` required in `problem.yaml`.
 - Add `/submissions/rejected` directory.
 - Clarify working directories for submissions and validators.
+- Add `allow_writing_files` to `problem.yaml`.
 
 ## Legacy version (changes since beginning 2021)
 
