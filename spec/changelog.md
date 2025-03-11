@@ -34,6 +34,7 @@ sort: 1
 - Add `/submissions/rejected` directory.
 - Clarify working directories for submissions and validators.
 - Add `allow_writing_files` to `problem.yaml`.
+- Rename `testdata.yaml` to `test_group.yaml`.
 
 ## Legacy version (changes since beginning 2021)
 
