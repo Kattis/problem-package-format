@@ -241,7 +241,7 @@ Image file formats supported are `.png`, `.jpg`, `.jpeg`, and `.pdf`.
 
 A LaTeX file may include the problem name using the LaTeX command `\problemname` in case LaTeX formatting of the title is wanted.
 If a plaintext version of the problem name is required, the `name` value from `problem.yaml` shall be used if present.
-If not, the name given in `\problemname` is displayed verbatim.
+If not, the name given in `\problemname` is used verbatim.
 
 The problem statements must only contain the actual problem statement, no sample data.
 
