@@ -20,4 +20,5 @@ group :jekyll_plugins do
   gem "jekyll-remote-theme"
   gem 'faraday', '< 1'
   gem 'liquid', '>= 4.0.1'
+  gem 'webrick'
 end
