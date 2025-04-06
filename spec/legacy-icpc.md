@@ -73,13 +73,13 @@ If at least one of these two files is included:
    will be invoked in the same way as a single file program.
 
 Programs without `build` and `run` scripts are built and run according to what language is used.
-Language is determined by looking at the file endings as specified in the [languages table](/appendix/languages.html).
+Language is determined by looking at the file endings as specified in the [languages table](../appendix/languages.md).
 In the case of Python 2 and 3 which share the same file ending,
 language will be determined by looking at the shebang line which must match the regular expressions `^#!.*python2` for Python 2 and `^#!.*python3` for Python 3.
 If a single language can't be determined, building fails.
 
 For languages where there could be several entry points,
-the default entry point in the [languages table](/appendix/languages.html) will be used.
+the default entry point in the [languages table](../appendix/languages.md) will be used.
 
 ## Problem Metadata
 
