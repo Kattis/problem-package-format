@@ -319,9 +319,9 @@ Key                      | Type                                           | Defa
 `grader_flags`           | String                                         | empty string | arguments passed to the grader for this test data group.
 `input_validator_flags`  | String or map with the keys "name" and "flags" | empty string | arguments passed to the input validator for this test data group. If a string, then those are the arguments that will be passed to each input validator for this test data group. If a map, then this is the name of the input validator as well as the arguments to pass to that input validator for this test data group. Validators not present in the map are run without any arguments.
 `output_validator_flags` | String or map with the keys "name" and "flags" | empty string | arguments passed to the output validator for this test data group. If a string, this is the name of the output validator that will be used for this test data group. If a map, then this is the name as well as the arguments that will be passed to the output validator.
-`accept_score`           | String                                         | 1            | Default score for accepted input files. May only be specified for scoring problems.
-`reject_score`           | String                                         | 0            | Default score for rejected input files. May only be specified for scoring problems.
-`range`                  | String                                         | \-inf +inf   | Two numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.
+`accept_score`           | Int                                            | 1            | Default score for accepted input files. May only be specified for scoring problems.
+`reject_score`           | Int                                            | 0            | Default score for rejected input files. May only be specified for scoring problems.
+`range`                  | Two space separated floating-point numbers     | \-inf +inf   | Two floating-point numbers A and B ("inf", "-inf", "+inf" are allowed for plus/minus infinity) specifying the range of possible scores. May only be specified for scoring problems.
 
 ## Included Code
 
