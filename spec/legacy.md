@@ -109,7 +109,7 @@ Key                                               | Type                        
 [limits](#limits)                                 | Map with keys as defined below                | No        | See below
 [validation](#validation)                         | String                                        | No        | `default`
 [validator_flags](#validation)                    | String                                        | No        |
-[scoring](#scoring)                               | Map with keys as defined below                | No        | See below
+[grading](#grading)                               | Map with keys as defined below                | No        | See below
 [keywords](#keywords)                             | String                                        | No        |
 
 ### Problem format version
@@ -206,7 +206,7 @@ For example, `custom interactive score`.
 
 `validator_flags` will be passed as command-line arguments to each of the output validators.
 
-### Scoring
+### Grading
 
 Must only be used on scoring problems.
 A map with the following keys:
