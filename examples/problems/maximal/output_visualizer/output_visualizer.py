@@ -7,4 +7,10 @@ answer_file = open(sys.argv[2]).read().strip()
 feedback_dir = sys.argv[3]
 args = sys.argv[4:]
 with open(f"{feedback_dir}/judgeimage.svg", "w") as f:
-    print(f"<svg><text>args: {escape(' '.join(args))}</text><text>team output: {input()}</text></svg>", file=f)
+    print(
+        "<svg>"
+        + f"<text y='20'>args: {escape(' '.join(args))}</text>"
+        + f"<text y='40'>team output: {escape(input())}</text>"
+        + "</svg>",
+        file=f,
+    )
