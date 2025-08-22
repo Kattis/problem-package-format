@@ -19,6 +19,7 @@ sort: 1
 - Change specification of time limit multipliers and allow to
   explicitly specify a problem time limit.
 - Add the problem types multi-pass and submit-answer.
+- Add static validators, validators whose input is submission source code.
 - Support invalid testdata that validators must fail on.
 - Only allow a single output validator, remove `validator_flags` from
   `problem.yaml`, update `{input,output}_validator_flags` in
