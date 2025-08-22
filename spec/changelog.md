@@ -18,7 +18,7 @@ sort: 1
 - Allow either a build or run script to be present.
 - Change specification of time limit multipliers and allow to
   explicitly specify a problem time limit.
-- Add a multi-pass problem type.
+- Add the problem types multi-pass and submit-answer.
 - Support invalid testdata that validators must fail on.
 - Only allow a single output validator, remove `validator_flags` from
   `problem.yaml`, update `{input,output}_validator_flags` in
