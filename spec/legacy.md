@@ -242,7 +242,7 @@ Image file formats supported are `.png`, `.jpg`, `.jpeg`, and `.pdf`.
 
 A LaTeX file may include the problem name using the LaTeX command `\problemname`. This name is used verbatim.
 If LaTeX formatting of the problem name is desired, say if the problem name is $x^2+y^2=z^2$, the file must provide
-a plain problem using a comment of the following format:
+a plain problem using a comment with the following format:
 `%% plainproblemname: x^2 + y^2 = z^2`.
 
 The problem statements must only contain the actual problem statement, no sample data.
