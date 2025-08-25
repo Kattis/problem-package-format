@@ -240,9 +240,10 @@ Auxiliary files needed by the problem statement files must all be in `problem_st
 `problem.<language>.<filetype>` should reference auxiliary files as if the working directory is `problem_statement/`.
 Image file formats supported are `.png`, `.jpg`, `.jpeg`, and `.pdf`.
 
-A LaTeX file may include the problem name using the LaTeX command `\problemname` in case LaTeX formatting of the title is wanted.
-If a plaintext version of the problem name is required, the `name` value from `problem.yaml` shall be used if present.
-If not, the name given in `\problemname` is used verbatim.
+A LaTeX file may include the problem name using the LaTeX command `\problemname`. This name is used verbatim.
+If LaTeX formatting of the problem name is desired, say if the problem name is $x^2+y^2=z^2$, the file must provide
+a plain problem using a comment with the following format:
+`%% plainproblemname: x^2 + y^2 = z^2`.
 
 The problem statements must only contain the actual problem statement, no sample data.
 
