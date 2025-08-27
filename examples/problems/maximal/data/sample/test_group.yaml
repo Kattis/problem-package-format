@@ -1,2 +1,2 @@
-test_case_visualizer_args: [sample]
+input_visualizer_args: [sample]
 output_visualizer_args: [sample]
