@@ -218,8 +218,7 @@ Auxiliary files needed by the problem statement files must all be in `problem_st
 Image file formats supported are `.png`, `.jpg`, `.jpeg`, and `.pdf`.
 
 A LaTeX file must specify the problem name using the LaTeX command `\problemname`.
-If LaTeX formatting is used in the problem name, say if the problem name is $x^2+y^2=z^2$, the file must provide
-a plain problem name using a comment with the following format anywhere in the document:
+If LaTeX formatting is used in the problem name, say if the problem name is $x^2+y^2=z^2$, the file must provide a plain problem name using a comment with the following format anywhere in the document:
 `%% plainproblemname: x^2 + y^2 = z^2`.
 
 The problem statements must only contain the actual problem statement, no sample data.
