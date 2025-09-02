@@ -27,7 +27,7 @@ This is an (incomplete?) list of systems supporting Problem Package Format:
   This is the reference validation tool for the Kattis format. 
   It is not intended to be more than that.
 - [BAPCtools](https://github.com/RagnarGrootKoerkamp/BAPCtools):
-  Development tool for creating and problems using the Kattis format.
+  Development tool for creating and developing problems using the Kattis format.
 - [Testdata Tools](https://github.com/Kodsport/testdata_tools):
   Bash helper functions for working with problems for the Kattis format, particularly ones that use multiple test groups.
 - [Kattis](https://open.kattis.com/):
