@@ -6,7 +6,7 @@ sort: 1
 
 # Changelog
 
-## Version 2023-07-draft
+## Version 2025-09
 
 - Removed scoring objective; this now always is "maximize".
 - Removed `scoring` keyword from `problem.yaml`.
