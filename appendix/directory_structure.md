@@ -6,7 +6,7 @@ sort: 5
 
 # Directory structure
 
-These examples are for the latest version of the spec, `2023-07-draft`.
+These examples are for the latest version of the spec, `2025-09`.
 
 ```text
 <short_name>/

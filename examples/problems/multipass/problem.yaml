@@ -1,4 +1,4 @@
-problem_format_version: 2023-07-draft # or `legacy` for the previous version of the Problem Package Format
+problem_format_version: 2025-09 # or `legacy` for the previous version of the Problem Package Format
 type: pass-fail multi-pass
 name: Sample problem
 uuid: c0c117b7-c70c-4369-b574-06e7802beb9f
