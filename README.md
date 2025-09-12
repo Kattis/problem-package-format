@@ -8,7 +8,7 @@ sort: 1
 This site contains the specification for the Kattis Problem Package Format.
 There are currently three versions:
 
-- The latest (draft) version: <https://www.kattis.com/problem-package-format/spec/2023-07-draft.html>.
+- The latest (release candidate) version: <https://www.kattis.com/problem-package-format/spec/2025-09.html>.
 - The current version: <https://www.kattis.com/problem-package-format/spec/legacy.html>.
 - The ICPC subset of the current version: <https://icpc.io/problem-package-format/spec/legacy-icpc.html>.
 

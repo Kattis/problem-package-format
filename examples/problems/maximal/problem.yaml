@@ -1,4 +1,4 @@
-problem_format_version: 2023-07-draft # or `legacy` for the previous version of the Problem Package Format
+problem_format_version: 2025-09 # or `legacy` for the previous version of the Problem Package Format
 type: pass-fail
 name: # May be just a string if there's only a problem statement for one language
   en: Sample Problem
