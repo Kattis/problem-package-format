@@ -8,8 +8,12 @@ readme_index:
 
 theme: null
 
-# https://github.com/rundocs/jekyll-rtd-theme
-remote_theme: kattis/jekyll-rtd-theme
+# https://jv-conseil.github.io/jekyll-theme-read-the-docs/
+remote_theme: JV-conseil/jekyll-theme-read-the-docs
+
+# if this breaks too here's an alternative
+# https://github.com/just-the-docs/just-the-docs
+# remote_theme: just-the-docs/just-the-docs
 
 plugins:
   - jekyll-remote-theme
