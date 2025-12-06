@@ -13,6 +13,7 @@ remote_theme: kattis/jekyll-rtd-theme
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-redirect-from
 
 markdown: CommonMarkGhPages
 commonmark:
