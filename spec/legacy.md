@@ -526,7 +526,8 @@ This information may be displayed to the user upon invocation of the validator.
 ## Graders
 
 Graders are programs that are given the sub-results of a test data group and aggregate a result for the group.
-They are provided in `graders/`.
+There may exist at most one grader program, and it is provided in the `graders/` directory.
+It is a judge error to use `grading: custom` without providing a grader.
 
 For pass-fail problems, this grader will typically just set the verdict to accepted if all sub-results in the group were accepted and otherwise select the "worst" error in the group (see below for definition of "worst"),
 though it is possible to write a custom grader which e.g. accepts if at least half the sub-results are accepted.

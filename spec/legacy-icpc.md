@@ -61,7 +61,7 @@ In the case that a program is a single file, it is treated as if a directory wit
 The name of the program, for the purpose of referring to it within the package, is the base name of the file or the name of the directory.
 There can't be two programs of the same kind with the same name.
 
-Validators and graders, but not submissions,
+Input and output validators, but not submissions,
 in the form of a directory may include two POSIX-compliant shell scripts, `build` and `run`.
 These scripts must be executable when they exist or get generated.
 If at least one of these two files is included:
