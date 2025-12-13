@@ -532,10 +532,14 @@ Graders are programs that are given the sub-results of a test data group and agg
 There may exist at most one grader program, and it is provided in the `graders/` directory.
 It is a judge error to use `grading: custom` without providing a grader.
 
-For pass-fail problems, this grader will typically just set the verdict to accepted if all sub-results in the group were accepted and otherwise select the "worst" error in the group (see below for definition of "worst"),
-though it is possible to write a custom grader which e.g. accepts if at least half the sub-results are accepted.
-For scoring problems, one common grader behaviour would be to always set the verdict to Accepted,
-with the score being the sum of scores of the items in the test group.
+Graders are only allowed for scoring problems, not pass-fail.
+Most reasonable grader behaviors can be achieved through clever configuration of the default grader.
+If it all possible, this should be preferred over writing a custom grader.
+
+An example of a behavior that is not possible using the default grader is to make `score.txt` act as a multiplier of `accept_score`.
+One way to accomplish this is to first add `accept_score=x` to `grader_flags`.
+Then, copy an implementation of the default grader, make it parse the `accept_score`, and multiply it with any supplied scores.
+If the problem has test data groups, it might be a good idea to only use the custom grader in test data groups that only contain test cases.
 
 ### Invocation
 
@@ -564,14 +568,14 @@ RTE  | Run-Time Error
 TLE  | Time-Limit Exceeded
 
 The score is taken from the `score.txt` files produced by the output validator.
-If no `score.txt` exists the score will be as defined by the grading accept_score and reject_score setting from `problem.yaml`.
+If no `score.txt` exists the score will be as defined by the grading `accept_score` and `reject_score` settings from `problem.yaml`.
 
 ### Output
 
 The grader must output the aggregate result on stdout in the same format as its input.
 Any other output, including no output, will result in a Judging Error.
 
-For pass-fail problems, or for non-Accepted results on scoring problems, the score provided by the grader will always be ignored.
+For non-Accepted results on scoring problems, the score provided by the grader will always be ignored.
 
 The grader may output debug information on stderr.
 This information may be displayed to the user upon invocation of the grader.
@@ -579,12 +583,12 @@ This information may be displayed to the user upon invocation of the grader.
 ### Default Grader Specification
 
 The default grader has three different modes for aggregating the verdict
--- _worst_error_, _first_error_ and _always_accept_ --
+-- `worst_error`, `first_error` and `always_accept` --
 four different modes for aggregating the score
--- _sum_, _avg_, _min_, _max_ --
+-- `sum`, `avg`, `min`, `max` --
 and two flags
--- _ignore_sample_ and _accept_if_any_accepted_.
-These modes can be set by providing their names as command line arguments (through the "grader_flags" option in [`testdata.yaml`](#test-data-groups)).
+-- `ignore_sample` and `accept_if_any_accepted`.
+These modes can be set by providing their names as command line arguments (through the `grader_flags` option in [`testdata.yaml`](#test-data-groups)).
 If multiple conflicting modes are given, the last one is used. Their meaning are as follows.
 
 Argument                 | Type         | Description
