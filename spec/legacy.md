@@ -576,7 +576,7 @@ If no `score.txt` exists the score will be as defined by the grading `accept_sco
 The grader must output the aggregate result on stdout in the same format as its input.
 Any other output, including no output, will result in a Judging Error.
 
-For non-Accepted results on scoring problems, the score provided by the grader will always be ignored.
+For non-Accepted verdicts on scoring problems, the score provided by the grader will always be ignored.
 
 The grader may output debug information on stderr.
 This information may be displayed to the user upon invocation of the grader.
