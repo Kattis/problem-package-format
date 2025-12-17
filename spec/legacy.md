@@ -536,11 +536,6 @@ Graders are only allowed for scoring problems, not pass-fail.
 Most reasonable grader behaviors can be achieved through clever configuration of the default grader.
 If it all possible, this should be preferred over writing a custom grader.
 
-An example of a behavior that is not possible using the default grader is to make `score.txt` act as a multiplier of `accept_score`.
-One way to accomplish this is to first add `accept_score=x` to `grader_flags`.
-Then, copy an implementation of the default grader, make it parse the `accept_score`, and multiply it with any supplied scores.
-If the problem has test data groups, it might be a good idea to only use the custom grader in test data groups that only contain test cases.
-
 ### Invocation
 
 A grader program must be an application (executable or interpreted) capable of being invoked with a command line call.
