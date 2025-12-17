@@ -310,8 +310,9 @@ Test cases and groups will be used in lexicographical order on file base name.
 If a specific order is desired, a numbered prefix such as `00`, `01`, `02`, `03`, and so on, can be used.
 
 In each test data group, a YAML file `testdata.yaml` may be placed to specify how the result of the test data group should be computed.
-If a test data group has no `testdata.yaml` file, the `testdata.yaml` in the closest ancestor group that has one will be used.
-If there is no `testdata.yaml` file in the root `data` group, one is implicitly added with the default values.
+Properties specified in testdata.yaml are inherited transitively by descendant groups.
+If a property is not defined for a given group, its value is taken from the nearest ancestor group whose `testdata.yaml` defines that property.
+If there is no such `testdata.yaml`, the default value will be used.
 
 The format of `testdata.yaml` is as follows:
 
