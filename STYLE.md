@@ -18,7 +18,7 @@ This style guide ensures consistency across all specification documents and make
 Tables should be formatted with the following conventions:
 
 - No prefix `|` at the beginning of rows
-- No postfix `|` at the end of rows  
+- No postfix `|` at the end of rows, unless the last column is empty
 - Exactly one space between `---` and `|` in the header divider row on each side
 - Match width of columns for all rows (that is, all columns are as wide as the largest content), except when that becomes unreasonable
 - Match width of columns between format versions when "the same" table exist in both, to allow useful diffs
