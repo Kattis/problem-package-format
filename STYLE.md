@@ -21,7 +21,7 @@ Tables should be formatted with the following conventions:
 - No postfix `|` at the end of rows, unless the last column is empty
 - Exactly one space between `---` and `|` in the header divider row on each side
 - Match width of columns for all rows (that is, all columns are as wide as the largest content), except when that becomes unreasonable
-- Match width of columns between format versions when "the same" table exist in both, to allow useful diffs
+- Match width of columns between format versions when "the same" table exists in both, to allow useful diffs
 - Last header divider matches the length of the header text, not the content below
 
 **Example:**
@@ -71,12 +71,11 @@ Use full English phrases instead of Latin abbreviations for clarity:
 
 ### Headers and capitalization
 
-Capitalize headers like normal sentences (sentence case), 
-that is, only capitalize the first word and proper nouns.
+Capitalize headers like normal sentences (sentence case), that is, only capitalize the first word and proper nouns.
 
 **Examples:**
 - ✅ "Problem metadata"
-- ✅ "Test data groups" 
+- ✅ "Test data groups"
 - ✅ "LaTeX environment and supported subset"
 - ❌ "Problem Metadata"
 - ❌ "Test Data Groups"
@@ -93,7 +92,7 @@ that is, only capitalize the first word and proper nouns.
 - Separate stylistic changes from content changes as much as reasonably possible
 - Focus on consistency within the section being modified
 - When in doubt, prioritize diff clarity over perfect formatting
-- Style can always be fixed in a follow up PR
+- Style can always be fixed in a follow-up PR
 
 ### Review process
 
@@ -117,21 +116,9 @@ These conventions were chosen to:
 ```markdown
 Extension | Description                   | Required
 --------- | ----------------------------- | --------
-.in       | Input piped to standard input | Yes
-.ans      | Answer file for validator     | Yes
-.files    | Input available via file I/O  | No
-```
-
-### Good sentence structure
-
-```markdown
-The validator should be possible to use as follows on the command line:
-
-```
-<input_validator_program> [arguments] < inputfile
-```
-
-Here, `arguments` is the `input_validator_args`.
+`.in`     | Input piped to standard input | Yes
+`.ans`    | Answer file for validator     | Yes
+`.files`  | Input available via file I/O  | No
 ```
 
 ### Good header hierarchy
