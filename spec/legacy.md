@@ -479,7 +479,7 @@ A validator program is required to report its judgement by exiting with specific
 - If the output is incorrect (that is, the submission that produced the output is to be judged as Wrong Answer),
   the validator exits with exit code 43.
 
-Any other exit code (including 0\!) indicates that the validator did not operate properly,
+Any other exit code, **including 0**, indicates that the validator did not operate properly,
 and the judging system invoking the validator must take measures to report this to contest personnel.
 The purpose of these somewhat exotic exit codes is to avoid conflict with other exit codes that results when the validator crashes.
 For instance, if the validator is written in Java, any unhandled exception results in the program crashing with an exit code of 1,
