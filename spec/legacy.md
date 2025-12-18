@@ -86,7 +86,7 @@ the default entry point in the [languages table](../appendix/languages.md) will 
 
 ### Problem types
 
-There are two types of problems: *pass-fail* problems and *scoring* problems.
+There are two types of problems: _pass-fail_ problems and _scoring_ problems.
 In pass-fail problems, submissions are basically judged as either accepted or rejected (though the "rejected" judgement is more fine-grained and divided into results such as "Wrong Answer", "Time Limit Exceeded", and so on).
 In scoring problems, a submission that is accepted is additionally given a score, which is a numeric value (and the goal is to either maximize or minimize this value).
 
@@ -272,12 +272,12 @@ hint         | text      | `.hint`                            |
 description  | text      | `.desc`                            | privileged information
 illustration | image     | `.png`, `.jpg`, `.jpeg`, or `.svg` | privileged information
 
-- A *hint* provides feedback for solving a test case to, for example, somebody whose submission didn't pass.
+- A _hint_ provides feedback for solving a test case to, for example, somebody whose submission didn't pass.
 
-- A *description* conveys the purpose of a test case.
+- A _description_ conveys the purpose of a test case.
   It is an explanation of what aspect or edge case of the solution that the input file is meant to test.
 
-- An *illustration* provides a visualization of the associated test case.
+- An _illustration_ provides a visualization of the associated test case.
   Note that at most one image file may exist for each test case.
 
 ### Interactive problems
@@ -303,7 +303,7 @@ Each test data group may consist of zero or more test cases (that is, input-answ
 At the top level, the test data is divided into exactly two groups: `sample` and `secret`.
 These two groups may be further split into subgroups as desired.
 
-The *result* of a test data group is computed by applying a *grader* to all of the sub-results (test cases and subgroups) in the group.
+The *result* of a test data group is computed by applying a _grader_ to all of the sub-results (test cases and subgroups) in the group.
 See [Graders](#graders) for more details.
 
 Test cases and groups will be used in lexicographical order on file base name.

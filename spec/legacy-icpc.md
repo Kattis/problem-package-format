@@ -246,12 +246,12 @@ hint         | text      | `.hint`                            |
 description  | text      | `.desc`                            | privileged information
 illustration | image     | `.png`, `.jpg`, `.jpeg`, or `.svg` | privileged information
 
-- A *hint* provides feedback for solving a test case to, for example, somebody whose submission didn't pass.
+- A _hint_ provides feedback for solving a test case to, for example, somebody whose submission didn't pass.
 
-- A *description* conveys the purpose of a test case.
+- A _description_ conveys the purpose of a test case.
   It is an explanation of what aspect or edge case of the solution that the input file is meant to test.
 
-- An *illustration* provides a visualization of the associated test case.
+- An _illustration_ provides a visualization of the associated test case.
   Note that at most one image file may exist for each test case.
 
 ### Interactive problems
