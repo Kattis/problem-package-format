@@ -4,7 +4,7 @@ title: Legacy (ICPC)
 sort: 4
 ---
 
-# Problem Package Format
+# Problem package format
 
 This is the `legacy-icpc` version of the Kattis problem package format.
 It is also known as the ICPC subset.
@@ -14,7 +14,7 @@ It is also known as the ICPC subset.
 This document describes the format of a _Kattis problem package_,
 used for distributing and sharing problems for algorithmic programming contests as well as educational use.
 
-### General Requirements
+### General requirements
 
 - The package must consist of a single directory containing files as described below.
   The directory name must consist solely of lowercase letters a–z and digits 0–9.
@@ -34,20 +34,20 @@ used for distributing and sharing problems for algorithmic programming contests 
 - The problem package may include symbolic links to other files in the problem package.
   Symlinks must not have targets outside the problem package directory tree.
 
-### Problem Package Structure Overview
+### Problem package structure overview
 
 The following table summarizes the elements of a problem package described in this specification:
 
-File or Folder         | Required? | Described In                                  | Description
+File or Folder         | Required? | Described in                                  | Description
 ---------------------- | --------- | --------------------------------------------- | -----------
-`problem.yaml`         | Yes       | [Problem Metadata](#problem-metadata)         | Metadata about the problem (e.g., source, license, limits)
-`problem_statement/`   | Yes       | [Problem Statements](#problem-statements)     | Problem statement files
+`problem.yaml`         | Yes       | [Problem metadata](#problem-metadata)         | Metadata about the problem (e.g., source, license, limits)
+`problem_statement/`   | Yes       | [Problem statements](#problem-statements)     | Problem statement files
 `attachments/`         | No        | [Attachments](#attachments)                   | Files available to problem-solvers other than the problem statement and sample test data
-`data/sample/`         | No        | [Test Data](#test-data)                       | Sample test data
-`data/secret/`         | Yes       | [Test Data](#test-data)                       | Secret test data
-`submissions/`         | Yes       | [Example Submissions](#example-submissions)   | Correct and incorrect judge solutions of the problem
-`input_validators/`    | Yes       | [Input Validators](#input-validators)         | Programs that verifies correctness of the test data inputs
-`output_validators/`   | No        | [Output Validators](#output-validators)       | Custom programs for judging solutions
+`data/sample/`         | No        | [Test data](#test-data)                       | Sample test data
+`data/secret/`         | Yes       | [Test data](#test-data)                       | Secret test data
+`submissions/`         | Yes       | [Example submissions](#example-submissions)   | Correct and incorrect judge solutions of the problem
+`input_validators/`    | Yes       | [Input validators](#input-validators)         | Programs that verifies correctness of the test data inputs
+`output_validators/`   | No        | [Output validators](#output-validators)       | Custom programs for judging solutions
 
 A minimal problem package must contain `problem.yaml`, a problem statement, a secret test case, an accepted judge solution, and an input validator.
 
@@ -81,7 +81,7 @@ If a single language can't be determined, building fails.
 For languages where there could be several entry points,
 the default entry point in the [languages table](../appendix/languages.md) will be used.
 
-## Problem Metadata
+## Problem metadata
 
 Metadata about the problem (e.g., source, license, limits) are provided in a YAML file named `problem.yaml` placed in the root directory of the package.
 
@@ -198,7 +198,7 @@ For example, `custom interactive`.
 Space separated list of keywords describing the problem.
 Keywords must not contain spaces.
 
-## Problem Statements
+## Problem statements
 
 The problem statement of the problem is provided in the directory `problem_statement/`.
 
@@ -254,7 +254,7 @@ illustration | image     | `.png`, `.jpg`, `.jpeg`, or `.svg` | privileged infor
 - An *illustration* provides a visualization of the associated test case.
   Note that at most one image file may exist for each test case.
 
-### Interactive Problems
+### Interactive problems
 
 Unlike in non-interactive problems, `.in` and `.ans` files in interactive problems **must not** be displayed to teams:
 not in the problem statement, nor as part of sample input download.
@@ -268,14 +268,14 @@ while those starting with `<` signify an input from the output validator to the 
 
 If you want to provide files related to interactive problems (such as testing tools or input files), you can use [attachments](#attachments).
 
-### Test Data Groups
+### Test data groups
 
 At the top level, the test data is divided into exactly two groups: `sample` and `secret`.
 
 Test cases and groups will be used in lexicographical order on file base name.
 If a specific order is desired, a numbered prefix such as `00`, `01`, `02`, `03`, and so on, can be used.
 
-## Example Submissions
+## Example submissions
 
 Correct and incorrect solutions to the problem are provided in subdirectories of `submissions/`.
 The possible subdirectories are:
@@ -292,7 +292,7 @@ It is mandatory to provide at least one accepted solution.
 
 Submissions must read input data from standard input, and write output to standard output.
 
-## Input Validators
+## Input validators
 
 Input Validators, verifying the correctness of the input files, are provided in `input_validators/` (or the deprecated `input_format_validators/`).
 Input validators can be specified as [VIVA](http://viva.vanb.org/)-files (with file ending `.viva`),
@@ -331,7 +331,7 @@ Any other exit code means that the input file could not be confirmed as valid.
 The validator **must not** read any files outside those defined in the Invocation section.
 Its result **must** depend only on these files and the arguments.
 
-## Output Validators
+## Output validators
 
 ### Overview
 
@@ -346,7 +346,7 @@ The validator program has two ways of reporting back the results of validating:
 
 1.  The validator must give a judgement (see [Reporting a judgement](#reporting-a-judgement)).
 2.  The validator may give additional feedback,
-    e.g., an explanation of the judgement to humans (see [Reporting Additional Feedback](#reporting-additional-feedback)).
+    e.g., an explanation of the judgement to humans (see [Reporting additional feedback](#reporting-additional-feedback)).
 
 Custom output validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below.
 They are provided in `output_validators/`, and must adhere to the [Output validator](#output-validators) specification.
@@ -354,7 +354,7 @@ They are provided in `output_validators/`, and must adhere to the [Output valida
 All output validators provided will be run on the output for every test data file using the arguments specified for the test data group they are part of.
 Validation fails if any validator fails.
 
-### Default Output Validator Specification
+### Default output validator specification
 
 The default output validator is essentially a beefed-up diff.
 In its default mode, it tokenizes the output and answer files and compares them token by token.
@@ -421,7 +421,7 @@ The purpose of these somewhat exotic exit codes is to avoid conflict with other 
 For instance, if the validator is written in Java, any unhandled exception results in the program crashing with an exit code of 1,
 making it unsuitable to assign a judgement meaning to this exit code.
 
-### Reporting Additional Feedback
+### Reporting additional feedback
 
 The purpose of the feedback directory is to allow the validator program to report more information to the judging system than just the accept/reject verdict.
 Using the feedback directory is optional for a validator program, so if one just wants to write a bare-bones minimal validator, it can be ignored.
