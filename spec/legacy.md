@@ -26,7 +26,7 @@ used for distributing and sharing problems for algorithmic programming contests 
   but must not begin with a dash or period.
 - Auxiliary files and directories beginning with a dash or period (such as `.gitignore` and `.git/`) or containing invalid characters are allowed in the problem package for convenience when interoperating with external tools.
   However, the judging system shall behave as if all such files and directories were removed before the system interacts with the package.
-  Package preparation tools are encouraged to warn the user if a file or folder that is ignored in this way appears intended as a test case, submission, or other file integral to the package.
+  Package preparation tools are encouraged to warn the user if a file or directory that is ignored in this way appears intended as a test case, submission, or other file integral to the package.
 - All text files for a problem must be UTF-8 encoded and not have a byte-order mark (BOM).
 - All text files must have Unix-style line endings (newline/LF byte only).
   Note that LF is line-ending and not line-separating in POSIX, which means that all non-empty text files must end with a newline.
@@ -40,7 +40,7 @@ used for distributing and sharing problems for algorithmic programming contests 
 
 The following table summarizes the elements of a problem package described in this specification:
 
-File or Folder         | Required? | Described in                                  | Description
+File or directory      | Required? | Described in                                  | Description
 ---------------------- | --------- | --------------------------------------------- | -----------
 `problem.yaml`         | Yes       | [Problem metadata](#problem-metadata)         | Metadata about the problem (for example, source, license, limits)
 `problem_statement/`   | Yes       | [Problem statements](#problem-statements)     | Problem statement files

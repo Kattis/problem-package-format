@@ -38,7 +38,7 @@ used for distributing and sharing problems for algorithmic programming contests 
 
 The following table summarizes the elements of a problem package described in this specification:
 
-File or Folder         | Required? | Described in                                  | Description
+File or directory      | Required? | Described in                                  | Description
 ---------------------- | --------- | --------------------------------------------- | -----------
 `problem.yaml`         | Yes       | [Problem metadata](#problem-metadata)         | Metadata about the problem (for example, source, license, limits)
 `problem_statement/`   | Yes       | [Problem statements](#problem-statements)     | Problem statement files
