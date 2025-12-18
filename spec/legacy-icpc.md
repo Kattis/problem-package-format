@@ -23,7 +23,7 @@ used for distributing and sharing problems for algorithmic programming contests 
   ```regex
   ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,253}[a-zA-Z0-9]$
   ```
-  i.e., they must be of length at least 2, at most 255, consist solely of lower- or uppercase letters a–z, A–Z, digits 0–9, period, dash, or underscore,
+  that is, they must be of length at least 2, at most 255, consist solely of lower- or uppercase letters a–z, A–Z, digits 0–9, period, dash, or underscore,
   but must not begin or end with a period, dash, or underscore.
 - All text files for a problem must be UTF-8 encoded and not have a byte-order mark (BOM).
 - All text files must have Unix-style line endings (newline/LF byte only).
@@ -40,7 +40,7 @@ The following table summarizes the elements of a problem package described in th
 
 File or Folder         | Required? | Described in                                  | Description
 ---------------------- | --------- | --------------------------------------------- | -----------
-`problem.yaml`         | Yes       | [Problem metadata](#problem-metadata)         | Metadata about the problem (e.g., source, license, limits)
+`problem.yaml`         | Yes       | [Problem metadata](#problem-metadata)         | Metadata about the problem (for example, source, license, limits)
 `problem_statement/`   | Yes       | [Problem statements](#problem-statements)     | Problem statement files
 `attachments/`         | No        | [Attachments](#attachments)                   | Files available to problem-solvers other than the problem statement and sample test data
 `data/sample/`         | No        | [Test data](#test-data)                       | Sample test data
@@ -83,7 +83,7 @@ the default entry point in the [languages table](../appendix/languages.md) will 
 
 ## Problem metadata
 
-Metadata about the problem (e.g., source, license, limits) are provided in a YAML file named `problem.yaml` placed in the root directory of the package.
+Metadata about the problem (for example, source, license, limits) are provided in a YAML file named `problem.yaml` placed in the root directory of the package.
 
 The keys are defined as below.
 Keys are optional unless explicitly stated.
@@ -225,7 +225,7 @@ The problem statements must only contain the actual problem statement, no sample
 
 ## Attachments
 
-Public, i.e., non-secret, files to be made available in addition to the problem statement and sample test data are provided in the directory `attachments/`.
+Public, that is, non-secret, files to be made available in addition to the problem statement and sample test data are provided in the directory `attachments/`.
 
 ## Test data
 
@@ -246,7 +246,7 @@ hint         | text      | `.hint`                            |
 description  | text      | `.desc`                            | privileged information
 illustration | image     | `.png`, `.jpg`, `.jpeg`, or `.svg` | privileged information
 
-- A *hint* provides feedback for solving a test case to, e.g., somebody whose submission didn't pass.
+- A *hint* provides feedback for solving a test case to, for example, somebody whose submission didn't pass.
 
 - A *description* conveys the purpose of a test case.
   It is an explanation of what aspect or edge case of the solution that the input file is meant to test.
@@ -346,7 +346,7 @@ The validator program has two ways of reporting back the results of validating:
 
 1.  The validator must give a judgement (see [Reporting a judgement](#reporting-a-judgement)).
 2.  The validator may give additional feedback,
-    e.g., an explanation of the judgement to humans (see [Reporting additional feedback](#reporting-additional-feedback)).
+    for example, an explanation of the judgement to humans (see [Reporting additional feedback](#reporting-additional-feedback)).
 
 Custom output validators are used if the problem requires more complicated output validation than what is provided by the default diff variant described below.
 They are provided in `output_validators/`, and must adhere to the [Output validator](#output-validators) specification.
@@ -410,9 +410,9 @@ The directory pointed to by feedback_dir must also exist.
 
 A validator program is required to report its judgement by exiting with specific exit codes:
 
-- If the output is a correct output for the input file (i.e., the submission that produced the output is to be Accepted),
+- If the output is a correct output for the input file (that is, the submission that produced the output is to be Accepted),
   the validator exits with exit code 42.
-- If the output is incorrect (i.e., the submission that produced the output is to be judged as Wrong Answer),
+- If the output is incorrect (that is, the submission that produced the output is to be judged as Wrong Answer),
   the validator exits with exit code 43.
 
 Any other exit code (including 0\!) indicates that the validator did not operate properly,
@@ -436,7 +436,7 @@ giving the submission a score based on other factors than correctness,
 or a `teammessage.txt` file, giving a message to the team that submitted the solution, providing additional feedback on the submission.
 
 A judging system that implements this format must support the `judgemessage.txt` file described above
-(I.e., content of the `judgemessage.txt` file, if produced by the validator, must be provided by the judging system to a human judge examining the submission).
+(that is, content of the `judgemessage.txt` file, if produced by the validator, must be provided by the judging system to a human judge examining the submission).
 Having the judging system support other files is optional.
 
 Note that a validator may choose to ignore the feedback directory entirely.

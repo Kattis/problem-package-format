@@ -47,6 +47,7 @@ Use full English phrases instead of Latin abbreviations for clarity:
 
 - Write "for example" instead of "e.g."
 - Write "that is" instead of "i.e."
+- Write "and so on" instead of "etc."
 
 **Rationale:** This is clearer for non-native English speakers and those without Latin knowledge, and helps avoid formatting issues.
 
