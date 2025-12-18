@@ -148,4 +148,4 @@ The `data/sample` directory contains test cases similar to those in `data/secret
 
 ---
 
-*This style guide is a living document and may be updated based on community feedback and evolving needs.*
+_This style guide is a living document and may be updated based on community feedback and evolving needs._
