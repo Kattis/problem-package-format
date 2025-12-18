@@ -39,6 +39,24 @@ Add newlines to make diffs maximally useful:
 - Add a newline after every sentence
 - Add newlines at subclauses (after commas) when the sentence becomes too long **and** it makes semantic sense
 
+### Inline code markup
+
+Use backticks for:
+
+- File and directory names (for example, `problem.yaml`, `data/secret/`)
+- Key names and values in configuration files (for example, `time_limit`, `true`)
+- Command-line invocations and arguments in inline text
+- Literal values and identifiers (for example, exit code `42`)
+
+### Link text
+
+Use descriptive link text that makes sense out of context:
+
+- ✅ `see the [languages table](../appendix/languages.md)`
+- ✅ `as described in [Problem metadata](#problem-metadata)`
+- ❌ `see [here](../appendix/languages.md)`
+- ❌ `[click here](#problem-metadata) for details`
+
 ## Language and terminology
 
 ### Latin abbreviations
@@ -62,6 +80,10 @@ that is, only capitalize the first word and proper nouns.
 - ✅ "LaTeX environment and supported subset"
 - ❌ "Problem Metadata"
 - ❌ "Test Data Groups"
+
+### Terminology
+
+- Use "directory" instead of "folder"
 
 ## Implementation guidelines
 
