@@ -334,9 +334,9 @@ Code that should be included with all submissions are provided in one directory 
 The files should be copied from a language directory based on the language of the submission,
 to the submission files before compiling,
 overwriting files from the submission in the case of name collision.
-Language must be given as one of the language codes in the language table in the overview section.
+Language must be given as one of the language codes in the [languages table](../appendix/languages.md).
 If any of the included files are supposed to be the main file (that is, a driver),
-that file must have the language-dependent name as given in the table referred above.
+that file must have the language-dependent name given by the default entry point in that table.
 
 ## Example submissions
 
