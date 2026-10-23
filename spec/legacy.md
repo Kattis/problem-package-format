@@ -560,9 +560,16 @@ using the code from the table below, followed by whitespace, followed by the sco
 Code | Meaning
 ---- | -------
 AC   | Accepted
-WA   | Wrong Answer
+IF   | Illegal Function
+JE   | Judge Error
+MLE  | Memory-Limit Exceeded
+OLE  | Output-Limit Exceeded
 RTE  | Run-Time Error
 TLE  | Time-Limit Exceeded
+WA   | Wrong Answer
+
+A judging system is not required to use every one of these codes.
+For some results, such as Judge Error, a judging system may skip the grader and use that result directly as the final verdict.
 
 The score is taken from the `score.txt` files produced by the output validator.
 If no `score.txt` exists the score will be as defined by the grading `accept_score` and `reject_score` settings from `problem.yaml`.
@@ -570,7 +577,7 @@ If no `score.txt` exists the score will be as defined by the grading `accept_sco
 ### Output
 
 The grader must output the aggregate result on stdout in the same format as its input.
-Any other output, including no output, will result in a Judging Error.
+Any other output, including no output, will result in a Judge Error.
 
 For non-Accepted verdicts on scoring problems, the score provided by the grader will always be ignored.
 
