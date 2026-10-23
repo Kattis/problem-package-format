@@ -79,6 +79,7 @@ Programs without `build` and `run` scripts are built and run according to what l
 Language is determined by looking at the file endings as specified in the [languages table](../appendix/languages.md).
 In the case of Python 2 and 3 which share the same file ending,
 language will be determined by looking at the shebang line which must match the regular expressions `^#!.*python2` for Python 2 and `^#!.*python3` for Python 3.
+If the shebang line matches neither, or there is no shebang line, Python 3 is used.
 If a single language can't be determined, building fails.
 
 For languages where there could be several entry points,
