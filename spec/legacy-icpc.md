@@ -159,7 +159,7 @@ Value           | Comments                                                      
 `rights_owner` is the owner of the copyright of the problem.
 If `license` is not `unknown` or `public domain`, `rights_owner` is required to have a value.
 If `license` is `public domain`, `rights_owner` must not be set.
-`rights_owner` defaults to `credits.authors`, if present, otherwise the value of `source`, otherwise it will have no value.
+`rights_owner` defaults to `author`, if present, otherwise the value of `source`, otherwise it will have no value.
 
 ### Limits
 
