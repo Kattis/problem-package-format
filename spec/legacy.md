@@ -47,7 +47,7 @@ File or directory      | Required? | Described in                               
 `attachments/`         | No        | [Attachments](#attachments)                   | Files available to problem-solvers other than the problem statement and sample test data
 `data/sample/`         | No        | [Test data](#test-data)                       | Sample test data
 `data/secret/`         | Yes       | [Test data](#test-data)                       | Secret test data
-`include/`             | No        | [Included files](#included-files)             | Files appended to all submitted solutions
+`include/`             | No        | [Included code](#included-code)               | Files appended to all submitted solutions
 `submissions/`         | Yes       | [Example submissions](#example-submissions)   | Correct and incorrect judge solutions of the problem
 `input_validators/`    | Yes       | [Input validators](#input-validators)         | Programs that verifies correctness of the test data inputs
 `output_validators/`   | No        | [Output validators](#output-validators)       | Custom programs for judging solutions
