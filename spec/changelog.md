@@ -37,6 +37,7 @@ sort: 1
 - Add the `file-output` problem type.
 - Rename `testdata.yaml` to `test_group.yaml`.
 - Add `score_mode` to `test_group.yaml`.
+- Rename `entrypoint` to `main_file` in `submissions.yaml` and define how the main file is determined.
 
 ## Legacy version (changes since beginning 2021)
 
