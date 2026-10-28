@@ -82,8 +82,15 @@ language will be determined by looking at the shebang line which must match the 
 If the shebang line matches neither, or there is no shebang line, Python 3 is used.
 If a single language can't be determined, building fails.
 
-For languages where there could be several entry points,
-the default entry point in the [languages table](../appendix/languages.md) will be used.
+The _main file_ of a submission is the file from which the program is started, its entry point.
+For languages such as C and C++ the toolchain finds the entry point itself and the main file does not matter;
+for languages such as Python and Java the judging system must know it.
+
+If the [included code](#included-code) for the submission's language contains a file matching `main.*` case-insensitively, with one of the language's file endings from the [languages table](../appendix/languages.md), that file (a driver) is the main file.
+Otherwise, if the submission consists of a single file, that file is the main file, whatever its name.
+Otherwise, if the submitted files contain a file matching `main.*` case-insensitively with one of the language's file endings, such as `main.py` or `Main.java`, anywhere in the submission, it is the main file; it is an error if they contain more than one, for example both `main.cc` and `main.cpp`, or `main.py` and `Main.py`.
+Otherwise, the main file is the submitted file with the lexicographically smallest path.
+How the program is started from the main file is language dependent; for example, for Java the class to run is derived from it.
 
 ### Problem types
 
@@ -336,8 +343,8 @@ The files should be copied from a language directory based on the language of th
 to the submission files before compiling,
 overwriting files from the submission in the case of name collision.
 Language must be given as one of the language codes in the language table in the overview section.
-If any of the included files are supposed to be the main file (that is, a driver),
-that file must have the language-dependent name as given in the table referred above.
+An included file matching `main.*` case-insensitively, with one of the language's file endings, is a driver: the main file of every submission in that language; see [Programs](#programs).
+`include/<language>/` must not contain more than one such file.
 
 ## Example submissions
 
