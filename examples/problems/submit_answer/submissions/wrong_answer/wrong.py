@@ -1,1 +1,1 @@
-print(24)
+print(int(input()) * 2)
