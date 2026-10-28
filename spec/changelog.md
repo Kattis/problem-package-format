@@ -32,7 +32,8 @@ sort: 1
   rather than a string of space separated words.
 - Clarified when code limit is applied in the case of included code
 - Make `uuid` required in `problem.yaml`.
-- Add `/submissions/rejected` directory.
+- Add `/submissions/rejected` and `/submissions/partially_accepted` directories,
+  and `max` and `not-max` as `score` requirements in `submissions.yaml`.
 - Clarify working directories for submissions and validators.
 - Add `allow_writing_files` to `problem.yaml`.
 - Rename `testdata.yaml` to `test_group.yaml`.
