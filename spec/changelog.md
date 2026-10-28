@@ -34,7 +34,7 @@ sort: 1
 - Make `uuid` required in `problem.yaml`.
 - Add `/submissions/rejected` directory.
 - Clarify working directories for submissions and validators.
-- Add `allow_writing_files` to `problem.yaml`.
+- Add the `file-output` problem type.
 - Rename `testdata.yaml` to `test_group.yaml`.
 - Add `score_mode` to `test_group.yaml`.
 

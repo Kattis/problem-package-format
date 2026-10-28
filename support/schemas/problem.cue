@@ -102,9 +102,6 @@ import "strings"
 	// If not "all", restrict the programming languages that this problem may be solved in.
 	languages?: *"all" | [#ProgrammingLanguage, ...#ProgrammingLanguage]
 
-	// Should submissions have access to creating, editing and deleting files in their working directory?
-	allow_file_writing?: *false | true
-
 	// Constants for templates in the rest of the package, such as { max_n: 2000, name: "Alice" }
 	constants?: [=~"^[a-zA-Z_][a-zA-Z0-9_]*$"]: number | string
 }
