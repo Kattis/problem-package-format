@@ -18,7 +18,7 @@ sort: 1
 - Allow either a build or run script to be present.
 - Change specification of time limit multipliers and allow to
   explicitly specify a problem time limit.
-- Add the problem types multi-pass and submit-answer.
+- Add the problem types multi-pass and submit-answer, and define how submit-answer problems work.
 - Add static validators, validators whose input is submission source code.
 - Support invalid testdata that validators must fail on.
 - Only allow a single output validator, remove `validator_flags` from
@@ -34,7 +34,7 @@ sort: 1
 - Make `uuid` required in `problem.yaml`.
 - Add `/submissions/rejected` directory.
 - Clarify working directories for submissions and validators.
-- Add `allow_writing_files` to `problem.yaml`.
+- Add the `file-output` problem type.
 - Rename `testdata.yaml` to `test_group.yaml`.
 - Add `score_mode` to `test_group.yaml`.
 
