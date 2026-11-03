@@ -4,7 +4,8 @@ name: Sample Scoring problem
 uuid: db3e1e32-dd6f-4158-8f9f-909a383fe8d5
 credits:
   authors: Author <author@judge.com>
-source: My Contest 2024
-source_url: https://my.contest.com/2024
+source:
+  name: My Contest 2024
+  url: https://my.contest.com/2024
 license: cc by-sa
 rights_owner: My Contest

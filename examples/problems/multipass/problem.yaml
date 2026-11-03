@@ -1,10 +1,11 @@
 problem_format_version: 2025-09 # or `legacy` for the previous version of the Problem Package Format
-type: pass-fail multi-pass
+type: [pass-fail, multi-pass]
 name: Sample problem
 uuid: c0c117b7-c70c-4369-b574-06e7802beb9f
 credits:
   authors: Author One <author1@judge.com>
-source: My Contest 2024
-source_url: https://my.contest.com/2024
+source:
+  name: My Contest 2024
+  url: https://my.contest.com/2024
 license: cc by-sa
 rights_owner: My Contest
