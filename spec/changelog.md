@@ -40,6 +40,7 @@ sort: 1
 
 ## Legacy version (changes since beginning 2021)
 
+- Add (back) `languages` to `problem.yaml`.
 - Removed `libraries` keyword from `problem.yaml`.
 - Add specification of `.interaction` files.
 - Clarify directory or zip file name.

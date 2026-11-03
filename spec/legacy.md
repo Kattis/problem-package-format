@@ -115,6 +115,7 @@ Key                                               | Type                        
 [validator_flags](#validation)                    | String                                        | No        |
 [grading](#grading)                               | Map with keys as defined below                | No        | See below
 [keywords](#keywords)                             | String                                        | No        |
+[languages](#languages)                           | String or non-empty sequence of strings       | No        | `all`
 
 ### Problem format version
 
@@ -224,6 +225,12 @@ Key                     | Type    | Default | Comments
 
 Space separated list of keywords describing the problem.
 Keywords must not contain spaces.
+
+### Languages
+
+List of one or more programming language codes from the [languages table](../appendix/languages.md), or the string `all`.
+If the value is `all`, the problem may be solved using any programming language supported by the judging system.
+Otherwise, the problem may only be solved using the listed programming languages.
 
 ## Problem statements
 
