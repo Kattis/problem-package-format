@@ -1,1 +1,1 @@
-print(42)
+print(int(input()) ** 2)
