@@ -1,10 +1,11 @@
 problem_format_version: 2025-09
-type: pass-fail submit-answer
+type: [pass-fail, submit-answer]
 name: Sample problem
 uuid: 9b3df34b-165a-4ed6-8248-4cee2bd6985c
 credits:
   authors: Author One <author1@judge.com>
-source: My Contest 2024
-source_url: https://my.contest.com/2024
+source:
+  name: My Contest 2024
+  url: https://my.contest.com/2024
 license: cc by-sa
 rights_owner: My Contest

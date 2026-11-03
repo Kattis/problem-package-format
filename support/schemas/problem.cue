@@ -1,7 +1,7 @@
 package problem_package
 
 import "time"
-import "strings"
+import "list"
 
 #ProgrammingLanguage: "ada" | "algol68" | "apl" | "bash" | "c" | "cgmp" | "cobol" | "cpp" | "cppgmp" | "crystal" | "csharp" | "d" | "dart" | "elixir" | "erlang" | "forth" | "fortran" | "fsharp" | "gerbil" | "go" | "haskell" | "java" | "javaalgs4" | "javascript" | "julia" | "kotlin" | "lisp" | "lua" | "modula2" | "nim" | "objectivec" | "ocaml" | "octave" | "odin" | "pascal" | "perl" | "php" | "prolog" | "python2" | "python3" | "python3numpy" | "racket" | "ruby" | "rust" | "scala" | "simula" | "smalltalk" | "snobol" | "swift" | "typescript" | "visualbasic" | "zig"
 
@@ -17,15 +17,14 @@ import "strings"
 // Persons are one or more people, such as "Ada Lovelace <ada@lovelace.com>" or ["Alice", "Bob"]
 #Persons: #Person | [#Person, ...#Person]
 
+#ProblemType: "pass-fail" | "scoring" | "multi-pass" | "interactive" | "file-output" | "submit-answer"
+
 #Problem: {
 	// Problem package format used by this file, such as "2023-12-draft"
 	problem_format_version!: =~"^[0-9]{4}-[0-9]{2}(-draft)?$" | "draft" | "legacy" | "legacy-icpc"
 
-	// The judgement type is "pass-fail" (the default) or "scoring"
-	judgement_type?: *"pass-fail" | "scoring"
-
-	// The submission types are standard, interactive or multi-pass, or submit_answer.
-	submission_type?: *"standard" | "submit_answer" | "interactive" | "multi-pass" | "interactive multi-pass"
+	// The problem type, such as "scoring" or ["scoring", "interactive"]
+	type?: *"pass-fail" | #ProblemType | [#ProblemType, ...#ProblemType]
 
 	// The name of this problem, such as "Hello" or { en: "Hello", da: "Hej" }
 	name!: string | {[string]: string}
@@ -88,10 +87,17 @@ import "strings"
 		// Code length in kiB
 		code?: int & >0
 
-		if submission_type != _|_ {
-			if strings.Contains(submission_type, "multi-pass") {
-				// For multi-pass problems, how many passes does validation use?
-				validation_passes: *2 | int & >=2
+		if type != _|_ {
+			// For multi-pass problems, how many passes does validation use?
+			if (type & string) != _|_ {
+				if type == "multi-pass" {
+					validation_passes: *2 | int & >=2
+				}
+			}
+			if (type & [...]) != _|_ {
+				if list.Contains(type, "multi-pass") {
+					validation_passes: *2 | int & >=2
+				}
 			}
 		}
 	}
@@ -101,9 +107,6 @@ import "strings"
 
 	// If not "all", restrict the programming languages that this problem may be solved in.
 	languages?: *"all" | [#ProgrammingLanguage, ...#ProgrammingLanguage]
-
-	// Should submissions have access to creating, editing and deleting files in their working directory?
-	allow_file_writing?: *false | true
 
 	// Constants for templates in the rest of the package, such as { max_n: 2000, name: "Alice" }
 	constants?: [=~"^[a-zA-Z_][a-zA-Z0-9_]*$"]: number | string
