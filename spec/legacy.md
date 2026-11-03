@@ -87,7 +87,6 @@ For languages such as C and C++ the toolchain finds the entry point itself and t
 for languages such as Python and Java the judging system must know it.
 
 If the [included code](#included-code) for the submission's language contains a file matching `main.*` case-insensitively, with one of the language's file endings from the [languages table](../appendix/languages.md), that file (a driver) is the main file.
-Otherwise, if the submission consists of a single file, that file is the main file, whatever its name.
 Otherwise, if the submitted files contain a file matching `main.*` case-insensitively with one of the language's file endings, such as `main.py` or `Main.java`, anywhere in the submission, it is the main file; it is an error if they contain more than one, for example both `main.cc` and `main.cpp`, or `main.py` and `Main.py`.
 Otherwise, the main file is the submitted file with the lexicographically smallest path.
 How the program is started from the main file is language dependent; for example, for Java the class to run is derived from it.

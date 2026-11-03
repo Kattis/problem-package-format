@@ -8,7 +8,7 @@ accepted/*.php:
 
 run_time_error/not_defined:
   language: python3
-  entrypoint: main.py
+  main_file: main.py
   authors: Python Judge <python@judge.com>
 
 time_limit_exceeded/*:
